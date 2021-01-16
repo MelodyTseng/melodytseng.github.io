@@ -82,9 +82,9 @@
     
     <category term="php" scheme="https://josephzeng36.github.io/tags/php/"/>
     
-    <category term="interface" scheme="https://josephzeng36.github.io/tags/interface/"/>
-    
     <category term="spl" scheme="https://josephzeng36.github.io/tags/spl/"/>
+    
+    <category term="interface" scheme="https://josephzeng36.github.io/tags/interface/"/>
     
   </entry>
   
@@ -112,9 +112,9 @@
     
     <category term="php" scheme="https://josephzeng36.github.io/tags/php/"/>
     
-    <category term="abstract" scheme="https://josephzeng36.github.io/tags/abstract/"/>
-    
     <category term="interface" scheme="https://josephzeng36.github.io/tags/interface/"/>
+    
+    <category term="abstract" scheme="https://josephzeng36.github.io/tags/abstract/"/>
     
   </entry>
   
