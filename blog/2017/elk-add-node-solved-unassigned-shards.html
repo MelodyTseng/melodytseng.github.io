@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2021-01-20 Wed 17:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>elk add node solved unassigned shards</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员"
+ />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/blog/index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">elk add node solved unassigned shards</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgfd4a5e2">问题</a></li>
+<li><a href="#org2db6687">下载</a></li>
+<li><a href="#org797943d">logstash udp server</a></li>
+<li><a href="#org408ce50">kibana配置</a></li>
+<li><a href="#org2835e75">Elasticsearch节点1</a></li>
+<li><a href="#orgc871ca8">Elasticsearch节点2</a></li>
+<li><a href="#org219f16f">其他</a></li>
+<li><a href="#org8daa1df">启动</a></li>
+<li><a href="#orgb62e1cc">验收</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfd4a5e2" class="outline-2">
+<h2 id="orgfd4a5e2">问题</h2>
+<div class="outline-text-2" id="text-orgfd4a5e2">
+<p>
+因为之前搭建ELK是单机单节点，运行了一段时间了，今天上服务器查看了下状态，命令如下
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ curl -XGET <span style="color: #99bb66;">"http://localhost:9200/_cat/health?v"</span>
+</pre>
+</div>
+<p>
+突然发现status: yellow，奇怪的是出现了大量unassigned shards。  
+已经搜索了一下相关资料，都建议新增节点试试，可以解决这个问题；经过尝试，果然解决了这个问题，顺便把搭建过程重新整理一遍（ [查看之前整理的](<a href="http://www.zshuiquan.com/archives/20161213-elk-notes.html">http://www.zshuiquan.com/archives/20161213-elk-notes.html</a>) ）
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2db6687" class="outline-2">
+<h2 id="org2db6687">下载</h2>
+<div class="outline-text-2" id="text-org2db6687">
+<pre class="example" id="orgf9c2de1">
+elasticsearch-5.2.2
+logstash-5.2.2
+kibana-5.2.2-linux-x86_64
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org797943d" class="outline-2">
+<h2 id="org797943d">logstash udp server</h2>
+<div class="outline-text-2" id="text-org797943d">
+<pre class="example" id="org8e6b67c">
+input {
+   udp {
+	port =&gt; 65551
+	type =&gt; weblog
+	codec =&gt; json
+   }
+   udp {
+	port =&gt; 65552
+	type =&gt; serverlog
+	codec =&gt; json
+   }
+   udp {
+	port =&gt; 65553
+	type =&gt; applog
+	codec =&gt; json
+   }
+   udp {
+	port =&gt; 65554
+	type =&gt; crontablog
+	codec =&gt; json
+   }
+}
+output {
+   elasticsearch {
+   hosts =&gt; ["localhost:9200", "localhost:9201"]
+   }
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org408ce50" class="outline-2">
+<h2 id="org408ce50">kibana配置</h2>
+<div class="outline-text-2" id="text-org408ce50">
+<pre class="example" id="org0f2fe64">
+server.port: 8080
+server.host: "0.0.0.0"
+elasticsearch.url: "http://localhost:9200"
+elasticsearch.requestTimeout: 60000
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2835e75" class="outline-2">
+<h2 id="org2835e75">Elasticsearch节点1</h2>
+<div class="outline-text-2" id="text-org2835e75">
+<pre class="example" id="org71987bf">
+cluster.name: logcenter
+node.name: node1
+node.data: true
+node.master: true
+discovery.zen.ping.unicast.hosts: ["0.0.0.0:9300", "0.0.0.0:9301"]
+discovery.zen.minimum_master_nodes: 1
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc871ca8" class="outline-2">
+<h2 id="orgc871ca8">Elasticsearch节点2</h2>
+<div class="outline-text-2" id="text-orgc871ca8">
+<pre class="example" id="org0c7c7ba">
+cluster.name: logcenter
+node.name: node2
+node.data: true
+node.master: false
+transport.tcp.port: 9301
+http.port: 9201
+discovery.zen.ping.unicast.hosts: ["0.0.0.0:9300", "0.0.0.0:9301"]
+discovery.zen.minimum_master_nodes: 1
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org219f16f" class="outline-2">
+<h2 id="org219f16f">其他</h2>
+<div class="outline-text-2" id="text-org219f16f">
+<pre class="example" id="org26db469">
+### 可以修改 elasticsearch-5.2.2/config/jvm.options 
+-Xms3g
+-Xmx3g
+-XX:+UseConcMarkSweepGC
+-XX:CMSInitiatingOccupancyFraction=75
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:+DisableExplicitGC
+-XX:+AlwaysPreTouch
+-server
+-Xss1m
+-Djava.awt.headless=true
+-Dfile.encoding=UTF-8
+-Djna.nosys=true
+-Djdk.io.permissionsUseCanonicalPath=true
+-Dio.netty.noUnsafe=true
+-Dio.netty.noKeySetOptimization=true
+-Dio.netty.recycler.maxCapacityPerThread=0
+-Dlog4j.shutdownHookEnabled=false
+-Dlog4j2.disable.jmx=true
+-Dlog4j.skipJansi=true
+-XX:+HeapDumpOnOutOfMemoryError
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8daa1df" class="outline-2">
+<h2 id="org8daa1df">启动</h2>
+<div class="outline-text-2" id="text-org8daa1df">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">!/bin/</span><span style="color: #51afef;">bash</span>
+nohup /disk1/elk/kibana-5.2.2-linux-x86_64/bin/kibana &gt; /disk1/elk/kibana.log 2&gt;&amp;1 &amp;
+nohup /disk1/elk/elasticsearch-5.2.2/bin/elasticsearch -p /tmp/espid/node1.pid &gt; /disk1/elk/esnode1.log 2&gt;&amp;1 &amp;
+nohup /disk1/elk/elasticsearch-5.2.2-node2/bin/elasticsearch -p /tmp/espid/node2.pid &gt; /disk1/elk/esnode2.log 2&gt;&amp;1 &amp;
+nohup /disk1/elk/logstash-5.2.2/bin/logstash -f /disk1/elk/logstash-5.2.2/config/logstash-udp.conf &gt; /disk1/elk/ls.log 2&gt;&amp;1 &amp;
+
+<span style="color: #747474;">#</span><span style="color: #747474;">&#20445;&#23384;&#20026;start.sh</span>
+$ ./start.sh
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb62e1cc" class="outline-2">
+<h2 id="orgb62e1cc">验收</h2>
+<div class="outline-text-2" id="text-orgb62e1cc">
+<pre class="example" id="orgde7bbc2">
+$ curl -XGET "http://localhost:9200/_cat/health?v"
+epoch      timestamp cluster   status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
+1489128117 14:41:57  logcenter green           2         2     12   6    0    0        0             0                  -                100.0%
+</pre>
+
+<img src="/static/img/20170310145235.png" alt="/static/img/20170310145235.png" />
+
+<ul class="post-copyright">
+  <li>
+    <strong>本文作者： </strong>josephzeng
+  </li>
+  <li>
+    <strong>本文链接：</strong>
+    <a href="https://josephzeng36.github.io/blog/2020/elk-add-node-solved-unassigned-shards.html" title="elk add node solved unassigned shards">https://josephzeng36.github.io/blog/2020/elk-add-node-solved-unassigned-shards.html</a>
+  </li>
+  <li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-01-20 Wed 17:18 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+</div>
+</body>
+</html>
