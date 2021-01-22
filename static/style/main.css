@@ -30,8 +30,8 @@ body {
   font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif;
   width: 60%;
   margin: 0 auto;
-  /*font-size: .16rem;*/
-  font-size: 15px;
+  font-size: .16rem;
+  /* font-size: 15px; */
   line-height: 1.5;
 }
 
