@@ -2,10 +2,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-01-21 四 23:08 -->
+<!-- 2021-01-22 五 19:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>JosephZeng's Blog - Tools</title>
+<title>JosephZeng's Blog - Env Tools</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
 <meta name="description" content="coder 程序员"
@@ -225,36 +225,96 @@
  |
  <a accesskey="H" href="/index.html"> HOME </a>
 </div><div id="content">
-<h1 class="title">JosephZeng's Blog - Tools</h1>
+<h1 class="title">JosephZeng's Blog - Env Tools</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7cdff62">工作环境</a>
+<li><a href="#orgeeebc41">开发环境</a>
 <ul>
 <li><a href="#orgf7a4d66">系统</a></li>
+<li><a href="#org7fd0ec3">常用工具</a>
+<ul>
+<li><a href="#orga2b2567">debian</a></li>
+<li><a href="#orgc0a0ff4">windows 10</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7cdff62" class="outline-2">
-<h2 id="org7cdff62">工作环境</h2>
-<div class="outline-text-2" id="text-org7cdff62">
+<div id="outline-container-orgeeebc41" class="outline-2">
+<h2 id="orgeeebc41">开发环境</h2>
+<div class="outline-text-2" id="text-orgeeebc41">
 </div>
 <div id="outline-container-orgf7a4d66" class="outline-3">
 <h3 id="orgf7a4d66">系统</h3>
 <div class="outline-text-3" id="text-orgf7a4d66">
 <p>
-debian
+debian  或  win10 + wsl2(debian)
+</p>
+</div>
+</div>
+<div id="outline-container-org7fd0ec3" class="outline-3">
+<h3 id="org7fd0ec3">常用工具</h3>
+<div class="outline-text-3" id="text-org7fd0ec3">
+</div>
+<div id="outline-container-orga2b2567" class="outline-4">
+<h4 id="orga2b2567">debian</h4>
+<div class="outline-text-4" id="text-orga2b2567">
+<ul class="org-ul">
+<li><a href="https:ohmyz.sh/#install">oh my zsh</a> - 默认主题</li>
+<li><a href="https:github.com/tmux/tmux">tmux</a> - 配置使用<a href="https:github.com/gpakosz/.tmux.git"> https://github.com/gpakosz/.tmux.git</a></li>
+<li><a href="https:www.vim.org/">vim</a> - 配置使用 <a href="https:github.com/josephzeng36/vim">https://github.com/josephzeng36/vim</a></li>
+<li><a href="https:www.gnu.org/software/emacs/">emacs</a> 配置使用 <a href="https:github.com/josephzeng36/emacs">https://github.com/josephzeng36/emacs</a></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #51afef;">alias</span> <span style="color: #979797;">emacsd</span>=<span style="color: #99bb66;">"emacs --bg-daemon=~/.emacs.d/.cache/emacs_server"</span>
+<span style="color: #51afef;">alias</span> <span style="color: #979797;">et</span>=<span style="color: #99bb66;">"emacsclient -s ~/.emacs.d/.cache/emacs_server -nw"</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>tldr</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt-get install tldr
+</pre>
+</div>
+<ul class="org-ul">
+<li>trans - <a href="https:github.com/soimort/translate-shell">https://github.com/soimort/translate-shell</a></li>
+<li>ag - <a href="https:github.com/ggreer/the_silver_searcher">https://github.com/ggreer/the_silver_searcher</a></li>
+<li>eclipse - <a href="https:www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a></li>
+<li>xfce4 or awesome</li>
+<li>gcc / g++ / gdb / valgrind / doxygen / nginx / php / golang /
+cmake / make /autotools / java / &#x2026;</li>
+<li>zeal</li>
+<li>网易云音乐</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc0a0ff4" class="outline-4">
+<h4 id="orgc0a0ff4">windows 10</h4>
+<div class="outline-text-4" id="text-orgc0a0ff4">
+<ul class="org-ul">
+<li>eclipse - <a href="https:www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a></li>
+<li>WSL2 debian</li>
+<li>zeal</li>
+<li>网易云音乐</li>
+</ul>
+
+<p>
+待续补充&#x2026;
 </p>
 </div>
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-01 <br />Last updated: 2021-01-21 四 23:08 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2021-01-01 <br />Last updated: 2021-01-22 五 19:38 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>
