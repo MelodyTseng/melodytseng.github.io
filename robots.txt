@@ -1,2 +1,6 @@
 User-agent: *
 Disallow: /notes/
+Disallow: /calendar/
+Disallow: /inbox/
+Disallow: /journal/
+Disallow: /tasks/
