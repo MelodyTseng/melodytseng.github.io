@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-01-20 Wed 18:13 -->
+<!-- 2021-01-26 二 16:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php pack unpack</title>
@@ -261,7 +261,7 @@
 </pre>
 </div>
 <p>
-该函数用来将对应的参数($args)打包成二进制字符串
+该函数用来将对应的参数($args)打包成二进制字符串<br />
 </p>
 </div>
 </div>
@@ -280,34 +280,148 @@
 <h3 id="org02d2b22">format</h3>
 <div class="outline-text-3" id="text-org02d2b22">
 <p>
-如下选项  
-a	以NUL字节填充字符串空白  
-A	以SPACE(空格)填充字符串  
-h	十六进制字符串，低位在前  
-H	十六进制字符串，高位在前  
-c	有符号字符  
-C	无符号字符  
-s	有符号短整型(16位，主机字节序)  
-S	无符号短整型(16位，主机字节序)  
-n	无符号短整型(16位，大端字节序)  
-v	无符号短整型(16位，小端字节序)  
-i	有符号整型(机器相关大小字节序)  
-I	无符号整型(机器相关大小字节序)  
-l	有符号长整型(32位，主机字节序)  
-L	无符号长整型(32位，主机字节序)  
-N	无符号长整型(32位，大端字节序)  
-V	无符号长整型(32位，小端字节序)  
-q	有符号长长整型(64位，主机字节序)  
-Q	无符号长长整型(64位，主机字节序)  
-J	无符号长长整型(64位，大端字节序)  
-P	无符号长长整型(64位，小端字节序)  
-f	单精度浮点型(机器相关大小)  
-d	双精度浮点型(机器相关大小)  
-x	NUL字节  
-X	回退一字节  
-Z	以NUL字节填充字符串空白(new in PHP 5.5)  
-@	NUL填充到绝对位置
+如下选项<br />
 </p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">以NUL字节填充字符串空白</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-left">以SPACE(空格)填充字符串</td>
+</tr>
+
+<tr>
+<td class="org-left">h</td>
+<td class="org-left">十六进制字符串，低位在前</td>
+</tr>
+
+<tr>
+<td class="org-left">H</td>
+<td class="org-left">十六进制字符串，高位在前</td>
+</tr>
+
+<tr>
+<td class="org-left">c</td>
+<td class="org-left">有符号字符</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-left">无符号字符</td>
+</tr>
+
+<tr>
+<td class="org-left">s</td>
+<td class="org-left">有符号短整型(16位，主机字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">S</td>
+<td class="org-left">无符号短整型(16位，主机字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">n</td>
+<td class="org-left">无符号短整型(16位，大端字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">v</td>
+<td class="org-left">无符号短整型(16位，小端字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">i</td>
+<td class="org-left">有符号整型(机器相关大小字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">I</td>
+<td class="org-left">无符号整型(机器相关大小字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">l</td>
+<td class="org-left">有符号长整型(32位，主机字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">L</td>
+<td class="org-left">无符号长整型(32位，主机字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">N</td>
+<td class="org-left">无符号长整型(32位，大端字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">V</td>
+<td class="org-left">无符号长整型(32位，小端字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">q</td>
+<td class="org-left">有符号长长整型(64位，主机字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">Q</td>
+<td class="org-left">无符号长长整型(64位，主机字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">J</td>
+<td class="org-left">无符号长长整型(64位，大端字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">P</td>
+<td class="org-left">无符号长长整型(64位，小端字节序)</td>
+</tr>
+
+<tr>
+<td class="org-left">f</td>
+<td class="org-left">单精度浮点型(机器相关大小)</td>
+</tr>
+
+<tr>
+<td class="org-left">d</td>
+<td class="org-left">双精度浮点型(机器相关大小)</td>
+</tr>
+
+<tr>
+<td class="org-left">x</td>
+<td class="org-left">NUL字节</td>
+</tr>
+
+<tr>
+<td class="org-left">X</td>
+<td class="org-left">回退一字节</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">以NUL字节填充字符串空白(new in PHP 5.5)</td>
+</tr>
+
+<tr>
+<td class="org-left">@</td>
+<td class="org-left">NUL填充到绝对位置</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -315,8 +429,8 @@ Z	以NUL字节填充字符串空白(new in PHP 5.5)
 <h3 id="orge28e2a7">作用</h3>
 <div class="outline-text-3" id="text-orge28e2a7">
 <ul class="org-ul">
-<li>常用于tcp,udp服务的数据通信</li>
-<li>自我脑补</li>
+<li>常用于tcp,udp服务的数据通信<br /></li>
+<li>自我脑补<br /></li>
 </ul>
 </div>
 </div>
@@ -325,9 +439,9 @@ Z	以NUL字节填充字符串空白(new in PHP 5.5)
 <h3 id="org9f3b8ac">备注</h3>
 <div class="outline-text-3" id="text-org9f3b8ac">
 <p>
-学习参考地址:  
-<a href="https://my.oschina.net/goal/blog/202378">https://my.oschina.net/goal/blog/202378</a>  
-<a href="https://my.oschina.net/goal/blog/202381">https://my.oschina.net/goal/blog/202381</a>  
+学习参考地址:<br />
+<a href="https://my.oschina.net/goal/blog/202378">https://my.oschina.net/goal/blog/202378</a>  <br />
+<a href="https://my.oschina.net/goal/blog/202381">https://my.oschina.net/goal/blog/202381</a>  <br />
 </p>
 </div>
 </div>
@@ -381,10 +495,10 @@ $<span style="color: #979797;">ua</span> = unpack<span style="color: #51afef;">(
 </pre>
 </div>
 <p>
-以上代码只是对package模块封装的测试。  
-当然，实际tcp或udp服务应用中，需要自己定义好协议，信息头长度多少，参数是什么等等。  
-当然，在package write的时候，为了安全，可以进行加密；package read的时候，对应解密即可；详细可以参考class EncryptDecrypt。  
-至于如何封装，如：将$e 封装到header参数  package read的时候 获取 $e 进行对应的解密，代码自行脑补&#x2026;&#x2026;
+以上代码只是对package模块封装的测试。<br />
+当然，实际tcp或udp服务应用中，需要自己定义好协议，信息头长度多少，参数是什么等等。<br />
+当然，在package write的时候，为了安全，可以进行加密；package read的时候，对应解密即可；详细可以参考class EncryptDecrypt。<br />
+至于如何封装，如：将$e 封装到header参数  package read的时候 获取 $e 进行对应的解密，代码自行脑补&#x2026;&#x2026;<br />
 </p>
 
 
@@ -405,7 +519,7 @@ $<span style="color: #979797;">ua</span> = unpack<span style="color: #51afef;">(
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-01-20 Wed 18:11 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-01-26 二 16:42 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>
