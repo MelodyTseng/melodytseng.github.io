@@ -4,3 +4,4 @@ Disallow: /calendar/
 Disallow: /inbox/
 Disallow: /journal/
 Disallow: /tasks/
+Disallow: /work/
