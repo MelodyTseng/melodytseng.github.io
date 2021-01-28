@@ -2,8 +2,8 @@
 ~*
 .viminfo
 .tags
-/calendar
-/inbox
-/journal
-/tasks
-/work
+/calendar/*
+/inbox/*
+/journal/*
+/tasks/*
+/work/*
