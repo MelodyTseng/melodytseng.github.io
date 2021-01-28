@@ -2,6 +2,7 @@
 ~*
 .viminfo
 .tags
+.gitignore
 /calendar/*
 /inbox/*
 /journal/*
