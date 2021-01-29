@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-01-29 Fri 20:14 -->
+<!-- 2021-01-29 Fri 20:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git</title>
@@ -233,7 +233,11 @@
 <li><a href="#org3ecf911">git</a>
 <ul>
 <li><a href="#orgeb20188">安装</a></li>
-<li><a href="#orgb93f522">使用</a></li>
+<li><a href="#orgb93f522">使用</a>
+<ul>
+<li><a href="#org5cc755f">基本常用操作</a></li>
+</ul>
+</li>
 <li><a href="#org2e158b3">备注</a>
 <ul>
 <li><a href="#org0bfa240">查看最近修改的文件</a></li>
@@ -251,9 +255,39 @@
 </div>
 <div id="outline-container-orgeb20188" class="outline-3">
 <h3 id="orgeb20188">安装</h3>
+<div class="outline-text-3" id="text-orgeb20188">
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt install git <span style="color: #747474;">#</span><span style="color: #747474;">&#25110;&#33258;&#24049;&#32534;&#35793; https://git-scm.com/download/linux</span>
+git config --global user.name <span style="color: #99bb66;">"josephzeng"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#35774;&#32622;&#29992;&#25143;&#21517;</span>
+git config --global user.email <span style="color: #99bb66;">"xxx@gmail.com"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#35774;&#32622;&#37038;&#31665;</span>
+</pre>
+</div>
+</div>
 </div>
 <div id="outline-container-orgb93f522" class="outline-3">
 <h3 id="orgb93f522">使用</h3>
+<div class="outline-text-3" id="text-orgb93f522">
+</div>
+<div id="outline-container-org5cc755f" class="outline-4">
+<h4 id="org5cc755f">基本常用操作</h4>
+<div class="outline-text-4" id="text-org5cc755f">
+<div class="org-src-container">
+<pre class="src src-bash">git init <span style="color: #747474;">#</span><span style="color: #747474;">&#21021;&#22987;&#21270;</span>
+git status <span style="color: #747474;">#</span><span style="color: #747474;">&#33719;&#21462;&#29366;&#24577;</span>
+git add file <span style="color: #747474;">#</span><span style="color: #747474;">&#19968;&#20010;&#25991;&#20214;&#25110;&#22810;&#20010;&#25991;&#20214; &#25110; &#29992;.&#21644;*&#20195;&#34920;&#20840;&#37096; &#25110;*.html&#25351;&#23450;&#25991;&#20214;&#31867;&#22411;</span>
+git commit -m <span style="color: #99bb66;">"&#27880;&#37322;"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#25552;&#20132;&#26412;&#22320;&#20179;&#24211;</span>
+git checkout -- file <span style="color: #747474;">#</span><span style="color: #747474;">&#25764;&#38144;&#21040;&#26368;&#36817;&#19968;&#27425;&#29366;&#24577;</span>
+git remote add origin https://github.com/josephzeng36/java-tcp-server-todo-qserver.git <span style="color: #747474;">#</span><span style="color: #747474;">&#28155;&#21152;&#28304;</span>
+git push -u origin master || git push origin master <span style="color: #747474;">#</span><span style="color: #747474;">&#25552;&#20132;&#21040;&#36828;&#31243;&#20179;&#24211;</span>
+git clone https://github.com/josephzeng36/java-tcp-server-todo-qserver.git <span style="color: #747474;">#</span><span style="color: #747474;">&#20811;&#38534;&#20179;&#24211;</span>
+git clone https://github.com/josephzeng36/java-tcp-server-todo-qserver.git myProject <span style="color: #747474;">#</span><span style="color: #747474;">&#20811;&#38534;&#20179;&#24211;</span>
+git diff HEAD -- &#25991;&#20214;&#21517; <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#20462;&#25913;</span>
+git rm &#25991;&#20214; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25991;&#20214;</span>
+git log <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#21382;&#21490;&#29256;&#26412;</span>
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-org2e158b3" class="outline-3">
 <h3 id="org2e158b3">备注</h3>
@@ -285,7 +319,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-29 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-01-29 Fri 20:14 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-01-29 Fri 20:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>
