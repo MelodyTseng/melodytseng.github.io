@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-01-20 Wed 18:13 -->
+<!-- 2021-01-29 Fri 14:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elk add node solved unassigned shards</title>
@@ -263,7 +263,7 @@
 <div id="outline-container-org2db6687" class="outline-2">
 <h2 id="org2db6687">下载</h2>
 <div class="outline-text-2" id="text-org2db6687">
-<pre class="example" id="org85e03b1">
+<pre class="example" id="orgdffe0ce">
 elasticsearch-5.2.2
 logstash-5.2.2
 kibana-5.2.2-linux-x86_64
@@ -274,7 +274,7 @@ kibana-5.2.2-linux-x86_64
 <div id="outline-container-org797943d" class="outline-2">
 <h2 id="org797943d">logstash udp server</h2>
 <div class="outline-text-2" id="text-org797943d">
-<pre class="example" id="orge29a6c1">
+<pre class="example" id="orge562e55">
 input {
    udp {
 	port =&gt; 65551
@@ -309,7 +309,7 @@ output {
 <div id="outline-container-org408ce50" class="outline-2">
 <h2 id="org408ce50">kibana配置</h2>
 <div class="outline-text-2" id="text-org408ce50">
-<pre class="example" id="orgf904713">
+<pre class="example" id="orgf2359c7">
 server.port: 8080
 server.host: "0.0.0.0"
 elasticsearch.url: "http://localhost:9200"
@@ -321,7 +321,7 @@ elasticsearch.requestTimeout: 60000
 <div id="outline-container-org2835e75" class="outline-2">
 <h2 id="org2835e75">Elasticsearch节点1</h2>
 <div class="outline-text-2" id="text-org2835e75">
-<pre class="example" id="orgb1c8840">
+<pre class="example" id="orgee94384">
 cluster.name: logcenter
 node.name: node1
 node.data: true
@@ -335,7 +335,7 @@ discovery.zen.minimum_master_nodes: 1
 <div id="outline-container-orgc871ca8" class="outline-2">
 <h2 id="orgc871ca8">Elasticsearch节点2</h2>
 <div class="outline-text-2" id="text-orgc871ca8">
-<pre class="example" id="orgc0a53d8">
+<pre class="example" id="orge2b4885">
 cluster.name: logcenter
 node.name: node2
 node.data: true
@@ -351,7 +351,7 @@ discovery.zen.minimum_master_nodes: 1
 <div id="outline-container-org219f16f" class="outline-2">
 <h2 id="org219f16f">其他</h2>
 <div class="outline-text-2" id="text-org219f16f">
-<pre class="example" id="orge923e07">
+<pre class="example" id="org8235b16">
 ### 可以修改 elasticsearch-5.2.2/config/jvm.options 
 -Xms3g
 -Xmx3g
@@ -397,7 +397,7 @@ $ ./start.sh
 <div id="outline-container-orgb62e1cc" class="outline-2">
 <h2 id="orgb62e1cc">验收</h2>
 <div class="outline-text-2" id="text-orgb62e1cc">
-<pre class="example" id="org24bfccb">
+<pre class="example" id="org8351af9">
 $ curl -XGET "http://localhost:9200/_cat/health?v"
 epoch      timestamp cluster   status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
 1489128117 14:41:57  logcenter green           2         2     12   6    0    0        0             0                  -                100.0%
@@ -406,22 +406,14 @@ epoch      timestamp cluster   status node.total node.data shards pri relo init 
 <img src="/static/img/20170310145235.png" alt="/static/img/20170310145235.png" />
 
 <ul class="post-copyright">
-  <li>
-    <strong>本文作者： </strong>josephzeng
-  </li>
-  <li>
-    <strong>本文链接：</strong>
-    <a href="https://josephzeng36.github.io/blog/2017/elk-add-node-solved-unassigned-shards.html" title="elk add node solved unassigned shards">https://josephzeng36.github.io/blog/2017/elk-add-node-solved-unassigned-shards.html</a>
-  </li>
-  <li>
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
+  <li>Author: josephzeng</li>
+  <li>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-01-20 Wed 18:11 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-01-29 Fri 14:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>

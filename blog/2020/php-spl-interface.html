@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-01-20 Wed 16:55 -->
+<!-- 2021-01-29 Fri 14:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php_spl常用接口</title>
@@ -232,23 +232,23 @@
 <ul>
 <li><a href="#org49b5e05">Countable</a>
 <ul>
-<li><a href="#org69f007f">简介</a></li>
-<li><a href="#org7f74031">接口摘要</a></li>
-<li><a href="#orgf85b005">示例</a></li>
+<li><a href="#orgd32f095">简介</a></li>
+<li><a href="#org844905a">接口摘要</a></li>
+<li><a href="#orgb1d3aa0">示例</a></li>
 </ul>
 </li>
 <li><a href="#org5a2a29f">Iterator</a>
 <ul>
-<li><a href="#org6370a54">简介</a></li>
-<li><a href="#org7086e3e">接口摘要</a></li>
-<li><a href="#org84792e9">示例</a></li>
+<li><a href="#orgf9fc6f9">简介</a></li>
+<li><a href="#org5f2fe6d">接口摘要</a></li>
+<li><a href="#orgff350af">示例</a></li>
 </ul>
 </li>
 <li><a href="#org0e74405">IteratorAggregate</a>
 <ul>
-<li><a href="#orgd32f095">简介</a></li>
-<li><a href="#org844905a">接口摘要</a></li>
-<li><a href="#orgb1d3aa0">示例</a></li>
+<li><a href="#org70c050a">简介</a></li>
+<li><a href="#orgf0566a5">接口摘要</a></li>
+<li><a href="#org3fb1537">示例</a></li>
 </ul>
 </li>
 </ul>
@@ -259,17 +259,17 @@
 <h2 id="org49b5e05">Countable</h2>
 <div class="outline-text-2" id="text-org49b5e05">
 </div>
-<div id="outline-container-org69f007f" class="outline-3">
-<h3 id="org69f007f">简介</h3>
-<div class="outline-text-3" id="text-org69f007f">
+<div id="outline-container-orgd32f095" class="outline-3">
+<h3 id="orgd32f095">简介</h3>
+<div class="outline-text-3" id="text-orgd32f095">
 <p>
 类实现 Countable 可被用于 count() 函数. 
 </p>
 </div>
 </div>
-<div id="outline-container-org7f74031" class="outline-3">
-<h3 id="org7f74031">接口摘要</h3>
-<div class="outline-text-3" id="text-org7f74031">
+<div id="outline-container-org844905a" class="outline-3">
+<h3 id="org844905a">接口摘要</h3>
+<div class="outline-text-3" id="text-org844905a">
 <div class="org-src-container">
 <pre class="src src-php"> Countable <span style="color: #51afef;">{</span>
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861; */</span>
@@ -282,9 +282,9 @@
 
 
 
-<div id="outline-container-orgf85b005" class="outline-3">
-<h3 id="orgf85b005">示例</h3>
-<div class="outline-text-3" id="text-orgf85b005">
+<div id="outline-container-orgb1d3aa0" class="outline-3">
+<h3 id="orgb1d3aa0">示例</h3>
+<div class="outline-text-3" id="text-orgb1d3aa0">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
 <span style="color: #7d7d7d;">/**</span>
@@ -331,17 +331,17 @@ $<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color
 <h2 id="org5a2a29f">Iterator</h2>
 <div class="outline-text-2" id="text-org5a2a29f">
 </div>
-<div id="outline-container-org6370a54" class="outline-3">
-<h3 id="org6370a54">简介</h3>
-<div class="outline-text-3" id="text-org6370a54">
+<div id="outline-container-orgf9fc6f9" class="outline-3">
+<h3 id="orgf9fc6f9">简介</h3>
+<div class="outline-text-3" id="text-orgf9fc6f9">
 <p>
 可在内部迭代自己的外部迭代器或类的接口。
 </p>
 </div>
 </div>
-<div id="outline-container-org7086e3e" class="outline-3">
-<h3 id="org7086e3e">接口摘要</h3>
-<div class="outline-text-3" id="text-org7086e3e">
+<div id="outline-container-org5f2fe6d" class="outline-3">
+<h3 id="org5f2fe6d">接口摘要</h3>
+<div class="outline-text-3" id="text-org5f2fe6d">
 <div class="org-src-container">
 <pre class="src src-php"> Iterator <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> <span style="color: #51afef;">{</span>
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861; */</span>
@@ -355,9 +355,9 @@ $<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color
 </div>
 </div>
 </div>
-<div id="outline-container-org84792e9" class="outline-3">
-<h3 id="org84792e9">示例</h3>
-<div class="outline-text-3" id="text-org84792e9">
+<div id="outline-container-orgff350af" class="outline-3">
+<h3 id="orgff350af">示例</h3>
+<div class="outline-text-3" id="text-orgff350af">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myIterator</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">Iterator</span> <span style="color: #51afef;">{</span>
     <span style="color: #51afef;">private</span> $<span style="color: #979797;">position</span> = 0;
@@ -422,17 +422,17 @@ $<span style="color: #979797;">it</span> = <span style="color: #51afef;">new</sp
 <h2 id="org0e74405">IteratorAggregate</h2>
 <div class="outline-text-2" id="text-org0e74405">
 </div>
-<div id="outline-container-orgd32f095" class="outline-3">
-<h3 id="orgd32f095">简介</h3>
-<div class="outline-text-3" id="text-orgd32f095">
+<div id="outline-container-org70c050a" class="outline-3">
+<h3 id="org70c050a">简介</h3>
+<div class="outline-text-3" id="text-org70c050a">
 <p>
 创建外部迭代器的接口。
 </p>
 </div>
 </div>
-<div id="outline-container-org844905a" class="outline-3">
-<h3 id="org844905a">接口摘要</h3>
-<div class="outline-text-3" id="text-org844905a">
+<div id="outline-container-orgf0566a5" class="outline-3">
+<h3 id="orgf0566a5">接口摘要</h3>
+<div class="outline-text-3" id="text-orgf0566a5">
 <div class="org-src-container">
 <pre class="src src-php"> IteratorAggregate <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> <span style="color: #51afef;">{</span>
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861; */</span>
@@ -442,9 +442,9 @@ $<span style="color: #979797;">it</span> = <span style="color: #51afef;">new</sp
 </div>
 </div>
 </div>
-<div id="outline-container-orgb1d3aa0" class="outline-3">
-<h3 id="orgb1d3aa0">示例</h3>
-<div class="outline-text-3" id="text-orgb1d3aa0">
+<div id="outline-container-org3fb1537" class="outline-3">
+<h3 id="org3fb1537">示例</h3>
+<div class="outline-text-3" id="text-org3fb1537">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myData</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">IteratorAggregate</span> <span style="color: #51afef;">{</span>
     <span style="color: #51afef;">public</span> $<span style="color: #979797;">property1</span> = <span style="color: #99bb66;">"Public property one"</span>;
@@ -470,23 +470,15 @@ $<span style="color: #979797;">obj</span> = <span style="color: #51afef;">new</s
 </div>
 
 <ul class="post-copyright">
-  <li>
-    <strong>本文作者： </strong>josephzeng
-  </li>
-  <li>
-    <strong>本文链接：</strong>
-    <a href="https://josephzeng36.github.io/blog/2020/php-spl-interface.html" title="php_spl常用接口">https://josephzeng36.github.io/blog/2020/php-spl-interface.html</a>
-  </li>
-  <li>
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
+  <li>Author: josephzeng</li>
+  <li>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2020-02-22 18:02:33 <br />Last updated: 2021-01-20 Wed 12:13 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2020-02-22 18:02:33 <br />Last updated: 2021-01-29 Fri 14:23 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>
