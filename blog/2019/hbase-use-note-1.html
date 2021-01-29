@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2021-01-29 Fri 00:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>hbase使用备注</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员"
+ />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/blog/index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">hbase使用备注</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6a67905">hbase使用备注</a>
+<ul>
+<li><a href="#orgf869f75">常见命令</a></li>
+<li><a href="#org320e089">hbase建表</a>
+<ul>
+<li><a href="#orgb457d3d">语句</a></li>
+<li><a href="#org56afc4b">参数</a>
+<ul>
+<li><a href="#org2608ba2">NAME</a></li>
+<li><a href="#orgbab3daa">BLOOMFILTER</a></li>
+<li><a href="#org217f48c">VERSIONS</a></li>
+<li><a href="#orgbc2a875">COMPRESSION</a></li>
+<li><a href="#org9919e3b">TTL</a></li>
+<li><a href="#orge3c313d">IN_MEMORY</a></li>
+<li><a href="#org4068844">BLOCKCACHE</a></li>
+<li><a href="#org2a875ef">BLOCKSIZE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6a67905" class="outline-2">
+<h2 id="org6a67905">hbase使用备注</h2>
+<div class="outline-text-2" id="text-org6a67905">
+</div>
+<div id="outline-container-orgf869f75" class="outline-3">
+<h3 id="orgf869f75">常见命令</h3>
+<div class="outline-text-3" id="text-orgf869f75">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #747474;"># </span><span style="color: #747474;">&#33719;&#21462;&#21629;&#20196;&#24110;&#21161; help 'command_name'</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; help <span style="color: #99bb66;">'list'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#29366;&#24577;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; status
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#29256;&#26412;&#21495;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; version
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#25152;&#26377;&#30340;&#34920;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; &#26597;&#30475;&#25152;&#26377;&#34920;
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#21019;&#24314;&#34920;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; create <span style="color: #99bb66;">'test'</span>, <span style="color: #51afef;">{</span><span style="color: #979797;">NAME</span> =&gt; <span style="color: #99bb66;">'d'</span>, <span style="color: #979797;">BLOOMFILTER</span> =&gt; <span style="color: #99bb66;">'ROW'</span>, <span style="color: #979797;">VERSIONS</span> =&gt; <span style="color: #99bb66;">'1'</span>, <span style="color: #979797;">IN_MEMORY</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">KEEP_DELETED_CELLS</span> =&gt; <span style="color: #99bb66;">'FALSE'</span>, <span style="color: #979797;">DATA_BLOCK_ENCODING</span> =&gt; <span style="color: #99bb66;">'FAST_DIFF'</span>,<span style="background-color: #ff6655;"> </span>
+<span style="color: #979797;">TTL</span> =&gt; <span style="color: #99bb66;">'7776000'</span>, <span style="color: #979797;">COMPRESSION</span> =&gt; <span style="color: #99bb66;">'GZ'</span>, <span style="color: #979797;">MIN_VERSIONS</span> =&gt; <span style="color: #99bb66;">'0'</span>, <span style="color: #979797;">BLOCKCACHE</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">BLOCKSIZE</span> =&gt; <span style="color: #99bb66;">'65536'</span>, <span style="color: #979797;">REPLICATION_SCOPE</span> =&gt; <span style="color: #99bb66;">'0'</span><span style="color: #51afef;">}</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#34920;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; describe <span style="color: #99bb66;">'test'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#21024;&#38500;&#34920;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; disable <span style="color: #99bb66;">'test'</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; drop <span style="color: #99bb66;">'test'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#28165;&#31354;&#34920;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; truncate <span style="color: #99bb66;">'test'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#21028;&#26029;&#34920;&#26159;&#21542;&#23384;&#22312;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; exists <span style="color: #99bb66;">'test'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#20462;&#25913;&#34920;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; disable <span style="color: #99bb66;">'test'</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; alter <span style="color: #99bb66;">'test'</span>, <span style="color: #51afef;">{</span><span style="color: #979797;">NAME</span> =&gt; <span style="color: #99bb66;">'f1'</span><span style="color: #51afef;">}</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; enable <span style="color: #99bb66;">'test'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#33719;&#21462;&#25968;&#25454;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; get <span style="color: #99bb66;">'test'</span>, <span style="color: #99bb66;">'1100000000055558454177160'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">&#25195;&#25551;&#25968;&#25454;</span>
+<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; scan <span style="color: #99bb66;">'test'</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org320e089" class="outline-3">
+<h3 id="org320e089">hbase建表</h3>
+<div class="outline-text-3" id="text-org320e089">
+</div>
+<div id="outline-container-orgb457d3d" class="outline-4">
+<h4 id="orgb457d3d">语句</h4>
+<div class="outline-text-4" id="text-orgb457d3d">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">create 'qp_test', {NAME =&gt; 'd', BLOOMFILTER =&gt; 'ROW', VERSIONS =&gt; '1',</span><span style="background-color: #ff6655;"> </span>
+<span style="color: #979797;">IN_MEMORY</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">KEEP_DELETED_CELLS</span> =&gt; <span style="color: #99bb66;">'FALSE'</span>, <span style="color: #979797;">DATA_BLOCK_ENCODING</span> =&gt; <span style="color: #99bb66;">'FAST_DIFF'</span>,<span style="background-color: #ff6655;"> </span>
+<span style="color: #979797;">TTL</span> =&gt; <span style="color: #99bb66;">'7776000'</span>, <span style="color: #979797;">COMPRESSION</span> =&gt; <span style="color: #99bb66;">'GZ'</span>, <span style="color: #979797;">MIN_VERSIONS</span> =&gt; <span style="color: #99bb66;">'0'</span>, <span style="color: #979797;">BLOCKCACHE</span> =&gt; <span style="color: #99bb66;">'false'</span>,<span style="background-color: #ff6655;"> </span>
+<span style="color: #979797;">BLOCKSIZE</span> =&gt; <span style="color: #99bb66;">'65536'</span>, <span style="color: #979797;">REPLICATION_SCOPE</span> =&gt; <span style="color: #99bb66;">'0'</span><span style="color: #ff6655; font-weight: bold;">}</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org56afc4b" class="outline-4">
+<h4 id="org56afc4b">参数</h4>
+<div class="outline-text-4" id="text-org56afc4b">
+</div>
+<div id="outline-container-org2608ba2" class="outline-5">
+<h5 id="org2608ba2">NAME</h5>
+<div class="outline-text-5" id="text-org2608ba2">
+<div class="org-src-container">
+<pre class="src src-bash">&#21015;&#26063;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbab3daa" class="outline-5">
+<h5 id="orgbab3daa">BLOOMFILTER</h5>
+<div class="outline-text-5" id="text-orgbab3daa">
+<div class="org-src-container">
+<pre class="src src-bash">BLOOMFILTER : NONE | ROW | ROWCOL &#23545;&#21015;&#26063;&#21333;&#29420;&#21551;&#29992;&#24067;&#38534;
+NONE -&gt; &#21542;
+ROW -&gt; &#34892;&#38190;&#30340;&#21704;&#24076;&#22312;&#27599;&#27425;&#25554;&#20837;&#34892;&#26102;&#23558;&#34987;&#28155;&#21152;&#21040;&#24067;&#38534;
+ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#39280;&#30340;&#21704;&#24076;&#23558;&#22312;&#27599;&#27425;&#25554;&#20837;&#34892;&#26102;&#28155;&#21152;&#21040;&#24067;&#38534;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org217f48c" class="outline-5">
+<h5 id="org217f48c">VERSIONS</h5>
+<div class="outline-text-5" id="text-org217f48c">
+<div class="org-src-container">
+<pre class="src src-bash">VERSIONS : 1 || N || ...
+&#20445;&#30041;N&#20010;&#29256;&#26412;
+&#21442;&#25968;&#35774;&#20026;1 &#33021;&#33410;&#32422;2/3&#30340;&#31354;&#38388;
+&#22791;&#27880;&#65306;MIN_VERSIONS&#12288;=&gt; ? &#34920;&#31034;compact&#25805;&#20316;&#25191;&#34892;&#20043;&#21518;&#65292;&#33267;&#23569;&#35201;&#20445;&#30041;&#30340;&#29256;&#26412;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc2a875" class="outline-5">
+<h5 id="orgbc2a875">COMPRESSION</h5>
+<div class="outline-text-5" id="text-orgbc2a875">
+<div class="org-src-container">
+<pre class="src src-bash">COMPRESSION :NONE | GZIP | LZO | Zippy/Snappy &#21387;&#32553;
+| Algorithm  | remaining | Encoding   | Decoding |
+|------------|-----------|------------|----------|
+|GZIP       |   13.4%   |   21 MB/s  |118 MB/s  |
+|LZO         |   20.5%   |   135 MB/s |410 MB/s  |
+|Zippy/Snappy|   22.2%   |   172 MB/s |409 MB/s  |
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9919e3b" class="outline-5">
+<h5 id="org9919e3b">TTL</h5>
+<div class="outline-text-5" id="text-org9919e3b">
+<div class="org-src-container">
+<pre class="src src-bash">&#40664;&#35748;&#26159; 2147483647 -&gt; 68&#24180;
+&#21015;&#26063;&#25968;&#25454;&#30340;&#23384;&#27963;&#26102;&#38388;&#65292;&#21333;&#20301;&#26159;s
+&#36825;&#20010;&#21442;&#25968;&#21487;&#20197;&#26681;&#25454;&#20855;&#20307;&#30340;&#38656;&#27714;&#23545;&#25968;&#25454;&#35774;&#23450;&#23384;&#27963;&#26102;&#38388;&#65292;&#36229;&#36807;&#23384;&#36807;&#26102;&#38388;&#30340;&#25968;&#25454;&#23558;&#22312;&#34920;&#20013;&#19981;&#22312;&#26174;&#31034;&#65292;&#24453;&#19979;&#27425;major compact&#30340;&#26102;&#20505;&#20877;&#24443;&#24213;&#21024;&#38500;&#25968;&#25454;.<span style="background-color: #ff6655;"> </span>
+&#27880;&#24847;&#30340;&#26159;TTL&#35774;&#23450;&#20043;&#21518; <span style="color: #979797;">MIN_VERSIONS</span>=&gt;&#8217;0&#8217; &#36825;&#26679;&#35774;&#32622;&#20043;&#21518;&#65292;TTL&#26102;&#38388;&#25139;&#36807;&#26399;&#21518;&#65292;&#23558;&#20840;&#37096;&#24443;&#24213;&#21024;&#38500;&#35813;family&#19979;&#25152;&#26377;&#30340;&#25968;&#25454;&#65292;
+&#22914;&#26524;MIN_VERSIONS &#19981;&#31561;&#20110;0&#37027;&#23558;&#20445;&#30041;&#26368;&#26032;&#30340;MIN_VERSIONS&#20010;&#29256;&#26412;&#30340;&#25968;&#25454;&#65292;&#20854;&#23427;&#30340;&#20840;&#37096;&#21024;&#38500;&#65292;
+<span style="color: #979797;">&#27604;&#22914;MIN_VERSIONS</span>=&gt;&#8217;1&#8217; &#23626;&#26102;&#23558;&#20445;&#30041;&#19968;&#20010;&#26368;&#26032;&#29256;&#26412;&#30340;&#25968;&#25454;&#65292;&#20854;&#23427;&#29256;&#26412;&#30340;&#25968;&#25454;&#23558;&#19981;&#20877;&#20445;&#23384;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge3c313d" class="outline-5">
+<h5 id="orge3c313d">IN_MEMORY</h5>
+<div class="outline-text-5" id="text-orge3c313d">
+<div class="org-src-container">
+<pre class="src src-bash">&#35774;&#32622;&#28608;&#36827;&#32531;&#23384;&#65292;&#20248;&#20808;&#32771;&#34385;&#23558;&#35813;&#21015;&#26063;&#25918;&#20837;&#22359;&#32531;&#23384;&#20013;
+&#38024;&#23545;&#38543;&#26426;&#35835;&#25805;&#20316;&#30456;&#23545;&#36739;&#22810;&#30340;&#21015;&#26063;&#21487;&#20197;&#35774;&#32622;&#35813;&#23646;&#24615;&#20026;true
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4068844" class="outline-5">
+<h5 id="org4068844">BLOCKCACHE</h5>
+<div class="outline-text-5" id="text-org4068844">
+<div class="org-src-container">
+<pre class="src src-bash">&#25968;&#25454;&#22359;&#32531;&#23384;&#23646;&#24615;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2a875ef" class="outline-5">
+<h5 id="org2a875ef">BLOCKSIZE</h5>
+<div class="outline-text-5" id="text-org2a875ef">
+<div class="org-src-container">
+<pre class="src src-bash">&#35774;&#32622;HFILE&#25968;&#25454;&#22359;&#22823;&#23567;<span style="color: #51afef;">&#65288;</span>&#40664;&#35748;64kb<span style="color: #51afef;">&#65289;</span>
+</pre>
+</div>
+
+<ul class="post-copyright">
+  <li>
+    <strong>本文作者： </strong>josephzeng
+  </li>
+  <li>
+    <strong>本文链接：</strong>
+    <a href="https://josephzeng36.github.io/blog/2019/hbase-use-note-1.html" title="hbase使用备注">https://josephzeng36.github.io/blog/2019/hbase-use-note-1.html</a>
+  </li>
+  <li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2021-02-27 Sat 00:00 <br />Last updated: 2021-01-29 Fri 00:32 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+</div>
+</body>
+</html>

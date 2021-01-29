@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2021-01-29 Fri 09:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2020年总结</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员"
+ />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/blog/index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">2020年总结</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org00b5a71">2020年总结</a>
+<ul>
+<li><a href="#org803eb3e">生活</a></li>
+<li><a href="#org5045450">工作</a></li>
+<li><a href="#orgd3d280f">学习</a></li>
+<li><a href="#org76305e9">复盘</a></li>
+<li><a href="#org6fe5edb">其他</a></li>
+<li><a href="#orgc780344">总结</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org00b5a71" class="outline-2">
+<h2 id="org00b5a71">2020年总结</h2>
+<div class="outline-text-2" id="text-org00b5a71">
+<p>
+时间过得挺快的，新的一年到了，意味着又一年过去了。内心一直在暗示自己应该写一下2020年终总结，每每想写的时候，却不知道该如何写起或写点什么。<br />
+</p>
+</div>
+
+<div id="outline-container-org803eb3e" class="outline-3">
+<h3 id="org803eb3e">生活</h3>
+<div class="outline-text-3" id="text-org803eb3e">
+<p>
+年初，由于疫情，在家办公，貌似也成了自从工作以来，在家里待的时间最长的一次，直到3月份左右才回深圳。这次可算是在家待到爸妈老婆孩子都嫌我烦了。<br />
+我家老李倒是挺委屈的，被领导安排天天回学校值班，直到学校正式开学；说实话，真心不容易，天天搞统计报表。随着复工，一家子生活又慢慢恢复成日常的<br />
+节奏，输出的输出，辅助的辅助。<br />
+</p>
+
+<p>
+年中的时候，本来收楼可谓是件好事，却被楼房外墙涂漆搞的挺闹心的。虽说新政策要求高楼不再贴瓷砖，只能涂漆；虽说政策就是政策，不过理不是这个理；总<br />
+觉得被欺骗的感觉，毕竟销售宣传是外墙褐石瓷砖情怀呢！现在缺变成了褐石涂漆了。只能随业主队伍走上起诉维权之路了。是不是有点这样的恍然大悟，销售的<br />
+话能信，母猪都能上树。<br />
+</p>
+
+<p>
+9月份，小屁孩喜欢上了羽毛球，于是给报个班。女儿无意中拿了当地教育局举办的青少年游泳锦标赛丁组蛙泳50米和100米的亚军，希望她可以继续保持游泳这个<br />
+兴趣。同时恭喜她，顺利进入了学校的游泳队和啦啦操队。对于孩子身上，绝对的输出是老李，我只是个辅助；这个问题上，其实我是应该自我检讨和改正的。对<br />
+待孩子的学习上，我比较佛性，我觉得孩子应该有个快乐的童年和保证身心健康；至于成绩，努力过就好。反倒我一直支持小孩多接触一些电子产品和高质量的游<br />
+戏(比如塞尔达类的)；老李也认为没问题，只不过得把控好这个度和做好监管。<br />
+</p>
+
+<p>
+到了10月份，被姑姑和姑丈的电话弄的挺糟心的，简单的意思就是，希望我可以帮忙侧击旁敲下，他们儿子自己创业都两年了，没钱支持家里也就算了，还一味掏<br />
+空家里；自己老婆孩子也需要他们老一辈养着。我也只能从成年人和为人父的责任方面上跟他沟通了下，至于听不听由他吧。这事本身不好强词或做思想工作，造<br />
+成今天这样的局面其实都有问题，真大的问题，他们彼此一直没有真诚的沟通或尝试沟通。<br />
+</p>
+
+<p>
+年末，本来应该是成都之旅的，却因成都疫情的突发情况被迫取消。在陈老师的安排下，最终是广州三天游；玩得倒是挺开心，却又留下了遗憾。本以为顺着记忆<br />
+可以寻找到曾经的踪迹；本以为带你走进我的过往后可以敞开心扉；本以为。。。。。。<br />
+顺其自然，努力珍惜眼前每一份相处共事的时光，未来不可期。<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5045450" class="outline-3">
+<h3 id="org5045450">工作</h3>
+<div class="outline-text-3" id="text-org5045450">
+<p>
+小伙伴们今年挺给力的，也算是顺利完成了一些事情。首先第一件事是，顺利将亚洲区的锦标赛合服，举办了第一届线上BPT决赛。虽然这过程有不少磕磕绊绊和<br />
+部门团队之间磨合的小插曲等，但是总算是圆满完成，并带来了一些经验总结。比如：多部门，多团队之间应该如何更好的沟通和协作？跨机房如何做好数据同步<br />
+？等。第二件事，就是顺利完成了全平台迁云工作。这事除了要求团队之间协作之外，其实更多考察的是迁云工作前的准备及对服务整体的熟悉程度，尤其是这过<br />
+程操作的TODO LISTS，服务测试验收用例，备选方案等等。第三件事，部分服务及游戏SERVER也顺利使用上了golang生态圈开发，从上线后服务各项指标的情况来<br />
+看，总体表现还不错，也算是新的技术引进和尝试。虽然一直认为，很多问题其实是无法通过换开发语言来解决的；但是引进新的技术生态，并进行对比不同技术<br />
+生态圈的优劣势总归没错，给后续不同需求或场景技术选型上提供更多的选择。还有些事就是活动模板化，部分公共服务的重构，配合移动客户端重构及PC平台的<br />
+H5化等等。想起了公共服务重构方面上，有个项目的出发点倒是挺值得提下和提倡的，负责重构短信公共服务的小伙子是个很较真的人，他重构的基于点是为了节<br />
+约成本，当然他努力做到了。技术的更新迭代，出发点本应该就是要需要带来收益的，尤其是在企业里面。小伙伴们有些对待技术或解决的方式上是有洁癖的，也<br />
+有些对待新技术是充满热枕的；不管如何选择或坚持都好；工作只是谋生的手段，技术也只是谋生的工具，大家求同存异，互相学习，把事情干得漂亮就好。对小<br />
+组简单的小结，一句话，“干的还不错”。<br />
+</p>
+
+<p>
+小组对产品运营沟通协调的人一直是自己负责，当然难免被吐槽等等，这事我也一直在反思，尤其是在沟通方面；该温柔的时候我选择了粗暴，该粗暴的时候我选<br />
+择了温柔；该正经的时候我选择了玩笑，该玩笑的时候我选择了较真。<br />
+</p>
+
+<p>
+究竟原因应该是自己本身格局和气度不够。当然这里无法聊格局，毕竟格局是看不见的东西，那情绪总可以自我控制了吧？日常自己虽一直固执着简单人事，但有<br />
+时又会夹带情绪。有时候，会发现不稳定的情绪进行沟通，会将事情复杂化。希望来年，可以尝试去多一点改变，让情绪更稳定点，让事情更简单点。<br />
+</p>
+
+<p>
+今年让我想或思考最多的是，我应该如何把事做成做好，而不是自己亲自去做成做好。好的管理应该要是个好的教练。<br />
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgd3d280f" class="outline-3">
+<h3 id="orgd3d280f">学习</h3>
+<div class="outline-text-3" id="text-orgd3d280f">
+<p>
+说起学习，看书和记录工作日常问题方面上，极其惭愧。零零散散，没有坚持。这个是需要纠正的坏毛病。不然会慢慢让自己失去表达能力的。<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org76305e9" class="outline-3">
+<h3 id="org76305e9">复盘</h3>
+<div class="outline-text-3" id="text-org76305e9">
+<p>
+对比去年，新增了架子鼓/电吉他的学习，偶尔翻了几本书。<br />
+对比上个月，松懈了日常架子鼓的练习<br />
+对比上周，玩游戏的时间有所增长<br />
+对比昨天，又晚睡了。<br />
+。。。。。。<br />
+其实，要想持续的进步或成长，应该不断跳出自己的舒服区域。比如方式有：不停跳槽，不停尝试新技术，不停设定新目标等等。<br />
+但是，最最重要的还是别忘记坚持记录，只有记录了才能定期回头看看；还有就是别只顾往前直冲，停下来，回头看看；会有不一样的收获。<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6fe5edb" class="outline-3">
+<h3 id="org6fe5edb">其他</h3>
+<div class="outline-text-3" id="text-org6fe5edb">
+<p>
+跟2019一样，有一段想高攀的感情，无疾而终。可遇不可求。<br />
+在沟通交流上，继续保持做到求同存异。<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc780344" class="outline-3">
+<h3 id="orgc780344">总结</h3>
+<div class="outline-text-3" id="text-orgc780344">
+<p>
+总之，2020一般。2021加油，好好干。<br />
+</p>
+
+<ul class="post-copyright">
+  <li>
+    <strong>本文作者： </strong>josephzeng
+  </li>
+  <li>
+    <strong>本文链接：</strong>
+    <a href="https://josephzeng36.github.io/blog/2021/2020-year-end-summary.html" title="2020年总结">https://josephzeng36.github.io/blog/2021/2020-year-end-summary.html</a>
+  </li>
+  <li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2021-01-01 Fri 00:00 <br />Last updated: 2021-01-29 Fri 09:41 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+</div>
+</body>
+</html>
