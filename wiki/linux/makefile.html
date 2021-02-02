@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-01 Mon 18:01 -->
+<!-- 2021-02-01 Mon 22:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Makefile 使用备注</title>
@@ -226,6 +226,26 @@
  <a accesskey="H" href="/index.html"> HOME </a>
 </div><div id="content">
 <h1 class="title">Makefile 使用备注</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4cd3247">Makefile 使用备注</a>
+<ul>
+<li><a href="#org471f972">概述</a></li>
+<li><a href="#org8479bdb">格式</a></li>
+<li><a href="#org84d189d">语法</a>
+<ul>
+<li><a href="#org2546b02">基本语法</a></li>
+<li><a href="#orge337a49">变量</a></li>
+</ul>
+</li>
+<li><a href="#org9469336">备注</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 
 <div id="outline-container-org4cd3247" class="outline-2">
 <h2 id="org4cd3247">Makefile 使用备注</h2>
@@ -233,12 +253,92 @@
 </div>
 <div id="outline-container-org471f972" class="outline-3">
 <h3 id="org471f972">概述</h3>
+<div class="outline-text-3" id="text-org471f972">
+<p>
+用于linux平台，管理软件项目的编译，连接等作用。<br />
+</p>
+</div>
 </div>
 <div id="outline-container-org8479bdb" class="outline-3">
 <h3 id="org8479bdb">格式</h3>
+<div class="outline-text-3" id="text-org8479bdb">
+<p>
+一般在项目根目录下，创建Makefile文件。如：<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-makefile"><span style="color: #747474;">#</span>
+<span style="color: #747474;"># </span><span style="color: #747474;">Makefile</span>
+<span style="color: #747474;"># </span><span style="color: #747474;">josephzeng, 2018-08-02 23:13</span>
+<span style="color: #747474;">#</span>
+
+<span style="color: #979797;">SHELL</span>=/bin/bash
+export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">shell</span> pwd<span style="color: #51afef;">)</span>:/home/josephzeng/go
+<span style="color: #979797;">GOBIN</span>=go
+<span style="color: #979797;">GLIDE</span>=glide
+<span style="color: #979797;">GOBUILD</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> build
+<span style="color: #979797;">GOCLEAN</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> clean
+<span style="color: #979797;">GOTEST</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> test
+<span style="color: #979797;">GOGET</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> get
+<span style="color: #979797;">GATEWAYBIN</span>=./bin/gateway
+<span style="color: #979797;">GATEWAYSRC</span>=./src/gateway
+
+<span style="color: #51afef;">all</span>: test_gateway build_gateway
+
+<span style="color: #51afef;">test</span>: test_gateway
+<span style="color: #51afef;">build</span>: build_gateway
+
+<span style="color: #51afef;">test_gateway</span>:
+        $<span style="color: #51afef;">(</span><span style="color: #979797;">GOTEST</span><span style="color: #51afef;">)</span> -v $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYSRC</span><span style="color: #51afef;">)</span>
+
+<span style="color: #51afef;">build_gateway</span>:
+        rm -rf $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span>
+        $<span style="color: #51afef;">(</span><span style="color: #979797;">GOBUILD</span><span style="color: #51afef;">)</span> -o $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span> $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYSRC</span><span style="color: #51afef;">)</span>
+
+<span style="color: #51afef;">run_gateway</span>: build_gateway
+        ps -eaf| grep $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span> | grep -v grep | awk <span style="color: #99bb66;">'{print $$2}'</span> | xargs kill -9
+        $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span>
+
+<span style="color: #51afef;">deps</span>:
+        cd ./src                                               ;\
+        $<span style="color: #51afef;">(</span><span style="color: #979797;">GLIDE</span><span style="color: #51afef;">)</span> get github.com/go-ini/ini#v1.38.1             ;\
+        $<span style="color: #51afef;">(</span><span style="color: #979797;">GLIDE</span><span style="color: #51afef;">)</span> get github.com/urfave/cli#v1.20.0             ;\
+        $<span style="color: #51afef;">(</span><span style="color: #979797;">GLIDE</span><span style="color: #51afef;">)</span> install
+
+<span style="color: #51afef;">clean</span>:
+        rm -rf ./bin/*
+        rm -rf ./logs/*
+
+<span style="color: #51afef;">.PHONY</span>:test_gateway build_gateway
+</pre>
+</div>
+</div>
 </div>
 <div id="outline-container-org84d189d" class="outline-3">
 <h3 id="org84d189d">语法</h3>
+<div class="outline-text-3" id="text-org84d189d">
+</div>
+<div id="outline-container-org2546b02" class="outline-4">
+<h4 id="org2546b02">基本语法</h4>
+<div class="outline-text-4" id="text-org2546b02">
+<div class="org-src-container">
+<pre class="src src-makefile"><span style="color: #51afef;">target</span>: dependencies
+      command
+<span style="color: #747474;">#</span><span style="color: #747474;">target &#25191;&#34892;&#30446;&#26631;&#65292;&#27604;&#22914; make target &#25191;&#34892;&#23545;&#24212;&#30340;&#30446;&#26631;</span>
+<span style="color: #747474;">#</span><span style="color: #747474;">dependencies &#20381;&#36182;&#39033; &#22914; target: before &#34920;&#31034;&#20381;&#36182;before&#25191;&#34892;target</span>
+<span style="color: #747474;">#</span><span style="color: #747474;">command &#25191;&#34892;&#30446;&#26631;&#20351;&#29992;&#21629;&#20196;&#38598;&#21512;</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge337a49" class="outline-4">
+<h4 id="orge337a49">变量</h4>
+<div class="outline-text-4" id="text-orge337a49">
+<div class="org-src-container">
+<pre class="src src-makefile"><span style="color: #979797;">VAR_NAME1</span> = VAL1
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-org9469336" class="outline-3">
 <h3 id="org9469336">备注</h3>
@@ -252,7 +352,7 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-01-29 Fri 17:27 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-02-01 Mon 22:39 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>
