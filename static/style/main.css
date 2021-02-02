@@ -27,7 +27,8 @@ html { font-size: 100px;  }
 body {
   /* Monaco, Consolas, "kaiti",  */
   /* font-family: "Droid Serif", "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", Verdana, sans-serif;   */
-  font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif;
+  /* font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif; */
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   width: 60%;
   margin: 0 auto;
   font-size: .16rem;
