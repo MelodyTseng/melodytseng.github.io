@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-03 Wed 17:51 -->
+<!-- 2021-02-04 Thu 11:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>tmux 手册</title>
@@ -249,7 +249,14 @@
 </ul>
 </li>
 <li><a href="#orgca35116">配置</a></li>
-<li><a href="#org7d8a979">官网</a></li>
+<li><a href="#org4013077">插件使用</a>
+<ul>
+<li><a href="#org88364de">Tmux Plugin Manager</a></li>
+<li><a href="#org3298508">保存和恢复插件</a></li>
+</ul>
+</li>
+<li><a href="#org8fc1b71">安装</a></li>
+<li><a href="#org1e79a69">参考</a></li>
 </ul>
 </li>
 </ul>
@@ -634,11 +641,64 @@
 </div>
 </div>
 
-<div id="outline-container-org7d8a979" class="outline-3">
-<h3 id="org7d8a979">官网</h3>
-<div class="outline-text-3" id="text-org7d8a979">
+<div id="outline-container-org4013077" class="outline-3">
+<h3 id="org4013077">插件使用</h3>
+<div class="outline-text-3" id="text-org4013077">
+</div>
+<div id="outline-container-org88364de" class="outline-4">
+<h4 id="org88364de">Tmux Plugin Manager</h4>
+<div class="outline-text-4" id="text-org88364de">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#26816;&#20986;</span>
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+<span style="color: #51afef;">set</span> -g @plugin <span style="color: #99bb66;">'tmux-plugins/tpm'</span>
+<span style="color: #51afef;">set</span> -g @plugin <span style="color: #99bb66;">'tmux-plugins/tmux-sensible'</span>
+<span style="color: #747474;"># </span><span style="color: #747474;">Other examples:</span>
+<span style="color: #747474;"># </span><span style="color: #747474;">set -g @plugin 'github_username/plugin_name'</span>
+<span style="color: #747474;"># </span><span style="color: #747474;">set -g @plugin 'git@github.com/user/plugin'</span>
+<span style="color: #747474;"># </span><span style="color: #747474;">set -g @plugin 'git@bitbucket.com/user/plugin'</span>
+
+<span style="color: #747474;"># </span><span style="color: #747474;">Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span>
+run <span style="color: #99bb66;">'~/.tmux/plugins/tpm/tpm'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3298508" class="outline-4">
+<h4 id="org3298508">保存和恢复插件</h4>
+<div class="outline-text-4" id="text-org3298508">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#37197;&#32622;&#25991;&#20214;&#25554;&#20214;&#21015;&#34920;&#37197;&#32622;&#28155;&#21152;</span>
+<span style="color: #51afef;">set</span> -g @plugin <span style="color: #99bb66;">'tmux-plugins/tmux-resurrect'</span>
+<span style="color: #747474;">#</span><span style="color: #747474;">&#37197;&#32622;&#25991;&#20214;&#28155;&#21152;</span>
+<span style="color: #51afef;">set</span> -g @resurrect-save-bash-history <span style="color: #99bb66;">'on'</span>
+<span style="color: #51afef;">set</span> -g @resurrect-capture-pane-contents <span style="color: #99bb66;">'on'</span>
+<span style="color: #51afef;">set</span> -g @resurrect-strategy-vim <span style="color: #99bb66;">'session'</span>
+<span style="color: #747474;">#</span><span style="color: #747474;">===========================================</span>
+<span style="color: #747474;">#</span><span style="color: #747474;">&#24555;&#25463;&#38190;&#26159;:</span>
+prefix Ctrl+s       <span style="color: #747474;"># </span><span style="color: #747474;">save tmux session to local file</span>
+prefix Ctrl-r       <span style="color: #747474;"># </span><span style="color: #747474;">reload tmux session from local file</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8fc1b71" class="outline-3">
+<h3 id="org8fc1b71">安装</h3>
+<div class="outline-text-3" id="text-org8fc1b71">
+<p>
+省略<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org1e79a69" class="outline-3">
+<h3 id="org1e79a69">参考</h3>
+<div class="outline-text-3" id="text-org1e79a69">
 <ul class="org-ul">
 <li><a href="https:github.com/tmux/tmux">https://github.com/tmux/tmux</a><br /></li>
+<li><a href="https:github.com/gpakosz/.tmux.git">https://github.com/gpakosz/.tmux.git</a><br /></li>
+<li><a href="https:github.com/tmux-plugins/tmux-resurrect">https://github.com/tmux-plugins/tmux-resurrect</a><br /></li>
 </ul>
 <div class="post-copyright">
 <p>Author: josephzeng</p>
@@ -652,7 +712,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-03 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-03 Wed 00:00 <br />Last updated: 2021-02-03 Wed 17:51 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2021-02-03 Wed 00:00 <br />Last updated: 2021-02-04 Thu 11:43 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>
