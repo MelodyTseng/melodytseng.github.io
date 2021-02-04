@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2021-02-04 Thu 16:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Markdown 使用手册</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员"
+ />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Markdown 使用手册</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd1f5fc8">语法</a>
+<ul>
+<li><a href="#org34714d4">斜体和粗体</a></li>
+<li><a href="#org6d9a1cd">标题</a></li>
+<li><a href="#org028549c">外链接</a></li>
+<li><a href="#orgb9ef2fd">无序列表</a></li>
+<li><a href="#org682fba1">有序列表</a></li>
+<li><a href="#org85359c7">数字列表自动排序</a></li>
+<li><a href="#orgc973597">文字引用</a></li>
+<li><a href="#org3eef141">多级数字列表</a></li>
+<li><a href="#orgda4a4d5">复选框列表</a></li>
+<li><a href="#orgc1d11d9">代码块</a></li>
+<li><a href="#orgd5313af">加强的代码块</a></li>
+<li><a href="#org791364d">插入图像</a></li>
+</ul>
+</li>
+<li><a href="#org350e273">参考</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd1f5fc8" class="outline-2">
+<h2 id="orgd1f5fc8">语法</h2>
+<div class="outline-text-2" id="text-orgd1f5fc8">
+</div>
+<div id="outline-container-org34714d4" class="outline-3">
+<h3 id="org34714d4">斜体和粗体</h3>
+<div class="outline-text-3" id="text-org34714d4">
+<p>
+使用 * 和 ** 表示斜体和粗体。<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-example">*斜体*
+**粗体**
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6d9a1cd" class="outline-3">
+<h3 id="org6d9a1cd">标题</h3>
+<div class="outline-text-3" id="text-org6d9a1cd">
+<div class="org-src-container">
+<pre class="src src-example">使用 === 表示一级标题，使用 --- 表示二级标题。
+也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org028549c" class="outline-3">
+<h3 id="org028549c">外链接</h3>
+<div class="outline-text-3" id="text-org028549c">
+<p>
+使用 [描述](链接地址) 为文字增加外链接<br />
+</p>
+<pre class="example" id="org0a29863">
+[my blog](http://josephzeng36.github.io/)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb9ef2fd" class="outline-3">
+<h3 id="orgb9ef2fd">无序列表</h3>
+<div class="outline-text-3" id="text-orgb9ef2fd">
+<p>
+使用 *，+，- 表示无序列表<br />
+</p>
+<pre class="example" id="orge2e58d3">
+- 无序列表项 一
+- 无序列表项 二
+- 无序列表项 三
+
+二级三级原点
+
++ 编程语言
+    + 脚本语言
+            + Python
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org682fba1" class="outline-3">
+<h3 id="org682fba1">有序列表</h3>
+<div class="outline-text-3" id="text-org682fba1">
+<p>
+使用数字和点表示有序列表<br />
+</p>
+<pre class="example" id="orgfb31f6f">
+1. 有序列表项 一
+2. 有序列表项 二
+3. 有序列表项 三
+</pre>
+</div>
+</div>
+<div id="outline-container-org85359c7" class="outline-3">
+<h3 id="org85359c7">数字列表自动排序</h3>
+<div class="outline-text-3" id="text-org85359c7">
+<p>
+也可以在第一行指定`1. `，而接下来的几行用星号`*`（或者继续用数字1.）就可以了，它会自动显示成2、3、4……<br />
+</p>
+<pre class="example" id="orgc05f552">
+面向对象的七大原则：
+    1. 开闭原则
+    * 里氏转换原则
+    * 依赖倒转原则
+    1. 接口隔离原则
+    1. 组合聚合复用原则
+    1. 迪米特法则
+    1. 单一直则原则 
+</pre>
+</div>
+</div>
+<div id="outline-container-orgc973597" class="outline-3">
+<h3 id="orgc973597">文字引用</h3>
+<div class="outline-text-3" id="text-orgc973597">
+<p>
+使用 &gt; 表示文字引用<br />
+</p>
+<pre class="example" id="org6184526">
+单个引用：
+
+&gt; 野火烧不尽，春风吹又生。
+
+字符包围：
+
+&gt; 数据结构
+&gt;&gt; 树
+&gt;&gt;&gt; 二叉树
+&gt;&gt;&gt;&gt; 平衡二叉树
+&gt;&gt;&gt;&gt;&gt; 满二叉树
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3eef141" class="outline-3">
+<h3 id="org3eef141">多级数字列表</h3>
+<div class="outline-text-3" id="text-org3eef141">
+<p>
+和圆点的列表一样，数字列表也有多级结构<br />
+</p>
+<pre class="example" id="orgb64d223">
+1. 这是一级的数字列表，数字1还是1
+   1. 这是二级的数字列表，阿拉伯数字在显示的时候变成了罗马数字
+         1. 这是三级的数字列表，数字在显示的时候变成了英文字母
+             1. 四级的数字列表显示效果，就不再变化了，依旧是英文字母
+</pre>
+</div>
+</div>
+<div id="outline-container-orgda4a4d5" class="outline-3">
+<h3 id="orgda4a4d5">复选框列表</h3>
+<div class="outline-text-3" id="text-orgda4a4d5">
+<pre class="example" id="org2a078e6">
+- [x] C
+- [x] C++
+- [x] Java
+- [x] Qt
+- [x] Android
+- [ ] C#
+- [ ] .NET
+</pre>
+</div>
+</div>
+<div id="outline-container-orgc1d11d9" class="outline-3">
+<h3 id="orgc1d11d9">代码块</h3>
+<div class="outline-text-3" id="text-orgc1d11d9">
+<p>
+使用 四个缩进空格 表示代码块<br />
+</p>
+<pre class="example" id="org772e638">
+//code
+</pre>
+</div>
+</div>
+<div id="outline-container-orgd5313af" class="outline-3">
+<h3 id="orgd5313af">加强的代码块</h3>
+<div class="outline-text-3" id="text-orgd5313af">
+<p>
+支持四十一种编程语言的语法高亮的显示，行号显示<br />
+</p>
+<pre class="example" id="org21bce5c">
+```
+$ sudo apt-get install
+```
+
+```python
+//code
+```
+</pre>
+</div>
+</div>
+<div id="outline-container-org791364d" class="outline-3">
+<h3 id="org791364d">插入图像</h3>
+<div class="outline-text-3" id="text-org791364d">
+<p>
+使用 ![描述](图片链接地址) 插入图像<br />
+</p>
+<pre class="example" id="orgb126863">
+![markdown](https://github.com/a.jpg)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org350e273" class="outline-2">
+<h2 id="org350e273">参考</h2>
+<div class="outline-text-2" id="text-org350e273">
+<ul class="org-ul">
+<li><a href="https:markdown-zh.readthedocs.io/en/latest/">https://markdown-zh.readthedocs.io/en/latest/</a><br /></li>
+<li><a href="https:github.com/gnipbao/markdown-handbook.git">https://github.com/gnipbao/markdown-handbook.git</a><br /></li>
+<li><a href="https:www.zybuluo.com/static/editor/cmd-manual.html">https://www.zybuluo.com/static/editor/cmd-manual.html</a><br /></li>
+</ul>
+<div class="post-copyright">
+<p>Author: josephzeng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-29 Fri&gt;</span></span><br />
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-02-04 Thu 16:13 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+</div>
+</body>
+</html>
