@@ -113,13 +113,15 @@ blockquote {
 code {
   color: #135;
   /* font-family: "Droid Sans Mono"; */
-  font-family: Monaco, Consolas, 'monospace', "kaiti";
+  /* font-family: Monaco, Consolas, 'monospace', "kaiti"; */
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 0.14rem;
 }
 
 pre {
   /* font-family: "Droid Sans Mono"; */
-  font-family: Monaco, Consolas, 'monospace', "kaiti";
+  /* font-family: Monaco, Consolas, 'monospace', "kaiti"; */
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   color: #135;
   font-size: 0.14rem;
   padding: .14rem;
