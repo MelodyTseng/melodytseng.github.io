@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-05 Fri 15:46 -->
+<!-- 2021-02-05 Fri 16:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MongoDB</title>
@@ -244,6 +244,7 @@
 <li><a href="#orgb51c1d1">导入</a></li>
 </ul>
 </li>
+<li><a href="#orgd951e37">索引</a></li>
 </ul>
 </li>
 <li><a href="#orgfcf1a4b">管理</a></li>
@@ -504,6 +505,32 @@ mongoimport -d <span style="color: #51afef;">[</span>DB_name<span style="color: 
 </div>
 </div>
 </div>
+<div id="outline-container-orgd951e37" class="outline-3">
+<h3 id="orgd951e37">索引</h3>
+<div class="outline-text-3" id="text-orgd951e37">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#21019;&#24314;&#32034;&#24341;</span>
+<span style="color: #44b9b1;">db.userInfo.ensureIndex</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>name: 1<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>;
+<span style="color: #44b9b1;">db.userInfo.ensureIndex</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>name: 1, ts: -1<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>;
+
+<span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#35810;&#24403;&#21069;&#32858;&#38598;&#38598;&#21512;&#25152;&#26377;&#32034;&#24341;</span>
+<span style="color: #44b9b1;">db.userInfo.getIndexes</span><span style="color: #51afef;">()</span>;
+
+<span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#24635;&#32034;&#24341;&#35760;&#24405;&#22823;&#23567;</span>
+<span style="color: #44b9b1;">db.userInfo.totalIndexSize</span><span style="color: #51afef;">()</span>;
+
+<span style="color: #747474;">#</span><span style="color: #747474;">&#35835;&#21462;&#24403;&#21069;&#38598;&#21512;&#30340;&#25152;&#26377;index&#20449;&#24687;</span>
+<span style="color: #44b9b1;">db.users.reIndex</span><span style="color: #51afef;">()</span>;
+
+<span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25351;&#23450;&#32034;&#24341;</span>
+<span style="color: #44b9b1;">db.users.dropIndex</span><span style="color: #51afef;">(</span><span style="color: #99bb66;">"name_1"</span><span style="color: #51afef;">)</span>;
+
+<span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25152;&#26377;&#32034;&#24341;&#32034;&#24341;</span>
+<span style="color: #44b9b1;">db.users.dropIndexes</span><span style="color: #51afef;">()</span>;
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-orgfcf1a4b" class="outline-2">
 <h2 id="orgfcf1a4b">管理</h2>
@@ -538,7 +565,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-05 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2021-02-05 Fri 15:46 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2021-02-05 Fri 16:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
 </div>
 </body>
 </html>
