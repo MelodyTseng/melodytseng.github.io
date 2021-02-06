@@ -241,6 +241,7 @@ th:last-child, td:last-child {
 
 .status p {
   margin: 0;
+  text-align: center;
 }
 
 .status p:last-child {
