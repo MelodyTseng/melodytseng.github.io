@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 12:01 -->
+<!-- 2021-02-10 Wed 14:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php_spl常用接口</title>
@@ -230,46 +230,46 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org49b5e05">Countable</a>
+<li><a href="#orgabe14bf">Countable</a>
 <ul>
-<li><a href="#org0cdae2a">简介</a></li>
-<li><a href="#orgd383e8e">接口摘要</a></li>
-<li><a href="#org867dd5c">示例</a></li>
+<li><a href="#org4374504">简介</a></li>
+<li><a href="#org2ed3171">接口摘要</a></li>
+<li><a href="#org285da2d">示例</a></li>
 </ul>
 </li>
-<li><a href="#org5a2a29f">Iterator</a>
+<li><a href="#org7f2ea18">Iterator</a>
 <ul>
-<li><a href="#org230ff6f">简介</a></li>
-<li><a href="#org1b76595">接口摘要</a></li>
-<li><a href="#org6b08d89">示例</a></li>
+<li><a href="#orgbbb5172">简介</a></li>
+<li><a href="#org7725e9f">接口摘要</a></li>
+<li><a href="#org22e196c">示例</a></li>
 </ul>
 </li>
-<li><a href="#org0e74405">IteratorAggregate</a>
+<li><a href="#org0701f64">IteratorAggregate</a>
 <ul>
-<li><a href="#org8ceb12a">简介</a></li>
-<li><a href="#org9ebe86e">接口摘要</a></li>
-<li><a href="#org5560832">示例</a></li>
+<li><a href="#orge6a97a5">简介</a></li>
+<li><a href="#orgc6d8364">接口摘要</a></li>
+<li><a href="#orgb9ab70f">示例</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org49b5e05" class="outline-2">
-<h2 id="org49b5e05">Countable</h2>
-<div class="outline-text-2" id="text-org49b5e05">
+<div id="outline-container-orgabe14bf" class="outline-2">
+<h2 id="orgabe14bf">Countable</h2>
+<div class="outline-text-2" id="text-orgabe14bf">
 </div>
-<div id="outline-container-org0cdae2a" class="outline-3">
-<h3 id="org0cdae2a">简介</h3>
-<div class="outline-text-3" id="text-org0cdae2a">
+<div id="outline-container-org4374504" class="outline-3">
+<h3 id="org4374504">简介</h3>
+<div class="outline-text-3" id="text-org4374504">
 <p>
 类实现 Countable 可被用于 count() 函数. 
 </p>
 </div>
 </div>
-<div id="outline-container-orgd383e8e" class="outline-3">
-<h3 id="orgd383e8e">接口摘要</h3>
-<div class="outline-text-3" id="text-orgd383e8e">
+<div id="outline-container-org2ed3171" class="outline-3">
+<h3 id="org2ed3171">接口摘要</h3>
+<div class="outline-text-3" id="text-org2ed3171">
 <div class="org-src-container">
 <pre class="src src-php"> Countable <span style="color: #51afef;">{</span>
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861;</span><span style="color: #747474;"> */</span>
@@ -282,9 +282,9 @@
 
 
 
-<div id="outline-container-org867dd5c" class="outline-3">
-<h3 id="org867dd5c">示例</h3>
-<div class="outline-text-3" id="text-org867dd5c">
+<div id="outline-container-org285da2d" class="outline-3">
+<h3 id="org285da2d">示例</h3>
+<div class="outline-text-3" id="text-org285da2d">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
 <span style="color: #7d7d7d;">/**</span>
@@ -327,21 +327,21 @@ $<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color
 </div>
 </div>
 
-<div id="outline-container-org5a2a29f" class="outline-2">
-<h2 id="org5a2a29f">Iterator</h2>
-<div class="outline-text-2" id="text-org5a2a29f">
+<div id="outline-container-org7f2ea18" class="outline-2">
+<h2 id="org7f2ea18">Iterator</h2>
+<div class="outline-text-2" id="text-org7f2ea18">
 </div>
-<div id="outline-container-org230ff6f" class="outline-3">
-<h3 id="org230ff6f">简介</h3>
-<div class="outline-text-3" id="text-org230ff6f">
+<div id="outline-container-orgbbb5172" class="outline-3">
+<h3 id="orgbbb5172">简介</h3>
+<div class="outline-text-3" id="text-orgbbb5172">
 <p>
 可在内部迭代自己的外部迭代器或类的接口。
 </p>
 </div>
 </div>
-<div id="outline-container-org1b76595" class="outline-3">
-<h3 id="org1b76595">接口摘要</h3>
-<div class="outline-text-3" id="text-org1b76595">
+<div id="outline-container-org7725e9f" class="outline-3">
+<h3 id="org7725e9f">接口摘要</h3>
+<div class="outline-text-3" id="text-org7725e9f">
 <div class="org-src-container">
 <pre class="src src-php"> Iterator <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> <span style="color: #51afef;">{</span>
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861;</span><span style="color: #747474;"> */</span>
@@ -355,9 +355,9 @@ $<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color
 </div>
 </div>
 </div>
-<div id="outline-container-org6b08d89" class="outline-3">
-<h3 id="org6b08d89">示例</h3>
-<div class="outline-text-3" id="text-org6b08d89">
+<div id="outline-container-org22e196c" class="outline-3">
+<h3 id="org22e196c">示例</h3>
+<div class="outline-text-3" id="text-org22e196c">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myIterator</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">Iterator</span> <span style="color: #51afef;">{</span>
     <span style="color: #51afef;">private</span> $<span style="color: #979797;">position</span> = 0;
@@ -418,21 +418,21 @@ $<span style="color: #979797;">it</span> = <span style="color: #51afef;">new</sp
 </div>
 </div>
 
-<div id="outline-container-org0e74405" class="outline-2">
-<h2 id="org0e74405">IteratorAggregate</h2>
-<div class="outline-text-2" id="text-org0e74405">
+<div id="outline-container-org0701f64" class="outline-2">
+<h2 id="org0701f64">IteratorAggregate</h2>
+<div class="outline-text-2" id="text-org0701f64">
 </div>
-<div id="outline-container-org8ceb12a" class="outline-3">
-<h3 id="org8ceb12a">简介</h3>
-<div class="outline-text-3" id="text-org8ceb12a">
+<div id="outline-container-orge6a97a5" class="outline-3">
+<h3 id="orge6a97a5">简介</h3>
+<div class="outline-text-3" id="text-orge6a97a5">
 <p>
 创建外部迭代器的接口。
 </p>
 </div>
 </div>
-<div id="outline-container-org9ebe86e" class="outline-3">
-<h3 id="org9ebe86e">接口摘要</h3>
-<div class="outline-text-3" id="text-org9ebe86e">
+<div id="outline-container-orgc6d8364" class="outline-3">
+<h3 id="orgc6d8364">接口摘要</h3>
+<div class="outline-text-3" id="text-orgc6d8364">
 <div class="org-src-container">
 <pre class="src src-php"> IteratorAggregate <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> <span style="color: #51afef;">{</span>
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861;</span><span style="color: #747474;"> */</span>
@@ -442,9 +442,9 @@ $<span style="color: #979797;">it</span> = <span style="color: #51afef;">new</sp
 </div>
 </div>
 </div>
-<div id="outline-container-org5560832" class="outline-3">
-<h3 id="org5560832">示例</h3>
-<div class="outline-text-3" id="text-org5560832">
+<div id="outline-container-orgb9ab70f" class="outline-3">
+<h3 id="orgb9ab70f">示例</h3>
+<div class="outline-text-3" id="text-orgb9ab70f">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myData</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">IteratorAggregate</span> <span style="color: #51afef;">{</span>
     <span style="color: #51afef;">public</span> $<span style="color: #979797;">property1</span> = <span style="color: #99bb66;">"Public property one"</span>;
@@ -478,8 +478,8 @@ $<span style="color: #979797;">obj</span> = <span style="color: #51afef;">new</s
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2020-02-22 18:02:33 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
+<p class="postamble">First created: 2020-02-22 18:02:33 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
 </html>

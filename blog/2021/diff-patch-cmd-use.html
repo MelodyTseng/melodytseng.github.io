@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 12:01 -->
+<!-- 2021-02-10 Wed 14:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>diff和patch命令使用</title>
@@ -230,20 +230,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc7a4200">diff介绍</a>
+<li><a href="#orgdfcfc5b">diff介绍</a>
 <ul>
-<li><a href="#org8de5d65">语法</a></li>
-<li><a href="#org9a57d5a">例子</a></li>
+<li><a href="#orgdc2de6c">语法</a></li>
+<li><a href="#orgd35c300">例子</a></li>
 </ul>
 </li>
-<li><a href="#org87e8ae3">patch介绍</a>
+<li><a href="#org12010b4">patch介绍</a>
 <ul>
-<li><a href="#org0b352c7">语法</a></li>
-<li><a href="#org436da68">例子</a></li>
+<li><a href="#orgdc1c471">语法</a></li>
+<li><a href="#orge7de77c">例子</a></li>
 </ul>
 </li>
-<li><a href="#org7f44389">参考</a></li>
-<li><a href="#orgb691b12">备注</a></li>
+<li><a href="#org8f789c7">参考</a></li>
+<li><a href="#org2e02d4a">备注</a></li>
 </ul>
 </div>
 </div>
@@ -251,9 +251,9 @@
 diff和patch是一对对应工具，作为程序员了解是很有必要的。<br />
 </p>
 
-<div id="outline-container-orgc7a4200" class="outline-2">
-<h2 id="orgc7a4200">diff介绍</h2>
-<div class="outline-text-2" id="text-orgc7a4200">
+<div id="outline-container-orgdfcfc5b" class="outline-2">
+<h2 id="orgdfcfc5b">diff介绍</h2>
+<div class="outline-text-2" id="text-orgdfcfc5b">
 <p>
 diff 是一个文件比较工具。<br />
 常用参数：<br />
@@ -279,18 +279,18 @@ diff 是一个文件比较工具。<br />
 </tbody>
 </table>
 </div>
-<div id="outline-container-org8de5d65" class="outline-3">
-<h3 id="org8de5d65">语法</h3>
-<div class="outline-text-3" id="text-org8de5d65">
+<div id="outline-container-orgdc2de6c" class="outline-3">
+<h3 id="orgdc2de6c">语法</h3>
+<div class="outline-text-3" id="text-orgdc2de6c">
 <div class="org-src-container">
 <pre class="src src-bash">diff <span style="color: #51afef;">[</span>options<span style="color: #51afef;">]</span> old new
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9a57d5a" class="outline-3">
-<h3 id="org9a57d5a">例子</h3>
-<div class="outline-text-3" id="text-org9a57d5a">
+<div id="outline-container-orgd35c300" class="outline-3">
+<h3 id="orgd35c300">例子</h3>
+<div class="outline-text-3" id="text-orgd35c300">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  shell diff -urN a.c b.c
 --- a.c 2021-02-09 11:29:12.840339700 +0800 <span style="color: #747474;">#</span><span style="color: #747474;">&#26356;&#26032;&#21069;&#30340;&#25991;&#20214;</span>
@@ -312,9 +312,9 @@ diff 是一个文件比较工具。<br />
 </div>
 </div>
 
-<div id="outline-container-org87e8ae3" class="outline-2">
-<h2 id="org87e8ae3">patch介绍</h2>
-<div class="outline-text-2" id="text-org87e8ae3">
+<div id="outline-container-org12010b4" class="outline-2">
+<h2 id="org12010b4">patch介绍</h2>
+<div class="outline-text-2" id="text-org12010b4">
 <p>
 patch 是一个可以将diff生成的补丁应用到源文件，生成一个打过补丁版本的文件。<br />
 常用参数：<br />
@@ -360,18 +360,18 @@ patch 是一个可以将diff生成的补丁应用到源文件，生成一个打�
 </tbody>
 </table>
 </div>
-<div id="outline-container-org0b352c7" class="outline-3">
-<h3 id="org0b352c7">语法</h3>
-<div class="outline-text-3" id="text-org0b352c7">
+<div id="outline-container-orgdc1c471" class="outline-3">
+<h3 id="orgdc1c471">语法</h3>
+<div class="outline-text-3" id="text-orgdc1c471">
 <div class="org-src-container">
 <pre class="src src-bash">patch <span style="color: #51afef;">[</span>oiption<span style="color: #51afef;">]</span> <span style="color: #51afef;">[</span>originalfile <span style="color: #c678dd;">[</span>patchfile<span style="color: #c678dd;">]</span><span style="color: #51afef;">]</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org436da68" class="outline-3">
-<h3 id="org436da68">例子</h3>
-<div class="outline-text-3" id="text-org436da68">
+<div id="outline-container-orge7de77c" class="outline-3">
+<h3 id="orge7de77c">例子</h3>
+<div class="outline-text-3" id="text-orge7de77c">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  shell cat a.c
 /* old */
@@ -450,18 +450,18 @@ int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="c
 </div>
 </div>
 
-<div id="outline-container-org7f44389" class="outline-2">
-<h2 id="org7f44389">参考</h2>
-<div class="outline-text-2" id="text-org7f44389">
+<div id="outline-container-org8f789c7" class="outline-2">
+<h2 id="org8f789c7">参考</h2>
+<div class="outline-text-2" id="text-org8f789c7">
 <ul class="org-ul">
 <li><a href="https:locez.com/linux/diff-and-patch/">https://locez.com/linux/diff-and-patch/</a><br /></li>
 <li><a href="https:linux.cn/article-9710-1.html">https://linux.cn/article-9710-1.html</a><br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb691b12" class="outline-2">
-<h2 id="orgb691b12">备注</h2>
-<div class="outline-text-2" id="text-orgb691b12">
+<div id="outline-container-org2e02d4a" class="outline-2">
+<h2 id="org2e02d4a">备注</h2>
+<div class="outline-text-2" id="text-org2e02d4a">
 <div class="post-copyright">
 <p>Author: josephzeng</p>
 <p>
@@ -473,8 +473,8 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-09 Tue 00:00 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
+<p class="postamble">First created: 2021-02-09 Tue 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
 </html>

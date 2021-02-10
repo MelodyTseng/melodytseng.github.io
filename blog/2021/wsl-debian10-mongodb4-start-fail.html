@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 12:02 -->
+<!-- 2021-02-10 Wed 14:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>wsl debian10 mongodb4 start fail solve</title>
@@ -230,33 +230,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc3e5402">wsl debian10 mongodb4 start fail solve</a>
+<li><a href="#org195b4c6">wsl debian10 mongodb4 start fail solve</a>
 <ul>
-<li><a href="#org01c4c08">安装</a></li>
-<li><a href="#orgc849a69">启动</a></li>
-<li><a href="#org9c44ae7">处理</a></li>
-<li><a href="#org68494d7">测试</a></li>
+<li><a href="#org8d4e6fd">安装</a></li>
+<li><a href="#org02a56d4">启动</a></li>
+<li><a href="#org4f53678">处理</a></li>
+<li><a href="#orgb1bf4e6">测试</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc3e5402" class="outline-2">
-<h2 id="orgc3e5402">wsl debian10 mongodb4 start fail solve</h2>
-<div class="outline-text-2" id="text-orgc3e5402">
+<div id="outline-container-org195b4c6" class="outline-2">
+<h2 id="org195b4c6">wsl debian10 mongodb4 start fail solve</h2>
+<div class="outline-text-2" id="text-org195b4c6">
 </div>
-<div id="outline-container-org01c4c08" class="outline-3">
-<h3 id="org01c4c08">安装</h3>
-<div class="outline-text-3" id="text-org01c4c08">
+<div id="outline-container-org8d4e6fd" class="outline-3">
+<h3 id="org8d4e6fd">安装</h3>
+<div class="outline-text-3" id="text-org8d4e6fd">
 <p>
 省略，请参考 <a href="https:docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/">https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgc849a69" class="outline-3">
-<h3 id="orgc849a69">启动</h3>
-<div class="outline-text-3" id="text-orgc849a69">
+<div id="outline-container-org02a56d4" class="outline-3">
+<h3 id="org02a56d4">启动</h3>
+<div class="outline-text-3" id="text-org02a56d4">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  ~ sudo systemctl start mongod
    <span style="color: #747474;">#</span><span style="color: #747474;">&#25253;&#38169;&#22914;&#19979;</span>
@@ -266,9 +266,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org9c44ae7" class="outline-3">
-<h3 id="org9c44ae7">处理</h3>
-<div class="outline-text-3" id="text-org9c44ae7">
+<div id="outline-container-org4f53678" class="outline-3">
+<h3 id="org4f53678">处理</h3>
+<div class="outline-text-3" id="text-org4f53678">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  ~ sudo curl -o /etc/init.d/mongodb https://raw.githubusercontent.com/mongodb/mongo/master/debian/init.d
 &#10140;  ~ sudo chmod +x etc/init.d/mongodb
@@ -279,9 +279,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org68494d7" class="outline-3">
-<h3 id="org68494d7">测试</h3>
-<div class="outline-text-3" id="text-org68494d7">
+<div id="outline-container-orgb1bf4e6" class="outline-3">
+<h3 id="orgb1bf4e6">测试</h3>
+<div class="outline-text-3" id="text-orgb1bf4e6">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  ~ mongo --eval <span style="color: #99bb66;">'db.runCommand({ connectionStatus: 1 })'</span>
    MongoDB shell version v4.4.3
@@ -307,8 +307,8 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-27 Wed 00:00 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
+<p class="postamble">First created: 2021-01-27 Wed 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
 </html>

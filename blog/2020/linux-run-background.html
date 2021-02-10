@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 12:01 -->
+<!-- 2021-02-10 Wed 14:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>linux后台运行方式</title>
@@ -230,19 +230,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4ee932e">方式</a>
+<li><a href="#orgfa861af">方式</a>
 <ul>
-<li><a href="#orga1c8179">&amp;</a></li>
-<li><a href="#org8b9f35e">nohub命令</a></li>
-<li><a href="#org59968bc">使用fork 和 setsid</a></li>
+<li><a href="#org7f84f03">&amp;</a></li>
+<li><a href="#org7c7e1da">nohub命令</a></li>
+<li><a href="#org71ec0c3">使用fork 和 setsid</a></li>
 </ul>
 </li>
-<li><a href="#orgc52ff77">其他</a>
+<li><a href="#orge51d8de">其他</a>
 <ul>
-<li><a href="#orgadd3d3e">查看后台进程</a>
+<li><a href="#org2c29402">查看后台进程</a>
 <ul>
-<li><a href="#org3f360f4">jobs命令</a></li>
-<li><a href="#org4f212ae">ps命令</a></li>
+<li><a href="#orgcd3b351">jobs命令</a></li>
+<li><a href="#org219a382">ps命令</a></li>
 </ul>
 </li>
 </ul>
@@ -251,17 +251,17 @@
 </div>
 </div>
 
-<div id="outline-container-org4ee932e" class="outline-2">
-<h2 id="org4ee932e">方式</h2>
-<div class="outline-text-2" id="text-org4ee932e">
+<div id="outline-container-orgfa861af" class="outline-2">
+<h2 id="orgfa861af">方式</h2>
+<div class="outline-text-2" id="text-orgfa861af">
 <p>
 让进程可以脱离终端或控制台在后台运行，在Linux中，大概有下面几种方式。
 </p>
 </div>
 
-<div id="outline-container-orga1c8179" class="outline-3">
-<h3 id="orga1c8179">&amp;</h3>
-<div class="outline-text-3" id="text-orga1c8179">
+<div id="outline-container-org7f84f03" class="outline-3">
+<h3 id="org7f84f03">&amp;</h3>
+<div class="outline-text-3" id="text-org7f84f03">
 <p>
 在命令之后加个“&amp;“ 符号就可以了
 command &gt; out.file(文件) 2&gt;&amp;1(指将标准错误重定向到标准输出) &amp;
@@ -278,9 +278,9 @@ command &gt; out.file(文件) 2&gt;&amp;1(指将标准错误重定向到标准�
 </div>
 </div>
 
-<div id="outline-container-org8b9f35e" class="outline-3">
-<h3 id="org8b9f35e">nohub命令</h3>
-<div class="outline-text-3" id="text-org8b9f35e">
+<div id="outline-container-org7c7e1da" class="outline-3">
+<h3 id="org7c7e1da">nohub命令</h3>
+<div class="outline-text-3" id="text-org7c7e1da">
 <p>
 nohup(no hang up)
 nohup command &gt; out.file 2&gt;&amp;1 &amp;
@@ -298,9 +298,9 @@ nohup ./test &gt;&gt; out.file 2&gt;&amp;1 &amp;
 </div>
 </div>
 
-<div id="outline-container-org59968bc" class="outline-3">
-<h3 id="org59968bc">使用fork 和 setsid</h3>
-<div class="outline-text-3" id="text-org59968bc">
+<div id="outline-container-org71ec0c3" class="outline-3">
+<h3 id="org71ec0c3">使用fork 和 setsid</h3>
+<div class="outline-text-3" id="text-org71ec0c3">
 <p>
 使用php伪代码如下
 </p>
@@ -340,17 +340,17 @@ cli_set_process_title<span style="color: #51afef;">(</span><span style="color: #
 </div>
 
 
-<div id="outline-container-orgc52ff77" class="outline-2">
-<h2 id="orgc52ff77">其他</h2>
-<div class="outline-text-2" id="text-orgc52ff77">
+<div id="outline-container-orge51d8de" class="outline-2">
+<h2 id="orge51d8de">其他</h2>
+<div class="outline-text-2" id="text-orge51d8de">
 </div>
-<div id="outline-container-orgadd3d3e" class="outline-3">
-<h3 id="orgadd3d3e">查看后台进程</h3>
-<div class="outline-text-3" id="text-orgadd3d3e">
+<div id="outline-container-org2c29402" class="outline-3">
+<h3 id="org2c29402">查看后台进程</h3>
+<div class="outline-text-3" id="text-org2c29402">
 </div>
-<div id="outline-container-org3f360f4" class="outline-4">
-<h4 id="org3f360f4">jobs命令</h4>
-<div class="outline-text-4" id="text-org3f360f4">
+<div id="outline-container-orgcd3b351" class="outline-4">
+<h4 id="orgcd3b351">jobs命令</h4>
+<div class="outline-text-4" id="text-orgcd3b351">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #51afef;">jobs</span> -l
 </pre>
@@ -358,9 +358,9 @@ cli_set_process_title<span style="color: #51afef;">(</span><span style="color: #
 </div>
 </div>
 
-<div id="outline-container-org4f212ae" class="outline-4">
-<h4 id="org4f212ae">ps命令</h4>
-<div class="outline-text-4" id="text-org4f212ae">
+<div id="outline-container-org219a382" class="outline-4">
+<h4 id="org219a382">ps命令</h4>
+<div class="outline-text-4" id="text-org219a382">
 <div class="org-src-container">
 <pre class="src src-bash">ps aux | grep test
 </pre>
@@ -376,8 +376,8 @@ cli_set_process_title<span style="color: #51afef;">(</span><span style="color: #
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2020-02-18 17:38:33 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
+<p class="postamble">First created: 2020-02-18 17:38:33 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
 </html>

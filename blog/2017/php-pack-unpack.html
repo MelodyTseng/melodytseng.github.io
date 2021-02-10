@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 12:00 -->
+<!-- 2021-02-10 Wed 14:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php pack unpack</title>
@@ -230,32 +230,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga61a439">学习</a>
+<li><a href="#org6cf5306">学习</a>
 <ul>
-<li><a href="#org04889c9">pack</a></li>
-<li><a href="#orgca65bea">unpack</a></li>
-<li><a href="#org02d2b22">format</a></li>
-<li><a href="#orge28e2a7">作用</a></li>
-<li><a href="#org9f3b8ac">备注</a></li>
+<li><a href="#org1fd82e2">pack</a></li>
+<li><a href="#org430bd5a">unpack</a></li>
+<li><a href="#org80ddb4e">format</a></li>
+<li><a href="#org492dfd8">作用</a></li>
+<li><a href="#orga7286bb">备注</a></li>
 </ul>
 </li>
-<li><a href="#org1d2bfb3">应用</a>
+<li><a href="#org8eaf92d">应用</a>
 <ul>
-<li><a href="#org526f181">demo代码</a></li>
-<li><a href="#orgeefde4e">实例</a></li>
+<li><a href="#org34e1cec">demo代码</a></li>
+<li><a href="#org67fea1b">实例</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga61a439" class="outline-2">
-<h2 id="orga61a439">学习</h2>
-<div class="outline-text-2" id="text-orga61a439">
+<div id="outline-container-org6cf5306" class="outline-2">
+<h2 id="org6cf5306">学习</h2>
+<div class="outline-text-2" id="text-org6cf5306">
 </div>
-<div id="outline-container-org04889c9" class="outline-3">
-<h3 id="org04889c9">pack</h3>
-<div class="outline-text-3" id="text-org04889c9">
+<div id="outline-container-org1fd82e2" class="outline-3">
+<h3 id="org1fd82e2">pack</h3>
+<div class="outline-text-3" id="text-org1fd82e2">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #44b9b1;">string</span> <span style="color: #44b9b1;">pack</span> <span style="color: #51afef;">(</span> <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> <span style="color: #c678dd;">[</span>, <span style="color: #44b9b1;">mixed</span> $<span style="color: #979797;">args</span> <span style="color: #99bb66;">[</span>, <span style="color: #44b9b1;">mixed</span> <span style="color: #979797;">$</span>... <span style="color: #99bb66;">]</span><span style="color: #c678dd;">]</span> <span style="color: #51afef;">)</span>
 </pre>
@@ -266,9 +266,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgca65bea" class="outline-3">
-<h3 id="orgca65bea">unpack</h3>
-<div class="outline-text-3" id="text-orgca65bea">
+<div id="outline-container-org430bd5a" class="outline-3">
+<h3 id="org430bd5a">unpack</h3>
+<div class="outline-text-3" id="text-org430bd5a">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef;">array</span> unpack <span style="color: #51afef;">(</span> <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> , <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">data</span> <span style="color: #51afef;">)</span>
 </pre>
@@ -276,9 +276,9 @@
 </div>
 </div>
 
-<div id="outline-container-org02d2b22" class="outline-3">
-<h3 id="org02d2b22">format</h3>
-<div class="outline-text-3" id="text-org02d2b22">
+<div id="outline-container-org80ddb4e" class="outline-3">
+<h3 id="org80ddb4e">format</h3>
+<div class="outline-text-3" id="text-org80ddb4e">
 <p>
 如下选项<br />
 </p>
@@ -425,9 +425,9 @@
 </div>
 </div>
 
-<div id="outline-container-orge28e2a7" class="outline-3">
-<h3 id="orge28e2a7">作用</h3>
-<div class="outline-text-3" id="text-orge28e2a7">
+<div id="outline-container-org492dfd8" class="outline-3">
+<h3 id="org492dfd8">作用</h3>
+<div class="outline-text-3" id="text-org492dfd8">
 <ul class="org-ul">
 <li>常用于tcp,udp服务的数据通信<br /></li>
 <li>自我脑补<br /></li>
@@ -435,9 +435,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9f3b8ac" class="outline-3">
-<h3 id="org9f3b8ac">备注</h3>
-<div class="outline-text-3" id="text-org9f3b8ac">
+<div id="outline-container-orga7286bb" class="outline-3">
+<h3 id="orga7286bb">备注</h3>
+<div class="outline-text-3" id="text-orga7286bb">
 <p>
 学习参考地址:<br />
 <a href="https://my.oschina.net/goal/blog/202378">https://my.oschina.net/goal/blog/202378</a>  <br />
@@ -448,23 +448,23 @@
 </div>
 
 
-<div id="outline-container-org1d2bfb3" class="outline-2">
-<h2 id="org1d2bfb3">应用</h2>
-<div class="outline-text-2" id="text-org1d2bfb3">
+<div id="outline-container-org8eaf92d" class="outline-2">
+<h2 id="org8eaf92d">应用</h2>
+<div class="outline-text-2" id="text-org8eaf92d">
 </div>
-<div id="outline-container-org526f181" class="outline-3">
-<h3 id="org526f181">demo代码</h3>
-<div class="outline-text-3" id="text-org526f181">
+<div id="outline-container-org34e1cec" class="outline-3">
+<h3 id="org34e1cec">demo代码</h3>
+<div class="outline-text-3" id="text-org34e1cec">
 <div class="org-src-container">
-<pre class="src src-php">git <span style="color: #51afef;">clone</span> https:<span style="color: #747474;">//</span><span style="color: #747474;">github.com/MelodyTseng/php.git</span>
+<pre class="src src-php">git <span style="color: #51afef;">clone</span> https:<span style="color: #747474;">//</span><span style="color: #747474;">github.com/josephtseng-echo/php.git</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgeefde4e" class="outline-3">
-<h3 id="orgeefde4e">实例</h3>
-<div class="outline-text-3" id="text-orgeefde4e">
+<div id="outline-container-org67fea1b" class="outline-3">
+<h3 id="org67fea1b">实例</h3>
+<div class="outline-text-3" id="text-org67fea1b">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
 <span style="color: #51afef;">include</span><span style="color: #51afef;">(</span><span style="color: #51afef;">__DIR__</span>.<span style="color: #99bb66;">'/../spl_autoload.php'</span><span style="color: #51afef;">)</span>;
@@ -511,8 +511,8 @@ $<span style="color: #979797;">ua</span> = unpack<span style="color: #51afef;">(
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
+<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 12:02 -->
+<!-- 2021-02-10 Wed 14:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mysql</title>
@@ -230,92 +230,92 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb48cd74">使用备注</a>
+<li><a href="#org520442e">使用备注</a>
 <ul>
-<li><a href="#orgb8e44e1">工具推荐</a></li>
+<li><a href="#orge3db8a6">工具推荐</a></li>
 </ul>
 </li>
-<li><a href="#orgdb0a316">安装</a></li>
-<li><a href="#orgdaf3ecd">操作</a>
+<li><a href="#orgaa85807">安装</a></li>
+<li><a href="#org6392cf0">操作</a>
 <ul>
-<li><a href="#org9aaaf44">连接</a></li>
-<li><a href="#org5c5fdda">账号操作</a>
+<li><a href="#orgc8484fa">连接</a></li>
+<li><a href="#org8bc53df">账号操作</a>
 <ul>
-<li><a href="#org5a3430f">添加账号</a></li>
-<li><a href="#org3cb8b1b">授权</a></li>
-<li><a href="#org4875671">修改密码</a></li>
-<li><a href="#org6ea83f4">删除账号</a></li>
+<li><a href="#org8441dd3">添加账号</a></li>
+<li><a href="#org06a7c13">授权</a></li>
+<li><a href="#org336ee85">修改密码</a></li>
+<li><a href="#org3d0501f">删除账号</a></li>
 </ul>
 </li>
-<li><a href="#org9ef4f81">基本操作</a>
+<li><a href="#org966f3e8">基本操作</a>
 <ul>
-<li><a href="#orgcedac69">数据库</a></li>
-<li><a href="#orgc3bbfa4">数据表</a></li>
-<li><a href="#org8ada559">约束</a></li>
-<li><a href="#orgb0d4b78">索引</a></li>
-<li><a href="#org2c66a10">添加数据</a></li>
-<li><a href="#org55a02db">更新数据</a></li>
-<li><a href="#org987fc1a">删除数据</a></li>
+<li><a href="#org2507dd9">数据库</a></li>
+<li><a href="#org9933619">数据表</a></li>
+<li><a href="#orgaea6130">约束</a></li>
+<li><a href="#orgbb50559">索引</a></li>
+<li><a href="#org081a8c9">添加数据</a></li>
+<li><a href="#org59e916d">更新数据</a></li>
+<li><a href="#org9fc8588">删除数据</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgbaa44cb">参考</a></li>
+<li><a href="#org53e7b0c">参考</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb48cd74" class="outline-2">
-<h2 id="orgb48cd74">使用备注</h2>
-<div class="outline-text-2" id="text-orgb48cd74">
+<div id="outline-container-org520442e" class="outline-2">
+<h2 id="org520442e">使用备注</h2>
+<div class="outline-text-2" id="text-org520442e">
 </div>
-<div id="outline-container-orgb8e44e1" class="outline-3">
-<h3 id="orgb8e44e1">工具推荐</h3>
-<div class="outline-text-3" id="text-orgb8e44e1">
+<div id="outline-container-orge3db8a6" class="outline-3">
+<h3 id="orge3db8a6">工具推荐</h3>
+<div class="outline-text-3" id="text-orge3db8a6">
 <ul class="org-ul">
 <li><a href="https://www.mycli.net/" target="_blank">mycli</a><br /></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb0a316" class="outline-2">
-<h2 id="orgdb0a316">安装</h2>
-<div class="outline-text-2" id="text-orgdb0a316">
+<div id="outline-container-orgaa85807" class="outline-2">
+<h2 id="orgaa85807">安装</h2>
+<div class="outline-text-2" id="text-orgaa85807">
 <p>
 使用apt, yumd或自行编译等等方式安装。<br />
 详细，请查看 <a href="https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/" target="_blank">安装</a><br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgdaf3ecd" class="outline-2">
-<h2 id="orgdaf3ecd">操作</h2>
-<div class="outline-text-2" id="text-orgdaf3ecd">
+<div id="outline-container-org6392cf0" class="outline-2">
+<h2 id="org6392cf0">操作</h2>
+<div class="outline-text-2" id="text-org6392cf0">
 </div>
-<div id="outline-container-org9aaaf44" class="outline-3">
-<h3 id="org9aaaf44">连接</h3>
-<div class="outline-text-3" id="text-org9aaaf44">
+<div id="outline-container-orgc8484fa" class="outline-3">
+<h3 id="orgc8484fa">连接</h3>
+<div class="outline-text-3" id="text-orgc8484fa">
 <div class="org-src-container">
 <pre class="src src-bash">mysql -h localhost -u root -p &#22238;&#36710; <span style="color: #747474;">#</span><span style="color: #747474;">-P&#31471;&#21475; -p&#23494;&#30721;</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org5c5fdda" class="outline-3">
-<h3 id="org5c5fdda">账号操作</h3>
-<div class="outline-text-3" id="text-org5c5fdda">
+<div id="outline-container-org8bc53df" class="outline-3">
+<h3 id="org8bc53df">账号操作</h3>
+<div class="outline-text-3" id="text-org8bc53df">
 </div>
-<div id="outline-container-org5a3430f" class="outline-4">
-<h4 id="org5a3430f">添加账号</h4>
-<div class="outline-text-4" id="text-org5a3430f">
+<div id="outline-container-org8441dd3" class="outline-4">
+<h4 id="org8441dd3">添加账号</h4>
+<div class="outline-text-4" id="text-org8441dd3">
 <div class="org-src-container">
 <pre class="src src-bash">create user username1 identified by <span style="color: #99bb66;">'pwd1'</span>;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3cb8b1b" class="outline-4">
-<h4 id="org3cb8b1b">授权</h4>
-<div class="outline-text-4" id="text-org3cb8b1b">
+<div id="outline-container-org06a7c13" class="outline-4">
+<h4 id="org06a7c13">授权</h4>
+<div class="outline-text-4" id="text-org06a7c13">
 <div class="org-src-container">
 <pre class="src src-bash">grant all privileges on DbName1.* to username1@<span style="color: #99bb66;">'%'</span> identified by <span style="color: #99bb66;">'pwd1'</span>; <span style="color: #747474;"># </span><span style="color: #747474;">%&#34920;&#31034;&#20219;&#20309;&#20027;&#26426; &#25110; &#25351;&#23450;ip&#22320;&#22336; &#25110; ip&#27573;</span>
 flush privileges; <span style="color: #747474;">#</span><span style="color: #747474;">&#21047;&#26032;</span>
@@ -323,9 +323,9 @@ flush privileges; <span style="color: #747474;">#</span><span style="color: #747
 </div>
 </div>
 </div>
-<div id="outline-container-org4875671" class="outline-4">
-<h4 id="org4875671">修改密码</h4>
-<div class="outline-text-4" id="text-org4875671">
+<div id="outline-container-org336ee85" class="outline-4">
+<h4 id="org336ee85">修改密码</h4>
+<div class="outline-text-4" id="text-org336ee85">
 <div class="org-src-container">
 <pre class="src src-bash">update mysql.user set <span style="color: #979797;">password</span> = password<span style="color: #51afef;">(</span><span style="color: #99bb66;">'pwd1'</span><span style="color: #51afef;">)</span> where <span style="color: #979797;">user</span> = <span style="color: #99bb66;">'username1'</span> and <span style="color: #979797;">host</span> = <span style="color: #99bb66;">'%'</span>;
 flush privileges;
@@ -333,9 +333,9 @@ flush privileges;
 </div>
 </div>
 </div>
-<div id="outline-container-org6ea83f4" class="outline-4">
-<h4 id="org6ea83f4">删除账号</h4>
-<div class="outline-text-4" id="text-org6ea83f4">
+<div id="outline-container-org3d0501f" class="outline-4">
+<h4 id="org3d0501f">删除账号</h4>
+<div class="outline-text-4" id="text-org3d0501f">
 <div class="org-src-container">
 <pre class="src src-bash">drop user username1@<span style="color: #99bb66;">'%'</span>;
 </pre>
@@ -343,13 +343,13 @@ flush privileges;
 </div>
 </div>
 </div>
-<div id="outline-container-org9ef4f81" class="outline-3">
-<h3 id="org9ef4f81">基本操作</h3>
-<div class="outline-text-3" id="text-org9ef4f81">
+<div id="outline-container-org966f3e8" class="outline-3">
+<h3 id="org966f3e8">基本操作</h3>
+<div class="outline-text-3" id="text-org966f3e8">
 </div>
-<div id="outline-container-orgcedac69" class="outline-4">
-<h4 id="orgcedac69">数据库</h4>
-<div class="outline-text-4" id="text-orgcedac69">
+<div id="outline-container-org2507dd9" class="outline-4">
+<h4 id="org2507dd9">数据库</h4>
+<div class="outline-text-4" id="text-org2507dd9">
 <div class="org-src-container">
 <pre class="src src-bash">//&#21019;&#24314;&#25968;&#25454;&#24211;
 create database h_test;
@@ -367,9 +367,9 @@ CREATE DATABASE h_test DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 </div>
 </div>
 </div>
-<div id="outline-container-orgc3bbfa4" class="outline-4">
-<h4 id="orgc3bbfa4">数据表</h4>
-<div class="outline-text-4" id="text-orgc3bbfa4">
+<div id="outline-container-org9933619" class="outline-4">
+<h4 id="org9933619">数据表</h4>
+<div class="outline-text-4" id="text-org9933619">
 <div class="org-src-container">
 <pre class="src src-bash">//&#39318;&#20808;&#36873;&#23450;&#25805;&#20316;&#30340;&#25968;&#25454;&#24211;
 use h_test;
@@ -404,9 +404,9 @@ drop table h_student;
 </div>
 </div>
 </div>
-<div id="outline-container-org8ada559" class="outline-4">
-<h4 id="org8ada559">约束</h4>
-<div class="outline-text-4" id="text-org8ada559">
+<div id="outline-container-orgaea6130" class="outline-4">
+<h4 id="orgaea6130">约束</h4>
+<div class="outline-text-4" id="text-orgaea6130">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -449,9 +449,9 @@ drop table h_student;
 </table>
 </div>
 </div>
-<div id="outline-container-orgb0d4b78" class="outline-4">
-<h4 id="orgb0d4b78">索引</h4>
-<div class="outline-text-4" id="text-orgb0d4b78">
+<div id="outline-container-orgbb50559" class="outline-4">
+<h4 id="orgbb50559">索引</h4>
+<div class="outline-text-4" id="text-orgbb50559">
 <div class="org-src-container">
 <pre class="src src-bash">&#20316;&#29992;&#65306;&#25552;&#39640;&#34920;&#20013;&#25968;&#25454;&#30340;&#26597;&#35810;&#36895;&#24230;
 1.&#26222;&#36890;&#32034;&#24341;
@@ -564,9 +564,9 @@ drop index spatidx on student;
 </div>
 </div>
 </div>
-<div id="outline-container-org2c66a10" class="outline-4">
-<h4 id="org2c66a10">添加数据</h4>
-<div class="outline-text-4" id="text-org2c66a10">
+<div id="outline-container-org081a8c9" class="outline-4">
+<h4 id="org081a8c9">添加数据</h4>
+<div class="outline-text-4" id="text-org081a8c9">
 <div class="org-src-container">
 <pre class="src src-bash">//&#37325;&#26032;&#24314;&#31435;&#34920;student
 drop table student;
@@ -590,9 +590,9 @@ insert into student values
 </div>
 </div>
 </div>
-<div id="outline-container-org55a02db" class="outline-4">
-<h4 id="org55a02db">更新数据</h4>
-<div class="outline-text-4" id="text-org55a02db">
+<div id="outline-container-org59e916d" class="outline-4">
+<h4 id="org59e916d">更新数据</h4>
+<div class="outline-text-4" id="text-org59e916d">
 <div class="org-src-container">
 <pre class="src src-bash">//<span style="color: #979797;">&#26356;&#26032;id</span>=1&#30340;&#25968;&#25454;
 update student set <span style="color: #979797;">name</span>=<span style="color: #99bb66;">"howie1"</span>,<span style="color: #979797;">grade</span>=60 where <span style="color: #979797;">id</span>=1;
@@ -602,9 +602,9 @@ update student set <span style="color: #979797;">grade</span>=100 where id&lt;4;
 </div>
 </div>
 </div>
-<div id="outline-container-org987fc1a" class="outline-4">
-<h4 id="org987fc1a">删除数据</h4>
-<div class="outline-text-4" id="text-org987fc1a">
+<div id="outline-container-org9fc8588" class="outline-4">
+<h4 id="org9fc8588">删除数据</h4>
+<div class="outline-text-4" id="text-org9fc8588">
 <div class="org-src-container">
 <pre class="src src-bash">//<span style="color: #979797;">&#21024;&#38500;id</span>=6&#30340;&#25968;&#25454;
 delete from student where <span style="color: #979797;">id</span>=6;
@@ -618,9 +618,9 @@ delete from student;
 </div>
 </div>
 </div>
-<div id="outline-container-orgbaa44cb" class="outline-2">
-<h2 id="orgbaa44cb">参考</h2>
-<div class="outline-text-2" id="text-orgbaa44cb">
+<div id="outline-container-org53e7b0c" class="outline-2">
+<h2 id="org53e7b0c">参考</h2>
+<div class="outline-text-2" id="text-org53e7b0c">
 <ul class="org-ul">
 <li><a href="https:dev.mysql.com/doc/">https://dev.mysql.com/doc/</a><br /></li>
 <li><a href="https:www.jianshu.com/p/118e1c41e9f0">https://www.jianshu.com/p/118e1c41e9f0</a><br /></li>
@@ -637,8 +637,8 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-06 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-06 Sat 00:00 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
+<p class="postamble">First created: 2021-02-06 Sat 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
 </html>

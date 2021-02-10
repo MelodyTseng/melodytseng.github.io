@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 12:03 -->
+<!-- 2021-02-10 Wed 14:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>tmux 手册</title>
@@ -230,50 +230,50 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgad7ccba">tmux 手册</a>
+<li><a href="#org543bf7c">tmux 手册</a>
 <ul>
-<li><a href="#org05df64d">基本操作</a>
+<li><a href="#orgdd8618f">基本操作</a>
 <ul>
-<li><a href="#org4a40080">启动会话</a></li>
-<li><a href="#org015031b">恢复会话</a></li>
-<li><a href="#org2a10742">列出会话</a></li>
-<li><a href="#org814c941">关闭会话</a></li>
+<li><a href="#org0768cd2">启动会话</a></li>
+<li><a href="#org2c6d55e">恢复会话</a></li>
+<li><a href="#org788e4e2">列出会话</a></li>
+<li><a href="#org8755c17">关闭会话</a></li>
 </ul>
 </li>
-<li><a href="#org87bd470">help</a></li>
-<li><a href="#org2845d6b">快捷键</a>
+<li><a href="#org2a2b090">help</a></li>
+<li><a href="#orga9f1631">快捷键</a>
 <ul>
-<li><a href="#org05023b5">系统指令</a></li>
-<li><a href="#orgac76e65">窗口（window）指令</a></li>
-<li><a href="#org3331747">面板（pane）指令</a></li>
+<li><a href="#orgc390f72">系统指令</a></li>
+<li><a href="#org1c9a17e">窗口（window）指令</a></li>
+<li><a href="#orgca1b6a7">面板（pane）指令</a></li>
 </ul>
 </li>
-<li><a href="#orgca35116">配置</a></li>
-<li><a href="#org4013077">插件使用</a>
+<li><a href="#org79383c0">配置</a></li>
+<li><a href="#org148299b">插件使用</a>
 <ul>
-<li><a href="#org88364de">Tmux Plugin Manager</a></li>
-<li><a href="#org3298508">保存和恢复插件</a></li>
+<li><a href="#org3941591">Tmux Plugin Manager</a></li>
+<li><a href="#org632dd8f">保存和恢复插件</a></li>
 </ul>
 </li>
-<li><a href="#org8fc1b71">安装</a></li>
-<li><a href="#org1e79a69">参考</a></li>
+<li><a href="#org55cb0bb">安装</a></li>
+<li><a href="#org3a9f5cc">参考</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgad7ccba" class="outline-2">
-<h2 id="orgad7ccba">tmux 手册</h2>
-<div class="outline-text-2" id="text-orgad7ccba">
+<div id="outline-container-org543bf7c" class="outline-2">
+<h2 id="org543bf7c">tmux 手册</h2>
+<div class="outline-text-2" id="text-org543bf7c">
 </div>
-<div id="outline-container-org05df64d" class="outline-3">
-<h3 id="org05df64d">基本操作</h3>
-<div class="outline-text-3" id="text-org05df64d">
+<div id="outline-container-orgdd8618f" class="outline-3">
+<h3 id="orgdd8618f">基本操作</h3>
+<div class="outline-text-3" id="text-orgdd8618f">
 </div>
-<div id="outline-container-org4a40080" class="outline-4">
-<h4 id="org4a40080">启动会话</h4>
-<div class="outline-text-4" id="text-org4a40080">
+<div id="outline-container-org0768cd2" class="outline-4">
+<h4 id="org0768cd2">启动会话</h4>
+<div class="outline-text-4" id="text-org0768cd2">
 <div class="org-src-container">
 <pre class="src src-bash">tmux <span style="color: #51afef;">[</span>new -s &#20250;&#35805;&#21517; -n &#31383;&#21475;&#21517;<span style="color: #51afef;">]</span>
 </pre>
@@ -281,9 +281,9 @@
 </div>
 </div>
 
-<div id="outline-container-org015031b" class="outline-4">
-<h4 id="org015031b">恢复会话</h4>
-<div class="outline-text-4" id="text-org015031b">
+<div id="outline-container-org2c6d55e" class="outline-4">
+<h4 id="org2c6d55e">恢复会话</h4>
+<div class="outline-text-4" id="text-org2c6d55e">
 <div class="org-src-container">
 <pre class="src src-bash">tmux at <span style="color: #51afef;">[</span>-t &#20250;&#35805;&#21517;<span style="color: #51afef;">]</span>
 </pre>
@@ -291,9 +291,9 @@
 </div>
 </div>
 
-<div id="outline-container-org2a10742" class="outline-4">
-<h4 id="org2a10742">列出会话</h4>
-<div class="outline-text-4" id="text-org2a10742">
+<div id="outline-container-org788e4e2" class="outline-4">
+<h4 id="org788e4e2">列出会话</h4>
+<div class="outline-text-4" id="text-org788e4e2">
 <div class="org-src-container">
 <pre class="src src-bash">tmux ls
 </pre>
@@ -301,9 +301,9 @@
 </div>
 </div>
 
-<div id="outline-container-org814c941" class="outline-4">
-<h4 id="org814c941">关闭会话</h4>
-<div class="outline-text-4" id="text-org814c941">
+<div id="outline-container-org8755c17" class="outline-4">
+<h4 id="org8755c17">关闭会话</h4>
+<div class="outline-text-4" id="text-org8755c17">
 <div class="org-src-container">
 <pre class="src src-bash">tmux kill-session -t &#20250;&#35805;&#21517;
 </pre>
@@ -312,9 +312,9 @@
 </div>
 </div>
 
-<div id="outline-container-org87bd470" class="outline-3">
-<h3 id="org87bd470">help</h3>
-<div class="outline-text-3" id="text-org87bd470">
+<div id="outline-container-org2a2b090" class="outline-3">
+<h3 id="org2a2b090">help</h3>
+<div class="outline-text-3" id="text-org2a2b090">
 <div class="org-src-container">
 <pre class="src src-bash">- Start a new session:
   tmux
@@ -346,13 +346,13 @@
 
 
 
-<div id="outline-container-org2845d6b" class="outline-3">
-<h3 id="org2845d6b">快捷键</h3>
-<div class="outline-text-3" id="text-org2845d6b">
+<div id="outline-container-orga9f1631" class="outline-3">
+<h3 id="orga9f1631">快捷键</h3>
+<div class="outline-text-3" id="text-orga9f1631">
 </div>
-<div id="outline-container-org05023b5" class="outline-4">
-<h4 id="org05023b5">系统指令</h4>
-<div class="outline-text-4" id="text-org05023b5">
+<div id="outline-container-orgc390f72" class="outline-4">
+<h4 id="orgc390f72">系统指令</h4>
+<div class="outline-text-4" id="text-orgc390f72">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -433,9 +433,9 @@
 </table>
 </div>
 </div>
-<div id="outline-container-orgac76e65" class="outline-4">
-<h4 id="orgac76e65">窗口（window）指令</h4>
-<div class="outline-text-4" id="text-orgac76e65">
+<div id="outline-container-org1c9a17e" class="outline-4">
+<h4 id="org1c9a17e">窗口（window）指令</h4>
+<div class="outline-text-4" id="text-org1c9a17e">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -510,9 +510,9 @@
 </table>
 </div>
 </div>
-<div id="outline-container-org3331747" class="outline-4">
-<h4 id="org3331747">面板（pane）指令</h4>
-<div class="outline-text-4" id="text-org3331747">
+<div id="outline-container-orgca1b6a7" class="outline-4">
+<h4 id="orgca1b6a7">面板（pane）指令</h4>
+<div class="outline-text-4" id="text-orgca1b6a7">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -631,9 +631,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgca35116" class="outline-3">
-<h3 id="orgca35116">配置</h3>
-<div class="outline-text-3" id="text-orgca35116">
+<div id="outline-container-org79383c0" class="outline-3">
+<h3 id="org79383c0">配置</h3>
+<div class="outline-text-3" id="text-org79383c0">
 <ul class="org-ul">
 <li>自行自定义配置<br /></li>
 <li>参考或直接使用 <a href="https://github.com/gpakosz/.tmux.git">https://github.com/gpakosz/.tmux.git</a> (建议)<br /></li>
@@ -641,13 +641,13 @@
 </div>
 </div>
 
-<div id="outline-container-org4013077" class="outline-3">
-<h3 id="org4013077">插件使用</h3>
-<div class="outline-text-3" id="text-org4013077">
+<div id="outline-container-org148299b" class="outline-3">
+<h3 id="org148299b">插件使用</h3>
+<div class="outline-text-3" id="text-org148299b">
 </div>
-<div id="outline-container-org88364de" class="outline-4">
-<h4 id="org88364de">Tmux Plugin Manager</h4>
-<div class="outline-text-4" id="text-org88364de">
+<div id="outline-container-org3941591" class="outline-4">
+<h4 id="org3941591">Tmux Plugin Manager</h4>
+<div class="outline-text-4" id="text-org3941591">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#26816;&#20986;</span>
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -664,9 +664,9 @@ run <span style="color: #99bb66;">'~/.tmux/plugins/tpm/tpm'</span>
 </div>
 </div>
 </div>
-<div id="outline-container-org3298508" class="outline-4">
-<h4 id="org3298508">保存和恢复插件</h4>
-<div class="outline-text-4" id="text-org3298508">
+<div id="outline-container-org632dd8f" class="outline-4">
+<h4 id="org632dd8f">保存和恢复插件</h4>
+<div class="outline-text-4" id="text-org632dd8f">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#37197;&#32622;&#25991;&#20214;&#25554;&#20214;&#21015;&#34920;&#37197;&#32622;&#28155;&#21152;</span>
 <span style="color: #51afef;">set</span> -g @plugin <span style="color: #99bb66;">'tmux-plugins/tmux-resurrect'</span>
@@ -684,17 +684,17 @@ prefix Ctrl-r       <span style="color: #747474;"># </span><span style="color: #
 </div>
 </div>
 
-<div id="outline-container-org8fc1b71" class="outline-3">
-<h3 id="org8fc1b71">安装</h3>
-<div class="outline-text-3" id="text-org8fc1b71">
+<div id="outline-container-org55cb0bb" class="outline-3">
+<h3 id="org55cb0bb">安装</h3>
+<div class="outline-text-3" id="text-org55cb0bb">
 <p>
 省略<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org1e79a69" class="outline-3">
-<h3 id="org1e79a69">参考</h3>
-<div class="outline-text-3" id="text-org1e79a69">
+<div id="outline-container-org3a9f5cc" class="outline-3">
+<h3 id="org3a9f5cc">参考</h3>
+<div class="outline-text-3" id="text-org3a9f5cc">
 <ul class="org-ul">
 <li><a href="https:github.com/tmux/tmux">https://github.com/tmux/tmux</a><br /></li>
 <li><a href="https:github.com/gpakosz/.tmux.git">https://github.com/gpakosz/.tmux.git</a><br /></li>
@@ -712,8 +712,8 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-03 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-03 Wed 00:00 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
+<p class="postamble">First created: 2021-02-03 Wed 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
 </html>
