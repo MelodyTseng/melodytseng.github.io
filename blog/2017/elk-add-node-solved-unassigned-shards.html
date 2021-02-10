@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-01-29 Fri 14:25 -->
+<!-- 2021-02-10 Wed 12:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elk add node solved unassigned shards</title>
@@ -263,7 +263,7 @@
 <div id="outline-container-org2db6687" class="outline-2">
 <h2 id="org2db6687">下载</h2>
 <div class="outline-text-2" id="text-org2db6687">
-<pre class="example" id="orgdffe0ce">
+<pre class="example" id="org2f1d158">
 elasticsearch-5.2.2
 logstash-5.2.2
 kibana-5.2.2-linux-x86_64
@@ -274,7 +274,7 @@ kibana-5.2.2-linux-x86_64
 <div id="outline-container-org797943d" class="outline-2">
 <h2 id="org797943d">logstash udp server</h2>
 <div class="outline-text-2" id="text-org797943d">
-<pre class="example" id="orge562e55">
+<pre class="example" id="org15cd941">
 input {
    udp {
 	port =&gt; 65551
@@ -309,7 +309,7 @@ output {
 <div id="outline-container-org408ce50" class="outline-2">
 <h2 id="org408ce50">kibana配置</h2>
 <div class="outline-text-2" id="text-org408ce50">
-<pre class="example" id="orgf2359c7">
+<pre class="example" id="org7657047">
 server.port: 8080
 server.host: "0.0.0.0"
 elasticsearch.url: "http://localhost:9200"
@@ -321,7 +321,7 @@ elasticsearch.requestTimeout: 60000
 <div id="outline-container-org2835e75" class="outline-2">
 <h2 id="org2835e75">Elasticsearch节点1</h2>
 <div class="outline-text-2" id="text-org2835e75">
-<pre class="example" id="orgee94384">
+<pre class="example" id="org19ef226">
 cluster.name: logcenter
 node.name: node1
 node.data: true
@@ -335,7 +335,7 @@ discovery.zen.minimum_master_nodes: 1
 <div id="outline-container-orgc871ca8" class="outline-2">
 <h2 id="orgc871ca8">Elasticsearch节点2</h2>
 <div class="outline-text-2" id="text-orgc871ca8">
-<pre class="example" id="orge2b4885">
+<pre class="example" id="orge0f302f">
 cluster.name: logcenter
 node.name: node2
 node.data: true
@@ -351,7 +351,7 @@ discovery.zen.minimum_master_nodes: 1
 <div id="outline-container-org219f16f" class="outline-2">
 <h2 id="org219f16f">其他</h2>
 <div class="outline-text-2" id="text-org219f16f">
-<pre class="example" id="org8235b16">
+<pre class="example" id="orga237d47">
 ### 可以修改 elasticsearch-5.2.2/config/jvm.options 
 -Xms3g
 -Xmx3g
@@ -397,7 +397,7 @@ $ ./start.sh
 <div id="outline-container-orgb62e1cc" class="outline-2">
 <h2 id="orgb62e1cc">验收</h2>
 <div class="outline-text-2" id="text-orgb62e1cc">
-<pre class="example" id="org8351af9">
+<pre class="example" id="org11ab515">
 $ curl -XGET "http://localhost:9200/_cat/health?v"
 epoch      timestamp cluster   status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
 1489128117 14:41:57  logcenter green           2         2     12   6    0    0        0             0                  -                100.0%
@@ -413,7 +413,8 @@ epoch      timestamp cluster   status node.total node.data shards pri relo init 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-01-29 Fri 14:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p>
+<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-02-10 Wed 11:58 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-8V9G4906K4"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8V9G4906K4');</script>
 </div>
 </body>
 </html>
