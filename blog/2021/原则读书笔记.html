@@ -1,0 +1,1869 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2021-02-11 Thu 15:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>《原则》读书笔记</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员"
+ />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">《原则》读书笔记</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgaf05d08">导言</a></li>
+<li><a href="#orgdc2de23">第一部分 我的历程</a></li>
+<li><a href="#org4670fc2">第二部分 生活原则</a>
+<ul>
+<li><a href="#orgbeeb032">拥抱现实，应对现实</a>
+<ul>
+<li><a href="#orgd2d7749">做一个超级现实的人</a></li>
+<li><a href="#org07f4aae">真相</a></li>
+<li><a href="#orgd747e8f">做到头脑极度开放，极度透明</a></li>
+<li><a href="#orgeeb7fa2">观察自然，学习现实规律</a></li>
+<li><a href="#org0895a26">进化是生命最大的成就和最大的回报</a></li>
+<li><a href="#org6897252">理解自然提供的现实教训</a></li>
+<li><a href="#orgabc7e9c">痛苦+反思=进步</a></li>
+<li><a href="#org3feb660">考虑后续与再后续的结果</a></li>
+<li><a href="#org78dc53c">接受结果</a></li>
+<li><a href="#org9aee6f1">从更高的层次俯视机器</a></li>
+<li><a href="#orgfb9cdc8">总结五项抉择</a></li>
+</ul>
+</li>
+<li><a href="#org01ae706">用五步流程实现你的人生愿望</a>
+<ul>
+<li><a href="#org7bded88">有明确的目标</a></li>
+<li><a href="#orgd61cfdb">找出问题，并且不容忍问题</a></li>
+<li><a href="#orgac4183d">诊断问题，找到问题的根源</a></li>
+<li><a href="#orgb241bf4">规划方案</a></li>
+<li><a href="#org8453699">坚定地从头至尾执行方案</a></li>
+<li><a href="#orgaf1579c">谨记</a></li>
+<li><a href="#org03922df">理解</a></li>
+</ul>
+</li>
+<li><a href="#org47200a9">做到头脑极度开放</a>
+<ul>
+<li><a href="#org5da8b96">认识你的两大障碍</a></li>
+<li><a href="#org147b94f">奉行头脑极度开放</a></li>
+<li><a href="#orgd7b8aba">领会并感激，深思熟虑的意见分歧</a></li>
+<li><a href="#orgd3cda1d">和可信的，愿意表达分歧的人一起审视你的观点</a></li>
+<li><a href="#org0ace743">识别你应当注意的头脑封闭和头脑开放的不同迹象</a></li>
+<li><a href="#org731d567">理解你如何做到头脑极度开放</a></li>
+</ul>
+</li>
+<li><a href="#org00c3a4b">理解人与人大不相同</a>
+<ul>
+<li><a href="#orgf653c08">明白你与其他人的思维方式能带来的力量</a></li>
+<li><a href="#orgbf1869a">有意义的工作和有意义的人际关系不仅是我们做出的美好选择，而且是我们天生的生理需求</a></li>
+<li><a href="#org4b63aa2">理解大脑里的主要争斗，以及如何控制这些斗争，以实现“你”的愿望</a></li>
+<li><a href="#orgf5525b2">认识自己和他人的特征</a></li>
+<li><a href="#orgd0d0969">无论你要实现什么目标，让合适的人各司其职以支持你的目标，是成功的关键</a></li>
+</ul>
+</li>
+<li><a href="#orgaad6bd7">学习如何有效决策</a>
+<ul>
+<li><a href="#orga9bbf6e">认识：影响好的决策最大威胁是有害的情绪；决策是一个两步流程（先了解后决定）</a></li>
+<li><a href="#org28bf9b8">综合分析眼前的形势</a></li>
+<li><a href="#orge860c27">综合分析变化中的形式</a></li>
+<li><a href="#org5b56c23">高效地综合考虑各个层次</a></li>
+<li><a href="#org78fdd15">综合分析现实，理解如何行动的最好工具是逻辑，理性和常识</a></li>
+<li><a href="#orgf132870">根据预期价值计算做决策</a></li>
+<li><a href="#orgb266897">比较更多信息带来的价值和不做决定造成的成本，决定优先顺序</a></li>
+<li><a href="#orgcf7c610">简化</a></li>
+<li><a href="#org1f967d1">使用原则</a></li>
+<li><a href="#org7c05d10">对你的决策进行可信度加权</a></li>
+<li><a href="#orgda143d3">把你的原则转换成算法，让计算机和你一起决策</a></li>
+<li><a href="#orgd1a5b0d">系统化和计算机化的决策</a></li>
+<li><a href="#orge0ff8f9">在深刻理解人工智能之前不要过渡信赖它</a></li>
+</ul>
+</li>
+<li><a href="#orgcacc223">总结</a></li>
+</ul>
+</li>
+<li><a href="#org49ba3ab">第三部分 工作原则</a>
+<ul>
+<li><a href="#org27d8b72">序</a>
+<ul>
+<li><a href="#org7a87e97">一个机构就像一部机器，主要由两组部件构成：文化和人</a></li>
+<li><a href="#org4bba3be">严厉之爱有助于成就优异的工作业绩和建立良好的人际关系</a></li>
+<li><a href="#org34cbfb8">基于可信度加权的创意择优是实现有效决策的最佳模式</a></li>
+<li><a href="#orgb19f196">让热情与工作合二为一，并与志同道合者倾力推进</a></li>
+</ul>
+</li>
+<li><a href="#orgd67fd71">打造良好的文化</a>
+<ul>
+<li><a href="#org54c07d2">相信极度求真和极度透明</a></li>
+<li><a href="#org81a9b11">做有意义的工作，发展有意义的人际关系</a></li>
+<li><a href="#orgf4ecccf">打造允许犯错，但不容忍罔顾教训、一错再错的文化</a></li>
+<li><a href="#org0f26ae2">求取共识并坚持</a></li>
+<li><a href="#org392e25f">做决策时要从观点的可信度出发</a></li>
+<li><a href="#org04c0d39">知道如何超越分歧</a></li>
+</ul>
+</li>
+<li><a href="#org291e5a9">用对人</a>
+<ul>
+<li><a href="#org6a58b9f">比做什么事更重要的是找对做事的人</a></li>
+<li><a href="#orga192ce5">要用对人，因为用人不当的代价高昂</a></li>
+<li><a href="#org90e022a">持续培训、测试、评估和调配员工</a></li>
+</ul>
+</li>
+<li><a href="#org38e2e6e">建造并进化你的机器</a>
+<ul>
+<li><a href="#org7ce6c1c">像操作一部机器那样进行管理以实现目标</a></li>
+<li><a href="#orgc7a1f73">发现问题，不容忍问题</a></li>
+<li><a href="#orgc1905ab">诊断问题，探究根源</a></li>
+<li><a href="#org0599dfa">改进机器，解决问题</a></li>
+<li><a href="#orgab17eb1">按既定计划行事</a></li>
+<li><a href="#org2f28311">运用工具和行为准则工作</a></li>
+<li><a href="#orgac2292f">千万别忽视了公司治理</a></li>
+<li><a href="#org3342711">将工作原则融会贯通</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgac2a9e0">其他备注</a></li>
+<li><a href="#orgbff5946">参考</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaf05d08" class="outline-2">
+<h2 id="orgaf05d08">导言</h2>
+<div class="outline-text-2" id="text-orgaf05d08">
+<p>
+作者是美国对冲基金公司桥水创始人瑞·达利欧（Ray Dalio）。<br />
+其他省略<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgdc2de23" class="outline-2">
+<h2 id="orgdc2de23">第一部分 我的历程</h2>
+<div class="outline-text-2" id="text-orgdc2de23">
+<p>
+省略<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org4670fc2" class="outline-2">
+<h2 id="org4670fc2">第二部分 生活原则</h2>
+<div class="outline-text-2" id="text-org4670fc2">
+</div>
+<div id="outline-container-orgbeeb032" class="outline-3">
+<h3 id="orgbeeb032">拥抱现实，应对现实</h3>
+<div class="outline-text-3" id="text-orgbeeb032">
+</div>
+<div id="outline-container-orgd2d7749" class="outline-4">
+<h4 id="orgd2d7749">做一个超级现实的人</h4>
+<div class="outline-text-4" id="text-orgd2d7749">
+<p>
+梦想+现实+决心=成功的生活<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org07f4aae" class="outline-4">
+<h4 id="org07f4aae">真相</h4>
+</div>
+<div id="outline-container-orgd747e8f" class="outline-4">
+<h4 id="orgd747e8f">做到头脑极度开放，极度透明</h4>
+<div class="outline-text-4" id="text-orgd747e8f">
+<ul class="org-ul">
+<li>对于快速学习和有效改变而言，头脑极度开放，极度透明是价值无限的。<br /></li>
+<li>不要担心其他人的看法，使之成为你的障碍。<br /></li>
+<li>拥抱极度求真和极度透明将带来更有意义的工作和更有意义的人际关系。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeeb7fa2" class="outline-4">
+<h4 id="orgeeb7fa2">观察自然，学习现实规律</h4>
+<div class="outline-text-4" id="text-orgeeb7fa2">
+<ul class="org-ul">
+<li>自上而下。<br /></li>
+<li>自下而上。<br /></li>
+<li>不要固守你对事物“应该”是什么样的看法，这将使你无法了解真实的情况。<br /></li>
+<li>一个东西要“好”，就必须符合现实的规律，并促进整体的进化，这能带来最大的回报。<br /></li>
+<li>进化是宇宙中最强大的力量，是唯一永恒的东西，是一切的驱动力。<br /></li>
+<li>不进化就死亡。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0895a26" class="outline-4">
+<h4 id="org0895a26">进化是生命最大的成就和最大的回报</h4>
+<div class="outline-text-4" id="text-org0895a26">
+<ul class="org-ul">
+<li>个体的经i机制必须符合群体的目标。<br /></li>
+<li>现实为了整体趋向最优化，而不是为了个体。<br /></li>
+<li>通过快速试错以适应现实是无价的。<br /></li>
+<li>意识到你既是一切又什么都不是，并决定你想成为什么样子。<br /></li>
+<li>你的未来取决你的视角。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6897252" class="outline-4">
+<h4 id="org6897252">理解自然提供的现实教训</h4>
+<div class="outline-text-4" id="text-org6897252">
+<ul class="org-ul">
+<li>把你的进化最大化。<br /></li>
+<li>记住“没有痛苦就没有收获”。<br /></li>
+<li>自然的一项根本法则是，为了赢得力量，人必须努力突破极限，而这是痛苦的。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgabc7e9c" class="outline-4">
+<h4 id="orgabc7e9c">痛苦+反思=进步</h4>
+<div class="outline-text-4" id="text-orgabc7e9c">
+<ul class="org-ul">
+<li>迎接而非躲避痛苦。<br /></li>
+<li>接受严厉的爱。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3feb660" class="outline-4">
+<h4 id="org3feb660">考虑后续与再后续的结果</h4>
+</div>
+<div id="outline-container-org78dc53c" class="outline-4">
+<h4 id="org78dc53c">接受结果</h4>
+</div>
+<div id="outline-container-org9aee6f1" class="outline-4">
+<h4 id="org9aee6f1">从更高的层次俯视机器</h4>
+<div class="outline-text-4" id="text-org9aee6f1">
+<ul class="org-ul">
+<li>把自己想象成一部在大机器里运转的小机器，并明白你有能力改变你的机器以实现更好的结果。<br /></li>
+<li>通过比较你实现的结果和你的目标，这就能确定如何改进你的机器。<br /></li>
+<li>区别作为机器设计者的你和作为机器中工作者的你。<br /></li>
+<li>大多数人犯下的最大错误是不客观看待自己以及其他人，这导致他们一次次地栽在自己或其他人的弱点上。<br /></li>
+<li>成功的人能超越自身，客观看待事物，并管理事物以塑造改变。<br /></li>
+<li>在你不擅长的领域请教擅长的其他人，这是一个你无论如何都应该培养的出色技能，这将帮助你建立起安全护栏，避免自己做错事。<br /></li>
+<li>因为客观看待自身很困难，所以你需要依赖其他人的意见，以及全部证据。<br /></li>
+<li>如果你的头脑足够开放，足够有决心，你几乎可以实现任何愿望。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb9cdc8" class="outline-4">
+<h4 id="orgfb9cdc8">总结五项抉择</h4>
+<div class="outline-text-4" id="text-orgfb9cdc8">
+<ul class="org-ul">
+<li>不要混淆你的愿望和事实。<br /></li>
+<li>不要以自身形象担心，只需关心能不能实现你的目标。<br /></li>
+<li>不要过于重视直接结果而忽视后续，再后续的结果。<br /></li>
+<li>不要让痛苦妨碍进步。<br /></li>
+<li>不要把不好的结果归咎于任何人，从自己身上找原因。<br /></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org01ae706" class="outline-3">
+<h3 id="org01ae706">用五步流程实现你的人生愿望</h3>
+<div class="outline-text-3" id="text-org01ae706">
+</div>
+<div id="outline-container-org7bded88" class="outline-4">
+<h4 id="org7bded88">有明确的目标</h4>
+<div class="outline-text-4" id="text-org7bded88">
+<ul class="org-ul">
+<li>排列优先顺序，尽管你几乎可以得到你想要的任何东西，但你不可能得到你想要的所有东西。<br /></li>
+<li>不要混淆目标和欲望。<br /></li>
+<li>调和你的目标和欲望。<br /></li>
+<li>不要把成功的装饰误认为成功本身。<br /></li>
+<li>永远不要因为你觉得某个目标无法实现就否决它。<br /></li>
+<li>谨记伟大的期望创造伟大的能力。<br /></li>
+<li>如果你拥有灵活性并自我归责，那么几乎没有什么能阻止你成功。<br /></li>
+<li>知道如何对待挫折和知道如何前进一样重要。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd61cfdb" class="outline-4">
+<h4 id="orgd61cfdb">找出问题，并且不容忍问题</h4>
+<div class="outline-text-4" id="text-orgd61cfdb">
+<ul class="org-ul">
+<li>把令人痛苦的问题视为考验你的潜在进步机会。<br /></li>
+<li>不要逃避问题，因为问题根植于看起来并不美好的残酷现实。<br /></li>
+<li>要精准地找到问题所在。<br /></li>
+<li>不要把问题的某个原因误认为问题本身。<br /></li>
+<li>区分大问题和小问题。<br /></li>
+<li>找出一个问题之后，不要容忍问题。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac4183d" class="outline-4">
+<h4 id="orgac4183d">诊断问题，找到问题的根源</h4>
+<div class="outline-text-4" id="text-orgac4183d">
+<ul class="org-ul">
+<li>先把问题是什么弄明白，再决定怎么做。<br /></li>
+<li>区分直接原因和根本原因。<br /></li>
+<li>认识到了解人（包括你自己）的特性，有助于对其形成合理预期。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb241bf4" class="outline-4">
+<h4 id="orgb241bf4">规划方案</h4>
+<div class="outline-text-4" id="text-orgb241bf4">
+<ul class="org-ul">
+<li>前进之前先回顾<br /></li>
+<li>把你的问题看作一部机器产生的一系列结果。<br /></li>
+<li>谨记实现你的目标通场有很多途径。<br /></li>
+<li>把你的方案想为一个电影剧本，然后循序进地思考由谁来做什么事。<br /></li>
+<li>把你的方案写下来，让所有人都能看到，并对照方案执行。<br /></li>
+<li>要明白，规划一个好方案不一定需要很多时间。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8453699" class="outline-4">
+<h4 id="org8453699">坚定地从头至尾执行方案</h4>
+<div class="outline-text-4" id="text-org8453699">
+<ul class="org-ul">
+<li>规划做的再好，不执行也无济于事。<br /></li>
+<li>良好工作习惯的重要性常被大大低估。<br /></li>
+<li>建立清晰的衡量标准来确保你在严格执行方案。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaf1579c" class="outline-4">
+<h4 id="orgaf1579c">谨记</h4>
+<div class="outline-text-4" id="text-orgaf1579c">
+<ul class="org-ul">
+<li>如果你找到了解决方案，弱点是不重要的。<br /></li>
+<li>考察你犯错的类型，并识别你通常在五步流程中的哪一步上做得不好。<br /></li>
+<li>每个人都至少有一个最大的弱点阻碍其成功，找到你的这个弱点并处理它。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org03922df" class="outline-4">
+<h4 id="org03922df">理解</h4>
+<div class="outline-text-4" id="text-org03922df">
+<ul class="org-ul">
+<li>理解你和其他人的“意境地图”与谦逊性。<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org47200a9" class="outline-3">
+<h3 id="org47200a9">做到头脑极度开放</h3>
+<div class="outline-text-3" id="text-org47200a9">
+</div>
+<div id="outline-container-org5da8b96" class="outline-4">
+<h4 id="org5da8b96">认识你的两大障碍</h4>
+<div class="outline-text-4" id="text-org5da8b96">
+<ul class="org-ul">
+<li>理解你的自我意识障碍。<br /></li>
+<li>“两个你”在争夺对你的控制权。<br /></li>
+<li>理解你的思维盲点障碍。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org147b94f" class="outline-4">
+<h4 id="org147b94f">奉行头脑极度开放</h4>
+<div class="outline-text-4" id="text-org147b94f">
+<ul class="org-ul">
+<li>诚恳地相信你也许并不知道最好的解决办法是什么，并认识到，与你知道的东西相比，能不能妥善处理“不知道”才是最重要。<br /></li>
+<li>认识到决策并分成两步，先分析所有相关的信息，然后决定。<br /></li>
+<li>不要担心自己的形象，只关心如何实现目标。<br /></li>
+<li>认识到你不能“只产出不吸纳”。<br /></li>
+<li>认识到为了能够从他人的角度看待事物，你必须暂时悬置判断，只有设身处地，你才能合理评估另一种观点的价值。<br /></li>
+<li>谨记，你是在寻找最好的答案，而不是你自己能得出的最好答案。<br /></li>
+<li>搞清楚你是在争论还是在试图理解一个问题，并根据你和对方的可信度，想想哪种做法最合理。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd7b8aba" class="outline-4">
+<h4 id="orgd7b8aba">领会并感激，深思熟虑的意见分歧</h4>
+</div>
+<div id="outline-container-orgd3cda1d" class="outline-4">
+<h4 id="orgd3cda1d">和可信的，愿意表达分歧的人一起审视你的观点</h4>
+<div class="outline-text-4" id="text-orgd3cda1d">
+<ul class="org-ul">
+<li>为最坏的情况做准备，以尽量使其不那么糟糕。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0ace743" class="outline-4">
+<h4 id="org0ace743">识别你应当注意的头脑封闭和头脑开放的不同迹象</h4>
+<div class="outline-text-4" id="text-org0ace743">
+<ul class="org-ul">
+<li>头脑封闭的人，不喜欢看到自己的观点被挑战；头脑开放的人更想了解为什么会出现分歧。<br /></li>
+<li>头脑封闭的人，更喜欢做陈述而不是提问；头脑开放的人会提出真诚的问题。<br /></li>
+<li>头脑封闭的人，更关心是否被了解，而不是理解其他人；头脑开放的人要从对方的视角看待事物。<br /></li>
+<li>头脑封闭的人，更容易固守自己的观点并断言；头脑开放的人知道何时陈述和提问。<br /></li>
+<li>头脑封闭的人，阻扰其他人发言；头脑开放的人总喜欢倾听而不是发言。<br /></li>
+<li>头脑封闭的人，难以同时持有两种想法；头脑开放的人会考虑其他人的观点同时保留自己深入思考的能力，他们可以同时思考多个冲突的概念，反复权衡其相<br />
+对价值。<br /></li>
+<li>头脑封闭的人，缺乏深刻的谦逊意识；头脑开放的人看待事物时，时刻在心底担忧自己可能是错误的。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org731d567" class="outline-4">
+<h4 id="org731d567">理解你如何做到头脑极度开放</h4>
+<div class="outline-text-4" id="text-org731d567">
+<ul class="org-ul">
+<li>经常利用痛苦来引导自己进行高质量的思考。<br /></li>
+<li>将头脑开放作为一种习惯。<br /></li>
+<li>认识自己的思维盲点。<br /></li>
+<li>假如很多可信的人都说你正在做错事，只有你不这么看，你就要想想自己是不是看偏了。<br /></li>
+<li>冥想<br /></li>
+<li>重视证据，并鼓励其他人也这么做。<br /></li>
+<li>尽力帮助其他人也保持头脑开放。<br /></li>
+<li>使用以证据为基础的决策工具。<br /></li>
+<li>知道什么时候应当停止为自己的观点辩护，信任自己的决策程序。<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org00c3a4b" class="outline-3">
+<h3 id="org00c3a4b">理解人与人大不相同</h3>
+<div class="outline-text-3" id="text-org00c3a4b">
+</div>
+<div id="outline-container-orgf653c08" class="outline-4">
+<h4 id="orgf653c08">明白你与其他人的思维方式能带来的力量</h4>
+<div class="outline-text-4" id="text-orgf653c08">
+<ul class="org-ul">
+<li>我们拥有各种天生特征，即可能帮助自己也可能伤害自己，取决于如何应用。<br /></li>
+<li>人脑的复杂程度超出我们的想象。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbf1869a" class="outline-4">
+<h4 id="orgbf1869a">有意义的工作和有意义的人际关系不仅是我们做出的美好选择，而且是我们天生的生理需求</h4>
+</div>
+<div id="outline-container-org4b63aa2" class="outline-4">
+<h4 id="org4b63aa2">理解大脑里的主要争斗，以及如何控制这些斗争，以实现“你”的愿望</h4>
+<div class="outline-text-4" id="text-org4b63aa2">
+<ul class="org-ul">
+<li>要明白，意识与潜意识在不断争斗。<br /></li>
+<li>要知道最常发生的斗争是情绪和思考的斗争。<br /></li>
+<li>调和你的情绪和思考。<br /></li>
+<li>善择你的习惯。<br /></li>
+<li>坚持友善地训练“较低层次的你”，以养成好的习惯。<br /></li>
+<li>理解右脑思维和左脑思维的差别。<br /></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">左脑</td>
+<td class="org-left">右脑</td>
+</tr>
+
+<tr>
+<td class="org-left">逻辑</td>
+<td class="org-left">情感</td>
+</tr>
+
+<tr>
+<td class="org-left">计算+科学思维</td>
+<td class="org-left">艺术性+创造性</td>
+</tr>
+
+<tr>
+<td class="org-left">现实感居主导地位</td>
+<td class="org-left">想象力居主导地位</td>
+</tr>
+
+<tr>
+<td class="org-left">有计划+有条理</td>
+<td class="org-left">偶尔心不在焉</td>
+</tr>
+
+<tr>
+<td class="org-left">喜欢非虚构性的东西</td>
+<td class="org-left">喜欢虚构性的东西</td>
+</tr>
+
+<tr>
+<td class="org-left">专注于事实</td>
+<td class="org-left">享受有创意的叙事</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>理解大脑可以改变的程度。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf5525b2" class="outline-4">
+<h4 id="orgf5525b2">认识自己和他人的特征</h4>
+<div class="outline-text-4" id="text-orgf5525b2">
+<ul class="org-ul">
+<li>内向与外向。<br /></li>
+<li>直觉与感知。<br /></li>
+<li>思考与感觉。<br /></li>
+<li>计划于发觉。<br /></li>
+<li>创造者，推进者，改进者，贯彻者于变通者。<br /></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">创造者</td>
+<td class="org-left">提出新想法，新概念</td>
+</tr>
+
+<tr>
+<td class="org-left">推进者</td>
+<td class="org-left">传递这些新想法并推进</td>
+</tr>
+
+<tr>
+<td class="org-left">改进者</td>
+<td class="org-left">挑战想法</td>
+</tr>
+
+<tr>
+<td class="org-left">贯彻者</td>
+<td class="org-left">执行</td>
+</tr>
+
+<tr>
+<td class="org-left">变通者</td>
+<td class="org-left">上面4种的结合</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>关注任务于关乎目标。<br /></li>
+<li>职场人格量表。<br /></li>
+<li>塑造者是能从构想一路走到构想实现的人。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd0d0969" class="outline-4">
+<h4 id="orgd0d0969">无论你要实现什么目标，让合适的人各司其职以支持你的目标，是成功的关键</h4>
+<div class="outline-text-4" id="text-orgd0d0969">
+<ul class="org-ul">
+<li>管理你自己，并协调其他人实现你的目标<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaad6bd7" class="outline-3">
+<h3 id="orgaad6bd7">学习如何有效决策</h3>
+<div class="outline-text-3" id="text-orgaad6bd7">
+</div>
+<div id="outline-container-orga9bbf6e" class="outline-4">
+<h4 id="orga9bbf6e">认识：影响好的决策最大威胁是有害的情绪；决策是一个两步流程（先了解后决定）</h4>
+</div>
+<div id="outline-container-org28bf9b8" class="outline-4">
+<h4 id="org28bf9b8">综合分析眼前的形势</h4>
+<div class="outline-text-4" id="text-org28bf9b8">
+<ul class="org-ul">
+<li>你能做的最重要的决定之一是决定问谁。<br /></li>
+<li>不要听到什么信什么。<br /></li>
+<li>所有东西都是放在眼前看更大。<br /></li>
+<li>不要夸大新东西的好处。<br /></li>
+<li>不要过渡分析细节。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge860c27" class="outline-4">
+<h4 id="orge860c27">综合分析变化中的形式</h4>
+<div class="outline-text-4" id="text-orge860c27">
+<ul class="org-ul">
+<li>始终记住改善事物的速度和水平，以及两者的关系。<br /></li>
+<li>不必过于精确。<br /></li>
+<li>谨记“80/20法则”，并明白关键性的“20%”是什么。<br /></li>
+<li>不要做完美主义者。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5b56c23" class="outline-4">
+<h4 id="org5b56c23">高效地综合考虑各个层次</h4>
+<div class="outline-text-4" id="text-org5b56c23">
+<ul class="org-ul">
+<li>用“基线以上”和“基线以下”来确定谈话位于哪一层。<br /></li>
+<li>谨记，决策需要在合理的层次做出，但也应在各层次之间保持一致。<br /></li>
+<li>把决策做好。<br /></li>
+<li>好的情况。<br /></li>
+<li>不好的情况。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org78fdd15" class="outline-4">
+<h4 id="org78fdd15">综合分析现实，理解如何行动的最好工具是逻辑，理性和常识</h4>
+</div>
+<div id="outline-container-orgf132870" class="outline-4">
+<h4 id="orgf132870">根据预期价值计算做决策</h4>
+<div class="outline-text-4" id="text-orgf132870">
+<ul class="org-ul">
+<li>不管你押对的概率已经有多大，提高你的押对概率始终有价值。<br /></li>
+<li>知道什么时候不要去押注，和知道什么注值得押同样重要。<br /></li>
+<li>最好的选择是好处多于坏处的选择，不是毫无坏处的选择。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb266897" class="outline-4">
+<h4 id="orgb266897">比较更多信息带来的价值和不做决定造成的成本，决定优先顺序</h4>
+<div class="outline-text-4" id="text-orgb266897">
+<ul class="org-ul">
+<li>先把你的“必做之事”做完，再做你的“想做之事”。<br /></li>
+<li>你很可能没有时间处理不重要的事，那最好将它留着，以免自己没时间处理重要的事。<br /></li>
+<li>不要把概率当作可能性。<br /></li>
+<li>成为好决策者的捷径<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcf7c610" class="outline-4">
+<h4 id="orgcf7c610">简化</h4>
+</div>
+<div id="outline-container-org1f967d1" class="outline-4">
+<h4 id="org1f967d1">使用原则</h4>
+<div class="outline-text-4" id="text-org1f967d1">
+<ul class="org-ul">
+<li>让你的思维慢下来，以注意到你正在引用的决策标准。<br /></li>
+<li>将这个标准作为一项原则写下来。<br /></li>
+<li>当结果出现时，评估结果，思考标准，并在下一个“类似情境”出现之前改进标准。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7c05d10" class="outline-4">
+<h4 id="org7c05d10">对你的决策进行可信度加权</h4>
+</div>
+<div id="outline-container-orgda143d3" class="outline-4">
+<h4 id="orgda143d3">把你的原则转换成算法，让计算机和你一起决策</h4>
+</div>
+<div id="outline-container-orgd1a5b0d" class="outline-4">
+<h4 id="orgd1a5b0d">系统化和计算机化的决策</h4>
+</div>
+<div id="outline-container-orge0ff8f9" class="outline-4">
+<h4 id="orge0ff8f9">在深刻理解人工智能之前不要过渡信赖它</h4>
+</div>
+</div>
+<div id="outline-container-orgcacc223" class="outline-3">
+<h3 id="orgcacc223">总结</h3>
+<div class="outline-text-3" id="text-orgcacc223">
+<ul class="org-ul">
+<li>拥抱现实并妥善应对现实。<br /></li>
+<li>实现你愿望的五步流程。<br /></li>
+<li>人与人大不相同<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org49ba3ab" class="outline-2">
+<h2 id="org49ba3ab">第三部分 工作原则</h2>
+<div class="outline-text-2" id="text-org49ba3ab">
+</div>
+<div id="outline-container-org27d8b72" class="outline-3">
+<h3 id="org27d8b72">序</h3>
+<div class="outline-text-3" id="text-org27d8b72">
+</div>
+<div id="outline-container-org7a87e97" class="outline-4">
+<h4 id="org7a87e97">一个机构就像一部机器，主要由两组部件构成：文化和人</h4>
+<div class="outline-text-4" id="text-org7a87e97">
+<ul class="org-ul">
+<li>优秀的机构拥有优秀的人和优秀的文化。<br /></li>
+<li>优秀的人具备高尚的品格和出色的能力。<br /></li>
+<li>优秀的文化不掩盖问题和分歧，而是公开妥善解决，喜欢让想象力驰骋且愿意开创先河。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4bba3be" class="outline-4">
+<h4 id="org4bba3be">严厉之爱有助于成就优异的工作业绩和建立良好的人际关系</h4>
+<div class="outline-text-4" id="text-org4bba3be">
+<ul class="org-ul">
+<li>为了成就伟大事业，对不应妥协的事情就必须坚持立场、寸步不让。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org34cbfb8" class="outline-4">
+<h4 id="org34cbfb8">基于可信度加权的创意择优是实现有效决策的最佳模式</h4>
+</div>
+<div id="outline-container-orgb19f196" class="outline-4">
+<h4 id="orgb19f196">让热情与工作合二为一，并与志同道合者倾力推进</h4>
+</div>
+</div>
+<div id="outline-container-orgd67fd71" class="outline-3">
+<h3 id="orgd67fd71">打造良好的文化</h3>
+<div class="outline-text-3" id="text-orgd67fd71">
+</div>
+<div id="outline-container-org54c07d2" class="outline-4">
+<h4 id="org54c07d2">相信极度求真和极度透明</h4>
+<div class="outline-text-4" id="text-org54c07d2">
+</div>
+<div id="outline-container-org896c23b" class="outline-5">
+<h5 id="org896c23b">不要惧怕了解事实</h5>
+</div>
+<div id="outline-container-org2dec290" class="outline-5">
+<h5 id="org2dec290">为人要正直，也要求他人保持正直</h5>
+<div class="outline-text-5" id="text-org2dec290">
+<ul class="org-ul">
+<li>若不想当面议论别人，背地里也不要说，要批评别人就当面指出来。<br /></li>
+<li>不要因忠诚于个人而阻碍追求事实和整个机构的利益。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf8d8425" class="outline-5">
+<h5 id="orgf8d8425">营造一种氛围，让每个人都有权了解合理之事，不可保持异议却缄默不语</h5>
+<div class="outline-text-5" id="text-orgf8d8425">
+<ul class="org-ul">
+<li>表达出来，并对你的观点负责，否则就走人。<br /></li>
+<li>切记要绝对开诚布公。<br /></li>
+<li>切莫轻信不诚实之人。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb692d8a" class="outline-5">
+<h5 id="orgb692d8a">要保持极度透明</h5>
+<div class="outline-text-5" id="text-orgb692d8a">
+<ul class="org-ul">
+<li>通过透明实现正义。<br /></li>
+<li>分享最难分享的事情。<br /></li>
+<li>要把极度透明的例外事项减到最少。<br /></li>
+<li>确保让因极度透明而获得信息的员工意识到，他们有责任妥善管理好信息，做出明智的权衡。<br /></li>
+<li>要向善于管理信息的人透明，对那些不善管理信息的人，要么不透明，要么将其清除出公司队伍。<br /></li>
+<li>不要向公司的敌人提供敏感信息。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc1a9f71" class="outline-5">
+<h5 id="orgc1a9f71">有意义的人际关系和有意义的工作相互促进，尤其是在极度求真和极度透明的环境下</h5>
+</div>
+</div>
+<div id="outline-container-org81a9b11" class="outline-4">
+<h4 id="org81a9b11">做有意义的工作，发展有意义的人际关系</h4>
+<div class="outline-text-4" id="text-org81a9b11">
+</div>
+<div id="outline-container-orgbe0d01c" class="outline-5">
+<h5 id="orgbe0d01c">忠于共同的使命，而非对此三心二意之人</h5>
+</div>
+<div id="outline-container-org9af1319" class="outline-5">
+<h5 id="org9af1319">对相互交往要一清二楚</h5>
+<div class="outline-text-5" id="text-org9af1319">
+<ul class="org-ul">
+<li>确保员工要多体贴他人，少向别人索取。<br /></li>
+<li>确保人人都理解公平合理与慷慨大方的区别。<br /></li>
+<li>要清楚界限在哪里，并站在公平的另一端。<br /></li>
+<li>酬劳与工作相适应。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd9c6e76" class="outline-5">
+<h5 id="orgd9c6e76">要认识到机构规模过大会对建立有意义的人际关系构成威胁</h5>
+</div>
+<div id="outline-container-org48094e9" class="outline-5">
+<h5 id="org48094e9">要记住很多人只是假装为你工作，而实际上是在追求一己私利</h5>
+</div>
+<div id="outline-container-org45c4a18" class="outline-5">
+<h5 id="org45c4a18">珍视诚实、能力强、表里如一的员工</h5>
+</div>
+</div>
+<div id="outline-container-orgf4ecccf" class="outline-4">
+<h4 id="orgf4ecccf">打造允许犯错，但不容忍罔顾教训、一错再错的文化</h4>
+<div class="outline-text-4" id="text-orgf4ecccf">
+</div>
+<div id="outline-container-orgad68d11" class="outline-5">
+<h5 id="orgad68d11">意识到错误是事物演变过程中的自然连带部分</h5>
+<div class="outline-text-5" id="text-orgad68d11">
+<ul class="org-ul">
+<li>把失败变成好事。<br /></li>
+<li>不要为你自己或他人的错误而懊恼，要珍爱它！<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge60511b" class="outline-5">
+<h5 id="orge60511b">不要纠结于一时的成败，要放眼于达成目标</h5>
+<div class="outline-text-5" id="text-orge60511b">
+<ul class="org-ul">
+<li>不要纠结于埋怨还是赞美，而要专注于准确还是不准确。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2c6f219" class="outline-5">
+<h5 id="org2c6f219">观察错误模式，判断是否因缺点引起</h5>
+</div>
+<div id="outline-container-orgb8741e2" class="outline-5">
+<h5 id="orgb8741e2">记住在经历痛苦后要反思</h5>
+<div class="outline-text-5" id="text-orgb8741e2">
+<ul class="org-ul">
+<li>要能够反思，并确保你的员工也能如此。<br /></li>
+<li>要知道，没有人能客观地看待自己。<br /></li>
+<li>教导并强化吃一堑、长一智的道理。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org19cbdb6" class="outline-5">
+<h5 id="org19cbdb6">知道哪些错误可以接受，哪些错误无法容忍，不要让你的员工犯不可接受的错误</h5>
+</div>
+</div>
+
+<div id="outline-container-org0f26ae2" class="outline-4">
+<h4 id="org0f26ae2">求取共识并坚持</h4>
+<div class="outline-text-4" id="text-org0f26ae2">
+</div>
+<div id="outline-container-org3d86bef" class="outline-5">
+<h5 id="org3d86bef">认识到冲突对建立良好的人际关系至关重要，因为人们正是用冲突来检验各自的原则是否一致以及能否解决彼此的分歧</h5>
+<div class="outline-text-5" id="text-org3d86bef">
+<ul class="org-ul">
+<li>求取共识要不吝时间与精力，因为这是你所能做出的最佳投资。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb33ddb0" class="outline-5">
+<h5 id="orgb33ddb0">知道怎样求取共识和掌控分歧</h5>
+<div class="outline-text-5" id="text-orgb33ddb0">
+<ul class="org-ul">
+<li>把可能的分歧摆到桌面上。<br /></li>
+<li>区分苍白的抱怨和有助于改进工作的诉求。<br /></li>
+<li>要记住每个故事都有另一面。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f26b65" class="outline-5">
+<h5 id="org1f26b65">保持开放心态，同时也要坚定果断</h5>
+<div class="outline-text-5" id="text-org1f26b65">
+<ul class="org-ul">
+<li>区别心态开放和心态封闭的人。<br /></li>
+<li>远离心态封闭的人。<br /></li>
+<li>提防那些羞于承认自己并非无所不知的人。<br /></li>
+<li>确保工作负责人以开放的心态对待问题和他人的意见。<br /></li>
+<li>认识到求取共识是双向的责任。<br /></li>
+<li>实质重于形式。<br /></li>
+<li>自己要通情达理，也期待别人通情达理。<br /></li>
+<li>提建议、提问题与批评是不一样的，所以别混淆。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f8f678" class="outline-5">
+<h5 id="org8f8f678">如果由你主持会议，应把握好对话</h5>
+<div class="outline-text-5" id="text-org8f8f678">
+<ul class="org-ul">
+<li>明确会议的主持人和会议的服务对象。<br /></li>
+<li>表述要清晰准确，以免造成困惑。<br /></li>
+<li>根据目标和优先次序来确定采用什么样的沟通方式。<br /></li>
+<li>主持讨论时要果断、开明。<br /></li>
+<li>在不同层面的讨论对话中穿梭对照。<br /></li>
+<li>谨防跑题。<br /></li>
+<li>坚持对话的逻辑性。<br /></li>
+<li>注意不要因集体决策而丧失个人责任。<br /></li>
+<li>运用两分钟法则避免持续被别人打断。<br /></li>
+<li>当心讲起话来不容置疑的快嘴王。<br /></li>
+<li>让对话善始善终。<br /></li>
+<li>运用沟通手段。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb86a96b" class="outline-5">
+<h5 id="orgb86a96b">伟大的合作如同爵士乐演奏</h5>
+<div class="outline-text-5" id="text-orgb86a96b">
+<ul class="org-ul">
+<li>1+1=3。<br /></li>
+<li>3—5人的效率高于20人。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8feb688" class="outline-5">
+<h5 id="org8feb688">珍惜志同道合者</h5>
+</div>
+<div id="outline-container-org4a3df35" class="outline-5">
+<h5 id="org4a3df35">如果你发现自己无法调和相互间的主要分歧——尤其是价值观层面的——要考虑是否值得维持这种关系</h5>
+</div>
+</div>
+<div id="outline-container-org392e25f" class="outline-4">
+<h4 id="org392e25f">做决策时要从观点的可信度出发</h4>
+<div class="outline-text-4" id="text-org392e25f">
+</div>
+<div id="outline-container-org7da65c9" class="outline-5">
+<h5 id="org7da65c9">采用创意择优，需要你了解每个人观点的长处</h5>
+<div class="outline-text-5" id="text-org7da65c9">
+<ul class="org-ul">
+<li>如果你自己无法成功完成某件事，就不要想着指导别人该如何完成。<br /></li>
+<li>要知道每个人都有自己的观点，但通常不是什么好点子。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org876361f" class="outline-5">
+<h5 id="org876361f">关注可信度最高、与你观点不一致的人，尽量理解其推理过程</h5>
+<div class="outline-text-5" id="text-org876361f">
+<ul class="org-ul">
+<li>要分析人们的可信度，以评价其观点正确的可能性。<br /></li>
+<li>较可信的观点很可能出自以下两种人：（1）至少曾经三次成功解决过相关问题；（2）对所得结论的因果关系分析很有道理。<br /></li>
+<li>若某人并无经验，但其所讲道理似乎符合逻辑且可经受压力测试，则一定要试一试。<br /></li>
+<li>要更关注发言人的推理过程，而非其结论。<br /></li>
+<li>没经验的人也不乏好点子，有时远远胜过有经验的人。<br /></li>
+<li>每个人都应在表达观点时信心满满。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f7db71" class="outline-5">
+<h5 id="org1f7db71">考虑好你要扮演老师、学生、同事中的哪个角色，你应该去说教、提问还是辩论</h5>
+<div class="outline-text-5" id="text-org1f7db71">
+<ul class="org-ul">
+<li>学生理解老师比老师理解学生更重要，尽管二者都重要。<br /></li>
+<li>每个人都有权利和责任尽力了解重要的事情，还必须保持谦逊和非常开放的心态。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46a0d4a" class="outline-5">
+<h5 id="org46a0d4a">要了解人们提出意见的过程和逻辑</h5>
+<div class="outline-text-5" id="text-org46a0d4a">
+<ul class="org-ul">
+<li>无论你向谁提问，对方一般都会提供答案，所以要仔细考虑向谁提问。<br /></li>
+<li>让每个人都可肆意评论其他人的观点，此举低效且浪费时间。<br /></li>
+<li>提防以我以为……为开头的发言。<br /></li>
+<li>系统梳理员工的工作记录，评估其发言的可信度。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org00cf8b6" class="outline-5">
+<h5 id="org00cf8b6">处理分歧务必高效</h5>
+<div class="outline-text-5" id="text-org00cf8b6">
+<ul class="org-ul">
+<li>知道适时终结辩论，推动就下一步措施形成共识。<br /></li>
+<li>可信度加权可以作为工具，但不能取代责任人的决策。<br /></li>
+<li>如果你自己没有时间全面检视每个人的想法，则要明智选取具有可信度的观点。<br /></li>
+<li>若由你负责做决策，要把可信度加权后得出的结论和你自己的想法做比较。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc215495" class="outline-5">
+<h5 id="orgc215495">每个人都有权利和义务去设法了解重要的事情</h5>
+<div class="outline-text-5" id="text-orgc215495">
+<ul class="org-ul">
+<li>沟通是为了获得最佳回应，故应与最相关的人沟通。<br /></li>
+<li>以教育或促成共识为目的的沟通，不仅仅是为了获得最佳答案，故应让更多的人参与。<br /></li>
+<li>要认识到你没有必要凡事都做出判断。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge1a7bff" class="outline-5">
+<h5 id="orge1a7bff">要更关注决策机制是否公允，而非是否如你自己所愿</h5>
+</div>
+</div>
+<div id="outline-container-org04c0d39" class="outline-4">
+<h4 id="org04c0d39">知道如何超越分歧</h4>
+<div class="outline-text-4" id="text-org04c0d39">
+</div>
+<div id="outline-container-orgde6fabd" class="outline-5">
+<h5 id="orgde6fabd">要牢记：相互达成协议时不能忽视原则</h5>
+<div class="outline-text-5" id="text-orgde6fabd">
+<ul class="org-ul">
+<li>每个人都要遵守相同的行为原则。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9b0bba4" class="outline-5">
+<h5 id="org9b0bba4">不要让大家把发牢骚、提建议、公开辩论的权利与决策权相混淆</h5>
+<div class="outline-text-5" id="text-org9b0bba4">
+<ul class="org-ul">
+<li>对决策本身以及决策者提不同意见时，要有大局意识。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf121eb7" class="outline-5">
+<h5 id="orgf121eb7">不要对重大分歧不闻不问</h5>
+<div class="outline-text-5" id="text-orgf121eb7">
+<ul class="org-ul">
+<li>专心协商大事时，别被琐事烦扰。<br /></li>
+<li>不要被分歧束缚住——要么提交上级裁定，要么投票表决！<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgde2f4c0" class="outline-5">
+<h5 id="orgde2f4c0">一旦做出决定，任何人都必须服从，即便个人可能有不同意见</h5>
+<div class="outline-text-5" id="text-orgde2f4c0">
+<ul class="org-ul">
+<li>着眼大局。<br /></li>
+<li>不要让创意择优变成无法无天。<br /></li>
+<li>不要容忍暴民手段。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1cdd2e6" class="outline-5">
+<h5 id="org1cdd2e6">如果创意择优与机构的利益相冲突，就难免会造成危害</h5>
+<div class="outline-text-5" id="text-org1cdd2e6">
+<ul class="org-ul">
+<li>只有在罕见或极端情况下才宣布宵禁，此时可暂不考虑遵守原则。<br /></li>
+<li>当心可能有人会提出为了机构的利益而临时放弃创意择优。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgafb7214" class="outline-5">
+<h5 id="orgafb7214">要知道一旦有权做决定的人不想依原则行事，规矩就会被破坏</h5>
+</div>
+</div>
+</div>
+<div id="outline-container-org291e5a9" class="outline-3">
+<h3 id="org291e5a9">用对人</h3>
+<div class="outline-text-3" id="text-org291e5a9">
+</div>
+<div id="outline-container-org6a58b9f" class="outline-4">
+<h4 id="org6a58b9f">比做什么事更重要的是找对做事的人</h4>
+<div class="outline-text-4" id="text-org6a58b9f">
+</div>
+<div id="outline-container-orged9f358" class="outline-5">
+<h5 id="orged9f358">你最重要的决策是选好工作的责任人</h5>
+<div class="outline-text-5" id="text-orged9f358">
+<ul class="org-ul">
+<li>最重要的责任人是在最高层负责订立目标、规划成果和组织实施的人。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb80bc5c" class="outline-5">
+<h5 id="orgb80bc5c">负最终责任的人应是对行为后果承担责任的人</h5>
+<div class="outline-text-5" id="text-orgb80bc5c">
+<ul class="org-ul">
+<li>确保每个人都有上级领导。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orged5e630" class="outline-5">
+<h5 id="orged5e630">要记住事情背后是人的力量</h5>
+</div>
+</div>
+<div id="outline-container-orga192ce5" class="outline-4">
+<h4 id="orga192ce5">要用对人，因为用人不当的代价高昂</h4>
+<div class="outline-text-4" id="text-orga192ce5">
+</div>
+<div id="outline-container-org9e18a57" class="outline-5">
+<h5 id="org9e18a57">让合适的人做合适的事</h5>
+<div class="outline-text-5" id="text-org9e18a57">
+<ul class="org-ul">
+<li>要考虑你寻找的人应具备什么样的价值观、能力和技艺（按此顺序）。<br /></li>
+<li>要用系统性思维和科学方法招聘人才。<br /></li>
+<li>注意：人与职责要相匹配。<br /></li>
+<li>要找出色的人，而不是此类即可。<br /></li>
+<li>不要凭借你的影响力帮别人找工作。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1770b87" class="outline-5">
+<h5 id="org1770b87">要记住人与人存在差异，认识不同、思维不同使不同的人适合不同工作</h5>
+<div class="outline-text-5" id="text-org1770b87">
+<ul class="org-ul">
+<li>明白如何进行个性评估，并清楚结果含义。<br /></li>
+<li>人容易选择与自己相似的人，因此安排面试官要确保其能发现你想招的人。<br /></li>
+<li>选用那些能客观认识自己的人。<br /></li>
+<li>要记住人一般不会随岁月有太大变化。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org631d47f" class="outline-5">
+<h5 id="org631d47f">对待你的团队要像体育界管理者那样：没人能靠一己之力单独取胜，但每个人都必须战胜对手</h5>
+</div>
+<div id="outline-container-org9718751" class="outline-5">
+<h5 id="org9718751">关注人的过往经历</h5>
+<div class="outline-text-5" id="text-org9718751">
+<ul class="org-ul">
+<li>核查情况。<br /></li>
+<li>学习成绩不能充分证明这个人是否具备你想要的价值观和能力。<br /></li>
+<li>概念思维能力强固然最佳，但经验丰富、业绩出众也很重要。<br /></li>
+<li>警惕不切实际的理想主义者。<br /></li>
+<li>不要假定在别处获得成功的人也同样能胜任你所要求的工作。<br /></li>
+<li>确保你选用的人要品格好、能力强。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2be13e1" class="outline-5">
+<h5 id="org2be13e1">找人不仅是干份具体工作，你还要愿意与其分享你的生活</h5>
+<div class="outline-text-5" id="text-org2be13e1">
+<ul class="org-ul">
+<li>选那些会问很多好问题的人。<br /></li>
+<li>让求职者知道这份工作的阴暗面。<br /></li>
+<li>合作者必是意趣相投之人，但也须是诤友。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb159294" class="outline-5">
+<h5 id="orgb159294">考虑薪酬时，要提供稳定性也要让人看到机会</h5>
+<div class="outline-text-5" id="text-orgb159294">
+<ul class="org-ul">
+<li>依人发薪，而非依工作岗位发薪。<br /></li>
+<li>薪酬至少要大体上与业绩测评结果挂钩。<br /></li>
+<li>薪酬要高于一般水平。<br /></li>
+<li>要更多想着如何把蛋糕做大，而非怎样切蛋糕才能使自己获得最大的一块。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6ebe79a" class="outline-5">
+<h5 id="org6ebe79a">要记住维系伟大的合作关系，比金钱更重要的是体贴和宽厚</h5>
+<div class="outline-text-5" id="text-org6ebe79a">
+<ul class="org-ul">
+<li>对人要宽宏大量，也这样要求别人。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org637ce05" class="outline-5">
+<h5 id="org637ce05">出色的人不容易找，所以要想着怎样留住人</h5>
+</div>
+</div>
+<div id="outline-container-org90e022a" class="outline-4">
+<h4 id="org90e022a">持续培训、测试、评估和调配员工</h4>
+<div class="outline-text-4" id="text-org90e022a">
+</div>
+<div id="outline-container-org78f18a8" class="outline-5">
+<h5 id="org78f18a8">要懂得你和你的下属将经历个人成长</h5>
+<div class="outline-text-5" id="text-org78f18a8">
+<ul class="org-ul">
+<li>认清优缺点后，个人会飞速成长。结果是，职业路径并非当初所料。<br /></li>
+<li>培训引导个人发展。<br /></li>
+<li>授人以渔，而不是授人以鱼，即便这意味着会使他们犯些错。<br /></li>
+<li>经验会形成内化的学习，这是书本学习无法替代的。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org01cb4b2" class="outline-5">
+<h5 id="org01cb4b2">不断提供反馈</h5>
+</div>
+<div id="outline-container-org6feb6df" class="outline-5">
+<h5 id="org6feb6df">准确评价人，不做好好先生</h5>
+<div class="outline-text-5" id="text-org6feb6df">
+<ul class="org-ul">
+<li>到最后，准确和善意是一回事。<br /></li>
+<li>正确运用褒贬。<br /></li>
+<li>考虑准确度，而非后果。<br /></li>
+<li>做出准确评价。<br /></li>
+<li>要像从成功中学习一样从失败中学习。<br /></li>
+<li>多数人做过的事和他们正在做的事，并不像他们认为的那么重要。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93d868d" class="outline-5">
+<h5 id="org93d868d">严厉的爱既是最难给的，也是最重要的爱（因为它很不受欢迎）</h5>
+<div class="outline-text-5" id="text-org93d868d">
+<ul class="org-ul">
+<li>虽然多数人爱听好话，但准确的批评更加难得。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5539508" class="outline-5">
+<h5 id="org5539508">对人的观察不要讳莫如深</h5>
+<div class="outline-text-5" id="text-org5539508">
+<ul class="org-ul">
+<li>从具体细节中综合判断。<br /></li>
+<li>从点数中发掘有用信息。<br /></li>
+<li>对某个点数挖掘别太过度。<br /></li>
+<li>采取业绩调查、绩效指标和正式考核等评价工具来记录一个人的所有表现。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9834c3e" class="outline-5">
+<h5 id="org9834c3e">让学习过程变得开放、有成长性和不断重复</h5>
+<div class="outline-text-5" id="text-org9834c3e">
+<ul class="org-ul">
+<li>绩效指标要清晰公正。<br /></li>
+<li>鼓励员工客观反思自己的业绩。<br /></li>
+<li>要有全局观。<br /></li>
+<li>对业绩考核要从具体案例开始，找出规律，与被考核人一起探究证据以求取共识。<br /></li>
+<li>评估人时，你可能犯的两个最大错误是：对自己的评估过度自信，无法取得共识。<br /></li>
+<li>达成评估共识不能以等级论。<br /></li>
+<li>通过针对错误及其根源的坦诚对话来了解你的员工，也让员工了解你。<br /></li>
+<li>确保员工做好工作，不必事无巨细进行监督。<br /></li>
+<li>改变是很难的。<br /></li>
+<li>通过发现人的缺点来帮人渡过难关。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org98c8d5a" class="outline-5">
+<h5 id="org98c8d5a">了解人们怎样处事和判断这种处事方式能否取得好结果，这比了解他们做了什么更重要</h5>
+<div class="outline-text-5" id="text-org98c8d5a">
+<ul class="org-ul">
+<li>如果一个人工作干得不怎么样，要考虑这是由于学习不够，还是能力不足。<br /></li>
+<li>培训和测试一个业绩不佳的员工时，常见的错误在于，只看其是否掌握所需技能，而不是评估他们的能力。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org832ddc9" class="outline-5">
+<h5 id="org832ddc9">如果你跟某人真的就他们的缺点取得共识，这些缺点可能真的存在</h5>
+<div class="outline-text-5" id="text-org832ddc9">
+<ul class="org-ul">
+<li>评判员工时，不必达到没有一丝疑点的境界。<br /></li>
+<li>用不了一年时间，你就能了解一个人是什么样的人，他们是否适合其岗位。<br /></li>
+<li>在员工任职期间持续评估。<br /></li>
+<li>要像评估应聘者一样严格评估员工。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0de843b" class="outline-5">
+<h5 id="org0de843b">培训、保护或辞退员工，不要修复</h5>
+<div class="outline-text-5" id="text-org0de843b">
+<ul class="org-ul">
+<li>不要让员工尸位素餐。<br /></li>
+<li>准备好朝你爱的人开枪。<br /></li>
+<li>某个人不适合某个岗位时，要考虑是否有更适合他的空缺，还是你需要让他们离开公司。<br /></li>
+<li>要慎重对待把不称职的员工换到新岗位。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbc9ecfe" class="outline-5">
+<h5 id="orgbc9ecfe">换岗是为了人尽其才，有利于整个团队</h5>
+<div class="outline-text-5" id="text-orgbc9ecfe">
+<ul class="org-ul">
+<li>换到新岗位前，要让员工完成职责。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8638be2" class="outline-5">
+<h5 id="org8638be2">不要降低标准</h5>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org38e2e6e" class="outline-3">
+<h3 id="org38e2e6e">建造并进化你的机器</h3>
+<div class="outline-text-3" id="text-org38e2e6e">
+</div>
+<div id="outline-container-org7ce6c1c" class="outline-4">
+<h4 id="org7ce6c1c">像操作一部机器那样进行管理以实现目标</h4>
+<div class="outline-text-4" id="text-org7ce6c1c">
+</div>
+<div id="outline-container-org3d7fe45" class="outline-5">
+<h5 id="org3d7fe45">从高层面俯视你的机器和你自己</h5>
+<div class="outline-text-5" id="text-org3d7fe45">
+<ul class="org-ul">
+<li>不断把结果和你的目标进行对照。<br /></li>
+<li>出色的管理者就是一家机构的工程师。<br /></li>
+<li>制定量化评价工具。<br /></li>
+<li>要注意别把精力过多用于应付各种事务，而忽视你的机器。<br /></li>
+<li>别被突发事件分散注意力。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5024088" class="outline-5">
+<h5 id="org5024088">应对每个问题的手段都要服务于两种目的：（1）让你与目标更为接近；（2）能够对机器（人和设计）进行培训和测试</h5>
+<div class="outline-text-5" id="text-org5024088">
+<ul class="org-ul">
+<li>经历的每件事都是一个案例。<br /></li>
+<li>如果出现问题，要在两个层面进行讨论：（1）机器层面（该结果怎样产生）；（2）案例层面（如何应对）。<br /></li>
+<li>制定规则时，要解释清楚背后的原则。<br /></li>
+<li>你的政策应当是你的原则的自然延伸。<br /></li>
+<li>尽管好的原则、政策几乎都会提供良好的指南，但要记住每条规则都会有例外。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46ce70b" class="outline-5">
+<h5 id="org46ce70b">了解管理、微观管理和不管理的区别</h5>
+<div class="outline-text-5" id="text-org46ce70b">
+<ul class="org-ul">
+<li>管理者必须确保自己负责的领域运转有效。<br /></li>
+<li>管理你的下属就好比是在一起滑雪。<br /></li>
+<li>优秀的滑雪者当滑雪教练要比新手当教练强。<br /></li>
+<li>你应当把具体工作授权给员工做。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge6cfbdc" class="outline-5">
+<h5 id="orge6cfbdc">了解员工及其工作的动力，因为人是你最重要的资源</h5>
+<div class="outline-text-5" id="text-orge6cfbdc">
+<ul class="org-ul">
+<li>经常了解那些对你和公司重要的人。<br /></li>
+<li>对员工的信心应通过了解而来，而不是随意猜测。<br /></li>
+<li>根据你的信心大小进行不同程度的调查了解。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org25f7f23" class="outline-5">
+<h5 id="org25f7f23">明确职责</h5>
+<div class="outline-text-5" id="text-org25f7f23">
+<ul class="org-ul">
+<li>记住谁负什么责任。<br /></li>
+<li>防止角色错位。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf711476" class="outline-5">
+<h5 id="orgf711476">深入探究你的机器以了解你能从它那里期待些什么</h5>
+<div class="outline-text-5" id="text-orgf711476">
+<ul class="org-ul">
+<li>获取足够程度的理解。<br /></li>
+<li>不要保持太远的距离。<br /></li>
+<li>利用每日更新来了解团队成员的行为和思想。<br /></li>
+<li>问责以了解问题会不会突然发生。<br /></li>
+<li>问责过程要触及你直接下属的下一级。<br /></li>
+<li>允许你下属的下属随时越级向你汇报。<br /></li>
+<li>别想当然地认为员工的答案都是正确的。<br /></li>
+<li>要学会明察秋毫。<br /></li>
+<li>让问责过程透明，而非私下问责。<br /></li>
+<li>欢迎被问责。<br /></li>
+<li>对事物的看法和思维方式截然不同的人，相互间的沟通通常不畅。<br /></li>
+<li>不放过一个可疑线索。<br /></li>
+<li>解决问题有很多办法。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd5a9710" class="outline-5">
+<h5 id="orgd5a9710">像公司的拥有者那样思考，要求你的同事也这样做</h5>
+<div class="outline-text-5" id="text-orgd5a9710">
+<ul class="org-ul">
+<li>休假也不应忘记责任。<br /></li>
+<li>强迫自己和员工做困难的事。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org472a957" class="outline-5">
+<h5 id="org472a957">承认并应对好关键人物风险</h5>
+</div>
+<div id="outline-container-orged19fac" class="outline-5">
+<h5 id="orged19fac">不要对所有人等同视之，要合理对待、有所区别</h5>
+<div class="outline-text-5" id="text-orged19fac">
+<ul class="org-ul">
+<li>别轻易被迫让步。<br /></li>
+<li>关心员工。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc743167" class="outline-5">
+<h5 id="orgc743167">优秀的领导一般不是表面上看起来那么简单</h5>
+<div class="outline-text-5" id="text-orgc743167">
+<ul class="org-ul">
+<li>既要弱，又要强。<br /></li>
+<li>不要担心你的员工是不是喜欢你，不要让他们告诉你要如何做事。<br /></li>
+<li>不要发号施令让别人服从你，要努力为人所理解并理解他人，以达成共识。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb9fbf82" class="outline-5">
+<h5 id="orgb9fbf82">确保你和你的员工承担相应的责任，也欢迎别人监督你负起责任</h5>
+<div class="outline-text-5" id="text-orgb9fbf82">
+<ul class="org-ul">
+<li>如果你已经与别人就某事的做法达成一致，要确保其按此操作，除非你们就改变做法已形成共识。<br /></li>
+<li>区分两种不同的失败情况，一种是没有遵守约定，第二种是根本没立约定。<br /></li>
+<li>避免下沉现象。<br /></li>
+<li>当心那些混淆目标和任务的人，因为如果他们分不清楚，你就不能信任他们并给他们委派职责。<br /></li>
+<li>当心缺乏重点、徒劳无益的理论上应当。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga78a9ee" class="outline-5">
+<h5 id="orga78a9ee">清楚地传达计划，用明确的量化指标对进展予以评估</h5>
+<div class="outline-text-5" id="text-orga78a9ee">
+<ul class="org-ul">
+<li>继续推进之前要回顾计划执行情况。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2a0240a" class="outline-5">
+<h5 id="org2a0240a">在无法充分完成职责时，将问题提交给上级解决，让你的下属也积极主动这样做</h5>
+</div>
+</div>
+<div id="outline-container-orgc7a1f73" class="outline-4">
+<h4 id="orgc7a1f73">发现问题，不容忍问题</h4>
+<div class="outline-text-4" id="text-orgc7a1f73">
+</div>
+<div id="outline-container-org01263ea" class="outline-5">
+<h5 id="org01263ea">如果你不担心，你就要担心了；如果你担心，你就不必担心</h5>
+</div>
+<div id="outline-container-orgc5883c7" class="outline-5">
+<h5 id="orgc5883c7">对机器进行设计和监督，确保能发现哪些事情做得好、哪些不够好，否则就自己动手做</h5>
+<div class="outline-text-5" id="text-orgc5883c7">
+<ul class="org-ul">
+<li>指定员工负责发现问题，给他们时间进行审查，确保他们有独立的报告路线能够反映问题，而不必担心揭丑的后果。<br /></li>
+<li>当心温水煮青蛙综合征。<br /></li>
+<li>当心从众心理。即便没有人担心，也不表明没有问题存在。<br /></li>
+<li>发现问题时，要把结果与目标相对照。<br /></li>
+<li>尝尝汤的味道。<br /></li>
+<li>尽量让更多双眼睛来寻找问题。<br /></li>
+<li>打开瓶塞。<br /></li>
+<li>最熟悉工作的人最有发言权。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org232d4a8" class="outline-5">
+<h5 id="org232d4a8">在分析问题时要非常具体，不要泛泛而谈</h5>
+<div class="outline-text-5" id="text-org232d4a8">
+<ul class="org-ul">
+<li>不要用我们他们这种不指名道姓的说法，以掩盖个人责任。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf406d3b" class="outline-5">
+<h5 id="orgf406d3b">不要害怕解决难题</h5>
+<div class="outline-text-5" id="text-orgf406d3b">
+<ul class="org-ul">
+<li>必须理解，那些有良好解决方案的问题不同于没有解决方案的问题。<br /></li>
+<li>以机器的方式来发现问题。<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc1905ab" class="outline-4">
+<h4 id="orgc1905ab">诊断问题，探究根源</h4>
+<div class="outline-text-4" id="text-orgc1905ab">
+</div>
+<div id="outline-container-orgeb01b3c" class="outline-5">
+<h5 id="orgeb01b3c">为了做好诊断，要先问以下问题：1.结果是好是坏？2.谁对结果负责？3.如果结果不好，是因为责任人能力不够还是机器设计有问题？</h5>
+<div class="outline-text-5" id="text-orgeb01b3c">
+<ul class="org-ul">
+<li>问自己：还有人能以别的方式完成这个工作吗？<br /></li>
+<li>找出五步流程中的哪一步出了问题。<br /></li>
+<li>找出哪些原则被违反了。<br /></li>
+<li>避免事后诸葛亮。<br /></li>
+<li>不要把某人所处环境的优劣与其应对方法的优劣混为一谈。<br /></li>
+<li>要认识到这样的事实，别人不知道怎么做，并不意味着你就能知道怎么做。<br /></li>
+<li>问题的根源不是一次行动而是一个原因。<br /></li>
+<li>为了分清楚哪些是人手不足的问题，哪些是能力不够的问题，要考虑如果在特定岗位上人手充足会把工作做得如何。<br /></li>
+<li>要记住管理者通常出于以下5个原因之一（或更多）而失败或未能达成目标。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org25b620f" class="outline-5">
+<h5 id="org25b620f">通过持续诊断来保持综合判断的与时俱进</h5>
+</div>
+<div id="outline-container-orgeb9953d" class="outline-5">
+<h5 id="orgeb9953d">诊断应当有成果</h5>
+<div class="outline-text-5" id="text-orgeb9953d">
+<ul class="org-ul">
+<li>如果让同样的人做同样的事，会产生同样的结果。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc7b8f07" class="outline-5">
+<h5 id="orgc7b8f07">使用如下的深挖技巧，对出现问题的部门或下级部门形成一个基于80/20法则的印象</h5>
+</div>
+<div id="outline-container-orgc75ff5b" class="outline-5">
+<h5 id="orgc75ff5b">诊断是实现进步和建立良好人际关系的基础</h5>
+</div>
+</div>
+<div id="outline-container-org0599dfa" class="outline-4">
+<h4 id="org0599dfa">改进机器，解决问题</h4>
+<div class="outline-text-4" id="text-org0599dfa">
+</div>
+<div id="outline-container-org6c21b35" class="outline-5">
+<h5 id="org6c21b35">建造你的机器</h5>
+</div>
+<div id="outline-container-orgdbaaa5d" class="outline-5">
+<h5 id="orgdbaaa5d">把原则和落实原则的方法系统化</h5>
+<div class="outline-text-5" id="text-orgdbaaa5d">
+<ul class="org-ul">
+<li>认真思考你做决策所依据的标准，据此建造优秀的决策机器。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5e6fc48" class="outline-5">
+<h5 id="org5e6fc48">好的计划应该像一部电影脚本</h5>
+<div class="outline-text-5" id="text-org5e6fc48">
+<ul class="org-ul">
+<li>让自己一段时间置身于痛苦的位置，更深入地理解你为了什么而设计。<br /></li>
+<li>设想其他可能的备选机器及其运行的结果，然后做出选择。<br /></li>
+<li>不仅要考虑第一轮的后果，更要考虑第二、第三轮的后果。<br /></li>
+<li>定期召开会议，让公司像瑞士钟表一样精准运行。<br /></li>
+<li>一部好的机器要考虑人可能并不完美这一因素。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf1ff4af" class="outline-5">
+<h5 id="orgf1ff4af">设计是一个循环往复的过程，在不满意的现在与美好的未来之间有一个不断努力的阶段</h5>
+<div class="outline-text-5" id="text-orgf1ff4af">
+<ul class="org-ul">
+<li>懂得清洗风暴的力量。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga6bd584" class="outline-5">
+<h5 id="orga6bd584">在设计组织结构时，要围绕目标而不是围绕任务</h5>
+<div class="outline-text-5" id="text-orga6bd584">
+<ul class="org-ul">
+<li>自上而下地建设组织。<br /></li>
+<li>每个人都必须由一位具有可信度的、奉行高标准的人来监督。<br /></li>
+<li>金字塔塔尖上的人应当有管理直接下属的技能和专注力，并对下属的工作有深入理解。<br /></li>
+<li>在设计组织时，运用五步流程是通往成功的捷径，不同员工能在不同步骤发挥良好作用。<br /></li>
+<li>不要让一个机构去适应员工。<br /></li>
+<li>要考虑机构的规模多大为宜。<br /></li>
+<li>按照万有引力定律，以最合乎逻辑的办法来划分业务部门及其下属部门。<br /></li>
+<li>让各部门尽可能自给自足，以便控制所需的资源。<br /></li>
+<li>为保证联络和沟通顺利，高级管理人员与基层管理人员的比例、基层管理人员与其直接下属的比例应当控制在一定范围。<br /></li>
+<li>在设计中要考虑继任计划和培训安排。<br /></li>
+<li>不要仅盯着你自己的工作，还要关注如果你不在场，工作会如何开展。<br /></li>
+<li>为确保正确完成关键任务，宁要做两遍而不要二次确认。<br /></li>
+<li>使用顾问要明智，防止过度依赖顾问。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6742edb" class="outline-5">
+<h5 id="org6742edb">描绘一幅金字塔形的组织架构图，任何两条由塔顶向下连接塔底的线不应产生交叉</h5>
+<div class="outline-text-5" id="text-org6742edb">
+<ul class="org-ul">
+<li>当遇到跨部门或跨附属部门的问题时，让金字塔交汇点上的人来处理。<br /></li>
+<li>不要替别的部门的人完成工作，也不要从其他部门抽人来为你工作，除非你征得该部门管理者的同意。<br /></li>
+<li>防止部门错位。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3882fbe" class="outline-5">
+<h5 id="org3882fbe">必要时可建立护栏，但最好不要有护栏</h5>
+<div class="outline-text-5" id="text-org3882fbe">
+<ul class="org-ul">
+<li>不要指望人们能意识到并消除自己的盲点。<br /></li>
+<li>考虑三叶草式的设计。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd1d8d86" class="outline-5">
+<h5 id="orgd1d8d86">保持战略规划不变，在环境允许的情况下可以进行适当的战术微调</h5>
+<div class="outline-text-5" id="text-orgd1d8d86">
+<ul class="org-ul">
+<li>不要让权宜之计超越战略目标。<br /></li>
+<li>同时考虑大局和细节，理解二者之间的联系。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org67d8f95" class="outline-5">
+<h5 id="org67d8f95">保持适当的监控，让谎言没有可乘之机</h5>
+<div class="outline-text-5" id="text-org67d8f95">
+<ul class="org-ul">
+<li>进行调查并让员工知道你将开展调查。<br /></li>
+<li>要知道如果没有警察（审计人员），法律就毫无意义。<br /></li>
+<li>当心橡皮图章。<br /></li>
+<li>按你的要求花钱的人在花钱上可能会大手大脚。<br /></li>
+<li>通过杀鸡儆猴阻止不良行为。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6ecf918" class="outline-5">
+<h5 id="org6ecf918">报告路线和职责描述要尽可能清晰</h5>
+<div class="outline-text-5" id="text-org6ecf918">
+<ul class="org-ul">
+<li>不要根据头衔，而要根据工作流程设计和人员的能力分配职责。<br /></li>
+<li>要不断思考如何产生以小博大的杠杆效应。<br /></li>
+<li>雇用少数聪明人才并赋予他们最好的技术手段，要远胜于雇用大量普通人并配给一般的技术。<br /></li>
+<li>使用助手来提高效率。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb0aa943" class="outline-5">
+<h5 id="orgb0aa943">要知道几乎做每件事所花费的时间和资金都比你预期的要多</h5>
+</div>
+</div>
+<div id="outline-container-orgab17eb1" class="outline-4">
+<h4 id="orgab17eb1">按既定计划行事</h4>
+<div class="outline-text-4" id="text-orgab17eb1">
+</div>
+<div id="outline-container-orgee3a422" class="outline-5">
+<h5 id="orgee3a422">朝着令你和你的机构振奋的目标去奋斗，要考虑怎样把任务与那些目标挂钩</h5>
+<div class="outline-text-5" id="text-orgee3a422">
+<ul class="org-ul">
+<li>协调一致激励大家前行。<br /></li>
+<li>别冲动，磨刀不误砍柴工。<br /></li>
+<li>寻找有创意、聪颖的解决方案。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga077c64" class="outline-5">
+<h5 id="orga077c64">要意识到每个人都忙得不可开交</h5>
+<div class="outline-text-5" id="text-orga077c64">
+<ul class="org-ul">
+<li>不要灰心丧气。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb71b3c" class="outline-5">
+<h5 id="orgdb71b3c">使用检查清单</h5>
+<div class="outline-text-5" id="text-orgdb71b3c">
+<ul class="org-ul">
+<li>不要把检查清单和个人责任相混淆。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org599117b" class="outline-5">
+<h5 id="org599117b">要留出时间休整</h5>
+</div>
+<div id="outline-container-orgea0c8ec" class="outline-5">
+<h5 id="orgea0c8ec">鸣钟庆祝</h5>
+</div>
+</div>
+<div id="outline-container-org2f28311" class="outline-4">
+<h4 id="org2f28311">运用工具和行为准则工作</h4>
+<div class="outline-text-4" id="text-org2f28311">
+</div>
+<div id="outline-container-orga1660ff" class="outline-5">
+<h5 id="orga1660ff">把系统化的原则嵌入工具以践行创意择优具有特别重要的价值</h5>
+<div class="outline-text-5" id="text-orga1660ff">
+<ul class="org-ul">
+<li>为了促进真正的行为改变，必须内化学习或变成习惯。<br /></li>
+<li>利用工具搜集数据，经过处理形成结论和行动。<br /></li>
+<li>把原则阐述清楚，运用各种工具和计划来推进实施，形成信任、公平的氛围，使任何结论都可以通过跟踪其背后的逻辑和数据来加以评估。<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgac2292f" class="outline-4">
+<h4 id="orgac2292f">千万别忽视了公司治理</h4>
+<div class="outline-text-4" id="text-orgac2292f">
+</div>
+<div id="outline-container-org396c96d" class="outline-5">
+<h5 id="org396c96d">为了取得成功，所有机构都必须建立制衡机制</h5>
+<div class="outline-text-5" id="text-org396c96d">
+<ul class="org-ul">
+<li>即使在创意择优下，靠观点胜出也不是分派责任和权力的唯一决定因素。<br /></li>
+<li>要确保公司里没有任何人比体系更强大，也没有任何人重要到不可替代。<br /></li>
+<li>当心出现诸侯割据。<br /></li>
+<li>设计一个机构的组织架构和规则时，要确保制衡机制能发挥作用。<br /></li>
+<li>确保报告路线清晰。<br /></li>
+<li>决策权归属要清晰。<br /></li>
+<li>要确保从事履职评估的人：（1）有时间掌握被评估对象工作情况的全面信息；（2）有能力实施评估；（3）没有利害冲突阻碍其有效行使监督权。<br /></li>
+<li>决策者能够接触做决策所需的信息，但必须守信用、妥善安全保管信息。<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org787b8a0" class="outline-5">
+<h5 id="org787b8a0">在创意择优下，CEO单人决策没有集体决策好</h5>
+</div>
+<div id="outline-container-org4db074a" class="outline-5">
+<h5 id="org4db074a">原则、规矩、制衡等组成的治理体系不能取代出色的伙伴关系</h5>
+</div>
+</div>
+<div id="outline-container-org3342711" class="outline-4">
+<h4 id="org3342711">将工作原则融会贯通</h4>
+<div class="outline-text-4" id="text-org3342711">
+<ul class="org-ul">
+<li>坦诚自己最诚实的想法，让大家公开讨论。<br /></li>
+<li>理性地表述分歧，以便大家进行高质量的辩论，拓展思路，尽量形成最优的集体决策。<br /></li>
+<li>用创意择优来处理不同意见<br /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgac2a9e0" class="outline-2">
+<h2 id="orgac2a9e0">其他备注</h2>
+</div>
+<div id="outline-container-orgbff5946" class="outline-2">
+<h2 id="orgbff5946">参考</h2>
+<div class="outline-text-2" id="text-orgbff5946">
+<ul class="org-ul">
+<li><a href="https://book.douban.com/review/10347036/" target="_blank">原则</a><br /></li>
+</ul>
+
+<div class="post-copyright">
+<p>Author: josephzeng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-11 Thu&gt;</span></span><br />
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2021-02-11 Thu 00:00 <br />Last updated: 2021-02-11 Thu 15:32 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
+</div>
+</body>
+</html>
