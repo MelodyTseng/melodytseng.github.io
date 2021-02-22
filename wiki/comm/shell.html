@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2021-02-21 Sun 20:20 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shell</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员"
+ />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<link rel="stylesheet" type="text/css" href="/static/style/theme2.css"/>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Shell</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org673200c">序</a>
+<ul>
+<li><a href="#org2e2541f">shell命令解析流程</a></li>
+<li><a href="#orgf9c4342">常见命令</a>
+<ul>
+<li><a href="#orgf4af9b0">文本处理</a></li>
+<li><a href="#org5023559">其他常用命令</a></li>
+</ul>
+</li>
+<li><a href="#org63e5c78">学会看手册</a></li>
+</ul>
+</li>
+<li><a href="#orgd11c71b">初探</a>
+<ul>
+<li><a href="#org8db8cdc">原则</a></li>
+<li><a href="#orgda60634">规范</a></li>
+<li><a href="#org96600fd">执行</a></li>
+<li><a href="#orgfa2dcde">变量</a></li>
+<li><a href="#org05b8f54">条件判断</a></li>
+<li><a href="#org3c435d8">循环</a></li>
+<li><a href="#orga61cf39">参考</a></li>
+</ul>
+</li>
+<li><a href="#orgb587ee5">日常使用</a>
+<ul>
+<li><a href="#orgcf78d29">一些不好的习惯</a></li>
+<li><a href="#org5f58d80">一些好的习惯</a></li>
+<li><a href="#org8c16965">一些容易混淆的概念</a>
+<ul>
+<li><a href="#orgc366f8f">环境变量</a></li>
+</ul>
+</li>
+<li><a href="#org96510f6">技巧</a></li>
+</ul>
+</li>
+<li><a href="#orgd6fc5b7">参考</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org673200c" class="outline-2">
+<h2 id="org673200c">序</h2>
+<div class="outline-text-2" id="text-org673200c">
+<p>
+<font color="red">持续更新.......</font><br />
+</p>
+</div>
+<div id="outline-container-org2e2541f" class="outline-3">
+<h3 id="org2e2541f">shell命令解析流程</h3>
+</div>
+<div id="outline-container-orgf9c4342" class="outline-3">
+<h3 id="orgf9c4342">常见命令</h3>
+<div class="outline-text-3" id="text-orgf9c4342">
+</div>
+<div id="outline-container-orgf4af9b0" class="outline-4">
+<h4 id="orgf4af9b0">文本处理</h4>
+<div class="outline-text-4" id="text-orgf4af9b0">
+<ul class="org-ul">
+<li>grep<br /></li>
+<li>sed<br /></li>
+<li>awk<br /></li>
+<li>sort<br /></li>
+<li>diff<br /></li>
+<li>vi<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5023559" class="outline-4">
+<h4 id="org5023559">其他常用命令</h4>
+<div class="outline-text-4" id="text-org5023559">
+<ul class="org-ul">
+<li>crontab<br /></li>
+<li>curl 支持ftp，http等多种协议处理<br /></li>
+<li>find<br /></li>
+<li>ftp<br /></li>
+<li>file 查看文件类型<br /></li>
+<li>free<br /></li>
+<li>lsof  查看打开的文件（文件被哪个进程打开；进程打开了哪些文件）<br /></li>
+<li>jq 处理json<br /></li>
+<li>pgrep<br /></li>
+<li>ps<br /></li>
+<li>top<br /></li>
+<li>tar<br /></li>
+<li>tcpdump<br /></li>
+<li>rsync 文件拷贝同步，支持远程拷贝，使用差量快速同步<br /></li>
+<li>df<br /></li>
+<li>du<br /></li>
+<li>bc 强大的可编程计算器<br /></li>
+<li>md5sum<br /></li>
+<li>hexdump<br /></li>
+<li>usradd<br /></li>
+<li>usrmod<br /></li>
+<li>chown<br /></li>
+<li>chmod<br /></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org63e5c78" class="outline-3">
+<h3 id="org63e5c78">学会看手册</h3>
+<div class="outline-text-3" id="text-org63e5c78">
+<p>
+命令有很多，而且选项也很多，单靠记忆是很难全部记住的。所以要学会 <font color="red">RTFM</font>。下面是看手册也的一些基本要点：<br />
+</p>
+<ul class="org-ul">
+<li><b><font color="red">man man</font></b><br /></li>
+<li>手册页<br /></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">The table below shows the section numbers of the manual followed by the types  of  pages  they contain.
+
+1   Executable programs or shell commands
+2   System calls <span style="color: #51afef;">(</span><span style="color: #51afef;">functions</span> provided by the kernel<span style="color: #51afef;">)</span>
+3   Library calls <span style="color: #51afef;">(</span><span style="color: #51afef;">functions</span> within program libraries<span style="color: #51afef;">)</span>
+4   Special files <span style="color: #51afef;">(</span>usually found<span style="color: #51afef;"> in</span> /dev)
+5   File formats and conventions eg /etc/passwd
+6   Games
+7   Miscellaneous <span style="color: #c678dd;">(</span>including macro packages and conventions<span style="color: #c678dd;">)</span>, e.g. man<span style="color: #c678dd;">(</span>7<span style="color: #c678dd;">)</span>, groff<span style="color: #c678dd;">(</span>7<span style="color: #c678dd;">)</span>
+8   System administration commands <span style="color: #c678dd;">(</span>usually only for root<span style="color: #c678dd;">)</span>
+9   Kernel routines <span style="color: #c678dd;">[</span>Non standard<span style="color: #c678dd;">]</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd11c71b" class="outline-2">
+<h2 id="orgd11c71b">初探</h2>
+<div class="outline-text-2" id="text-orgd11c71b">
+</div>
+<div id="outline-container-org8db8cdc" class="outline-3">
+<h3 id="org8db8cdc">原则</h3>
+<div class="outline-text-3" id="text-org8db8cdc">
+<ul class="org-ul">
+<li>一次做好一件事<br /></li>
+<li>处理文本，不要处理二进制数据<br />
+文本易懂，而且可用的工具更多。<br /></li>
+<li>使用正则表达式<br />
+使用正则，功能会更强大。<br /></li>
+<li>默认使用标准输入/输出<br />
+为了和其他工具在管道中使用<br /></li>
+<li>避免喋喋不休<br />
+仅输出必要的信息。unix工具程序遵循你叫它做什么，它就做什么的设计哲学。它们不会问“Are you sure?”<br /></li>
+<li>输出格式必须与可接受的输入格式一致<br />
+保持输入格式一致，以便其他工具可以继续处理<br /></li>
+<li>让工具去做困难的部分<br />
+尽量使用已有成熟的工具<br /></li>
+<li>构建特定工具前，先想一想<br />
+是否有必要，其他人是否也要做，是否这个特殊的要求是一个一般的要求的特例？<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgda60634" class="outline-3">
+<h3 id="orgda60634">规范</h3>
+<div class="outline-text-3" id="text-orgda60634">
+<p>
+可以参考<a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-shell-styleguide/contents/" target="_blank"> google shell脚本编程规范</a><br />
+这里特别提两点，变量名使用小写加小划线，环境变量以及全局变量放开头，并用大写加下划线；<br />
+shell脚本不需要用<font style="background-color:#f3f4f4;padding:0 2px 0 2px">.sh</font>作为结尾，除非是作为库函数使用，而且作为库函数使用时，不需要有执行权限。之所以不需要以<font style="background-color:#f3f4f4;padding:0 2px 0 2px">.sh</font>结尾的原因在于，文件后缀对于<br />
+Linux下的可执行文件没有特殊意义，另外，脚本有可能使用其他语言重写，调用方只需要知道脚本的功能，没有必要知道脚本的编写语言。<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org96600fd" class="outline-3">
+<h3 id="org96600fd">执行</h3>
+<div class="outline-text-3" id="text-org96600fd">
+<p>
+Linux在执行命令的时候，首先会判断命令是否是一个可执行的二进制文件，如果是，则直接执行。如果不是且文件以`#!`开头，则把该命令作为一个脚本执行（解释器文件）。并以`#!`后面指定的命令作为解释器。<br />
+例子<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #747474;">#</span><span style="color: #747474;">!/path/to/</span><span style="color: #51afef;">cmd</span><span style="color: #747474;"> -pf</span>
+script content comes here...
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfa2dcde" class="outline-3">
+<h3 id="orgfa2dcde">变量</h3>
+<div class="outline-text-3" id="text-orgfa2dcde">
+<p>
+bash支持定义readonly变量，整型变量等。<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org05b8f54" class="outline-3">
+<h3 id="org05b8f54">条件判断</h3>
+<div class="outline-text-3" id="text-org05b8f54">
+<p>
+bash支持if条件判断(条件测试包括文件是否存在，命令是否执行成功等。<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org3c435d8" class="outline-3">
+<h3 id="org3c435d8">循环</h3>
+<div class="outline-text-3" id="text-org3c435d8">
+<p>
+ash支持for以及while循环语句。<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orga61cf39" class="outline-3">
+<h3 id="orga61cf39">参考</h3>
+</div>
+</div>
+<div id="outline-container-orgb587ee5" class="outline-2">
+<h2 id="orgb587ee5">日常使用</h2>
+<div class="outline-text-2" id="text-orgb587ee5">
+</div>
+<div id="outline-container-orgcf78d29" class="outline-3">
+<h3 id="orgcf78d29">一些不好的习惯</h3>
+<div class="outline-text-3" id="text-orgcf78d29">
+<ul class="org-ul">
+<li>可执行脚本以<font style="background-color:#f3f4f4;padding:0 2px 0 2px">.sh</font>后缀结尾<br /></li>
+<li>脚本第一行不是<font style="background-color:#f3f4f4;padding:0 2px 0 2px">#!/bin/bash</font><br /></li>
+<li>喜欢使用root用户或其他具有超级用户权限的用户操作<br />
+这样做的坏处首先是不安全，跳过了系统按用户以及权限划分的边界，很容易误操作。打乱了系统的管理。同时，使用超级用户进行日常操作，就像一个野蛮人一<br />
+样，侵犯了正常操作的普通用户以及造成不便。在公共服务器上，使用超级用户权限时，需要尊重其他人。<br /></li>
+<li>给文件或目录加上777权限<br />
+没有必要，而且不符合最小权限的原则。<br /></li>
+<li>习惯一问一答的操作，例如rm -i以及mv -i等<br />
+这样一问一答的操作浪费时间，特别是这种日常操作更是如此。另外，这里有一个陷阱，以<font style="background-color:#f3f4f4;padding:0 2px 0 2px">rm -i</font>为例子，确认式删除好像看起来操作更加谨慎，但实际上可能在<br />
+习惯了这种操作之后，还是会顺手输入确认，导致误删。从这个角度而言，直接删除和交互式删除是一样。但是交互式删除浪费了更多的时间，而且，另一方面，<br />
+时刻提醒自己，一旦执行<font style="background-color:#f3f4f4;padding:0 2px 0 2px">rm</font>}就会删除，会让你在删除时更加谨慎，并养成习惯。真正谨慎的操作是养成谨慎的习惯。<br /></li>
+<li>脚本不检查输入<br />
+严格检查外部输入，内部错误则要快速出错。<br /></li>
+<li>文件或目录名称滥用大写字母<br />
+一般使用大写字母的作用是为了强调，但是如果滥用大写字母，就起不到强调的作用了！就像到处使用叹号一样！！而且输入的时候，要多按一个shift键！！！<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f58d80" class="outline-3">
+<h3 id="org5f58d80">一些好的习惯</h3>
+<div class="outline-text-3" id="text-org5f58d80">
+<ul class="org-ul">
+<li>保证脚本在任何工作目录都可以正常执行，关键是在脚本里使用绝对路径。<br /></li>
+<li>合理使用引号。例如，<font style="background-color:#f3f4f4;padding:0 2px 0 2px">grep</font>的*pattern*参数最好用单引号包起来。<br /></li>
+<li>谨慎处理批量操作，尽量精确匹配。特别是删除文件等。<br /></li>
+<li>文件或目录名不要包含对shell有特殊含义的特殊字符，例如<font style="background-color:#f3f4f4;padding:0 2px 0 2px">() , > , |</font>等。<br /></li>
+<li>从标准输入读入数据，输出到标准输出，同时错误信息输出到标准错误<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8c16965" class="outline-3">
+<h3 id="org8c16965">一些容易混淆的概念</h3>
+<div class="outline-text-3" id="text-org8c16965">
+</div>
+<div id="outline-container-orgc366f8f" class="outline-4">
+<h4 id="orgc366f8f">环境变量</h4>
+<div class="outline-text-4" id="text-orgc366f8f">
+<p>
+设置环境变量仅对当前进程以及它的子进程有效。<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org96510f6" class="outline-3">
+<h3 id="org96510f6">技巧</h3>
+</div>
+</div>
+<div id="outline-container-orgd6fc5b7" class="outline-2">
+<h2 id="orgd6fc5b7">参考</h2>
+<div class="outline-text-2" id="text-orgd6fc5b7">
+<ul class="org-ul">
+<li><a href="https:github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)">命令行的艺术</a><br /></li>
+<li><a href="https:book.douban.com/subject/3519360/">Shell脚本学习指南</a><br /></li>
+<li><a href="https:book.douban.com/subject/4253716/">Unix &amp; Linux大学教程</a><br /></li>
+<li><a href="https:book.douban.com/subject/1110484/">UNIX用户手册</a><br /></li>
+<li><a href="https:book.douban.com/subject/1788421/">UNIX环境高级编程</a><br /></li>
+</ul>
+<div class="post-copyright">
+<p>Author: josephzeng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-20 Sat&gt;</span></span><br />
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2021-02-20 Sat 00:00 <br />Last updated: 2021-02-21 Sun 20:20 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
+</div>
+</body>
+</html>
