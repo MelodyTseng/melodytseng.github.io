@@ -43,13 +43,13 @@ body {
 .title {
   font-size: .32rem;
   width: 100%;
-  border-bottom: 2px solid #369;
-  border-image: linear-gradient(to right, #147 , #f66) 30 30;
+  border-bottom: 1px solid #369;
+  /*border-image: linear-gradient(to right, #147 , #f66) 30 30;*/
   padding: .08rem 0;
   margin: .36rem 0;
 }
 
-a { color: #527d9a; }
+a { color: #527d9a; } /*#19f*/
 a:hover { color:#E69; text-shadow: 0px 0px 1px #E69;}
 
 h2, h3, h4, h5, h6 {
@@ -156,11 +156,11 @@ table {
 }
 
 thead tr {
-  border-top: 2px solid #369;
+  border-top: 1px solid #369;
 }
 
 tbody {
-  border-top: 2px solid #369;
+  border-top: 1px solid #369;
 }
 
 tbody tr {
@@ -168,7 +168,7 @@ tbody tr {
 }
 
 tbody tr:last-child {
-  border-bottom: 2px solid #369;
+  border-bottom: 1px solid #369;
 }
 
 th, td {
@@ -246,7 +246,7 @@ th:last-child, td:last-child {
 /* #postamble, .status */
 .status {
   color: #666;
-  border-top: 2px solid #369;
+  border-top: 1px solid #369;
   border-image: linear-gradient(to right, #f66 , #147) 30 30;
   margin: .62rem 0 .2rem 0;
   padding-top: .2rem;
@@ -254,6 +254,7 @@ th:last-child, td:last-child {
 
 .status p {
   margin: 0;
+  text-align: center;
 }
 
 .status p:last-child {
@@ -469,4 +470,9 @@ th:last-child, td:last-child {
     padding: 0.5em 1em;
     border-style:dashed;
     border-width:1px;
+}
+.post-copyright p {
+	list-style:none;
+	margin: 0;
+	padding: 0;
 }
