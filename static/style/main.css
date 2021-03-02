@@ -458,3 +458,8 @@ th:last-child, td:last-child {
     border-style:dashed;
     border-width:1px;
 }
+.post-copyright p {
+	list-style:none;
+	margin: 0;
+	padding: 0;
+}
