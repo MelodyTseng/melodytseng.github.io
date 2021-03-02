@@ -28,7 +28,7 @@ body {
   /* Monaco, Consolas, "kaiti",  */
   /* font-family: "Droid Serif", "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", Verdana, sans-serif;   */
   /* font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif; */
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "Trebuchet MS", Helvetica, Verdana, "Helvetica Neue", "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   max-width: 960px;
   margin: 0 auto;
   font-size: .16rem;
