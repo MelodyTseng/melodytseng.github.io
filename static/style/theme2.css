@@ -29,11 +29,11 @@ body {
   /* font-family: "Droid Serif", "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", Verdana, sans-serif;   */
   /* font-family: "trebuchet ms", verdana, helvetica, arial, sans-serif; */
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, "Hiragino Sans GB", "Heiti SC", Arial, "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  width: 60%;
+  max-width: 960px;
   margin: 0 auto;
   font-size: .16rem;
   /* font-size: 15px; */
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 #content { position: relative; }
@@ -413,7 +413,7 @@ th:last-child, td:last-child {
 
 
 /* Mobile UI */
-@media screen and (max-width: 1026px) {
+@media screen and (max-width: 960px) { /*1026*/
 
   body { width: 96%; }
 
