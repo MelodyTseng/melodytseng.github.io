@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:49 -->
+<!-- 2021-03-12 Fri 00:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JosephTseng's Notes - Env Tools</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,15 +229,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc62ef4f">开发环境</a>
+<li><a href="#org314256a">开发环境</a>
 <ul>
-<li><a href="#orgc8a22ba">系统</a></li>
-<li><a href="#org3de3c37">常用工具</a>
+<li><a href="#orgd13554d">系统</a></li>
+<li><a href="#orgeef15ef">常用工具</a>
 <ul>
-<li><a href="#org6e5338c">debian</a></li>
-<li><a href="#orgdbf4e86">windows 10</a></li>
-<li><a href="#orgd58c2ba">macOS</a></li>
-<li><a href="#orgf626421">通用</a></li>
+<li><a href="#org577080b">debian</a></li>
+<li><a href="#orge9ec80e">archlinux</a></li>
+<li><a href="#org27eb11d">windows 10</a></li>
+<li><a href="#org6f7f9d9">macOS</a></li>
+<li><a href="#org48f0708">通用</a></li>
 </ul>
 </li>
 </ul>
@@ -247,25 +247,28 @@
 </div>
 </div>
 
-<div id="outline-container-orgc62ef4f" class="outline-2">
-<h2 id="orgc62ef4f">开发环境</h2>
-<div class="outline-text-2" id="text-orgc62ef4f">
+<div id="outline-container-org314256a" class="outline-2">
+<h2 id="org314256a">开发环境</h2>
+<div class="outline-text-2" id="text-org314256a">
 </div>
-<div id="outline-container-orgc8a22ba" class="outline-3">
-<h3 id="orgc8a22ba">系统</h3>
-<div class="outline-text-3" id="text-orgc8a22ba">
+<div id="outline-container-orgd13554d" class="outline-3">
+<h3 id="orgd13554d">系统</h3>
+<div class="outline-text-3" id="text-orgd13554d">
 <p>
 debian  或  win10 + wsl2(debian)
 </p>
 </div>
 </div>
-<div id="outline-container-org3de3c37" class="outline-3">
-<h3 id="org3de3c37">常用工具</h3>
-<div class="outline-text-3" id="text-org3de3c37">
+<div id="outline-container-orgeef15ef" class="outline-3">
+<h3 id="orgeef15ef">常用工具</h3>
+<div class="outline-text-3" id="text-orgeef15ef">
 </div>
-<div id="outline-container-org6e5338c" class="outline-4">
-<h4 id="org6e5338c">debian</h4>
-<div class="outline-text-4" id="text-org6e5338c">
+<div id="outline-container-org577080b" class="outline-4">
+<h4 id="org577080b">debian</h4>
+</div>
+<div id="outline-container-orge9ec80e" class="outline-4">
+<h4 id="orge9ec80e">archlinux</h4>
+<div class="outline-text-4" id="text-orge9ec80e">
 <ul class="org-ul">
 <li><a href="https:ohmyz.sh/#install">oh my zsh</a> - 默认主题</li>
 <li><a href="https:github.com/tmux/tmux">tmux</a> - 配置使用<a href="https:github.com/gpakosz/.tmux.git"> https://github.com/gpakosz/.tmux.git</a></li>
@@ -281,7 +284,10 @@ debian  或  win10 + wsl2(debian)
 <li>tldr</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash">sudo apt-get install tldr
+<pre class="src src-bash"><span style="color: #747474;"># </span><span style="color: #747474;">debian</span>
+sudo apt-get install tldr
+<span style="color: #747474;"># </span><span style="color: #747474;">archlinux</span>
+sudo pacman -S tldr
 </pre>
 </div>
 <ul class="org-ul">
@@ -295,22 +301,22 @@ cmake / make /autotools / java / &#x2026;</li>
 </div>
 </div>
 
-<div id="outline-container-orgdbf4e86" class="outline-4">
-<h4 id="orgdbf4e86">windows 10</h4>
-<div class="outline-text-4" id="text-orgdbf4e86">
+<div id="outline-container-org27eb11d" class="outline-4">
+<h4 id="org27eb11d">windows 10</h4>
+<div class="outline-text-4" id="text-org27eb11d">
 <ul class="org-ul">
 <li>eclipse - <a href="https:www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a></li>
 <li>WSL2 debian</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd58c2ba" class="outline-4">
-<h4 id="orgd58c2ba">macOS</h4>
+<div id="outline-container-org6f7f9d9" class="outline-4">
+<h4 id="org6f7f9d9">macOS</h4>
 </div>
 
-<div id="outline-container-orgf626421" class="outline-4">
-<h4 id="orgf626421">通用</h4>
-<div class="outline-text-4" id="text-orgf626421">
+<div id="outline-container-org48f0708" class="outline-4">
+<h4 id="org48f0708">通用</h4>
+<div class="outline-text-4" id="text-org48f0708">
 <ul class="org-ul">
 <li>zeal</li>
 <li>网易云音乐</li>
@@ -325,7 +331,7 @@ cmake / make /autotools / java / &#x2026;</li>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-01 <br />Last updated: 2021-02-10 Wed 14:49 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-01 <br />Last updated: 2021-03-12 Fri 00:10 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
