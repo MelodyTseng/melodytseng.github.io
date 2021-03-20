@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:48 -->
+<!-- 2021-03-20 Sat 22:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MongoDB</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,45 +229,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org046aa00">安装</a></li>
-<li><a href="#org247f46e">命令</a>
+<li><a href="#org4d0c53a">安装</a></li>
+<li><a href="#org21c4441">命令</a>
 <ul>
-<li><a href="#org7eb2657">连接</a></li>
-<li><a href="#orge813ddf">基本操作</a>
+<li><a href="#orgf0a46ac">连接</a></li>
+<li><a href="#org3f8fed4">基本操作</a>
 <ul>
-<li><a href="#orga4d94c9">数据库</a></li>
-<li><a href="#org1b73106">插入</a></li>
-<li><a href="#org269ea4b">删除</a></li>
-<li><a href="#org5587ae1">更新</a></li>
-<li><a href="#orgefb4011">查询</a></li>
-<li><a href="#orge04ed14">导入</a></li>
+<li><a href="#org31a1d3e">数据库</a></li>
+<li><a href="#orgf638e52">插入</a></li>
+<li><a href="#orgbad75dd">删除</a></li>
+<li><a href="#org32b6505">更新</a></li>
+<li><a href="#org8b3aeb8">查询</a></li>
+<li><a href="#org5e83652">导入</a></li>
 </ul>
 </li>
-<li><a href="#orgfcb7541">索引</a></li>
+<li><a href="#orgb149021">索引</a></li>
 </ul>
 </li>
-<li><a href="#org3ff0bb4">管理</a></li>
-<li><a href="#org7e62042">参考</a></li>
+<li><a href="#orgd3bb4b9">管理</a></li>
+<li><a href="#orgee27a3b">参考</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org046aa00" class="outline-2">
-<h2 id="org046aa00">安装</h2>
-<div class="outline-text-2" id="text-org046aa00">
+<div id="outline-container-org4d0c53a" class="outline-2">
+<h2 id="org4d0c53a">安装</h2>
+<div class="outline-text-2" id="text-org4d0c53a">
 <p>
 使用apt, yumd或自行编译等等方式安装。<br />
 详细，请查看 <a href="https://docs.mongodb.com/manual/installation">https://docs.mongodb.com/manual/installation</a><br />
 </p>
 </div>
 </div>
-<div id="outline-container-org247f46e" class="outline-2">
-<h2 id="org247f46e">命令</h2>
-<div class="outline-text-2" id="text-org247f46e">
+<div id="outline-container-org21c4441" class="outline-2">
+<h2 id="org21c4441">命令</h2>
+<div class="outline-text-2" id="text-org21c4441">
 </div>
-<div id="outline-container-org7eb2657" class="outline-3">
-<h3 id="org7eb2657">连接</h3>
-<div class="outline-text-3" id="text-org7eb2657">
+<div id="outline-container-orgf0a46ac" class="outline-3">
+<h3 id="orgf0a46ac">连接</h3>
+<div class="outline-text-3" id="text-orgf0a46ac">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span>
 mongo ip:port/dbname -u &#29992;&#25143;&#21517; -p &#23494;&#30721;
@@ -299,13 +298,13 @@ Enable MongoDB<span style="color: #99bb66;">'s free cloud-based monitoring servi
 </div>
 </div>
 </div>
-<div id="outline-container-orge813ddf" class="outline-3">
-<h3 id="orge813ddf">基本操作</h3>
-<div class="outline-text-3" id="text-orge813ddf">
+<div id="outline-container-org3f8fed4" class="outline-3">
+<h3 id="org3f8fed4">基本操作</h3>
+<div class="outline-text-3" id="text-org3f8fed4">
 </div>
-<div id="outline-container-orga4d94c9" class="outline-4">
-<h4 id="orga4d94c9">数据库</h4>
-<div class="outline-text-4" id="text-orga4d94c9">
+<div id="outline-container-org31a1d3e" class="outline-4">
+<h4 id="org31a1d3e">数据库</h4>
+<div class="outline-text-4" id="text-org31a1d3e">
 <div class="org-src-container">
 <pre class="src src-bash">show dbs; <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#25152;&#26377;&#25968;&#25454;&#24211;&#21015;&#34920;</span>
 show collections; <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#24403;&#21069;&#25968;&#25454;&#24211;&#20013;&#30340;&#38598;&#21512;</span>
@@ -317,9 +316,9 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </div>
 </div>
 </div>
-<div id="outline-container-org1b73106" class="outline-4">
-<h4 id="org1b73106">插入</h4>
-<div class="outline-text-4" id="text-org1b73106">
+<div id="outline-container-orgf638e52" class="outline-4">
+<h4 id="orgf638e52">插入</h4>
+<div class="outline-text-4" id="text-orgf638e52">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #44b9b1;">db.COLLECTION_NAME.insert</span><span style="color: #51afef;">(</span>document<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#19968;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
 <span style="color: #44b9b1;">db.user.insert</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"josephzeng"</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">exmpale</span>
@@ -333,9 +332,9 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </div>
 </div>
 </div>
-<div id="outline-container-org269ea4b" class="outline-4">
-<h4 id="org269ea4b">删除</h4>
-<div class="outline-text-4" id="text-org269ea4b">
+<div id="outline-container-orgbad75dd" class="outline-4">
+<h4 id="orgbad75dd">删除</h4>
+<div class="outline-text-4" id="text-orgbad75dd">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #44b9b1;">db.dropDatabase</span><span style="color: #51afef;">()</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#24403;&#21069;&#25152;&#22312;&#30340;&#25968;&#25454;&#24211;</span>
 <span style="color: #44b9b1;">db.COLLECTION_NAME.drop</span><span style="color: #51afef;">()</span>;  <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#35813;&#25968;&#25454;&#24211;&#19979;&#30340;&#38598;&#21512;&#34920;</span>
@@ -350,9 +349,9 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </div>
 </div>
 </div>
-<div id="outline-container-org5587ae1" class="outline-4">
-<h4 id="org5587ae1">更新</h4>
-<div class="outline-text-4" id="text-org5587ae1">
+<div id="outline-container-org32b6505" class="outline-4">
+<h4 id="org32b6505">更新</h4>
+<div class="outline-text-4" id="text-org32b6505">
 <div class="org-src-container">
 <pre class="src src-bash">/*
  * query : update&#30340;&#26597;&#35810;&#26465;&#20214;&#65292;&#31867;&#20284;sql update&#26597;&#35810;&#20869;where&#21518;&#38754;&#30340;&#12290;
@@ -388,9 +387,9 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </div>
 </div>
 </div>
-<div id="outline-container-orgefb4011" class="outline-4">
-<h4 id="orgefb4011">查询</h4>
-<div class="outline-text-4" id="text-orgefb4011">
+<div id="outline-container-org8b3aeb8" class="outline-4">
+<h4 id="org8b3aeb8">查询</h4>
+<div class="outline-text-4" id="text-org8b3aeb8">
 <div class="org-src-container">
 <pre class="src src-bash"> /*
   **query : &#26597;&#35810;&#26465;&#20214;
@@ -479,9 +478,9 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </div>
 </div>
 </div>
-<div id="outline-container-orge04ed14" class="outline-4">
-<h4 id="orge04ed14">导入</h4>
-<div class="outline-text-4" id="text-orge04ed14">
+<div id="outline-container-org5e83652" class="outline-4">
+<h4 id="org5e83652">导入</h4>
+<div class="outline-text-4" id="text-org5e83652">
 <div class="org-src-container">
 <pre class="src src-bash"> /*
  * -h,&#8211;host &#65306;&#20195;&#34920;&#36828;&#31243;&#36830;&#25509;&#30340;&#25968;&#25454;&#24211;&#22320;&#22336;&#65292;&#40664;&#35748;&#36830;&#25509;&#26412;&#22320;Mongo&#25968;&#25454;&#24211;&#65307;
@@ -505,9 +504,9 @@ mongoimport -d <span style="color: #51afef;">[</span>DB_name<span style="color: 
 </div>
 </div>
 </div>
-<div id="outline-container-orgfcb7541" class="outline-3">
-<h3 id="orgfcb7541">索引</h3>
-<div class="outline-text-3" id="text-orgfcb7541">
+<div id="outline-container-orgb149021" class="outline-3">
+<h3 id="orgb149021">索引</h3>
+<div class="outline-text-3" id="text-orgb149021">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#21019;&#24314;&#32034;&#24341;</span>
 <span style="color: #44b9b1;">db.userInfo.ensureIndex</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>name: 1<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>;
@@ -532,9 +531,9 @@ mongoimport -d <span style="color: #51afef;">[</span>DB_name<span style="color: 
 </div>
 </div>
 </div>
-<div id="outline-container-org3ff0bb4" class="outline-2">
-<h2 id="org3ff0bb4">管理</h2>
-<div class="outline-text-2" id="text-org3ff0bb4">
+<div id="outline-container-orgd3bb4b9" class="outline-2">
+<h2 id="orgd3bb4b9">管理</h2>
+<div class="outline-text-2" id="text-orgd3bb4b9">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#21551;&#21160;</span>
 sudo /etc/init.d/mongodb start
@@ -546,9 +545,9 @@ sudo /etc/init.d/mongodb stop
 </div>
 </div>
 </div>
-<div id="outline-container-org7e62042" class="outline-2">
-<h2 id="org7e62042">参考</h2>
-<div class="outline-text-2" id="text-org7e62042">
+<div id="outline-container-orgee27a3b" class="outline-2">
+<h2 id="orgee27a3b">参考</h2>
+<div class="outline-text-2" id="text-orgee27a3b">
 <ul class="org-ul">
 <li><a href="https://docs.mongodb.com/manual/core/document/">https://docs.mongodb.com/manual/core/document/</a><br /></li>
 <li><a href="https:juejin.cn/post/6865704368252026887">https://juejin.cn/post/6865704368252026887</a><br /></li>
@@ -565,7 +564,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-05 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

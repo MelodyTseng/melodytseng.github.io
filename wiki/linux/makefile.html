@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:48 -->
+<!-- 2021-03-20 Sat 22:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Makefile 使用备注</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,38 +229,38 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org86e60e8">Makefile 使用备注</a>
+<li><a href="#org738e747">Makefile 使用备注</a>
 <ul>
-<li><a href="#orgd507444">概述</a></li>
-<li><a href="#org73ebb75">格式</a></li>
-<li><a href="#org653310b">语法</a>
+<li><a href="#org881cb30">概述</a></li>
+<li><a href="#org6e8880a">格式</a></li>
+<li><a href="#org920e1e8">语法</a>
 <ul>
-<li><a href="#org549cb97">基本语法</a></li>
-<li><a href="#org596fe01">变量</a></li>
+<li><a href="#orgfd5d8dc">基本语法</a></li>
+<li><a href="#orgfc6e858">变量</a></li>
 </ul>
 </li>
-<li><a href="#orga5b7ddb">备注</a></li>
+<li><a href="#org44e5d0a">备注</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org86e60e8" class="outline-2">
-<h2 id="org86e60e8">Makefile 使用备注</h2>
-<div class="outline-text-2" id="text-org86e60e8">
+<div id="outline-container-org738e747" class="outline-2">
+<h2 id="org738e747">Makefile 使用备注</h2>
+<div class="outline-text-2" id="text-org738e747">
 </div>
-<div id="outline-container-orgd507444" class="outline-3">
-<h3 id="orgd507444">概述</h3>
-<div class="outline-text-3" id="text-orgd507444">
+<div id="outline-container-org881cb30" class="outline-3">
+<h3 id="org881cb30">概述</h3>
+<div class="outline-text-3" id="text-org881cb30">
 <p>
 用于linux平台，管理软件项目的编译，连接等作用。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org73ebb75" class="outline-3">
-<h3 id="org73ebb75">格式</h3>
-<div class="outline-text-3" id="text-org73ebb75">
+<div id="outline-container-org6e8880a" class="outline-3">
+<h3 id="org6e8880a">格式</h3>
+<div class="outline-text-3" id="text-org6e8880a">
 <p>
 一般在项目根目录下，创建Makefile文件。如：<br />
 </p>
@@ -313,13 +312,13 @@ export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;
 </div>
 </div>
 </div>
-<div id="outline-container-org653310b" class="outline-3">
-<h3 id="org653310b">语法</h3>
-<div class="outline-text-3" id="text-org653310b">
+<div id="outline-container-org920e1e8" class="outline-3">
+<h3 id="org920e1e8">语法</h3>
+<div class="outline-text-3" id="text-org920e1e8">
 </div>
-<div id="outline-container-org549cb97" class="outline-4">
-<h4 id="org549cb97">基本语法</h4>
-<div class="outline-text-4" id="text-org549cb97">
+<div id="outline-container-orgfd5d8dc" class="outline-4">
+<h4 id="orgfd5d8dc">基本语法</h4>
+<div class="outline-text-4" id="text-orgfd5d8dc">
 <div class="org-src-container">
 <pre class="src src-makefile"><span style="color: #51afef;">target</span>: dependencies
       command
@@ -330,9 +329,9 @@ export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;
 </div>
 </div>
 </div>
-<div id="outline-container-org596fe01" class="outline-4">
-<h4 id="org596fe01">变量</h4>
-<div class="outline-text-4" id="text-org596fe01">
+<div id="outline-container-orgfc6e858" class="outline-4">
+<h4 id="orgfc6e858">变量</h4>
+<div class="outline-text-4" id="text-orgfc6e858">
 <div class="org-src-container">
 <pre class="src src-makefile"><span style="color: #979797;">VARIABLE</span> = value
 <span style="color: #747474;"># </span><span style="color: #747474;">&#22312;&#25191;&#34892;&#26102;&#25193;&#23637;&#65292;&#20801;&#35768;&#36882;&#24402;&#25193;&#23637;&#12290;</span>
@@ -347,9 +346,9 @@ export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;
 </div>
 </div>
 </div>
-<div id="outline-container-orga5b7ddb" class="outline-3">
-<h3 id="orga5b7ddb">备注</h3>
-<div class="outline-text-3" id="text-orga5b7ddb">
+<div id="outline-container-org44e5d0a" class="outline-3">
+<h3 id="org44e5d0a">备注</h3>
+<div class="outline-text-3" id="text-org44e5d0a">
 <ul class="post-copyright">
   <li>Author: josephzeng</li>
   <li>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></li>
@@ -359,7 +358,7 @@ export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

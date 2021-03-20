@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-19 Fri 17:41 -->
+<!-- 2021-03-20 Sat 22:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HTTP响应代码</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -231,151 +230,151 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbdc9332">HTTP响应代码</a>
+<li><a href="#org8e7cfa7">HTTP响应代码</a>
 <ul>
-<li><a href="#org8c04f14">信息响应</a>
+<li><a href="#org41c4c7b">信息响应</a>
 <ul>
-<li><a href="#org9a741e1">100 Continue</a></li>
-<li><a href="#orgee1b7aa">101 Switching Protocol</a></li>
-<li><a href="#orgb75c4ef">102 Processing (WebDAV)</a></li>
-<li><a href="#orgf6d9b7d">103 Early Hints</a></li>
+<li><a href="#org191bd8a">100 Continue</a></li>
+<li><a href="#orgf9bd19f">101 Switching Protocol</a></li>
+<li><a href="#org8567864">102 Processing (WebDAV)</a></li>
+<li><a href="#orgfc4a70c">103 Early Hints</a></li>
 </ul>
 </li>
-<li><a href="#orgb633bc4">成功响应</a>
+<li><a href="#org06823c7">成功响应</a>
 <ul>
-<li><a href="#orgff778dc">200 OK</a></li>
-<li><a href="#org56f5142">201 Created</a></li>
-<li><a href="#org3d9e82a">202 Accepted</a></li>
-<li><a href="#orgd4936d5">203 Non-Authoritative Information</a></li>
-<li><a href="#org1426d53">204 No Content</a></li>
-<li><a href="#orgaff9dcb">205 Reset Content</a></li>
-<li><a href="#orga947e5a">206 Partial Content</a></li>
-<li><a href="#org03f9d54">207 Multi-Status (WebDAV)</a></li>
-<li><a href="#orgf2fc67f">208 Already Reported (WebDAV)</a></li>
-<li><a href="#org9eca8d7">226 IM Used (HTTP Delta encoding)</a></li>
+<li><a href="#org2c553a2">200 OK</a></li>
+<li><a href="#org3a27d00">201 Created</a></li>
+<li><a href="#orgb695bbb">202 Accepted</a></li>
+<li><a href="#orgf73b44e">203 Non-Authoritative Information</a></li>
+<li><a href="#org2198416">204 No Content</a></li>
+<li><a href="#orgf267cca">205 Reset Content</a></li>
+<li><a href="#org71dfb6e">206 Partial Content</a></li>
+<li><a href="#orgdb3dabf">207 Multi-Status (WebDAV)</a></li>
+<li><a href="#org6f0c4d8">208 Already Reported (WebDAV)</a></li>
+<li><a href="#orgf22080c">226 IM Used (HTTP Delta encoding)</a></li>
 </ul>
 </li>
-<li><a href="#org6740053">重定向</a>
+<li><a href="#orgcd0baa4">重定向</a>
 <ul>
-<li><a href="#orgcf4e3bd">300 Multiple Choice</a></li>
-<li><a href="#orga87974d">301 Moved Permanently</a></li>
-<li><a href="#orgc52e4d9">302 Found</a></li>
-<li><a href="#org4b48702">303 See Other</a></li>
-<li><a href="#org7e16523">304 Not Modified</a></li>
-<li><a href="#org39c43ac">305 Use Proxy</a></li>
-<li><a href="#org71fd560">306 unused</a></li>
-<li><a href="#org96c63d5">307 Temporary Redirect</a></li>
-<li><a href="#org25d6b2f">308 Permanent Redirect</a></li>
+<li><a href="#orgab9c2dd">300 Multiple Choice</a></li>
+<li><a href="#org57ffb7b">301 Moved Permanently</a></li>
+<li><a href="#org9f58e94">302 Found</a></li>
+<li><a href="#orgaa5dd5f">303 See Other</a></li>
+<li><a href="#orgfe1651c">304 Not Modified</a></li>
+<li><a href="#orgd2b3be6">305 Use Proxy</a></li>
+<li><a href="#orgb70d83a">306 unused</a></li>
+<li><a href="#orge12805b">307 Temporary Redirect</a></li>
+<li><a href="#org431b409">308 Permanent Redirect</a></li>
 </ul>
 </li>
-<li><a href="#org212b7f3">客户端响应</a>
+<li><a href="#orgce464bf">客户端响应</a>
 <ul>
-<li><a href="#orgdfff097">400 Bad Request</a></li>
-<li><a href="#orgb87db4d">401 Unauthorized</a></li>
-<li><a href="#orgbcd801e">402 Payment Required</a></li>
-<li><a href="#orgf4a899f">403 Forbidden</a></li>
-<li><a href="#org1e733b6">404 Not Found</a></li>
-<li><a href="#org19db326">405 Method Not Allowed</a></li>
-<li><a href="#org4ab2e94">406 Not Acceptable</a></li>
-<li><a href="#orgc378db0">407 Proxy Authentication Required</a></li>
-<li><a href="#org3426f8e">408 Request Timeout</a></li>
-<li><a href="#orgdc2af3b">409 Conflict</a></li>
-<li><a href="#org2c5bcb1">410 Gone</a></li>
-<li><a href="#org6672a09">411 Length Required</a></li>
-<li><a href="#org8c3307f">412 Precondition Failed</a></li>
-<li><a href="#org0f356e4">413 Payload Too Large</a></li>
-<li><a href="#org11d805c">414 URI Too Long</a></li>
-<li><a href="#orgb194a14">415 Unsupported Media Type</a></li>
-<li><a href="#org6e1d1e4">416 Range Not Satisfiable</a></li>
-<li><a href="#orgfdc4edb">417 Expectation Failed</a></li>
-<li><a href="#org9f935cf">418 I'm a teapot</a></li>
-<li><a href="#orgac87905">421 Misdirected Request</a></li>
-<li><a href="#org578ccaa">422 Unprocessable Entity (WebDAV)</a></li>
-<li><a href="#org8b3b156">423 Locked (WebDAV)</a></li>
-<li><a href="#org0165e34">424 Failed Dependency (WebDAV)</a></li>
-<li><a href="#org8d025f9">425 Too Early</a></li>
-<li><a href="#orgc983934">426 Upgrade Required</a></li>
-<li><a href="#org8fd31ca">428 Precondition Required</a></li>
-<li><a href="#org3c8a620">429 Too Many Requests</a></li>
-<li><a href="#orgc2be534">431 Request Header Fields Too Large</a></li>
-<li><a href="#orgc81dc62">451 Unavailable For Legal Reasons</a></li>
+<li><a href="#org82d2012">400 Bad Request</a></li>
+<li><a href="#org735f162">401 Unauthorized</a></li>
+<li><a href="#org7868b59">402 Payment Required</a></li>
+<li><a href="#org094c0d3">403 Forbidden</a></li>
+<li><a href="#org73b3ed3">404 Not Found</a></li>
+<li><a href="#org5793d4a">405 Method Not Allowed</a></li>
+<li><a href="#org3cb5fa2">406 Not Acceptable</a></li>
+<li><a href="#org40f98e3">407 Proxy Authentication Required</a></li>
+<li><a href="#orga59a22c">408 Request Timeout</a></li>
+<li><a href="#org97caca1">409 Conflict</a></li>
+<li><a href="#orgbbe7157">410 Gone</a></li>
+<li><a href="#org0e8930c">411 Length Required</a></li>
+<li><a href="#orge432ef5">412 Precondition Failed</a></li>
+<li><a href="#orgb43f51e">413 Payload Too Large</a></li>
+<li><a href="#orge8531b3">414 URI Too Long</a></li>
+<li><a href="#org946e65b">415 Unsupported Media Type</a></li>
+<li><a href="#org27f7b36">416 Range Not Satisfiable</a></li>
+<li><a href="#org5bdeb3c">417 Expectation Failed</a></li>
+<li><a href="#org7ffc825">418 I'm a teapot</a></li>
+<li><a href="#org25402f0">421 Misdirected Request</a></li>
+<li><a href="#orgc244a3d">422 Unprocessable Entity (WebDAV)</a></li>
+<li><a href="#org3b8742a">423 Locked (WebDAV)</a></li>
+<li><a href="#orgc98b41e">424 Failed Dependency (WebDAV)</a></li>
+<li><a href="#orgb7aa53b">425 Too Early</a></li>
+<li><a href="#org1676bab">426 Upgrade Required</a></li>
+<li><a href="#org7f8075d">428 Precondition Required</a></li>
+<li><a href="#org4537d5d">429 Too Many Requests</a></li>
+<li><a href="#org3767e3f">431 Request Header Fields Too Large</a></li>
+<li><a href="#orga88a117">451 Unavailable For Legal Reasons</a></li>
 </ul>
 </li>
-<li><a href="#org87c42a2">服务端响应</a>
+<li><a href="#orgc2deb08">服务端响应</a>
 <ul>
-<li><a href="#org136be5d">500 Internal Server Error</a></li>
-<li><a href="#orgfc1d4ee">501 Not Implemented</a></li>
-<li><a href="#orgd418082">502 Bad Gateway</a></li>
-<li><a href="#orgb53ddad">503 Service Unavailable</a></li>
-<li><a href="#orgfefc0c5">504 Gateway Timeout</a></li>
-<li><a href="#org8b4d6ed">505 HTTP Version Not Supported</a></li>
-<li><a href="#orga691bd8">506 Variant Also Negotiates</a></li>
-<li><a href="#org332fd76">507 Insufficient Storage</a></li>
-<li><a href="#org4e6e7e3">508 Loop Detected (WebDAV)</a></li>
-<li><a href="#orgb07cd0e">510 Not Extended</a></li>
-<li><a href="#org79fd9be">511 Network Authentication Required</a></li>
-<li><a href="#orgd48b499">511 状态码指示客户端需要进行身份验证才能获得网络访问权限。</a></li>
+<li><a href="#orgd2e2ebd">500 Internal Server Error</a></li>
+<li><a href="#org4b4e0cc">501 Not Implemented</a></li>
+<li><a href="#org65b23da">502 Bad Gateway</a></li>
+<li><a href="#orgf0ac516">503 Service Unavailable</a></li>
+<li><a href="#org25a530f">504 Gateway Timeout</a></li>
+<li><a href="#orgf9862d5">505 HTTP Version Not Supported</a></li>
+<li><a href="#orge3ed78d">506 Variant Also Negotiates</a></li>
+<li><a href="#org9db281f">507 Insufficient Storage</a></li>
+<li><a href="#orga3307ef">508 Loop Detected (WebDAV)</a></li>
+<li><a href="#orgd06c7fa">510 Not Extended</a></li>
+<li><a href="#org2a3bf47">511 Network Authentication Required</a></li>
+<li><a href="#org34c01ec">511 状态码指示客户端需要进行身份验证才能获得网络访问权限。</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org873ac27">参考</a></li>
+<li><a href="#org0400a4c">参考</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgbdc9332" class="outline-2">
-<h2 id="orgbdc9332">HTTP响应代码</h2>
-<div class="outline-text-2" id="text-orgbdc9332">
+<div id="outline-container-org8e7cfa7" class="outline-2">
+<h2 id="org8e7cfa7">HTTP响应代码</h2>
+<div class="outline-text-2" id="text-org8e7cfa7">
 <p>
 HTTP 响应状态代码指示特定 HTTP 请求是否已成功完成。响应分为五类：信息响应(100–199)，成功响应(200–299)，重定向(300–399)，客户端错误(400–499)和服务器错误 (500–599)。状态代码由 section 10 of RFC 2616定义
 </p>
 </div>
 
-<div id="outline-container-org8c04f14" class="outline-3">
-<h3 id="org8c04f14">信息响应</h3>
-<div class="outline-text-3" id="text-org8c04f14">
+<div id="outline-container-org41c4c7b" class="outline-3">
+<h3 id="org41c4c7b">信息响应</h3>
+<div class="outline-text-3" id="text-org41c4c7b">
 </div>
-<div id="outline-container-org9a741e1" class="outline-4">
-<h4 id="org9a741e1">100 Continue</h4>
-<div class="outline-text-4" id="text-org9a741e1">
+<div id="outline-container-org191bd8a" class="outline-4">
+<h4 id="org191bd8a">100 Continue</h4>
+<div class="outline-text-4" id="text-org191bd8a">
 <p>
 这个临时响应表明，迄今为止的所有内容都是可行的，客户端应该继续请求，如果已经完成，则忽略它。
 </p>
 </div>
 </div>
-<div id="outline-container-orgee1b7aa" class="outline-4">
-<h4 id="orgee1b7aa">101 Switching Protocol</h4>
-<div class="outline-text-4" id="text-orgee1b7aa">
+<div id="outline-container-orgf9bd19f" class="outline-4">
+<h4 id="orgf9bd19f">101 Switching Protocol</h4>
+<div class="outline-text-4" id="text-orgf9bd19f">
 <p>
 该代码是响应客户端的 Upgrade 标头发送的，并且指示服务器也正在切换的协议。
 </p>
 </div>
 </div>
-<div id="outline-container-orgb75c4ef" class="outline-4">
-<h4 id="orgb75c4ef">102 Processing (WebDAV)</h4>
-<div class="outline-text-4" id="text-orgb75c4ef">
+<div id="outline-container-org8567864" class="outline-4">
+<h4 id="org8567864">102 Processing (WebDAV)</h4>
+<div class="outline-text-4" id="text-org8567864">
 <p>
 此代码表示服务器已收到并正在处理该请求，但没有响应可用。
 </p>
 </div>
 </div>
-<div id="outline-container-orgf6d9b7d" class="outline-4">
-<h4 id="orgf6d9b7d">103 Early Hints</h4>
-<div class="outline-text-4" id="text-orgf6d9b7d">
+<div id="outline-container-orgfc4a70c" class="outline-4">
+<h4 id="orgfc4a70c">103 Early Hints</h4>
+<div class="outline-text-4" id="text-orgfc4a70c">
 <p>
 此状态代码主要用于与Link 链接头一起使用，以允许用户代理在服务器仍在准备响应时开始预加载资源。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb633bc4" class="outline-3">
-<h3 id="orgb633bc4">成功响应</h3>
-<div class="outline-text-3" id="text-orgb633bc4">
+<div id="outline-container-org06823c7" class="outline-3">
+<h3 id="org06823c7">成功响应</h3>
+<div class="outline-text-3" id="text-org06823c7">
 </div>
-<div id="outline-container-orgff778dc" class="outline-4">
-<h4 id="orgff778dc">200 OK</h4>
-<div class="outline-text-4" id="text-orgff778dc">
+<div id="outline-container-org2c553a2" class="outline-4">
+<h4 id="org2c553a2">200 OK</h4>
+<div class="outline-text-4" id="text-org2c553a2">
 <p>
 请求成功。成功的含义取决于HTTP方法：
 </p>
@@ -388,489 +387,489 @@ TRACE：消息正文包含服务器收到的请求消息
 </p>
 </div>
 </div>
-<div id="outline-container-org56f5142" class="outline-4">
-<h4 id="org56f5142">201 Created</h4>
-<div class="outline-text-4" id="text-org56f5142">
+<div id="outline-container-org3a27d00" class="outline-4">
+<h4 id="org3a27d00">201 Created</h4>
+<div class="outline-text-4" id="text-org3a27d00">
 <p>
 该请求已成功，并因此创建了一个新的资源。这通常是在POST请求，或是某些PUT请求之后返回的响应。
 </p>
 </div>
 </div>
-<div id="outline-container-org3d9e82a" class="outline-4">
-<h4 id="org3d9e82a">202 Accepted</h4>
-<div class="outline-text-4" id="text-org3d9e82a">
+<div id="outline-container-orgb695bbb" class="outline-4">
+<h4 id="orgb695bbb">202 Accepted</h4>
+<div class="outline-text-4" id="text-orgb695bbb">
 <p>
 请求已经接收到，但还未响应，没有结果。意味着不会有一个异步的响应去表明当前请求的结果，预期另外的进程和服务去处理请求，或者批处理。
 </p>
 </div>
 </div>
-<div id="outline-container-orgd4936d5" class="outline-4">
-<h4 id="orgd4936d5">203 Non-Authoritative Information</h4>
-<div class="outline-text-4" id="text-orgd4936d5">
+<div id="outline-container-orgf73b44e" class="outline-4">
+<h4 id="orgf73b44e">203 Non-Authoritative Information</h4>
+<div class="outline-text-4" id="text-orgf73b44e">
 <p>
 服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。当前的信息可能是原始版本的子集或者超集。例如，包含资源的元数据可能导致原始服务器知道元信息的超集。使用此状态码不是必须的，而且只有在响应不使用此状态码便会返回200 OK的情况下才是合适的。
 </p>
 </div>
 </div>
-<div id="outline-container-org1426d53" class="outline-4">
-<h4 id="org1426d53">204 No Content</h4>
-<div class="outline-text-4" id="text-org1426d53">
+<div id="outline-container-org2198416" class="outline-4">
+<h4 id="org2198416">204 No Content</h4>
+<div class="outline-text-4" id="text-org2198416">
 <p>
 服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。响应可能通过实体头部的形式，返回新的或更新后的元信息。如果存在这些头部信息，则应当与所请求的变量相呼应。如果客户端是浏览器的话，那么用户浏览器应保留发送了该请求的页面，而不产生任何文档视图上的变化，即使按照规范新的或更新后的元信息应当被应用到用户浏览器活动视图中的文档。由于204响应被禁止包含任何消息体，因此它始终以消息头后的第一个空行结尾。
 </p>
 </div>
 </div>
-<div id="outline-container-orgaff9dcb" class="outline-4">
-<h4 id="orgaff9dcb">205 Reset Content</h4>
-<div class="outline-text-4" id="text-orgaff9dcb">
+<div id="outline-container-orgf267cca" class="outline-4">
+<h4 id="orgf267cca">205 Reset Content</h4>
+<div class="outline-text-4" id="text-orgf267cca">
 <p>
 服务器成功处理了请求，且没有返回任何内容。但是与204响应不同，返回此状态码的响应要求请求者重置文档视图。该响应主要是被用于接受用户输入后，立即重置表单，以便用户能够轻松地开始另一次输入。与204响应一样，该响应也被禁止包含任何消息体，且以消息头后的第一个空行结束。
 </p>
 </div>
 </div>
-<div id="outline-container-orga947e5a" class="outline-4">
-<h4 id="orga947e5a">206 Partial Content</h4>
-<div class="outline-text-4" id="text-orga947e5a">
+<div id="outline-container-org71dfb6e" class="outline-4">
+<h4 id="org71dfb6e">206 Partial Content</h4>
+<div class="outline-text-4" id="text-org71dfb6e">
 <p>
 服务器已经成功处理了部分 GET 请求。类似于 FlashGet 或者迅雷这类的 HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。该请求必须包含 Range 头信息来指示客户端希望得到的内容范围，并且可能包含 If-Range 来作为请求条件。
 </p>
 </div>
 </div>
-<div id="outline-container-org03f9d54" class="outline-4">
-<h4 id="org03f9d54">207 Multi-Status (WebDAV)</h4>
-<div class="outline-text-4" id="text-org03f9d54">
+<div id="outline-container-orgdb3dabf" class="outline-4">
+<h4 id="orgdb3dabf">207 Multi-Status (WebDAV)</h4>
+<div class="outline-text-4" id="text-orgdb3dabf">
 <p>
 由WebDAV(RFC 2518)扩展的状态码，代表之后的消息体将是一个XML消息，并且可能依照之前子请求数量的不同，包含一系列独立的响应代码。
 </p>
 </div>
 </div>
-<div id="outline-container-orgf2fc67f" class="outline-4">
-<h4 id="orgf2fc67f">208 Already Reported (WebDAV)</h4>
-<div class="outline-text-4" id="text-orgf2fc67f">
+<div id="outline-container-org6f0c4d8" class="outline-4">
+<h4 id="org6f0c4d8">208 Already Reported (WebDAV)</h4>
+<div class="outline-text-4" id="text-org6f0c4d8">
 <p>
 在 DAV 里面使用: propstat 响应元素以避免重复枚举多个绑定的内部成员到同一个集合。
 </p>
 </div>
 </div>
-<div id="outline-container-org9eca8d7" class="outline-4">
-<h4 id="org9eca8d7">226 IM Used (HTTP Delta encoding)</h4>
-<div class="outline-text-4" id="text-org9eca8d7">
+<div id="outline-container-orgf22080c" class="outline-4">
+<h4 id="orgf22080c">226 IM Used (HTTP Delta encoding)</h4>
+<div class="outline-text-4" id="text-orgf22080c">
 <p>
 服务器已经完成了对资源的 GET 请求，并且响应是对当前实例应用的一个或多个实例操作结果的表示。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org6740053" class="outline-3">
-<h3 id="org6740053">重定向</h3>
-<div class="outline-text-3" id="text-org6740053">
+<div id="outline-container-orgcd0baa4" class="outline-3">
+<h3 id="orgcd0baa4">重定向</h3>
+<div class="outline-text-3" id="text-orgcd0baa4">
 </div>
-<div id="outline-container-orgcf4e3bd" class="outline-4">
-<h4 id="orgcf4e3bd">300 Multiple Choice</h4>
-<div class="outline-text-4" id="text-orgcf4e3bd">
+<div id="outline-container-orgab9c2dd" class="outline-4">
+<h4 id="orgab9c2dd">300 Multiple Choice</h4>
+<div class="outline-text-4" id="text-orgab9c2dd">
 <p>
 被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。
 </p>
 </div>
 </div>
-<div id="outline-container-orga87974d" class="outline-4">
-<h4 id="orga87974d">301 Moved Permanently</h4>
-<div class="outline-text-4" id="text-orga87974d">
+<div id="outline-container-org57ffb7b" class="outline-4">
+<h4 id="org57ffb7b">301 Moved Permanently</h4>
+<div class="outline-text-4" id="text-org57ffb7b">
 <p>
 被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个 URI 之一。如果可能，拥有链接编辑功能的客户端应当自动把请求的地址修改为从服务器反馈回来的地址。除非额外指定，否则这个响应也是可缓存的。
 </p>
 </div>
 </div>
-<div id="outline-container-orgc52e4d9" class="outline-4">
-<h4 id="orgc52e4d9">302 Found</h4>
-<div class="outline-text-4" id="text-orgc52e4d9">
+<div id="outline-container-org9f58e94" class="outline-4">
+<h4 id="org9f58e94">302 Found</h4>
+<div class="outline-text-4" id="text-org9f58e94">
 <p>
 请求的资源现在临时从不同的 URI 响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。
 </p>
 </div>
 </div>
-<div id="outline-container-org4b48702" class="outline-4">
-<h4 id="org4b48702">303 See Other</h4>
-<div class="outline-text-4" id="text-org4b48702">
+<div id="outline-container-orgaa5dd5f" class="outline-4">
+<h4 id="orgaa5dd5f">303 See Other</h4>
+<div class="outline-text-4" id="text-orgaa5dd5f">
 <p>
 对应当前请求的响应可以在另一个 URI 上被找到，而且客户端应当采用 GET 的方式访问那个资源。这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。
 </p>
 </div>
 </div>
-<div id="outline-container-org7e16523" class="outline-4">
-<h4 id="org7e16523">304 Not Modified</h4>
-<div class="outline-text-4" id="text-org7e16523">
+<div id="outline-container-orgfe1651c" class="outline-4">
+<h4 id="orgfe1651c">304 Not Modified</h4>
+<div class="outline-text-4" id="text-orgfe1651c">
 <p>
 如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。304 响应禁止包含消息体，因此始终以消息头后的第一个空行结尾。
 </p>
 </div>
 </div>
-<div id="outline-container-org39c43ac" class="outline-4">
-<h4 id="org39c43ac">305 Use Proxy</h4>
-<div class="outline-text-4" id="text-org39c43ac">
+<div id="outline-container-orgd2b3be6" class="outline-4">
+<h4 id="orgd2b3be6">305 Use Proxy</h4>
+<div class="outline-text-4" id="text-orgd2b3be6">
 <p>
 被请求的资源必须通过指定的代理才能被访问。Location 域中将给出指定的代理所在的 URI 信息，接收者需要重复发送一个单独的请求，通过这个代理才能访问相应资源。只有原始服务器才能建立305响应。
 </p>
 </div>
 </div>
-<div id="outline-container-org71fd560" class="outline-4">
-<h4 id="org71fd560">306 unused</h4>
-<div class="outline-text-4" id="text-org71fd560">
+<div id="outline-container-orgb70d83a" class="outline-4">
+<h4 id="orgb70d83a">306 unused</h4>
+<div class="outline-text-4" id="text-orgb70d83a">
 <p>
 在最新版的规范中，306 状态码已经不再被使用。
 </p>
 </div>
 </div>
-<div id="outline-container-org96c63d5" class="outline-4">
-<h4 id="org96c63d5">307 Temporary Redirect</h4>
-<div class="outline-text-4" id="text-org96c63d5">
+<div id="outline-container-orge12805b" class="outline-4">
+<h4 id="orge12805b">307 Temporary Redirect</h4>
+<div class="outline-text-4" id="text-orge12805b">
 <p>
 请求的资源现在临时从不同的URI 响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。
 </p>
 </div>
 </div>
-<div id="outline-container-org25d6b2f" class="outline-4">
-<h4 id="org25d6b2f">308 Permanent Redirect</h4>
-<div class="outline-text-4" id="text-org25d6b2f">
+<div id="outline-container-org431b409" class="outline-4">
+<h4 id="org431b409">308 Permanent Redirect</h4>
+<div class="outline-text-4" id="text-org431b409">
 <p>
 这意味着资源现在永久位于由 Location: HTTP Response 标头指定的另一个 URI。 这与 301 Moved Permanently HTTP 响应代码具有相同的语义，但用户代理不能更改所使用的 HTTP 方法：如果在第一个请求中使用 POST，则必须在第二个请求中使用 POST。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org212b7f3" class="outline-3">
-<h3 id="org212b7f3">客户端响应</h3>
-<div class="outline-text-3" id="text-org212b7f3">
+<div id="outline-container-orgce464bf" class="outline-3">
+<h3 id="orgce464bf">客户端响应</h3>
+<div class="outline-text-3" id="text-orgce464bf">
 </div>
-<div id="outline-container-orgdfff097" class="outline-4">
-<h4 id="orgdfff097">400 Bad Request</h4>
-<div class="outline-text-4" id="text-orgdfff097">
+<div id="outline-container-org82d2012" class="outline-4">
+<h4 id="org82d2012">400 Bad Request</h4>
+<div class="outline-text-4" id="text-org82d2012">
 <p>
 1、语义有误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。
 2、请求参数有误。
 </p>
 </div>
 </div>
-<div id="outline-container-orgb87db4d" class="outline-4">
-<h4 id="orgb87db4d">401 Unauthorized</h4>
-<div class="outline-text-4" id="text-orgb87db4d">
+<div id="outline-container-org735f162" class="outline-4">
+<h4 id="org735f162">401 Unauthorized</h4>
+<div class="outline-text-4" id="text-org735f162">
 <p>
 当前请求需要用户验证。该响应必须包含一个适用于被请求资源的 WWW-Authenticate 信息头用以询问用户信息。客户端可以重复提交一个包含恰当的 Authorization 头信息的请求。如果当前请求已经包含了 Authorization 证书，那么401响应代表着服务器验证已经拒绝了那些证书。如果401响应包含了与前一个响应相同的身份验证询问，且浏览器已经至少尝试了一次验证，那么浏览器应当向用户展示响应中包含的实体信息，因为这个实体信息中可能包含了相关诊断信息。
 </p>
 </div>
 </div>
-<div id="outline-container-orgbcd801e" class="outline-4">
-<h4 id="orgbcd801e">402 Payment Required</h4>
-<div class="outline-text-4" id="text-orgbcd801e">
+<div id="outline-container-org7868b59" class="outline-4">
+<h4 id="org7868b59">402 Payment Required</h4>
+<div class="outline-text-4" id="text-org7868b59">
 <p>
 此响应码保留以便将来使用，创造此响应码的最初目的是用于数字支付系统，然而现在并未使用。
 </p>
 </div>
 </div>
-<div id="outline-container-orgf4a899f" class="outline-4">
-<h4 id="orgf4a899f">403 Forbidden</h4>
-<div class="outline-text-4" id="text-orgf4a899f">
+<div id="outline-container-org094c0d3" class="outline-4">
+<h4 id="org094c0d3">403 Forbidden</h4>
+<div class="outline-text-4" id="text-org094c0d3">
 <p>
 服务器已经理解请求，但是拒绝执行它。与 401 响应不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。如果这不是一个 HEAD 请求，而且服务器希望能够讲清楚为何请求不能被执行，那么就应该在实体内描述拒绝的原因。当然服务器也可以返回一个 404 响应，假如它不希望让客户端获得任何信息。
 </p>
 </div>
 </div>
-<div id="outline-container-org1e733b6" class="outline-4">
-<h4 id="org1e733b6">404 Not Found</h4>
-<div class="outline-text-4" id="text-org1e733b6">
+<div id="outline-container-org73b3ed3" class="outline-4">
+<h4 id="org73b3ed3">404 Not Found</h4>
+<div class="outline-text-4" id="text-org73b3ed3">
 <p>
 请求失败，请求所希望得到的资源未被在服务器上发现。没有信息能够告诉用户这个状况到底是暂时的还是永久的。假如服务器知道情况的话，应当使用410状态码来告知旧资源因为某些内部的配置机制问题，已经永久的不可用，而且没有任何可以跳转的地址。404这个状态码被广泛应用于当服务器不想揭示到底为何请求被拒绝或者没有其他适合的响应可用的情况下。
 </p>
 </div>
 </div>
-<div id="outline-container-org19db326" class="outline-4">
-<h4 id="org19db326">405 Method Not Allowed</h4>
-<div class="outline-text-4" id="text-org19db326">
+<div id="outline-container-org5793d4a" class="outline-4">
+<h4 id="org5793d4a">405 Method Not Allowed</h4>
+<div class="outline-text-4" id="text-org5793d4a">
 <p>
 请求行中指定的请求方法不能被用于请求相应的资源。该响应必须返回一个Allow 头信息用以表示出当前资源能够接受的请求方法的列表。 鉴于 PUT，DELETE 方法会对服务器上的资源进行写操作，因而绝大部分的网页服务器都不支持或者在默认配置下不允许上述请求方法，对于此类请求均会返回405错误。
 </p>
 </div>
 </div>
-<div id="outline-container-org4ab2e94" class="outline-4">
-<h4 id="org4ab2e94">406 Not Acceptable</h4>
-<div class="outline-text-4" id="text-org4ab2e94">
+<div id="outline-container-org3cb5fa2" class="outline-4">
+<h4 id="org3cb5fa2">406 Not Acceptable</h4>
+<div class="outline-text-4" id="text-org3cb5fa2">
 <p>
 请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体。
 </p>
 </div>
 </div>
-<div id="outline-container-orgc378db0" class="outline-4">
-<h4 id="orgc378db0">407 Proxy Authentication Required</h4>
-<div class="outline-text-4" id="text-orgc378db0">
+<div id="outline-container-org40f98e3" class="outline-4">
+<h4 id="org40f98e3">407 Proxy Authentication Required</h4>
+<div class="outline-text-4" id="text-org40f98e3">
 <p>
 与401响应类似，只不过客户端必须在代理服务器上进行身份验证。代理服务器必须返回一个 Proxy-Authenticate 用以进行身份询问。客户端可以返回一个 Proxy-Authorization 信息头用以验证。
 </p>
 </div>
 </div>
-<div id="outline-container-org3426f8e" class="outline-4">
-<h4 id="org3426f8e">408 Request Timeout</h4>
-<div class="outline-text-4" id="text-org3426f8e">
+<div id="outline-container-orga59a22c" class="outline-4">
+<h4 id="orga59a22c">408 Request Timeout</h4>
+<div class="outline-text-4" id="text-orga59a22c">
 <p>
 请求超时。客户端没有在服务器预备等待的时间内完成一个请求的发送。客户端可以随时再次提交这一请求而无需进行任何更改。
 </p>
 </div>
 </div>
-<div id="outline-container-orgdc2af3b" class="outline-4">
-<h4 id="orgdc2af3b">409 Conflict</h4>
-<div class="outline-text-4" id="text-orgdc2af3b">
+<div id="outline-container-org97caca1" class="outline-4">
+<h4 id="org97caca1">409 Conflict</h4>
+<div class="outline-text-4" id="text-org97caca1">
 <p>
 由于和被请求的资源的当前状态之间存在冲突，请求无法完成。这个代码只允许用在这样的情况下才能被使用：用户被认为能够解决冲突，并且会重新提交新的请求。该响应应当包含足够的信息以便用户发现冲突的源头。
 </p>
 </div>
 </div>
-<div id="outline-container-org2c5bcb1" class="outline-4">
-<h4 id="org2c5bcb1">410 Gone</h4>
-<div class="outline-text-4" id="text-org2c5bcb1">
+<div id="outline-container-orgbbe7157" class="outline-4">
+<h4 id="orgbbe7157">410 Gone</h4>
+<div class="outline-text-4" id="text-orgbbe7157">
 <p>
 被请求的资源在服务器上已经不再可用，而且没有任何已知的转发地址。这样的状况应当被认为是永久性的。如果可能，拥有链接编辑功能的客户端应当在获得用户许可后删除所有指向这个地址的引用。如果服务器不知道或者无法确定这个状况是否是永久的，那么就应该使用 404 状态码。除非额外说明，否则这个响应是可缓存的。
 </p>
 </div>
 </div>
-<div id="outline-container-org6672a09" class="outline-4">
-<h4 id="org6672a09">411 Length Required</h4>
-<div class="outline-text-4" id="text-org6672a09">
+<div id="outline-container-org0e8930c" class="outline-4">
+<h4 id="org0e8930c">411 Length Required</h4>
+<div class="outline-text-4" id="text-org0e8930c">
 <p>
 服务器拒绝在没有定义 Content-Length 头的情况下接受请求。在添加了表明请求消息体长度的有效 Content-Length 头之后，客户端可以再次提交该请求。
 </p>
 </div>
 </div>
-<div id="outline-container-org8c3307f" class="outline-4">
-<h4 id="org8c3307f">412 Precondition Failed</h4>
-<div class="outline-text-4" id="text-org8c3307f">
+<div id="outline-container-orge432ef5" class="outline-4">
+<h4 id="orge432ef5">412 Precondition Failed</h4>
+<div class="outline-text-4" id="text-orge432ef5">
 <p>
 服务器在验证在请求的头字段中给出先决条件时，没能满足其中的一个或多个。这个状态码允许客户端在获取资源时在请求的元信息（请求头字段数据）中设置先决条件，以此避免该请求方法被应用到其希望的内容以外的资源上。
 </p>
 </div>
 </div>
-<div id="outline-container-org0f356e4" class="outline-4">
-<h4 id="org0f356e4">413 Payload Too Large</h4>
-<div class="outline-text-4" id="text-org0f356e4">
+<div id="outline-container-orgb43f51e" class="outline-4">
+<h4 id="orgb43f51e">413 Payload Too Large</h4>
+<div class="outline-text-4" id="text-orgb43f51e">
 <p>
 服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或者能够处理的范围。此种情况下，服务器可以关闭连接以免客户端继续发送此请求。如果这个状况是临时的，服务器应当返回一个 Retry-After 的响应头，以告知客户端可以在多少时间以后重新尝试。
 </p>
 </div>
 </div>
-<div id="outline-container-org11d805c" class="outline-4">
-<h4 id="org11d805c">414 URI Too Long</h4>
-<div class="outline-text-4" id="text-org11d805c">
+<div id="outline-container-orge8531b3" class="outline-4">
+<h4 id="orge8531b3">414 URI Too Long</h4>
+<div class="outline-text-4" id="text-orge8531b3">
 <p>
 请求的URI 长度超过了服务器能够解释的长度，因此服务器拒绝对该请求提供服务。这比较少见，通常的情况包括：本应使用POST方法的表单提交变成了GET方法，导致查询字符串（Query String）过长。
 </p>
 </div>
 </div>
-<div id="outline-container-orgb194a14" class="outline-4">
-<h4 id="orgb194a14">415 Unsupported Media Type</h4>
-<div class="outline-text-4" id="text-orgb194a14">
+<div id="outline-container-org946e65b" class="outline-4">
+<h4 id="org946e65b">415 Unsupported Media Type</h4>
+<div class="outline-text-4" id="text-org946e65b">
 <p>
 对于当前请求的方法和所请求的资源，请求中提交的实体并不是服务器中所支持的格式，因此请求被拒绝。
 </p>
 </div>
 </div>
-<div id="outline-container-org6e1d1e4" class="outline-4">
-<h4 id="org6e1d1e4">416 Range Not Satisfiable</h4>
-<div class="outline-text-4" id="text-org6e1d1e4">
+<div id="outline-container-org27f7b36" class="outline-4">
+<h4 id="org27f7b36">416 Range Not Satisfiable</h4>
+<div class="outline-text-4" id="text-org27f7b36">
 <p>
 如果请求中包含了 Range 请求头，并且 Range 中指定的任何数据范围都与当前资源的可用范围不重合，同时请求中又没有定义 If-Range 请求头，那么服务器就应当返回416状态码。
 </p>
 </div>
 </div>
-<div id="outline-container-orgfdc4edb" class="outline-4">
-<h4 id="orgfdc4edb">417 Expectation Failed</h4>
-<div class="outline-text-4" id="text-orgfdc4edb">
+<div id="outline-container-org5bdeb3c" class="outline-4">
+<h4 id="org5bdeb3c">417 Expectation Failed</h4>
+<div class="outline-text-4" id="text-org5bdeb3c">
 <p>
 此响应代码意味着服务器无法满足 Expect 请求标头字段指示的期望值。
 </p>
 </div>
 </div>
-<div id="outline-container-org9f935cf" class="outline-4">
-<h4 id="org9f935cf">418 I'm a teapot</h4>
-<div class="outline-text-4" id="text-org9f935cf">
+<div id="outline-container-org7ffc825" class="outline-4">
+<h4 id="org7ffc825">418 I'm a teapot</h4>
+<div class="outline-text-4" id="text-org7ffc825">
 <p>
 服务器拒绝尝试用 “茶壶冲泡咖啡”。
 </p>
 </div>
 </div>
-<div id="outline-container-orgac87905" class="outline-4">
-<h4 id="orgac87905">421 Misdirected Request</h4>
-<div class="outline-text-4" id="text-orgac87905">
+<div id="outline-container-org25402f0" class="outline-4">
+<h4 id="org25402f0">421 Misdirected Request</h4>
+<div class="outline-text-4" id="text-org25402f0">
 <p>
 该请求针对的是无法产生响应的服务器。 这可以由服务器发送，该服务器未配置为针对包含在请求 URI 中的方案和权限的组合产生响应。
 </p>
 </div>
 </div>
-<div id="outline-container-org578ccaa" class="outline-4">
-<h4 id="org578ccaa">422 Unprocessable Entity (WebDAV)</h4>
-<div class="outline-text-4" id="text-org578ccaa">
+<div id="outline-container-orgc244a3d" class="outline-4">
+<h4 id="orgc244a3d">422 Unprocessable Entity (WebDAV)</h4>
+<div class="outline-text-4" id="text-orgc244a3d">
 <p>
 请求格式良好，但由于语义错误而无法遵循。
 </p>
 </div>
 </div>
-<div id="outline-container-org8b3b156" class="outline-4">
-<h4 id="org8b3b156">423 Locked (WebDAV)</h4>
-<div class="outline-text-4" id="text-org8b3b156">
+<div id="outline-container-org3b8742a" class="outline-4">
+<h4 id="org3b8742a">423 Locked (WebDAV)</h4>
+<div class="outline-text-4" id="text-org3b8742a">
 <p>
 正在访问的资源被锁定。
 </p>
 </div>
 </div>
-<div id="outline-container-org0165e34" class="outline-4">
-<h4 id="org0165e34">424 Failed Dependency (WebDAV)</h4>
-<div class="outline-text-4" id="text-org0165e34">
+<div id="outline-container-orgc98b41e" class="outline-4">
+<h4 id="orgc98b41e">424 Failed Dependency (WebDAV)</h4>
+<div class="outline-text-4" id="text-orgc98b41e">
 <p>
 由于先前的请求失败，所以此次请求失败。
 </p>
 </div>
 </div>
-<div id="outline-container-org8d025f9" class="outline-4">
-<h4 id="org8d025f9">425 Too Early</h4>
-<div class="outline-text-4" id="text-org8d025f9">
+<div id="outline-container-orgb7aa53b" class="outline-4">
+<h4 id="orgb7aa53b">425 Too Early</h4>
+<div class="outline-text-4" id="text-orgb7aa53b">
 <p>
 服务器不愿意冒着风险去处理可能重播的请求。
 </p>
 </div>
 </div>
-<div id="outline-container-orgc983934" class="outline-4">
-<h4 id="orgc983934">426 Upgrade Required</h4>
-<div class="outline-text-4" id="text-orgc983934">
+<div id="outline-container-org1676bab" class="outline-4">
+<h4 id="org1676bab">426 Upgrade Required</h4>
+<div class="outline-text-4" id="text-org1676bab">
 <p>
 服务器拒绝使用当前协议执行请求，但可能在客户机升级到其他协议后愿意这样做。 服务器在 426 响应中发送 Upgrade 头以指示所需的协议。
 </p>
 </div>
 </div>
-<div id="outline-container-org8fd31ca" class="outline-4">
-<h4 id="org8fd31ca">428 Precondition Required</h4>
-<div class="outline-text-4" id="text-org8fd31ca">
+<div id="outline-container-org7f8075d" class="outline-4">
+<h4 id="org7f8075d">428 Precondition Required</h4>
+<div class="outline-text-4" id="text-org7f8075d">
 <p>
 原始服务器要求该请求是有条件的。 旨在防止“丢失更新”问题，即客户端获取资源状态，修改该状态并将其返回服务器，同时第三方修改服务器上的状态，从而导致冲突。
 </p>
 </div>
 </div>
-<div id="outline-container-org3c8a620" class="outline-4">
-<h4 id="org3c8a620">429 Too Many Requests</h4>
-<div class="outline-text-4" id="text-org3c8a620">
+<div id="outline-container-org4537d5d" class="outline-4">
+<h4 id="org4537d5d">429 Too Many Requests</h4>
+<div class="outline-text-4" id="text-org4537d5d">
 <p>
 用户在给定的时间内发送了太多请求（“限制请求速率”）。
 </p>
 </div>
 </div>
-<div id="outline-container-orgc2be534" class="outline-4">
-<h4 id="orgc2be534">431 Request Header Fields Too Large</h4>
-<div class="outline-text-4" id="text-orgc2be534">
+<div id="outline-container-org3767e3f" class="outline-4">
+<h4 id="org3767e3f">431 Request Header Fields Too Large</h4>
+<div class="outline-text-4" id="text-org3767e3f">
 <p>
 服务器不愿意处理请求，因为它的 请求头字段太大（ Request Header Fields Too Large）。 请求可以在减小请求头字段的大小后重新提交。
 </p>
 </div>
 </div>
-<div id="outline-container-orgc81dc62" class="outline-4">
-<h4 id="orgc81dc62">451 Unavailable For Legal Reasons</h4>
-<div class="outline-text-4" id="text-orgc81dc62">
+<div id="outline-container-orga88a117" class="outline-4">
+<h4 id="orga88a117">451 Unavailable For Legal Reasons</h4>
+<div class="outline-text-4" id="text-orga88a117">
 <p>
 用户请求非法资源，例如：由政府审查的网页。
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org87c42a2" class="outline-3">
-<h3 id="org87c42a2">服务端响应</h3>
-<div class="outline-text-3" id="text-org87c42a2">
+<div id="outline-container-orgc2deb08" class="outline-3">
+<h3 id="orgc2deb08">服务端响应</h3>
+<div class="outline-text-3" id="text-orgc2deb08">
 </div>
-<div id="outline-container-org136be5d" class="outline-4">
-<h4 id="org136be5d">500 Internal Server Error</h4>
-<div class="outline-text-4" id="text-org136be5d">
+<div id="outline-container-orgd2e2ebd" class="outline-4">
+<h4 id="orgd2e2ebd">500 Internal Server Error</h4>
+<div class="outline-text-4" id="text-orgd2e2ebd">
 <p>
 服务器遇到了不知道如何处理的情况。
 </p>
 </div>
 </div>
-<div id="outline-container-orgfc1d4ee" class="outline-4">
-<h4 id="orgfc1d4ee">501 Not Implemented</h4>
-<div class="outline-text-4" id="text-orgfc1d4ee">
+<div id="outline-container-org4b4e0cc" class="outline-4">
+<h4 id="org4b4e0cc">501 Not Implemented</h4>
+<div class="outline-text-4" id="text-org4b4e0cc">
 <p>
 此请求方法不被服务器支持且无法被处理。只有GET和HEAD是要求服务器支持的，它们必定不会返回此错误代码。
 </p>
 </div>
 </div>
-<div id="outline-container-orgd418082" class="outline-4">
-<h4 id="orgd418082">502 Bad Gateway</h4>
-<div class="outline-text-4" id="text-orgd418082">
+<div id="outline-container-org65b23da" class="outline-4">
+<h4 id="org65b23da">502 Bad Gateway</h4>
+<div class="outline-text-4" id="text-org65b23da">
 <p>
 此错误响应表明服务器作为网关需要得到一个处理这个请求的响应，但是得到一个错误的响应。
 </p>
 </div>
 </div>
-<div id="outline-container-orgb53ddad" class="outline-4">
-<h4 id="orgb53ddad">503 Service Unavailable</h4>
-<div class="outline-text-4" id="text-orgb53ddad">
+<div id="outline-container-orgf0ac516" class="outline-4">
+<h4 id="orgf0ac516">503 Service Unavailable</h4>
+<div class="outline-text-4" id="text-orgf0ac516">
 <p>
 服务器没有准备好处理请求。 常见原因是服务器因维护或重载而停机。 请注意，与此响应一起，应发送解释问题的用户友好页面。 这个响应应该用于临时条件和 Retry-After：如果可能的话，HTTP头应该包含恢复服务之前的估计时间。 网站管理员还必须注意与此响应一起发送的与缓存相关的标头，因为这些临时条件响应通常不应被缓存。
 </p>
 </div>
 </div>
-<div id="outline-container-orgfefc0c5" class="outline-4">
-<h4 id="orgfefc0c5">504 Gateway Timeout</h4>
-<div class="outline-text-4" id="text-orgfefc0c5">
+<div id="outline-container-org25a530f" class="outline-4">
+<h4 id="org25a530f">504 Gateway Timeout</h4>
+<div class="outline-text-4" id="text-org25a530f">
 <p>
 当服务器作为网关，不能及时得到响应时返回此错误代码。
 </p>
 </div>
 </div>
-<div id="outline-container-org8b4d6ed" class="outline-4">
-<h4 id="org8b4d6ed">505 HTTP Version Not Supported</h4>
-<div class="outline-text-4" id="text-org8b4d6ed">
+<div id="outline-container-orgf9862d5" class="outline-4">
+<h4 id="orgf9862d5">505 HTTP Version Not Supported</h4>
+<div class="outline-text-4" id="text-orgf9862d5">
 <p>
 服务器不支持请求中所使用的HTTP协议版本。
 </p>
 </div>
 </div>
-<div id="outline-container-orga691bd8" class="outline-4">
-<h4 id="orga691bd8">506 Variant Also Negotiates</h4>
-<div class="outline-text-4" id="text-orga691bd8">
+<div id="outline-container-orge3ed78d" class="outline-4">
+<h4 id="orge3ed78d">506 Variant Also Negotiates</h4>
+<div class="outline-text-4" id="text-orge3ed78d">
 <p>
 服务器有一个内部配置错误：对请求的透明内容协商导致循环引用。
 </p>
 </div>
 </div>
-<div id="outline-container-org332fd76" class="outline-4">
-<h4 id="org332fd76">507 Insufficient Storage</h4>
-<div class="outline-text-4" id="text-org332fd76">
+<div id="outline-container-org9db281f" class="outline-4">
+<h4 id="org9db281f">507 Insufficient Storage</h4>
+<div class="outline-text-4" id="text-org9db281f">
 <p>
 服务器有内部配置错误：所选的变体资源被配置为参与透明内容协商本身，因此不是协商过程中的适当端点。
 </p>
 </div>
 </div>
-<div id="outline-container-org4e6e7e3" class="outline-4">
-<h4 id="org4e6e7e3">508 Loop Detected (WebDAV)</h4>
-<div class="outline-text-4" id="text-org4e6e7e3">
+<div id="outline-container-orga3307ef" class="outline-4">
+<h4 id="orga3307ef">508 Loop Detected (WebDAV)</h4>
+<div class="outline-text-4" id="text-orga3307ef">
 <p>
 服务器在处理请求时检测到无限循环。
 </p>
 </div>
 </div>
-<div id="outline-container-orgb07cd0e" class="outline-4">
-<h4 id="orgb07cd0e">510 Not Extended</h4>
-<div class="outline-text-4" id="text-orgb07cd0e">
+<div id="outline-container-orgd06c7fa" class="outline-4">
+<h4 id="orgd06c7fa">510 Not Extended</h4>
+<div class="outline-text-4" id="text-orgd06c7fa">
 <p>
 客户端需要对请求进一步扩展，服务器才能实现它。服务器会回复客户端发出扩展请求所需的所有信息。
 </p>
 </div>
 </div>
-<div id="outline-container-org79fd9be" class="outline-4">
-<h4 id="org79fd9be">511 Network Authentication Required</h4>
+<div id="outline-container-org2a3bf47" class="outline-4">
+<h4 id="org2a3bf47">511 Network Authentication Required</h4>
 </div>
-<div id="outline-container-orgd48b499" class="outline-4">
-<h4 id="orgd48b499">511 状态码指示客户端需要进行身份验证才能获得网络访问权限。</h4>
+<div id="outline-container-org34c01ec" class="outline-4">
+<h4 id="org34c01ec">511 状态码指示客户端需要进行身份验证才能获得网络访问权限。</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org873ac27" class="outline-2">
-<h2 id="org873ac27">参考</h2>
-<div class="outline-text-2" id="text-org873ac27">
+<div id="outline-container-org0400a4c" class="outline-2">
+<h2 id="org0400a4c">参考</h2>
+<div class="outline-text-2" id="text-org0400a4c">
 <ul class="org-ul">
 <li><a href="https:developer.mozilla.org/zh-CN/docs/Web/HTTP/Status">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status</a></li>
 </ul>

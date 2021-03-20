@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:45 -->
+<!-- 2021-03-20 Sat 22:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>api 文档规范制定</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,27 +229,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1bea938">引言</a></li>
-<li><a href="#org9e38c2b">模板</a></li>
-<li><a href="#org70cd6da">示例</a></li>
+<li><a href="#orga886128">引言</a></li>
+<li><a href="#org06f6325">模板</a></li>
+<li><a href="#org76d6215">示例</a></li>
 </ul>
 </li>
-<li><a href="#org882c3b9">视图</a></div>
+<li><a href="#org4631815">视图</a></div>
 </div>
 
 
-<div id="outline-container-org1bea938" class="outline-3">
-<h3 id="org1bea938">引言</h3>
-<div class="outline-text-3" id="text-org1bea938">
+<div id="outline-container-orga886128" class="outline-3">
+<h3 id="orga886128">引言</h3>
+<div class="outline-text-3" id="text-orga886128">
 <p>
 api文档一直诟病，文档不齐除外，主要是规范不统一，百花齐放。现在重新制定api新的规范。<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9e38c2b" class="outline-3">
-<h3 id="org9e38c2b">模板</h3>
-<div class="outline-text-3" id="text-org9e38c2b">
+<div id="outline-container-org06f6325" class="outline-3">
+<h3 id="org06f6325">模板</h3>
+<div class="outline-text-3" id="text-org06f6325">
 <p>
 目录：<br />
 </p>
@@ -267,9 +266,9 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
 </div>
 </div>
 
-<div id="outline-container-org70cd6da" class="outline-3">
-<h3 id="org70cd6da">示例</h3>
-<div class="outline-text-3" id="text-org70cd6da">
+<div id="outline-container-org76d6215" class="outline-3">
+<h3 id="org76d6215">示例</h3>
+<div class="outline-text-3" id="text-org76d6215">
 <p>
 因为一直使用mediawiki，示例备注<br />
 </p>
@@ -298,11 +297,11 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
       <span style="color: #99bb66;">"method"</span>:<span style="color: #99bb66;">"Achievement.getTaskList"</span>,<span style="background-color: #ff6655;">            </span>
       <span style="color: #99bb66;">"vmid"</span>:<span style="color: #99bb66;">"501644"</span>,<span style="background-color: #ff6655;">          </span>
       <span style="color: #99bb66;">"param"</span>:<span style="color: #c678dd;">{</span><span style="background-color: #ff6655;">                       </span>
-          <span style="color: #99bb66;">"type"</span>:1<span style="background-color: #ff6655;">                              </span>
+      <span style="color: #99bb66;">"type"</span>:1<span style="background-color: #ff6655;">                              </span>
       <span style="color: #c678dd;">}</span>,<span style="background-color: #ff6655;">              </span>
       <span style="color: #99bb66;">"_unset"</span>:<span style="color: #c678dd;">[</span><span style="background-color: #ff6655;">                               </span>
-          <span style="color: #99bb66;">"_unset"</span>,<span style="background-color: #ff6655;">                              </span>
-          <span style="color: #99bb66;">"mbsid"</span><span style="background-color: #ff6655;">                                </span>
+      <span style="color: #99bb66;">"_unset"</span>,<span style="background-color: #ff6655;">                              </span>
+      <span style="color: #99bb66;">"mbsid"</span><span style="background-color: #ff6655;">                                </span>
       <span style="color: #c678dd;">]</span>,
 <span style="color: #99bb66;">"mbsid"</span>:<span style="color: #99bb66;">"488"</span>
    <span style="color: #51afef;">}</span>
@@ -316,29 +315,29 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
   == &#36820;&#22238;&#31034;&#20363; ==<span style="background-color: #ff6655;">  </span>
    <span style="color: #51afef;">{</span><span style="background-color: #ff6655;">  </span>
       <span style="color: #99bb66;">"sys"</span>:<span style="color: #c678dd;">[</span><span style="background-color: #ff6655;">  </span>
-          17051110,<span style="background-color: #ff6655;">  </span>
-          0<span style="background-color: #ff6655;">  </span>
+      17051110,<span style="background-color: #ff6655;">  </span>
+      0<span style="background-color: #ff6655;">  </span>
       <span style="color: #c678dd;">]</span>,<span style="background-color: #ff6655;">  </span>
       <span style="color: #99bb66;">"time"</span>:1497414550,
       <span style="color: #99bb66;">"ret"</span>:<span style="color: #c678dd;">{</span><span style="background-color: #ff6655;"> </span>
-          <span style="color: #99bb66;">"cdnVer"</span>:<span style="color: #99bb66;">""</span>,<span style="background-color: #ff6655;"> </span>
-          <span style="color: #99bb66;">"picPath"</span>:<span style="color: #99bb66;">"xx"</span>,<span style="background-color: #ff6655;"> </span>
-          <span style="color: #99bb66;">"list"</span>:<span style="color: #99bb66;">[</span><span style="background-color: #ff6655;">  </span>
-              <span style="color: #dd8844;">{</span><span style="background-color: #ff6655;">  </span>
-                  <span style="color: #99bb66;">"taskId"</span>:1,
-                  <span style="color: #99bb66;">"conditionNum"</span>:2,
-                  <span style="color: #99bb66;">"chips"</span>:0,
-                  <span style="color: #99bb66;">"status"</span>:1,
-                  <span style="color: #99bb66;">"new"</span>:<span style="color: #51afef;">null</span>,
-                  <span style="color: #99bb66;">"levels"</span>:<span style="color: #99bb66;">""</span>,
-                  <span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"xxx"</span>,
-                  <span style="color: #99bb66;">"desc"</span>:<span style="color: #99bb66;">"xxx"</span>,
-                  <span style="color: #99bb66;">"progress"</span>:0
-              <span style="color: #dd8844;">}</span><span style="background-color: #ff6655;">  </span>
-          <span style="color: #99bb66;">]</span>,<span style="background-color: #ff6655;">  </span>
-          <span style="color: #99bb66;">"allCnt"</span>:52,
-          <span style="color: #99bb66;">"completeCnt"</span>:0,
-          <span style="color: #99bb66;">"finishCnt"</span>:<span style="color: #51afef;">null</span>
+      <span style="color: #99bb66;">"cdnVer"</span>:<span style="color: #99bb66;">""</span>,<span style="background-color: #ff6655;"> </span>
+      <span style="color: #99bb66;">"picPath"</span>:<span style="color: #99bb66;">"xx"</span>,<span style="background-color: #ff6655;"> </span>
+      <span style="color: #99bb66;">"list"</span>:<span style="color: #99bb66;">[</span><span style="background-color: #ff6655;">  </span>
+          <span style="color: #dd8844;">{</span><span style="background-color: #ff6655;">  </span>
+          <span style="color: #99bb66;">"taskId"</span>:1,
+          <span style="color: #99bb66;">"conditionNum"</span>:2,
+          <span style="color: #99bb66;">"chips"</span>:0,
+          <span style="color: #99bb66;">"status"</span>:1,
+          <span style="color: #99bb66;">"new"</span>:<span style="color: #51afef;">null</span>,
+          <span style="color: #99bb66;">"levels"</span>:<span style="color: #99bb66;">""</span>,
+          <span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"xxx"</span>,
+          <span style="color: #99bb66;">"desc"</span>:<span style="color: #99bb66;">"xxx"</span>,
+          <span style="color: #99bb66;">"progress"</span>:0
+          <span style="color: #dd8844;">}</span><span style="background-color: #ff6655;">  </span>
+      <span style="color: #99bb66;">]</span>,<span style="background-color: #ff6655;">  </span>
+      <span style="color: #99bb66;">"allCnt"</span>:52,
+      <span style="color: #99bb66;">"completeCnt"</span>:0,
+      <span style="color: #99bb66;">"finishCnt"</span>:<span style="color: #51afef;">null</span>
       <span style="color: #c678dd;">}</span>,<span style="background-color: #ff6655;">  </span>
       <span style="color: #99bb66;">"api"</span>:<span style="color: #99bb66;">"v5"</span>,
       <span style="color: #99bb66;">"flag"</span>:1
@@ -357,9 +356,9 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
 </div>
 </div>
 
-<div id="outline-container-org882c3b9" class="outline-2">
-<h2 id="org882c3b9">视图</h2>
-<div class="outline-text-2" id="text-org882c3b9">
+<div id="outline-container-org4631815" class="outline-2">
+<h2 id="org4631815">视图</h2>
+<div class="outline-text-2" id="text-org4631815">
 <img src="/static/img/11B02E83E6DADE0CAE37E82B219BBCCA.jpg" alt="/static/img/11B02E83E6DADE0CAE37E82B219BBCCA.jpg" />
 <img src="/static/img/994985FE7652889B881F34FA72110F99.png" alt="/static/img/994985FE7652889B881F34FA72110F99.png" />
 
@@ -371,7 +370,7 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-06-29 20:23:04 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2017-06-29 20:23:04 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

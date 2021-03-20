@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-25 Thu 17:01 -->
+<!-- 2021-03-20 Sat 22:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>vsftpd搭建使用</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,29 +229,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org42639f2">背景</a></li>
-<li><a href="#org81ced08">安装</a></li>
-<li><a href="#orgdb4d518">添加账号</a></li>
-<li><a href="#orgf01c673">设置密码</a></li>
-<li><a href="#orga43d525">配置修改</a></li>
-<li><a href="#orgf3b1177">操作</a></li>
-<li><a href="#orgf103f8f">测试</a></li>
-<li><a href="#org2b90b8a">总结</a></li>
+<li><a href="#org2fe3e90">背景</a></li>
+<li><a href="#org243eeef">安装</a></li>
+<li><a href="#orgc7a09cb">添加账号</a></li>
+<li><a href="#org9940ca8">设置密码</a></li>
+<li><a href="#org3f2a07d">配置修改</a></li>
+<li><a href="#org0cf065c">操作</a></li>
+<li><a href="#orgfd932d1">测试</a></li>
+<li><a href="#orgdc2a8bc">总结</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org42639f2" class="outline-2">
-<h2 id="org42639f2">背景</h2>
-<div class="outline-text-2" id="text-org42639f2">
+<div id="outline-container-org2fe3e90" class="outline-2">
+<h2 id="org2fe3e90">背景</h2>
+<div class="outline-text-2" id="text-org2fe3e90">
 <p>
 客户端需上传一些安装包给运营自行安装测试，方便客户端同学自行上传。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org81ced08" class="outline-2">
-<h2 id="org81ced08">安装</h2>
-<div class="outline-text-2" id="text-org81ced08">
+<div id="outline-container-org243eeef" class="outline-2">
+<h2 id="org243eeef">安装</h2>
+<div class="outline-text-2" id="text-org243eeef">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;"># </span><span style="color: #747474;">debian</span>
 sudo apt-get install vsftpd
@@ -266,9 +265,9 @@ yum install vsftpd
 </div>
 </div>
 
-<div id="outline-container-orgdb4d518" class="outline-2">
-<h2 id="orgdb4d518">添加账号</h2>
-<div class="outline-text-2" id="text-orgdb4d518">
+<div id="outline-container-orgc7a09cb" class="outline-2">
+<h2 id="orgc7a09cb">添加账号</h2>
+<div class="outline-text-2" id="text-orgc7a09cb">
 <div class="org-src-container">
 <pre class="src src-bash">useradd -g www -d /data/wwwroot/mtv.xxx.com/apps/data -s /sbin/nologin mvtftpuser
 <span style="color: #747474;">#</span><span style="color: #747474;">useradd &#35828;&#26126;</span>
@@ -283,9 +282,9 @@ yum install vsftpd
 </div>
 </div>
 
-<div id="outline-container-orgf01c673" class="outline-2">
-<h2 id="orgf01c673">设置密码</h2>
-<div class="outline-text-2" id="text-orgf01c673">
+<div id="outline-container-org9940ca8" class="outline-2">
+<h2 id="org9940ca8">设置密码</h2>
+<div class="outline-text-2" id="text-org9940ca8">
 <p>
 passwd mvtftpuser<br />
 自行设置即可<br />
@@ -293,9 +292,9 @@ passwd mvtftpuser<br />
 </div>
 </div>
 
-<div id="outline-container-orga43d525" class="outline-2">
-<h2 id="orga43d525">配置修改</h2>
-<div class="outline-text-2" id="text-orga43d525">
+<div id="outline-container-org3f2a07d" class="outline-2">
+<h2 id="org3f2a07d">配置修改</h2>
+<div class="outline-text-2" id="text-org3f2a07d">
 <p>
 主要为了安全进行必要的修改<br />
 </p>
@@ -347,9 +346,9 @@ passwd mvtftpuser<br />
 </div>
 </div>
 
-<div id="outline-container-orgf3b1177" class="outline-2">
-<h2 id="orgf3b1177">操作</h2>
-<div class="outline-text-2" id="text-orgf3b1177">
+<div id="outline-container-org0cf065c" class="outline-2">
+<h2 id="org0cf065c">操作</h2>
+<div class="outline-text-2" id="text-org0cf065c">
 <div class="org-src-container">
 <pre class="src src-bash">service vsftpd start <span style="color: #747474;">#</span><span style="color: #747474;">&#21551;&#21160;&#31561;&#25805;&#20316;</span>
 &#25110;
@@ -359,18 +358,18 @@ passwd mvtftpuser<br />
 </div>
 </div>
 
-<div id="outline-container-orgf103f8f" class="outline-2">
-<h2 id="orgf103f8f">测试</h2>
-<div class="outline-text-2" id="text-orgf103f8f">
+<div id="outline-container-orgfd932d1" class="outline-2">
+<h2 id="orgfd932d1">测试</h2>
+<div class="outline-text-2" id="text-orgfd932d1">
 <p>
 略<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2b90b8a" class="outline-2">
-<h2 id="org2b90b8a">总结</h2>
-<div class="outline-text-2" id="text-org2b90b8a">
+<div id="outline-container-orgdc2a8bc" class="outline-2">
+<h2 id="orgdc2a8bc">总结</h2>
+<div class="outline-text-2" id="text-orgdc2a8bc">
 <p>
 记得还是毕业那两年折腾这种配置了，都忘记的差不多了。只能通过网络查漏补缺，然后备注记录。<br />
 </p>

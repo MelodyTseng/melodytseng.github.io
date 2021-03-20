@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:45 -->
+<!-- 2021-03-20 Sat 22:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elk add node solved unassigned shards</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,22 +229,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcb1da14">问题</a></li>
-<li><a href="#org619c5aa">下载</a></li>
-<li><a href="#org55cd283">logstash udp server</a></li>
-<li><a href="#orgc6bb7dc">kibana配置</a></li>
-<li><a href="#org3773ccf">Elasticsearch节点1</a></li>
-<li><a href="#org2d8670f">Elasticsearch节点2</a></li>
-<li><a href="#org4415a9b">其他</a></li>
-<li><a href="#orga580fa6">启动</a></li>
-<li><a href="#orgf21dc4f">验收</a></li>
+<li><a href="#org88e80f1">问题</a></li>
+<li><a href="#orgf0c2a46">下载</a></li>
+<li><a href="#orgfaa0cc5">logstash udp server</a></li>
+<li><a href="#org1a5fce0">kibana配置</a></li>
+<li><a href="#org829fcb8">Elasticsearch节点1</a></li>
+<li><a href="#org08cc330">Elasticsearch节点2</a></li>
+<li><a href="#orgae59915">其他</a></li>
+<li><a href="#orgd401ebd">启动</a></li>
+<li><a href="#org7541e86">验收</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgcb1da14" class="outline-2">
-<h2 id="orgcb1da14">问题</h2>
-<div class="outline-text-2" id="text-orgcb1da14">
+<div id="outline-container-org88e80f1" class="outline-2">
+<h2 id="org88e80f1">问题</h2>
+<div class="outline-text-2" id="text-org88e80f1">
 <p>
 因为之前搭建ELK是单机单节点，运行了一段时间了，今天上服务器查看了下状态，命令如下
 </p>
@@ -260,10 +259,10 @@
 </div>
 </div>
 
-<div id="outline-container-org619c5aa" class="outline-2">
-<h2 id="org619c5aa">下载</h2>
-<div class="outline-text-2" id="text-org619c5aa">
-<pre class="example" id="org8c98c00">
+<div id="outline-container-orgf0c2a46" class="outline-2">
+<h2 id="orgf0c2a46">下载</h2>
+<div class="outline-text-2" id="text-orgf0c2a46">
+<pre class="example" id="org33092b0">
 elasticsearch-5.2.2
 logstash-5.2.2
 kibana-5.2.2-linux-x86_64
@@ -271,10 +270,10 @@ kibana-5.2.2-linux-x86_64
 </div>
 </div>
 
-<div id="outline-container-org55cd283" class="outline-2">
-<h2 id="org55cd283">logstash udp server</h2>
-<div class="outline-text-2" id="text-org55cd283">
-<pre class="example" id="orge54ca7b">
+<div id="outline-container-orgfaa0cc5" class="outline-2">
+<h2 id="orgfaa0cc5">logstash udp server</h2>
+<div class="outline-text-2" id="text-orgfaa0cc5">
+<pre class="example" id="org2208904">
 input {
    udp {
 	port =&gt; 65551
@@ -306,10 +305,10 @@ output {
 </div>
 </div>
 
-<div id="outline-container-orgc6bb7dc" class="outline-2">
-<h2 id="orgc6bb7dc">kibana配置</h2>
-<div class="outline-text-2" id="text-orgc6bb7dc">
-<pre class="example" id="orgbdd0262">
+<div id="outline-container-org1a5fce0" class="outline-2">
+<h2 id="org1a5fce0">kibana配置</h2>
+<div class="outline-text-2" id="text-org1a5fce0">
+<pre class="example" id="org611f904">
 server.port: 8080
 server.host: "0.0.0.0"
 elasticsearch.url: "http://localhost:9200"
@@ -318,10 +317,10 @@ elasticsearch.requestTimeout: 60000
 </div>
 </div>
 
-<div id="outline-container-org3773ccf" class="outline-2">
-<h2 id="org3773ccf">Elasticsearch节点1</h2>
-<div class="outline-text-2" id="text-org3773ccf">
-<pre class="example" id="orgfb975e7">
+<div id="outline-container-org829fcb8" class="outline-2">
+<h2 id="org829fcb8">Elasticsearch节点1</h2>
+<div class="outline-text-2" id="text-org829fcb8">
+<pre class="example" id="org2ed386b">
 cluster.name: logcenter
 node.name: node1
 node.data: true
@@ -332,10 +331,10 @@ discovery.zen.minimum_master_nodes: 1
 </div>
 </div>
 
-<div id="outline-container-org2d8670f" class="outline-2">
-<h2 id="org2d8670f">Elasticsearch节点2</h2>
-<div class="outline-text-2" id="text-org2d8670f">
-<pre class="example" id="org41697b4">
+<div id="outline-container-org08cc330" class="outline-2">
+<h2 id="org08cc330">Elasticsearch节点2</h2>
+<div class="outline-text-2" id="text-org08cc330">
+<pre class="example" id="orgb0ef9b5">
 cluster.name: logcenter
 node.name: node2
 node.data: true
@@ -348,10 +347,10 @@ discovery.zen.minimum_master_nodes: 1
 </div>
 </div>
 
-<div id="outline-container-org4415a9b" class="outline-2">
-<h2 id="org4415a9b">其他</h2>
-<div class="outline-text-2" id="text-org4415a9b">
-<pre class="example" id="org3b17e51">
+<div id="outline-container-orgae59915" class="outline-2">
+<h2 id="orgae59915">其他</h2>
+<div class="outline-text-2" id="text-orgae59915">
+<pre class="example" id="org951bef4">
 ### 可以修改 elasticsearch-5.2.2/config/jvm.options 
 -Xms3g
 -Xmx3g
@@ -377,9 +376,9 @@ discovery.zen.minimum_master_nodes: 1
 </div>
 </div>
 
-<div id="outline-container-orga580fa6" class="outline-2">
-<h2 id="orga580fa6">启动</h2>
-<div class="outline-text-2" id="text-orga580fa6">
+<div id="outline-container-orgd401ebd" class="outline-2">
+<h2 id="orgd401ebd">启动</h2>
+<div class="outline-text-2" id="text-orgd401ebd">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">!/bin/</span><span style="color: #51afef;">bash</span>
 nohup /disk1/elk/kibana-5.2.2-linux-x86_64/bin/kibana &gt; /disk1/elk/kibana.log 2&gt;&amp;1 &amp;
@@ -394,10 +393,10 @@ $ ./start.sh
 </div>
 </div>
 
-<div id="outline-container-orgf21dc4f" class="outline-2">
-<h2 id="orgf21dc4f">验收</h2>
-<div class="outline-text-2" id="text-orgf21dc4f">
-<pre class="example" id="org6c4ec93">
+<div id="outline-container-org7541e86" class="outline-2">
+<h2 id="org7541e86">验收</h2>
+<div class="outline-text-2" id="text-org7541e86">
+<pre class="example" id="org203ee65">
 $ curl -XGET "http://localhost:9200/_cat/health?v"
 epoch      timestamp cluster   status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
 1489128117 14:41:57  logcenter green           2         2     12   6    0    0        0             0                  -                100.0%
@@ -413,7 +412,7 @@ epoch      timestamp cluster   status node.total node.data shards pri relo init 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

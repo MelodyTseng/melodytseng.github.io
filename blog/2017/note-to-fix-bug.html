@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:45 -->
+<!-- 2021-03-20 Sat 22:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>note to fix bug</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,44 +229,44 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb7e0786">记录一次修复问题</a>
+<li><a href="#orgbb101e6">记录一次修复问题</a>
 <ul>
-<li><a href="#orgce130cb">缘由</a></li>
-<li><a href="#org7ab8580">问题原因</a></li>
-<li><a href="#org7574e49">解决</a></li>
-<li><a href="#org374e391">插曲</a></li>
-<li><a href="#org28e49b3">反思</a></li>
+<li><a href="#org7caf900">缘由</a></li>
+<li><a href="#org394bd8f">问题原因</a></li>
+<li><a href="#org0097865">解决</a></li>
+<li><a href="#org76a4058">插曲</a></li>
+<li><a href="#orgb69f8c1">反思</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb7e0786" class="outline-2">
-<h2 id="orgb7e0786">记录一次修复问题</h2>
-<div class="outline-text-2" id="text-orgb7e0786">
+<div id="outline-container-orgbb101e6" class="outline-2">
+<h2 id="orgbb101e6">记录一次修复问题</h2>
+<div class="outline-text-2" id="text-orgbb101e6">
 </div>
-<div id="outline-container-orgce130cb" class="outline-3">
-<h3 id="orgce130cb">缘由</h3>
-<div class="outline-text-3" id="text-orgce130cb">
+<div id="outline-container-org7caf900" class="outline-3">
+<h3 id="org7caf900">缘由</h3>
+<div class="outline-text-3" id="text-org7caf900">
 <p>
 运营接到客服的反馈，某个用户某个道具数量惊人，觉得有问题，需运营开发核查；运营也就直接转给了我。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7ab8580" class="outline-3">
-<h3 id="org7ab8580">问题原因</h3>
-<div class="outline-text-3" id="text-org7ab8580">
+<div id="outline-container-org394bd8f" class="outline-3">
+<h3 id="org394bd8f">问题原因</h3>
+<div class="outline-text-3" id="text-org394bd8f">
 <p>
 根据该用户获取的道具来源备注，快速定位到登录后免费获取某个道具(备注：每天只可以领取一次)。经过一番code review，发现每天领取一次这个道具的业务逻辑有明显漏洞，只是简单get，set每天领取的标示这样来判断是否需要领取(开发容易犯错的地方)。在并发的情况，很容易反复领取。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7574e49" class="outline-3">
-<h3 id="org7574e49">解决</h3>
-<div class="outline-text-3" id="text-org7574e49">
+<div id="outline-container-org0097865" class="outline-3">
+<h3 id="org0097865">解决</h3>
+<div class="outline-text-3" id="text-org0097865">
 <p>
 快速解决方法是使用原子计数器解决(如：redis)，本身项目有使用redis。
 当然，还有其他方法，比如使用队列等等（容易忽略是：漏做“幂等”）
@@ -275,18 +274,18 @@
 </div>
 </div>
 
-<div id="outline-container-org374e391" class="outline-3">
-<h3 id="org374e391">插曲</h3>
-<div class="outline-text-3" id="text-org374e391">
+<div id="outline-container-org76a4058" class="outline-3">
+<h3 id="org76a4058">插曲</h3>
+<div class="outline-text-3" id="text-org76a4058">
 <p>
 由于忙的原因，在初步定位出原因的情况下，请了另一个开发去修复；结果，该开发去模拟重现，加上重新去实现防并发的方法，测试等等，到了第二天上午还未修复；实在等不及，就很简单加了几行代码先上线了。（备注：自身的原因，没说明问题的严重性）
 </p>
 </div>
 </div>
 
-<div id="outline-container-org28e49b3" class="outline-3">
-<h3 id="org28e49b3">反思</h3>
-<div class="outline-text-3" id="text-org28e49b3">
+<div id="outline-container-orgb69f8c1" class="outline-3">
+<h3 id="orgb69f8c1">反思</h3>
+<div class="outline-text-3" id="text-orgb69f8c1">
 <ul class="org-ul">
 <li>对于这种问题，一定需要叮嘱问题的严重性，跟指出快速修复的重要性</li>
 <li>对于这种免费获取道具等等的接口，被刷是很正常的；所以开发一定需要记得做防并发及业务的幂等</li>
@@ -302,7 +301,7 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-06-29 22:24:55 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2017-06-29 22:24:55 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

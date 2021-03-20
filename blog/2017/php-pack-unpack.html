@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:45 -->
+<!-- 2021-03-20 Sat 22:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php pack unpack</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,32 +229,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6cf5306">学习</a>
+<li><a href="#orga248866">学习</a>
 <ul>
-<li><a href="#org1fd82e2">pack</a></li>
-<li><a href="#org430bd5a">unpack</a></li>
-<li><a href="#org80ddb4e">format</a></li>
-<li><a href="#org492dfd8">作用</a></li>
-<li><a href="#orga7286bb">备注</a></li>
+<li><a href="#org8278e7a">pack</a></li>
+<li><a href="#org4debe6c">unpack</a></li>
+<li><a href="#orgf09c9d4">format</a></li>
+<li><a href="#orgded1c58">作用</a></li>
+<li><a href="#orgc3c0298">备注</a></li>
 </ul>
 </li>
-<li><a href="#org8eaf92d">应用</a>
+<li><a href="#org070cf5a">应用</a>
 <ul>
-<li><a href="#org34e1cec">demo代码</a></li>
-<li><a href="#org67fea1b">实例</a></li>
+<li><a href="#org46f8da0">demo代码</a></li>
+<li><a href="#orge4ed16b">实例</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6cf5306" class="outline-2">
-<h2 id="org6cf5306">学习</h2>
-<div class="outline-text-2" id="text-org6cf5306">
+<div id="outline-container-orga248866" class="outline-2">
+<h2 id="orga248866">学习</h2>
+<div class="outline-text-2" id="text-orga248866">
 </div>
-<div id="outline-container-org1fd82e2" class="outline-3">
-<h3 id="org1fd82e2">pack</h3>
-<div class="outline-text-3" id="text-org1fd82e2">
+<div id="outline-container-org8278e7a" class="outline-3">
+<h3 id="org8278e7a">pack</h3>
+<div class="outline-text-3" id="text-org8278e7a">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #44b9b1;">string</span> <span style="color: #44b9b1;">pack</span> <span style="color: #51afef;">(</span> <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> <span style="color: #c678dd;">[</span>, <span style="color: #44b9b1;">mixed</span> $<span style="color: #979797;">args</span> <span style="color: #99bb66;">[</span>, <span style="color: #44b9b1;">mixed</span> <span style="color: #979797;">$</span>... <span style="color: #99bb66;">]</span><span style="color: #c678dd;">]</span> <span style="color: #51afef;">)</span>
 </pre>
@@ -266,9 +265,9 @@
 </div>
 </div>
 
-<div id="outline-container-org430bd5a" class="outline-3">
-<h3 id="org430bd5a">unpack</h3>
-<div class="outline-text-3" id="text-org430bd5a">
+<div id="outline-container-org4debe6c" class="outline-3">
+<h3 id="org4debe6c">unpack</h3>
+<div class="outline-text-3" id="text-org4debe6c">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef;">array</span> unpack <span style="color: #51afef;">(</span> <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> , <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">data</span> <span style="color: #51afef;">)</span>
 </pre>
@@ -276,9 +275,9 @@
 </div>
 </div>
 
-<div id="outline-container-org80ddb4e" class="outline-3">
-<h3 id="org80ddb4e">format</h3>
-<div class="outline-text-3" id="text-org80ddb4e">
+<div id="outline-container-orgf09c9d4" class="outline-3">
+<h3 id="orgf09c9d4">format</h3>
+<div class="outline-text-3" id="text-orgf09c9d4">
 <p>
 如下选项<br />
 </p>
@@ -425,9 +424,9 @@
 </div>
 </div>
 
-<div id="outline-container-org492dfd8" class="outline-3">
-<h3 id="org492dfd8">作用</h3>
-<div class="outline-text-3" id="text-org492dfd8">
+<div id="outline-container-orgded1c58" class="outline-3">
+<h3 id="orgded1c58">作用</h3>
+<div class="outline-text-3" id="text-orgded1c58">
 <ul class="org-ul">
 <li>常用于tcp,udp服务的数据通信<br /></li>
 <li>自我脑补<br /></li>
@@ -435,9 +434,9 @@
 </div>
 </div>
 
-<div id="outline-container-orga7286bb" class="outline-3">
-<h3 id="orga7286bb">备注</h3>
-<div class="outline-text-3" id="text-orga7286bb">
+<div id="outline-container-orgc3c0298" class="outline-3">
+<h3 id="orgc3c0298">备注</h3>
+<div class="outline-text-3" id="text-orgc3c0298">
 <p>
 学习参考地址:<br />
 <a href="https://my.oschina.net/goal/blog/202378">https://my.oschina.net/goal/blog/202378</a>  <br />
@@ -448,13 +447,13 @@
 </div>
 
 
-<div id="outline-container-org8eaf92d" class="outline-2">
-<h2 id="org8eaf92d">应用</h2>
-<div class="outline-text-2" id="text-org8eaf92d">
+<div id="outline-container-org070cf5a" class="outline-2">
+<h2 id="org070cf5a">应用</h2>
+<div class="outline-text-2" id="text-org070cf5a">
 </div>
-<div id="outline-container-org34e1cec" class="outline-3">
-<h3 id="org34e1cec">demo代码</h3>
-<div class="outline-text-3" id="text-org34e1cec">
+<div id="outline-container-org46f8da0" class="outline-3">
+<h3 id="org46f8da0">demo代码</h3>
+<div class="outline-text-3" id="text-org46f8da0">
 <div class="org-src-container">
 <pre class="src src-php">git <span style="color: #51afef;">clone</span> https:<span style="color: #747474;">//</span><span style="color: #747474;">github.com/josephtseng-echo/php.git</span>
 </pre>
@@ -462,9 +461,9 @@
 </div>
 </div>
 
-<div id="outline-container-org67fea1b" class="outline-3">
-<h3 id="org67fea1b">实例</h3>
-<div class="outline-text-3" id="text-org67fea1b">
+<div id="outline-container-orge4ed16b" class="outline-3">
+<h3 id="orge4ed16b">实例</h3>
+<div class="outline-text-3" id="text-orge4ed16b">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
 <span style="color: #51afef;">include</span><span style="color: #51afef;">(</span><span style="color: #51afef;">__DIR__</span>.<span style="color: #99bb66;">'/../spl_autoload.php'</span><span style="color: #51afef;">)</span>;
@@ -476,8 +475,8 @@ $<span style="color: #979797;">pw</span>-&gt;writeEnd<span style="color: #51afef
 $<span style="color: #979797;">buff</span> = $<span style="color: #979797;">pw</span>-&gt;getPacketBuffer<span style="color: #51afef;">()</span>;
 $<span style="color: #979797;">pr</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\Read</span><span style="color: #51afef;">()</span>;
 <span style="color: #51afef;">if</span><span style="color: #51afef;">(</span>$<span style="color: #979797;">pr</span>-&gt;readPackageBuffer<span style="color: #c678dd;">(</span>$<span style="color: #979797;">buff</span><span style="color: #c678dd;">)</span> == <span style="color: #51afef;">true</span><span style="color: #51afef;">){</span>
-        <span style="color: #747474;">//</span><span style="color: #747474;">print_r($pr-&gt;getHeaderInfo());</span>
-        <span style="color: #747474;">//</span><span style="color: #747474;">echo $pr-&gt;getCmd();</span>
+    <span style="color: #747474;">//</span><span style="color: #747474;">print_r($pr-&gt;getHeaderInfo());</span>
+    <span style="color: #747474;">//</span><span style="color: #747474;">echo $pr-&gt;getCmd();</span>
 <span style="color: #51afef;">}</span>
 <span style="color: #747474;">//</span><span style="color: #747474;">test class EncryptDecrypt</span>
 $<span style="color: #979797;">ed</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\EncryptDecrypt</span><span style="color: #51afef;">()</span>;
@@ -511,7 +510,7 @@ $<span style="color: #979797;">ua</span> = unpack<span style="color: #51afef;">(
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

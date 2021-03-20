@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:46 -->
+<!-- 2021-03-20 Sat 22:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>hbase使用备注</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,22 +229,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb75762f">hbase使用备注</a>
+<li><a href="#orgf118cd4">hbase使用备注</a>
 <ul>
-<li><a href="#org0e02d06">常见命令</a></li>
-<li><a href="#org80a9012">hbase建表</a>
+<li><a href="#org4812e2c">常见命令</a></li>
+<li><a href="#org67388df">hbase建表</a>
 <ul>
-<li><a href="#orgad7ccec">语句</a></li>
-<li><a href="#org9d4410a">参数</a>
+<li><a href="#org8ef5d7f">语句</a></li>
+<li><a href="#org297ca63">参数</a>
 <ul>
-<li><a href="#org3a49f40">NAME</a></li>
-<li><a href="#org3895b5f">BLOOMFILTER</a></li>
-<li><a href="#org1654ce1">VERSIONS</a></li>
-<li><a href="#orgbb1fc5e">COMPRESSION</a></li>
-<li><a href="#org4bd8b25">TTL</a></li>
-<li><a href="#org9ba8fbd">IN_MEMORY</a></li>
-<li><a href="#orgcbcf7aa">BLOCKCACHE</a></li>
-<li><a href="#orge7ea635">BLOCKSIZE</a></li>
+<li><a href="#org20b2026">NAME</a></li>
+<li><a href="#orgb777840">BLOOMFILTER</a></li>
+<li><a href="#orgd28b667">VERSIONS</a></li>
+<li><a href="#org1cb1482">COMPRESSION</a></li>
+<li><a href="#orgec7bbac">TTL</a></li>
+<li><a href="#orgb53f4ea">IN_MEMORY</a></li>
+<li><a href="#orgf70670f">BLOCKCACHE</a></li>
+<li><a href="#org793ca87">BLOCKSIZE</a></li>
 </ul>
 </li>
 </ul>
@@ -256,13 +255,13 @@
 </div>
 </div>
 
-<div id="outline-container-orgb75762f" class="outline-2">
-<h2 id="orgb75762f">hbase使用备注</h2>
-<div class="outline-text-2" id="text-orgb75762f">
+<div id="outline-container-orgf118cd4" class="outline-2">
+<h2 id="orgf118cd4">hbase使用备注</h2>
+<div class="outline-text-2" id="text-orgf118cd4">
 </div>
-<div id="outline-container-org0e02d06" class="outline-3">
-<h3 id="org0e02d06">常见命令</h3>
-<div class="outline-text-3" id="text-org0e02d06">
+<div id="outline-container-org4812e2c" class="outline-3">
+<h3 id="org4812e2c">常见命令</h3>
+<div class="outline-text-3" id="text-org4812e2c">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;"># </span><span style="color: #747474;">&#33719;&#21462;&#21629;&#20196;&#24110;&#21161; help 'command_name'</span>
 <span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; help <span style="color: #99bb66;">'list'</span>
@@ -309,13 +308,13 @@
 </div>
 
 
-<div id="outline-container-org80a9012" class="outline-3">
-<h3 id="org80a9012">hbase建表</h3>
-<div class="outline-text-3" id="text-org80a9012">
+<div id="outline-container-org67388df" class="outline-3">
+<h3 id="org67388df">hbase建表</h3>
+<div class="outline-text-3" id="text-org67388df">
 </div>
-<div id="outline-container-orgad7ccec" class="outline-4">
-<h4 id="orgad7ccec">语句</h4>
-<div class="outline-text-4" id="text-orgad7ccec">
+<div id="outline-container-org8ef5d7f" class="outline-4">
+<h4 id="org8ef5d7f">语句</h4>
+<div class="outline-text-4" id="text-org8ef5d7f">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">create 'qp_test', {NAME =&gt; 'd', BLOOMFILTER =&gt; 'ROW', VERSIONS =&gt; '1',</span><span style="background-color: #ff6655;"> </span>
 <span style="color: #979797;">IN_MEMORY</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">KEEP_DELETED_CELLS</span> =&gt; <span style="color: #99bb66;">'FALSE'</span>, <span style="color: #979797;">DATA_BLOCK_ENCODING</span> =&gt; <span style="color: #99bb66;">'FAST_DIFF'</span>,<span style="background-color: #ff6655;"> </span>
@@ -326,13 +325,13 @@
 </div>
 </div>
 
-<div id="outline-container-org9d4410a" class="outline-4">
-<h4 id="org9d4410a">参数</h4>
-<div class="outline-text-4" id="text-org9d4410a">
+<div id="outline-container-org297ca63" class="outline-4">
+<h4 id="org297ca63">参数</h4>
+<div class="outline-text-4" id="text-org297ca63">
 </div>
-<div id="outline-container-org3a49f40" class="outline-5">
-<h5 id="org3a49f40">NAME</h5>
-<div class="outline-text-5" id="text-org3a49f40">
+<div id="outline-container-org20b2026" class="outline-5">
+<h5 id="org20b2026">NAME</h5>
+<div class="outline-text-5" id="text-org20b2026">
 <div class="org-src-container">
 <pre class="src src-bash">&#21015;&#26063;
 </pre>
@@ -340,9 +339,9 @@
 </div>
 </div>
 
-<div id="outline-container-org3895b5f" class="outline-5">
-<h5 id="org3895b5f">BLOOMFILTER</h5>
-<div class="outline-text-5" id="text-org3895b5f">
+<div id="outline-container-orgb777840" class="outline-5">
+<h5 id="orgb777840">BLOOMFILTER</h5>
+<div class="outline-text-5" id="text-orgb777840">
 <div class="org-src-container">
 <pre class="src src-bash">BLOOMFILTER : NONE | ROW | ROWCOL &#23545;&#21015;&#26063;&#21333;&#29420;&#21551;&#29992;&#24067;&#38534;
 NONE -&gt; &#21542;
@@ -353,9 +352,9 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 
-<div id="outline-container-org1654ce1" class="outline-5">
-<h5 id="org1654ce1">VERSIONS</h5>
-<div class="outline-text-5" id="text-org1654ce1">
+<div id="outline-container-orgd28b667" class="outline-5">
+<h5 id="orgd28b667">VERSIONS</h5>
+<div class="outline-text-5" id="text-orgd28b667">
 <div class="org-src-container">
 <pre class="src src-bash">VERSIONS : 1 || N || ...
 &#20445;&#30041;N&#20010;&#29256;&#26412;
@@ -366,9 +365,9 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 
-<div id="outline-container-orgbb1fc5e" class="outline-5">
-<h5 id="orgbb1fc5e">COMPRESSION</h5>
-<div class="outline-text-5" id="text-orgbb1fc5e">
+<div id="outline-container-org1cb1482" class="outline-5">
+<h5 id="org1cb1482">COMPRESSION</h5>
+<div class="outline-text-5" id="text-org1cb1482">
 <div class="org-src-container">
 <pre class="src src-bash">COMPRESSION :NONE | GZIP | LZO | Zippy/Snappy &#21387;&#32553;
 | Algorithm  | remaining | Encoding   | Decoding |
@@ -381,9 +380,9 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 
-<div id="outline-container-org4bd8b25" class="outline-5">
-<h5 id="org4bd8b25">TTL</h5>
-<div class="outline-text-5" id="text-org4bd8b25">
+<div id="outline-container-orgec7bbac" class="outline-5">
+<h5 id="orgec7bbac">TTL</h5>
+<div class="outline-text-5" id="text-orgec7bbac">
 <div class="org-src-container">
 <pre class="src src-bash">&#40664;&#35748;&#26159; 2147483647 -&gt; 68&#24180;
 &#21015;&#26063;&#25968;&#25454;&#30340;&#23384;&#27963;&#26102;&#38388;&#65292;&#21333;&#20301;&#26159;s
@@ -396,9 +395,9 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 
-<div id="outline-container-org9ba8fbd" class="outline-5">
-<h5 id="org9ba8fbd">IN_MEMORY</h5>
-<div class="outline-text-5" id="text-org9ba8fbd">
+<div id="outline-container-orgb53f4ea" class="outline-5">
+<h5 id="orgb53f4ea">IN_MEMORY</h5>
+<div class="outline-text-5" id="text-orgb53f4ea">
 <div class="org-src-container">
 <pre class="src src-bash">&#35774;&#32622;&#28608;&#36827;&#32531;&#23384;&#65292;&#20248;&#20808;&#32771;&#34385;&#23558;&#35813;&#21015;&#26063;&#25918;&#20837;&#22359;&#32531;&#23384;&#20013;
 &#38024;&#23545;&#38543;&#26426;&#35835;&#25805;&#20316;&#30456;&#23545;&#36739;&#22810;&#30340;&#21015;&#26063;&#21487;&#20197;&#35774;&#32622;&#35813;&#23646;&#24615;&#20026;true
@@ -407,9 +406,9 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 
-<div id="outline-container-orgcbcf7aa" class="outline-5">
-<h5 id="orgcbcf7aa">BLOCKCACHE</h5>
-<div class="outline-text-5" id="text-orgcbcf7aa">
+<div id="outline-container-orgf70670f" class="outline-5">
+<h5 id="orgf70670f">BLOCKCACHE</h5>
+<div class="outline-text-5" id="text-orgf70670f">
 <div class="org-src-container">
 <pre class="src src-bash">&#25968;&#25454;&#22359;&#32531;&#23384;&#23646;&#24615;
 </pre>
@@ -417,9 +416,9 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 
-<div id="outline-container-orge7ea635" class="outline-5">
-<h5 id="orge7ea635">BLOCKSIZE</h5>
-<div class="outline-text-5" id="text-orge7ea635">
+<div id="outline-container-org793ca87" class="outline-5">
+<h5 id="org793ca87">BLOCKSIZE</h5>
+<div class="outline-text-5" id="text-org793ca87">
 <div class="org-src-container">
 <pre class="src src-bash">&#35774;&#32622;HFILE&#25968;&#25454;&#22359;&#22823;&#23567;<span style="color: #51afef;">&#65288;</span>&#40664;&#35748;64kb<span style="color: #51afef;">&#65289;</span>
 </pre>
@@ -436,7 +435,7 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-27 Sat 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-27 Sat 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

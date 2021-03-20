@@ -2,15 +2,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-02-10 Wed 14:47 -->
+<!-- 2021-03-20 Sat 22:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>wsl debian10 mongodb4 start fail solve</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -230,33 +229,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org195b4c6">wsl debian10 mongodb4 start fail solve</a>
+<li><a href="#orga890a1a">wsl debian10 mongodb4 start fail solve</a>
 <ul>
-<li><a href="#org8d4e6fd">安装</a></li>
-<li><a href="#org02a56d4">启动</a></li>
-<li><a href="#org4f53678">处理</a></li>
-<li><a href="#orgb1bf4e6">测试</a></li>
+<li><a href="#org977fa75">安装</a></li>
+<li><a href="#orgfc04b16">启动</a></li>
+<li><a href="#org8e524e0">处理</a></li>
+<li><a href="#org8e2e825">测试</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org195b4c6" class="outline-2">
-<h2 id="org195b4c6">wsl debian10 mongodb4 start fail solve</h2>
-<div class="outline-text-2" id="text-org195b4c6">
+<div id="outline-container-orga890a1a" class="outline-2">
+<h2 id="orga890a1a">wsl debian10 mongodb4 start fail solve</h2>
+<div class="outline-text-2" id="text-orga890a1a">
 </div>
-<div id="outline-container-org8d4e6fd" class="outline-3">
-<h3 id="org8d4e6fd">安装</h3>
-<div class="outline-text-3" id="text-org8d4e6fd">
+<div id="outline-container-org977fa75" class="outline-3">
+<h3 id="org977fa75">安装</h3>
+<div class="outline-text-3" id="text-org977fa75">
 <p>
 省略，请参考 <a href="https:docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/">https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org02a56d4" class="outline-3">
-<h3 id="org02a56d4">启动</h3>
-<div class="outline-text-3" id="text-org02a56d4">
+<div id="outline-container-orgfc04b16" class="outline-3">
+<h3 id="orgfc04b16">启动</h3>
+<div class="outline-text-3" id="text-orgfc04b16">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  ~ sudo systemctl start mongod
    <span style="color: #747474;">#</span><span style="color: #747474;">&#25253;&#38169;&#22914;&#19979;</span>
@@ -266,9 +265,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org4f53678" class="outline-3">
-<h3 id="org4f53678">处理</h3>
-<div class="outline-text-3" id="text-org4f53678">
+<div id="outline-container-org8e524e0" class="outline-3">
+<h3 id="org8e524e0">处理</h3>
+<div class="outline-text-3" id="text-org8e524e0">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  ~ sudo curl -o /etc/init.d/mongodb https://raw.githubusercontent.com/mongodb/mongo/master/debian/init.d
 &#10140;  ~ sudo chmod +x etc/init.d/mongodb
@@ -279,9 +278,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgb1bf4e6" class="outline-3">
-<h3 id="orgb1bf4e6">测试</h3>
-<div class="outline-text-3" id="text-orgb1bf4e6">
+<div id="outline-container-org8e2e825" class="outline-3">
+<h3 id="org8e2e825">测试</h3>
+<div class="outline-text-3" id="text-org8e2e825">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  ~ mongo --eval <span style="color: #99bb66;">'db.runCommand({ connectionStatus: 1 })'</span>
    MongoDB shell version v4.4.3
@@ -307,7 +306,7 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-27 Wed 00:00 <br />Last updated: 2021-02-10 Wed 14:28 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-27 Wed 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
