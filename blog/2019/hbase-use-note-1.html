@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:49 -->
+<!-- 2021-11-25 Thu 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>hbase使用备注</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -264,44 +265,44 @@
 <div class="outline-text-3" id="text-org4812e2c">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;"># </span><span style="color: #747474;">&#33719;&#21462;&#21629;&#20196;&#24110;&#21161; help 'command_name'</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; help <span style="color: #99bb66;">'list'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; help <span style="color: #99bb66;">'list'</span>
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#29366;&#24577;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; status
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; status
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#29256;&#26412;&#21495;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; version
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; version
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#25152;&#26377;&#30340;&#34920;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; &#26597;&#30475;&#25152;&#26377;&#34920;
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; &#26597;&#30475;&#25152;&#26377;&#34920;
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#21019;&#24314;&#34920;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; create <span style="color: #99bb66;">'test'</span>, <span style="color: #51afef;">{</span><span style="color: #979797;">NAME</span> =&gt; <span style="color: #99bb66;">'d'</span>, <span style="color: #979797;">BLOOMFILTER</span> =&gt; <span style="color: #99bb66;">'ROW'</span>, <span style="color: #979797;">VERSIONS</span> =&gt; <span style="color: #99bb66;">'1'</span>, <span style="color: #979797;">IN_MEMORY</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">KEEP_DELETED_CELLS</span> =&gt; <span style="color: #99bb66;">'FALSE'</span>, <span style="color: #979797;">DATA_BLOCK_ENCODING</span> =&gt; <span style="color: #99bb66;">'FAST_DIFF'</span>,<span style="background-color: #ff6655;"> </span>
-<span style="color: #979797;">TTL</span> =&gt; <span style="color: #99bb66;">'7776000'</span>, <span style="color: #979797;">COMPRESSION</span> =&gt; <span style="color: #99bb66;">'GZ'</span>, <span style="color: #979797;">MIN_VERSIONS</span> =&gt; <span style="color: #99bb66;">'0'</span>, <span style="color: #979797;">BLOCKCACHE</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">BLOCKSIZE</span> =&gt; <span style="color: #99bb66;">'65536'</span>, <span style="color: #979797;">REPLICATION_SCOPE</span> =&gt; <span style="color: #99bb66;">'0'</span><span style="color: #51afef;">}</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; create <span style="color: #99bb66;">'test'</span>, {<span style="color: #979797;">NAME</span> =&gt; <span style="color: #99bb66;">'d'</span>, <span style="color: #979797;">BLOOMFILTER</span> =&gt; <span style="color: #99bb66;">'ROW'</span>, <span style="color: #979797;">VERSIONS</span> =&gt; <span style="color: #99bb66;">'1'</span>, <span style="color: #979797;">IN_MEMORY</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">KEEP_DELETED_CELLS</span> =&gt; <span style="color: #99bb66;">'FALSE'</span>, <span style="color: #979797;">DATA_BLOCK_ENCODING</span> =&gt; <span style="color: #99bb66;">'FAST_DIFF'</span>,<span style="background-color: #ff6655;"> </span>
+<span style="color: #979797;">TTL</span> =&gt; <span style="color: #99bb66;">'7776000'</span>, <span style="color: #979797;">COMPRESSION</span> =&gt; <span style="color: #99bb66;">'GZ'</span>, <span style="color: #979797;">MIN_VERSIONS</span> =&gt; <span style="color: #99bb66;">'0'</span>, <span style="color: #979797;">BLOCKCACHE</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">BLOCKSIZE</span> =&gt; <span style="color: #99bb66;">'65536'</span>, <span style="color: #979797;">REPLICATION_SCOPE</span> =&gt; <span style="color: #99bb66;">'0'</span>}
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#26597;&#30475;&#34920;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; describe <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; describe <span style="color: #99bb66;">'test'</span>
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#21024;&#38500;&#34920;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; disable <span style="color: #99bb66;">'test'</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; drop <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; disable <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; drop <span style="color: #99bb66;">'test'</span>
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#28165;&#31354;&#34920;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; truncate <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; truncate <span style="color: #99bb66;">'test'</span>
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#21028;&#26029;&#34920;&#26159;&#21542;&#23384;&#22312;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; exists <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; exists <span style="color: #99bb66;">'test'</span>
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#20462;&#25913;&#34920;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; disable <span style="color: #99bb66;">'test'</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; alter <span style="color: #99bb66;">'test'</span>, <span style="color: #51afef;">{</span><span style="color: #979797;">NAME</span> =&gt; <span style="color: #99bb66;">'f1'</span><span style="color: #51afef;">}</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; enable <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; disable <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; alter <span style="color: #99bb66;">'test'</span>, {<span style="color: #979797;">NAME</span> =&gt; <span style="color: #99bb66;">'f1'</span>}
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; enable <span style="color: #99bb66;">'test'</span>
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#33719;&#21462;&#25968;&#25454;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; get <span style="color: #99bb66;">'test'</span>, <span style="color: #99bb66;">'1100000000055558454177160'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; get <span style="color: #99bb66;">'test'</span>, <span style="color: #99bb66;">'1100000000055558454177160'</span>
 
 <span style="color: #747474;"># </span><span style="color: #747474;">&#25195;&#25551;&#25968;&#25454;</span>
-<span style="color: #44b9b1;">hbase</span><span style="color: #51afef;">(</span>main<span style="color: #51afef;">)</span>:042:0&gt; scan <span style="color: #99bb66;">'test'</span>
+<span style="color: #46D9FF;">hbase</span>(main):042:0&gt; scan <span style="color: #99bb66;">'test'</span>
 </pre>
 </div>
 </div>
@@ -319,7 +320,7 @@
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">create 'qp_test', {NAME =&gt; 'd', BLOOMFILTER =&gt; 'ROW', VERSIONS =&gt; '1',</span><span style="background-color: #ff6655;"> </span>
 <span style="color: #979797;">IN_MEMORY</span> =&gt; <span style="color: #99bb66;">'false'</span>, <span style="color: #979797;">KEEP_DELETED_CELLS</span> =&gt; <span style="color: #99bb66;">'FALSE'</span>, <span style="color: #979797;">DATA_BLOCK_ENCODING</span> =&gt; <span style="color: #99bb66;">'FAST_DIFF'</span>,<span style="background-color: #ff6655;"> </span>
 <span style="color: #979797;">TTL</span> =&gt; <span style="color: #99bb66;">'7776000'</span>, <span style="color: #979797;">COMPRESSION</span> =&gt; <span style="color: #99bb66;">'GZ'</span>, <span style="color: #979797;">MIN_VERSIONS</span> =&gt; <span style="color: #99bb66;">'0'</span>, <span style="color: #979797;">BLOCKCACHE</span> =&gt; <span style="color: #99bb66;">'false'</span>,<span style="background-color: #ff6655;"> </span>
-<span style="color: #979797;">BLOCKSIZE</span> =&gt; <span style="color: #99bb66;">'65536'</span>, <span style="color: #979797;">REPLICATION_SCOPE</span> =&gt; <span style="color: #99bb66;">'0'</span><span style="color: #ff6655; font-weight: bold;">}</span>
+<span style="color: #979797;">BLOCKSIZE</span> =&gt; <span style="color: #99bb66;">'65536'</span>, <span style="color: #979797;">REPLICATION_SCOPE</span> =&gt; <span style="color: #99bb66;">'0'</span>}
 </pre>
 </div>
 </div>
@@ -420,7 +421,7 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 <h5 id="org793ca87">BLOCKSIZE</h5>
 <div class="outline-text-5" id="text-org793ca87">
 <div class="org-src-container">
-<pre class="src src-bash">&#35774;&#32622;HFILE&#25968;&#25454;&#22359;&#22823;&#23567;<span style="color: #51afef;">&#65288;</span>&#40664;&#35748;64kb<span style="color: #51afef;">&#65289;</span>
+<pre class="src src-bash">&#35774;&#32622;HFILE&#25968;&#25454;&#22359;&#22823;&#23567;&#65288;&#40664;&#35748;64kb&#65289;
 </pre>
 </div>
 
@@ -435,7 +436,7 @@ ROWCOL -&gt; &#34892;&#38190; + &#21015;&#26063; + &#21015;&#26063;&#20462;&#392
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-27 Sat 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-27 Sat 00:00 <br />Last updated: 2021-11-25 Thu 23:23 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

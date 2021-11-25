@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:49 -->
+<!-- 2021-11-25 Thu 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>gun global使用备注</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -295,26 +296,26 @@ vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php
 
 // -o &#25628;&#32034;tag&#30340;&#23450;&#20041;
 $ global -xo fromString
-fromString         15 src/Email.php        public static <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">fromString</span><span style="color: #51afef;">(</span>string $<span style="color: #979797;">email</span><span style="color: #51afef;">)</span>: self
-fromString         53 vendor/phar-io/manifest/src/ManifestLoader.php     public static <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">fromString</span><span style="color: #51afef;">(</span>$<span style="color: #979797;">manifest</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
-fromString         47 vendor/phar-io/manifest/src/xml/ManifestDocument.php     public static <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">fromString</span><span style="color: #c678dd;">(</span>$<span style="color: #979797;">xmlString</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+fromString         15 src/Email.php        public static <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">fromString</span>(string $<span style="color: #979797;">email</span>): self
+fromString         53 vendor/phar-io/manifest/src/ManifestLoader.php     public static <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">fromString</span>($<span style="color: #979797;">manifest</span>) {
+fromString         47 vendor/phar-io/manifest/src/xml/ManifestDocument.php     public static <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">fromString</span>($<span style="color: #979797;">xmlString</span>) {
 
 
 // -x &#26174;&#31034;&#26356;&#22810;&#35814;&#32454;
 $ global -rx fromString
-fromString         12 tests/EmailTest.php             Email::fromString<span style="color: #99bb66;">(</span><span style="color: #99bb66;">'user@example.com'</span><span style="color: #99bb66;">)</span>
-fromString         20 tests/EmailTest.php         Email::fromString<span style="color: #99bb66;">(</span><span style="color: #99bb66;">'invalid'</span><span style="color: #99bb66;">)</span>;
-fromString         27 tests/EmailTest.php             Email::fromString<span style="color: #99bb66;">(</span><span style="color: #99bb66;">'user@example.com'</span><span style="color: #99bb66;">)</span>
-fromString         56 vendor/phar-io/manifest/src/ManifestLoader.php                 ManifestDocument::fromString<span style="color: #99bb66;">(</span>$<span style="color: #979797;">manifest</span><span style="color: #99bb66;">)</span>
-fromString         42 vendor/phar-io/manifest/src/xml/ManifestDocument.php         return self::fromString<span style="color: #99bb66;">(</span>
-fromString         56 vendor/phar-io/manifest/tests/ManifestLoaderTest.php             ManifestLoader::fromString<span style="color: #dd8844;">(</span>
-fromString         80 vendor/phar-io/manifest/tests/ManifestLoaderTest.php         ManifestLoader::fromString<span style="color: #a9a1e1;">(</span><span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;broken&gt;'</span><span style="color: #a9a1e1;">)</span>;
-fromString         59 vendor/phar-io/manifest/tests/ManifestSerializerTest.php         $<span style="color: #979797;">manifest</span> = ManifestLoader::fromString<span style="color: #a9a1e1;">(</span>$<span style="color: #979797;">expected</span><span style="color: #a9a1e1;">)</span>;
-fromString         22 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php             ManifestDocument::fromString<span style="color: #a9a1e1;">(</span>$<span style="color: #979797;">content</span><span style="color: #a9a1e1;">)</span>
-fromString         28 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         ManifestDocument::fromString<span style="color: #a9a1e1;">(</span><span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;root&gt;'</span><span style="color: #a9a1e1;">)</span>;
-fromString         33 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         ManifestDocument::fromString<span style="color: #a9a1e1;">(</span><span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;root /&gt;'</span><span style="color: #a9a1e1;">)</span>;
-fromString         38 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         ManifestDocument::fromString<span style="color: #a9a1e1;">(</span><span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;phar xmlns="foo:bar" /&gt;'</span><span style="color: #a9a1e1;">)</span>;
-fromString        106 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         return ManifestDocument::fromString<span style="color: #a9a1e1;">(</span>
+fromString         12 tests/EmailTest.php             Email::fromString(<span style="color: #99bb66;">'user@example.com'</span>)
+fromString         20 tests/EmailTest.php         Email::fromString(<span style="color: #99bb66;">'invalid'</span>);
+fromString         27 tests/EmailTest.php             Email::fromString(<span style="color: #99bb66;">'user@example.com'</span>)
+fromString         56 vendor/phar-io/manifest/src/ManifestLoader.php                 ManifestDocument::fromString($<span style="color: #979797;">manifest</span>)
+fromString         42 vendor/phar-io/manifest/src/xml/ManifestDocument.php         return self::fromString(
+fromString         56 vendor/phar-io/manifest/tests/ManifestLoaderTest.php             ManifestLoader::fromString(
+fromString         80 vendor/phar-io/manifest/tests/ManifestLoaderTest.php         ManifestLoader::fromString(<span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;broken&gt;'</span>);
+fromString         59 vendor/phar-io/manifest/tests/ManifestSerializerTest.php         $<span style="color: #979797;">manifest</span> = ManifestLoader::fromString($<span style="color: #979797;">expected</span>);
+fromString         22 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php             ManifestDocument::fromString($<span style="color: #979797;">content</span>)
+fromString         28 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         ManifestDocument::fromString(<span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;root&gt;'</span>);
+fromString         33 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         ManifestDocument::fromString(<span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;root /&gt;'</span>);
+fromString         38 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         ManifestDocument::fromString(<span style="color: #99bb66;">'&lt;?xml version="1.0" ?&gt;&lt;phar xmlns="foo:bar" /&gt;'</span>);
+fromString        106 vendor/phar-io/manifest/tests/xml/ManifestDocumentTest.php         return ManifestDocument::fromString(
 
 
 // -a &#32477;&#23545;&#36335;&#24452;
@@ -326,11 +327,11 @@ $ global -a fromString
 
 // -g &#27491;&#21017;&#21305;&#37197;
 $ global -xg <span style="color: #99bb66;">"fromSt*"</span>
-fromSt*            15 src/Email.php        public static <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">fromString</span><span style="color: #ECBE7B;">(</span>string $<span style="color: #979797;">email</span><span style="color: #ECBE7B;">)</span>: self
-fromSt*            12 tests/EmailTest.php             Email::fromString<span style="color: #ECBE7B;">(</span><span style="color: #99bb66;">'user@example.com'</span><span style="color: #ECBE7B;">)</span>
-fromSt*            20 tests/EmailTest.php         Email::fromString<span style="color: #ECBE7B;">(</span><span style="color: #99bb66;">'invalid'</span><span style="color: #ECBE7B;">)</span>;
-fromSt*            27 tests/EmailTest.php             Email::fromString<span style="color: #ECBE7B;">(</span><span style="color: #99bb66;">'user@example.com'</span><span style="color: #ECBE7B;">)</span>
-fromSt*            15 vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php     public static <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">fromSerializationTriggeredExceptio</span>                                fromSt*            56 vendor/sebastian/diff/src/MemoryEfficientLongestCommonSubsequenceCalculator.php             $<span style="color: #979797;">this</span>-&gt;calculate<span style="color: #ECBE7B;">(</span>$<span style="color: #979797;">fromStart</span>, $<span style="color: #979797;">toStart</span><span style="color: #ECBE7B;">)</span>,
+fromSt*            15 src/Email.php        public static <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">fromString</span>(string $<span style="color: #979797;">email</span>): self
+fromSt*            12 tests/EmailTest.php             Email::fromString(<span style="color: #99bb66;">'user@example.com'</span>)
+fromSt*            20 tests/EmailTest.php         Email::fromString(<span style="color: #99bb66;">'invalid'</span>);
+fromSt*            27 tests/EmailTest.php             Email::fromString(<span style="color: #99bb66;">'user@example.com'</span>)
+fromSt*            15 vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php     public static <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">fromSerializationTriggeredExceptio</span>                                fromSt*            56 vendor/sebastian/diff/src/MemoryEfficientLongestCommonSubsequenceCalculator.php             $<span style="color: #979797;">this</span>-&gt;calculate($<span style="color: #979797;">fromStart</span>, $<span style="color: #979797;">toStart</span>),
 fromSt*           169 vendor/sebastian/diff/src/Output/StrictUnifiedDiffOutputBuilder.php         $<span style="color: #979797;">toStart</span>     = $<span style="color: #979797;">fromStart</span> = 1;
 fromSt*           174 vendor/sebastian/diff/src/Output/StrictUnifiedDiffOutputBuilder.php                     ++$<span style="color: #979797;">fromStart</span>;
 fromSt*           205 vendor/sebastian/diff/src/Output/StrictUnifiedDiffOutputBuilder.php                         $<span style="color: #979797;">fromStart</span> - $<span style="color: #979797;">contextStartOffset</span>,
@@ -341,10 +342,10 @@ fromSt*           212 vendor/sebastian/diff/src/Output/StrictUnifiedDiffOutputBu
 // -f &#21629;&#20196;&#26174;&#31034;&#25351;&#23450;&#25991;&#20214;&#30340;&#25152;&#26377;tag
 $ global -f src/Email.php
 Email               4 src/Email.php    final class Email
-__construct         8 src/Email.php        private <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">__construct</span><span style="color: #ECBE7B;">(</span>string $<span style="color: #979797;">email</span><span style="color: #ECBE7B;">)</span>
-fromString         15 src/Email.php        public static <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">fromString</span><span style="color: #ECBE7B;">(</span>string $<span style="color: #979797;">email</span><span style="color: #ECBE7B;">)</span>: self
-__toString         20 src/Email.php        public <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">__toString</span><span style="color: #ECBE7B;">()</span>: string
-ensureIsValidEmail   25 src/Email.php        private <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">ensureIsValidEmail</span><span style="color: #ECBE7B;">(</span>string $<span style="color: #979797;">email</span><span style="color: #ECBE7B;">)</span>: void
+__construct         8 src/Email.php        private <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">__construct</span>(string $<span style="color: #979797;">email</span>)
+fromString         15 src/Email.php        public static <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">fromString</span>(string $<span style="color: #979797;">email</span>): self
+__toString         20 src/Email.php        public <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">__toString</span>(): string
+ensureIsValidEmail   25 src/Email.php        private <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">ensureIsValidEmail</span>(string $<span style="color: #979797;">email</span>): void
 
 
 // -l &#26412;&#30446;&#24405;&#25628;&#32034;
@@ -369,14 +370,14 @@ Email.php
 Text string: String
 
   File                                           Line
-0 Email.php                                        15 public static <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">fromString</span><span style="color: #51afef;">(</span>string $<span style="color: #979797;">email</span><span style="color: #51afef;">)</span>: self
-1 Email.php                                        20 public <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">__toString</span><span style="color: #51afef;">()</span>: string
+0 Email.php                                        15 public static <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">fromString</span>(string $<span style="color: #979797;">email</span>): self
+1 Email.php                                        20 public <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">__toString</span>(): string
 .....................
 
 
 Find this symbol:
 Find this global definition:
-Find functions called by this <span style="color: #51afef;">function</span> <span style="color: #51afef;">(</span>N/A<span style="color: #51afef;">)</span>:
+Find functions called by this <span style="color: #51afef;">function</span> (N/A):
 Find references of this <span style="color: #51afef;">function</span>:
 Find this text string:
 Change this text string:
@@ -392,9 +393,9 @@ RETURN          Move to the next input field.
 ^Y / ^A         Search with the last pattern typed.
 ^B              Recall previous input field and search pattern.
 ^F              Recall next input field and search pattern.
-^C              Toggle ignore/use letter case when searching <span style="color: #51afef;">(</span>USE<span style="color: #51afef;">)</span>.
+^C              Toggle ignore/use letter case when searching (USE).
 ^R              Rebuild the cross-reference.
-<span style="color: #51afef; font-weight: bold;">!</span>               Start an interactive shell <span style="color: #51afef;">(</span><span style="color: #51afef;">type</span> ^D to return to cscope<span style="color: #51afef;">)</span>.
+<span style="color: #51afef; font-weight: bold;">!</span>               Start an interactive shell (<span style="color: #51afef;">type</span> ^D to return to cscope).
 ^L              Redraw the screen.
 ?               Display this list of commands.
 ^D              Exit cscope.
@@ -421,7 +422,7 @@ RETURN          Move to the next input field.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2020-03-11 23:48:09 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2020-03-11 23:48:09 <br />Last updated: 2021-11-25 Thu 23:23 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

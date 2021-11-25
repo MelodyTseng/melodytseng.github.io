@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:48 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>api 文档规范制定</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -281,7 +282,7 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
   == &#35831;&#27714;&#26041;&#24335; ==
    <span style="color: #51afef;">POST</span>
   == &#35831;&#27714;&#21442;&#25968; ==
-   <span style="color: #51afef;">{</span>
+   {
       <span style="color: #99bb66;">"mid"</span>:<span style="color: #99bb66;">"33"</span>,
       <span style="color: #99bb66;">"protocol"</span>:1,
       <span style="color: #99bb66;">"api"</span>:<span style="color: #99bb66;">"33"</span>,
@@ -296,59 +297,59 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
       <span style="color: #99bb66;">"unid"</span>:<span style="color: #99bb66;">"488"</span>,<span style="background-color: #ff6655;">                      </span>
       <span style="color: #99bb66;">"method"</span>:<span style="color: #99bb66;">"Achievement.getTaskList"</span>,<span style="background-color: #ff6655;">            </span>
       <span style="color: #99bb66;">"vmid"</span>:<span style="color: #99bb66;">"501644"</span>,<span style="background-color: #ff6655;">          </span>
-      <span style="color: #99bb66;">"param"</span>:<span style="color: #c678dd;">{</span><span style="background-color: #ff6655;">                       </span>
-      <span style="color: #99bb66;">"type"</span>:1<span style="background-color: #ff6655;">                              </span>
-      <span style="color: #c678dd;">}</span>,<span style="background-color: #ff6655;">              </span>
-      <span style="color: #99bb66;">"_unset"</span>:<span style="color: #c678dd;">[</span><span style="background-color: #ff6655;">                               </span>
-      <span style="color: #99bb66;">"_unset"</span>,<span style="background-color: #ff6655;">                              </span>
-      <span style="color: #99bb66;">"mbsid"</span><span style="background-color: #ff6655;">                                </span>
-      <span style="color: #c678dd;">]</span>,
+      <span style="color: #99bb66;">"param"</span>:{<span style="background-color: #ff6655;">                       </span>
+          <span style="color: #99bb66;">"type"</span>:1<span style="background-color: #ff6655;">                              </span>
+      },<span style="background-color: #ff6655;">              </span>
+      <span style="color: #99bb66;">"_unset"</span>:[<span style="background-color: #ff6655;">                               </span>
+          <span style="color: #99bb66;">"_unset"</span>,<span style="background-color: #ff6655;">                              </span>
+          <span style="color: #99bb66;">"mbsid"</span><span style="background-color: #ff6655;">                                </span>
+      ],
 <span style="color: #99bb66;">"mbsid"</span>:<span style="color: #99bb66;">"488"</span>
-   <span style="color: #51afef;">}</span>
+   }
   == &#35831;&#27714;&#21442;&#25968;&#35828;&#26126; ==<span style="background-color: #ff6655;">   </span>
-  <span style="color: #51afef;">{</span>| <span style="color: #51afef;">class</span>=<span style="color: #99bb66;">"wikitable"</span><span style="background-color: #ff6655;">   </span>
+  {| <span style="color: #51afef;">class</span>=<span style="color: #99bb66;">"wikitable"</span><span style="background-color: #ff6655;">   </span>
   |-<span style="background-color: #ff6655;">  </span>
   ! &#21442;&#25968;&#21517; !! &#24517;&#36873; !! &#31867;&#22411; !! &#35828;&#26126;<span style="background-color: #ff6655;">  </span>
   |-<span style="background-color: #ff6655;">  </span>
   | type || &#26159; || <span style="color: #44b9b1;">int</span> || &#35831;&#34917;&#20805;&#35828;&#26126;<span style="background-color: #ff6655;">  </span>
-  |<span style="color: #51afef;">}</span><span style="background-color: #ff6655;">  </span>
+  |}<span style="background-color: #ff6655;">  </span>
   == &#36820;&#22238;&#31034;&#20363; ==<span style="background-color: #ff6655;">  </span>
-   <span style="color: #51afef;">{</span><span style="background-color: #ff6655;">  </span>
-      <span style="color: #99bb66;">"sys"</span>:<span style="color: #c678dd;">[</span><span style="background-color: #ff6655;">  </span>
-      17051110,<span style="background-color: #ff6655;">  </span>
-      0<span style="background-color: #ff6655;">  </span>
-      <span style="color: #c678dd;">]</span>,<span style="background-color: #ff6655;">  </span>
+   {<span style="background-color: #ff6655;">  </span>
+      <span style="color: #99bb66;">"sys"</span>:[<span style="background-color: #ff6655;">  </span>
+          17051110,<span style="background-color: #ff6655;">  </span>
+          0<span style="background-color: #ff6655;">  </span>
+      ],<span style="background-color: #ff6655;">  </span>
       <span style="color: #99bb66;">"time"</span>:1497414550,
-      <span style="color: #99bb66;">"ret"</span>:<span style="color: #c678dd;">{</span><span style="background-color: #ff6655;"> </span>
-      <span style="color: #99bb66;">"cdnVer"</span>:<span style="color: #99bb66;">""</span>,<span style="background-color: #ff6655;"> </span>
-      <span style="color: #99bb66;">"picPath"</span>:<span style="color: #99bb66;">"xx"</span>,<span style="background-color: #ff6655;"> </span>
-      <span style="color: #99bb66;">"list"</span>:<span style="color: #99bb66;">[</span><span style="background-color: #ff6655;">  </span>
-          <span style="color: #dd8844;">{</span><span style="background-color: #ff6655;">  </span>
-          <span style="color: #99bb66;">"taskId"</span>:1,
-          <span style="color: #99bb66;">"conditionNum"</span>:2,
-          <span style="color: #99bb66;">"chips"</span>:0,
-          <span style="color: #99bb66;">"status"</span>:1,
-          <span style="color: #99bb66;">"new"</span>:<span style="color: #51afef;">null</span>,
-          <span style="color: #99bb66;">"levels"</span>:<span style="color: #99bb66;">""</span>,
-          <span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"xxx"</span>,
-          <span style="color: #99bb66;">"desc"</span>:<span style="color: #99bb66;">"xxx"</span>,
-          <span style="color: #99bb66;">"progress"</span>:0
-          <span style="color: #dd8844;">}</span><span style="background-color: #ff6655;">  </span>
-      <span style="color: #99bb66;">]</span>,<span style="background-color: #ff6655;">  </span>
-      <span style="color: #99bb66;">"allCnt"</span>:52,
-      <span style="color: #99bb66;">"completeCnt"</span>:0,
-      <span style="color: #99bb66;">"finishCnt"</span>:<span style="color: #51afef;">null</span>
-      <span style="color: #c678dd;">}</span>,<span style="background-color: #ff6655;">  </span>
+      <span style="color: #99bb66;">"ret"</span>:{<span style="background-color: #ff6655;"> </span>
+          <span style="color: #99bb66;">"cdnVer"</span>:<span style="color: #99bb66;">""</span>,<span style="background-color: #ff6655;"> </span>
+          <span style="color: #99bb66;">"picPath"</span>:<span style="color: #99bb66;">"xx"</span>,<span style="background-color: #ff6655;"> </span>
+          <span style="color: #99bb66;">"list"</span>:[<span style="background-color: #ff6655;">  </span>
+              {<span style="background-color: #ff6655;">  </span>
+                  <span style="color: #99bb66;">"taskId"</span>:1,
+                  <span style="color: #99bb66;">"conditionNum"</span>:2,
+                  <span style="color: #99bb66;">"chips"</span>:0,
+                  <span style="color: #99bb66;">"status"</span>:1,
+                  <span style="color: #99bb66;">"new"</span>:<span style="color: #51afef;">null</span>,
+                  <span style="color: #99bb66;">"levels"</span>:<span style="color: #99bb66;">""</span>,
+                  <span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"xxx"</span>,
+                  <span style="color: #99bb66;">"desc"</span>:<span style="color: #99bb66;">"xxx"</span>,
+                  <span style="color: #99bb66;">"progress"</span>:0
+              }<span style="background-color: #ff6655;">  </span>
+          ],<span style="background-color: #ff6655;">  </span>
+          <span style="color: #99bb66;">"allCnt"</span>:52,
+          <span style="color: #99bb66;">"completeCnt"</span>:0,
+          <span style="color: #99bb66;">"finishCnt"</span>:<span style="color: #51afef;">null</span>
+      },<span style="background-color: #ff6655;">  </span>
       <span style="color: #99bb66;">"api"</span>:<span style="color: #99bb66;">"v5"</span>,
       <span style="color: #99bb66;">"flag"</span>:1
-   <span style="color: #51afef;">}</span><span style="background-color: #ff6655;">  </span>
+   }<span style="background-color: #ff6655;">  </span>
   == &#36820;&#22238;&#21442;&#25968;&#35828;&#26126; ==<span style="background-color: #ff6655;">  </span>
-  <span style="color: #51afef;">{</span>| <span style="color: #51afef;">class</span>=<span style="color: #99bb66;">"wikitable"</span><span style="background-color: #ff6655;">  </span>
+  {| <span style="color: #51afef;">class</span>=<span style="color: #99bb66;">"wikitable"</span><span style="background-color: #ff6655;">  </span>
   |-<span style="background-color: #ff6655;">  </span>
   ! &#21442;&#25968;&#21517; !! &#31867;&#22411; !! &#35828;&#26126;<span style="background-color: #ff6655;">  </span>
   |-<span style="background-color: #ff6655;">  </span>
   | taskId || <span style="color: #44b9b1;">int</span> || &#34917;&#20805;&#35828;&#26126;<span style="background-color: #ff6655;">  </span>
-  |<span style="color: #51afef;">}</span><span style="background-color: #ff6655;">  </span>
+  |}<span style="background-color: #ff6655;">  </span>
   == &#22791;&#27880; ==<span style="background-color: #ff6655;">  </span>
   &#25551;&#36848;&#22791;&#27880;<span style="background-color: #ff6655;">  </span>
 </pre>
@@ -370,7 +371,7 @@ api文档一直诟病，文档不齐除外，主要是规范不统一，百花�
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-06-29 20:23:04 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2017-06-29 20:23:04 <br />Last updated: 2021-11-25 Thu 23:23 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

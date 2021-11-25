@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:49 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php面向对象abstract与interface</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -255,17 +256,17 @@
 
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">class</span> <span style="color: #44b9b1;">A</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">class</span> <span style="color: #44b9b1;">A</span> {
 
     <span style="color: #747474;">//</span><span style="color: #747474;">&#23376;&#31867;&#21487;&#30452;&#25509;&#20351;&#29992;</span>
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v1</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v1</span>() {
         <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"view A v1"</span>.<span style="color: #51afef;">PHP_EOL</span>;
-    <span style="color: #c678dd;">}</span>
+    }
 
     <span style="color: #747474;">//</span><span style="color: #747474;">&#23376;&#31867;&#21487;&#30452;&#25509;&#20351;&#29992;</span>
-    <span style="color: #51afef;">protected</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v2</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
+    <span style="color: #51afef;">protected</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v2</span>() {
         <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"view A v2"</span>.<span style="color: #51afef;">PHP_EOL</span>;
-    <span style="color: #c678dd;">}</span>
+    }
 
     <span style="color: #747474;">//</span><span style="color: #747474;">&#19981;&#33021;&#20351;&#29992;private&#20462;&#39280;&#65292;&#19981;&#28982;&#25253;&#38169;</span>
     <span style="color: #747474;">/*</span>
@@ -277,19 +278,19 @@
     <span style="color: #747474;">/*</span>
 <span style="color: #747474;">    PHP Fatal error:  Class Aa contains 2 abstract methods and must therefore be declared abstract or implement the remaining methods (A::v4, A::v5)</span><span style="background-color: #ff6655;"> </span>
 <span style="color: #747474;">    */</span>
-    <span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v4</span><span style="color: #c678dd;">()</span>;
-    <span style="color: #51afef;">abstract</span> <span style="color: #51afef;">protected</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v5</span><span style="color: #c678dd;">()</span>;
-<span style="color: #51afef;">}</span>
+    <span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v4</span>();
+    <span style="color: #51afef;">abstract</span> <span style="color: #51afef;">protected</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v5</span>();
+}
 
-<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">B</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">B</span> {
 
-<span style="color: #51afef;">}</span>
+}
 
 
 <span style="color: #747474;">//</span><span style="color: #747474;">&#19981;&#20250;&#25253;&#38169;</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Ab</span> <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">A</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Ab</span> <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">A</span> {
 
-<span style="color: #51afef;">}</span>
+}
 
 <span style="color: #747474;">//</span><span style="color: #747474;">&#19968;&#23450;&#35201;&#23454;&#29616;&#26041;&#27861; v4 &#21644; v5&#65292;&#19981;&#28982;&#25253;&#38169;</span>
 <span style="color: #747474;">/*</span>
@@ -310,32 +311,32 @@
 <span style="color: #747474;">*/</span>
 
 <span style="color: #747474;">//</span><span style="color: #747474;">&#21482;&#33021;&#32487;&#25215;&#19968;&#20010;class &#25110; abstract class</span>
-<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Aa</span> <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">A</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Aa</span> <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">A</span> {
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v4</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v4</span>() {
         <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"view A v4"</span>.<span style="color: #51afef;">PHP_EOL</span>;
-    <span style="color: #c678dd;">}</span>
+    }
 
-    <span style="color: #51afef;">protected</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v5</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
+    <span style="color: #51afef;">protected</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v5</span>() {
         <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"view A v5"</span>.<span style="color: #51afef;">PHP_EOL</span>;
-    <span style="color: #c678dd;">}</span>
+    }
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">test</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v1<span style="color: #99bb66;">()</span>;
-        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v2<span style="color: #99bb66;">()</span>;
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">test</span>() {
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v1();
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v2();
         <span style="color: #747474;">//</span><span style="color: #747474;">$this-&gt;v3();</span>
-        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v4<span style="color: #99bb66;">()</span>;
-        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v5<span style="color: #99bb66;">()</span>;
-    <span style="color: #c678dd;">}</span>
-<span style="color: #51afef;">}</span>
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v4();
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v5();
+    }
+}
 
 <span style="color: #747474;">//</span><span style="color: #747474;">&#19981;&#33021;&#23454;&#20363;&#21270;</span>
 <span style="color: #747474;">/*</span>
 <span style="color: #747474;">PHP Fatal error:  Uncaught Error: Cannot instantiate abstract class A</span><span style="background-color: #ff6655;"> </span>
 <span style="color: #747474;">*/</span>
 <span style="color: #747474;">//</span><span style="color: #747474;">$a = new A();</span>
-$<span style="color: #979797;">a</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Aa</span><span style="color: #51afef;">()</span>;
-$<span style="color: #979797;">a</span>-&gt;test<span style="color: #51afef;">()</span>;
+$<span style="color: #979797;">a</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Aa</span>();
+$<span style="color: #979797;">a</span>-&gt;test();
 </pre>
 </div>
 </div>
@@ -353,10 +354,10 @@ $<span style="color: #979797;">a</span>-&gt;test<span style="color: #51afef;">()
 </ul>
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
-<span style="color: #51afef;">interface</span> <span style="color: #44b9b1;">D</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">interface</span> <span style="color: #44b9b1;">D</span> {
     <span style="color: #51afef;">const</span> <span style="color: #44b9b1;">NAME</span> = <span style="color: #99bb66;">"&#24120;&#37327;&#23545;&#35937;&#23646;&#24615;"</span>;
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v1</span><span style="color: #c678dd;">()</span>;
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v1</span>();
 
     <span style="color: #747474;">//</span><span style="color: #747474;">&#24517;&#39035;&#23454;&#29616;&#65292;&#19981;&#28982;&#25253;&#38169;</span>
     <span style="color: #747474;">/*</span>
@@ -370,32 +371,32 @@ $<span style="color: #979797;">a</span>-&gt;test<span style="color: #51afef;">()
 <span style="color: #747474;">    */</span>
     <span style="color: #747474;">//</span><span style="color: #747474;">protected function v3();</span>
     <span style="color: #747474;">//</span><span style="color: #747474;">private function v4();</span>
-<span style="color: #51afef;">}</span>
+}
 
-<span style="color: #51afef;">interface</span> <span style="color: #44b9b1;">E</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">interface</span> <span style="color: #44b9b1;">E</span> {
     <span style="color: #747474;">//</span><span style="color: #747474;">&#34429;&#28982;&#19981;&#25253;&#38169;&#65292;&#21621;&#21621;</span>
     <span style="color: #747474;">//</span><span style="color: #747474;">public function v1();</span>
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v5</span><span style="color: #c678dd;">()</span>;
-<span style="color: #51afef;">}</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v5</span>();
+}
 
 <span style="color: #747474;">//</span><span style="color: #747474;">&#21487;&#20197;&#22810;&#20010;interface</span><span style="background-color: #ff6655;"> </span>
-<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Da</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">D</span>, <span style="color: #44b9b1;">E</span> <span style="color: #51afef;">{</span>
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v1</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
+<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Da</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">D</span>, <span style="color: #44b9b1;">E</span> {
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v1</span>() {
         <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"view D v1"</span>.<span style="color: #51afef;">PHP_EOL</span>;
-    <span style="color: #c678dd;">}</span>
+    }
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">v5</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">v5</span>() {
         <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"view D v5"</span>.<span style="color: #51afef;">PHP_EOL</span>;
-    <span style="color: #c678dd;">}</span>
+    }
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">test</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v1<span style="color: #99bb66;">()</span>;
-        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v5<span style="color: #99bb66;">()</span>;
-    <span style="color: #c678dd;">}</span>
-<span style="color: #51afef;">}</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">test</span>() {
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v1();
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;v5();
+    }
+}
 
-$<span style="color: #979797;">d</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Da</span><span style="color: #51afef;">()</span>;
-$<span style="color: #979797;">d</span>-&gt;test<span style="color: #51afef;">()</span>;
+$<span style="color: #979797;">d</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Da</span>();
+$<span style="color: #979797;">d</span>-&gt;test();
 </pre>
 </div>
 </div>
@@ -441,7 +442,7 @@ $<span style="color: #979797;">d</span>-&gt;test<span style="color: #51afef;">()
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2020-02-22 16:49:41 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2020-02-22 16:49:41 <br />Last updated: 2021-11-25 Thu 23:23 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

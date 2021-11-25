@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-16 Tue 23:24 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>pecl 切换 php 版本</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -250,9 +251,9 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  ~ php --version
-PHP 8.0.3 <span style="color: #51afef;">(</span>cli<span style="color: #51afef;">)</span> <span style="color: #51afef;">(</span>built: Mar  4 2021 05:33:14<span style="color: #51afef;">)</span> <span style="color: #51afef;">(</span> NTS <span style="color: #51afef;">)</span>
-<span style="color: #44b9b1;">Copyright</span> <span style="color: #51afef;">(</span>c<span style="color: #51afef;">)</span> The PHP Group
-Zend Engine v4.0.3, Copyright <span style="color: #51afef;">(</span>c<span style="color: #51afef;">)</span> Zend Technologies
+PHP 8.0.3 (cli) (built: Mar  4 2021 05:33:14) ( NTS )
+<span style="color: #46D9FF;">Copyright</span> (c) The PHP Group
+Zend Engine v4.0.3, Copyright (c) Zend Technologies
 &#10140;  ~ whereis php
 php: /usr/bin/php /usr/lib/php /etc/php /usr/include/php /usr/share/php /usr/share/man/man1/php.1.gz
 &#10140;  ~ whereis php7
@@ -277,13 +278,13 @@ pecl: /usr/bin/pecl
 <span style="color: #747474;">#</span>
 
 
-<span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span><span style="color: #c678dd;">[</span> $<span style="color: #979797;">1</span> == <span style="color: #99bb66;">'php8'</span> <span style="color: #c678dd;">]</span><span style="color: #51afef;">]</span>;<span style="color: #51afef;">then</span>
+<span style="color: #51afef;">if</span> [[ $<span style="color: #979797;">1</span> == <span style="color: #99bb66;">'php8'</span> ]];<span style="color: #51afef;">then</span>
     sudo pecl config-set ext_dir /usr/lib/php/modules
     sudo pecl config-set php_dir /usr/share/php
     sudo pecl config-set php_bin /usr/bin/php
     sudo pecl config-set php_ini /etc/php/php.ini
     sudo pecl config-set php_suffix 8
-<span style="color: #51afef;">elif</span> <span style="color: #51afef;">[</span><span style="color: #c678dd;">[</span> $<span style="color: #979797;">1</span> == <span style="color: #99bb66;">'php7'</span> <span style="color: #c678dd;">]</span><span style="color: #51afef;">]</span>;<span style="color: #51afef;">then</span>
+<span style="color: #51afef;">elif</span> [[ $<span style="color: #979797;">1</span> == <span style="color: #99bb66;">'php7'</span> ]];<span style="color: #51afef;">then</span>
     sudo pecl config-set ext_dir /usr/lib/php7/modules
     sudo pecl config-set php_dir /usr/share/php7
     sudo pecl config-set php_bin /usr/bin/php7
@@ -380,7 +381,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-16 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-03-16 Tue 00:00 <br />Last updated: 2021-03-16 Tue 23:24 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-03-16 Tue 00:00 <br />Last updated: 2021-11-25 Thu 23:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

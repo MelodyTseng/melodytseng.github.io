@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:49 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git使用常见问题解决方法</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -250,23 +251,23 @@
 <h3 id="org6a0967e">git clone代码失败</h3>
 <div class="outline-text-3" id="text-org6a0967e">
 <div class="org-src-container">
-<pre class="src src-bash">git config http.postBuffer 524288000
-git config ssh.postBuffer 100000000
-<span style="color: #747474;">#</span><span style="color: #747474;">&#25110;</span>
-git config --global http.postBuffer 524288000
-git config --global ssh.postBuffer 100000000
-<span style="color: #747474;">#</span><span style="color: #747474;">&#25110;</span>
-~ vim ~/.gitconfig
-<span style="color: #51afef;">[</span>http<span style="color: #51afef;">]</span>
-<span style="color: #979797;">sslVerify</span> = false
-<span style="color: #979797;">postBuffer</span> = 100000000
-<span style="color: #979797;">lowSpeedLimit</span> = 0
-<span style="color: #979797;">lowSpeedTime</span> = 999999
-<span style="color: #51afef;">[</span>user<span style="color: #51afef;">]</span>
-<span style="color: #979797;">email</span> = xxxx
-<span style="color: #979797;">name</span> = josephzeng
-<span style="color: #51afef;">[</span>ssh<span style="color: #51afef;">]</span>
-<span style="color: #979797;">postBuffer</span> = 100000000
+<pre class="src src-bash">          git config http.postBuffer 524288000
+          git config ssh.postBuffer 100000000
+          <span style="color: #747474;">#</span><span style="color: #747474;">&#25110;</span>
+          git config --global http.postBuffer 524288000
+          git config --global ssh.postBuffer 100000000
+          <span style="color: #747474;">#</span><span style="color: #747474;">&#25110;</span>
+          ~ vim ~/.gitconfig
+          [http]
+          <span style="color: #979797;">sslVerify</span> = false
+          <span style="color: #979797;">postBuffer</span> = 100000000
+          <span style="color: #979797;">lowSpeedLimit</span> = 0
+          <span style="color: #979797;">lowSpeedTime</span> = 999999
+          [user]
+          <span style="color: #979797;">email</span> = xxxx
+          <span style="color: #979797;">name</span> = josephzeng
+          [ssh]
+          <span style="color: #979797;">postBuffer</span> = 100000000
 </pre>
 </div>
 
@@ -279,7 +280,7 @@ git config --global ssh.postBuffer 100000000
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-26 Tue 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-26 Tue 00:00 <br />Last updated: 2021-11-25 Thu 23:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

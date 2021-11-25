@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:48 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php pack unpack</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -256,7 +257,7 @@
 <h3 id="org8278e7a">pack</h3>
 <div class="outline-text-3" id="text-org8278e7a">
 <div class="org-src-container">
-<pre class="src src-php"><span style="color: #44b9b1;">string</span> <span style="color: #44b9b1;">pack</span> <span style="color: #51afef;">(</span> <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> <span style="color: #c678dd;">[</span>, <span style="color: #44b9b1;">mixed</span> $<span style="color: #979797;">args</span> <span style="color: #99bb66;">[</span>, <span style="color: #44b9b1;">mixed</span> <span style="color: #979797;">$</span>... <span style="color: #99bb66;">]</span><span style="color: #c678dd;">]</span> <span style="color: #51afef;">)</span>
+<pre class="src src-php"><span style="color: #44b9b1;">string</span> <span style="color: #46D9FF;">pack</span> ( <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> [, <span style="color: #44b9b1;">mixed</span> $<span style="color: #979797;">args</span> [, <span style="color: #44b9b1;">mixed</span> <span style="color: #979797;">$</span>... ]] )
 </pre>
 </div>
 <p>
@@ -269,7 +270,7 @@
 <h3 id="org4debe6c">unpack</h3>
 <div class="outline-text-3" id="text-org4debe6c">
 <div class="org-src-container">
-<pre class="src src-php"><span style="color: #51afef;">array</span> unpack <span style="color: #51afef;">(</span> <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> , <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">data</span> <span style="color: #51afef;">)</span>
+<pre class="src src-php"><span style="color: #51afef;">array</span> unpack ( <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">format</span> , <span style="color: #44b9b1;">string</span> $<span style="color: #979797;">data</span> )
 </pre>
 </div>
 </div>
@@ -466,31 +467,31 @@
 <div class="outline-text-3" id="text-orge4ed16b">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
-<span style="color: #51afef;">include</span><span style="color: #51afef;">(</span><span style="color: #51afef;">__DIR__</span>.<span style="color: #99bb66;">'/../spl_autoload.php'</span><span style="color: #51afef;">)</span>;
+<span style="color: #51afef;">include</span>(<span style="color: #51afef;">__DIR__</span>.<span style="color: #99bb66;">'/../spl_autoload.php'</span>);
 <span style="color: #51afef;">use</span> <span style="color: #44b9b1;">Package\Write</span>;
-$<span style="color: #979797;">pw</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\Write</span><span style="color: #51afef;">()</span>;
-$<span style="color: #979797;">pw</span>-&gt;writeBegin<span style="color: #51afef;">(</span><span style="color: #99bb66;">"123"</span><span style="color: #51afef;">)</span>;
-$<span style="color: #979797;">pw</span>-&gt;writeString<span style="color: #51afef;">(</span><span style="color: #99bb66;">"abc"</span><span style="color: #51afef;">)</span>;
-$<span style="color: #979797;">pw</span>-&gt;writeEnd<span style="color: #51afef;">()</span>;
-$<span style="color: #979797;">buff</span> = $<span style="color: #979797;">pw</span>-&gt;getPacketBuffer<span style="color: #51afef;">()</span>;
-$<span style="color: #979797;">pr</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\Read</span><span style="color: #51afef;">()</span>;
-<span style="color: #51afef;">if</span><span style="color: #51afef;">(</span>$<span style="color: #979797;">pr</span>-&gt;readPackageBuffer<span style="color: #c678dd;">(</span>$<span style="color: #979797;">buff</span><span style="color: #c678dd;">)</span> == <span style="color: #51afef;">true</span><span style="color: #51afef;">){</span>
+$<span style="color: #979797;">pw</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\Write</span>();
+$<span style="color: #979797;">pw</span>-&gt;writeBegin(<span style="color: #99bb66;">"123"</span>);
+$<span style="color: #979797;">pw</span>-&gt;writeString(<span style="color: #99bb66;">"abc"</span>);
+$<span style="color: #979797;">pw</span>-&gt;writeEnd();
+$<span style="color: #979797;">buff</span> = $<span style="color: #979797;">pw</span>-&gt;getPacketBuffer();
+$<span style="color: #979797;">pr</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\Read</span>();
+<span style="color: #51afef;">if</span>($<span style="color: #979797;">pr</span>-&gt;readPackageBuffer($<span style="color: #979797;">buff</span>) == <span style="color: #51afef;">true</span>){
     <span style="color: #747474;">//</span><span style="color: #747474;">print_r($pr-&gt;getHeaderInfo());</span>
     <span style="color: #747474;">//</span><span style="color: #747474;">echo $pr-&gt;getCmd();</span>
-<span style="color: #51afef;">}</span>
+}
 <span style="color: #747474;">//</span><span style="color: #747474;">test class EncryptDecrypt</span>
-$<span style="color: #979797;">ed</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\EncryptDecrypt</span><span style="color: #51afef;">()</span>;
+$<span style="color: #979797;">ed</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Package\EncryptDecrypt</span>();
 $<span style="color: #979797;">str</span> = <span style="color: #99bb66;">"123"</span>;
 <span style="color: #51afef;">echo</span> $<span style="color: #979797;">str</span>.<span style="color: #99bb66;">"\n"</span>;
-$<span style="color: #979797;">buff</span> = pack<span style="color: #51afef;">(</span><span style="color: #99bb66;">"N"</span>, $<span style="color: #979797;">str</span><span style="color: #51afef;">)</span>;
+$<span style="color: #979797;">buff</span> = pack(<span style="color: #99bb66;">"N"</span>, $<span style="color: #979797;">str</span>);
 <span style="color: #51afef;">echo</span> $<span style="color: #979797;">buff</span>.<span style="color: #99bb66;">"\n"</span>;;
-$<span style="color: #979797;">e</span> = $<span style="color: #979797;">ed</span>-&gt;encryptBuffer<span style="color: #51afef;">(</span>$<span style="color: #979797;">buff</span>, 0, strlen<span style="color: #c678dd;">(</span>$<span style="color: #979797;">buff</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>;
+$<span style="color: #979797;">e</span> = $<span style="color: #979797;">ed</span>-&gt;encryptBuffer($<span style="color: #979797;">buff</span>, 0, strlen($<span style="color: #979797;">buff</span>));
 <span style="color: #51afef;">echo</span> $<span style="color: #979797;">e</span>.<span style="color: #99bb66;">"\n"</span>;
-$<span style="color: #979797;">d</span> = $<span style="color: #979797;">ed</span>-&gt;decryptBuffer<span style="color: #51afef;">(</span>$<span style="color: #979797;">buff</span>, strlen<span style="color: #c678dd;">(</span>$<span style="color: #979797;">buff</span><span style="color: #c678dd;">)</span>, $<span style="color: #979797;">e</span><span style="color: #51afef;">)</span>;
-var_dump<span style="color: #51afef;">(</span>$<span style="color: #979797;">d</span><span style="color: #51afef;">)</span>.<span style="color: #99bb66;">"\n"</span>;
+$<span style="color: #979797;">d</span> = $<span style="color: #979797;">ed</span>-&gt;decryptBuffer($<span style="color: #979797;">buff</span>, strlen($<span style="color: #979797;">buff</span>), $<span style="color: #979797;">e</span>);
+var_dump($<span style="color: #979797;">d</span>).<span style="color: #99bb66;">"\n"</span>;
 <span style="color: #51afef;">echo</span> $<span style="color: #979797;">buff</span>.<span style="color: #99bb66;">"\n"</span>;
-$<span style="color: #979797;">ua</span> = unpack<span style="color: #51afef;">(</span><span style="color: #99bb66;">'Na'</span>, $<span style="color: #979797;">buff</span><span style="color: #51afef;">)</span>;
-<span style="color: #51afef;">echo</span> $<span style="color: #979797;">ua</span><span style="color: #51afef;">[</span><span style="color: #99bb66;">'a'</span><span style="color: #51afef;">]</span>.<span style="color: #99bb66;">"\n"</span>;
+$<span style="color: #979797;">ua</span> = unpack(<span style="color: #99bb66;">'Na'</span>, $<span style="color: #979797;">buff</span>);
+<span style="color: #51afef;">echo</span> $<span style="color: #979797;">ua</span>[<span style="color: #99bb66;">'a'</span>].<span style="color: #99bb66;">"\n"</span>;
 </pre>
 </div>
 <p>
@@ -510,7 +511,7 @@ $<span style="color: #979797;">ua</span> = unpack<span style="color: #51afef;">(
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2017-03-06 20:38:35 <br />Last updated: 2021-11-25 Thu 23:23 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

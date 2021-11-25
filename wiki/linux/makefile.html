@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:50 -->
+<!-- 2021-11-25 Thu 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Makefile 使用备注</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -271,13 +272,13 @@
 <span style="color: #747474;">#</span>
 
 <span style="color: #979797;">SHELL</span>=/bin/bash
-export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">shell</span> pwd<span style="color: #51afef;">)</span>:/home/josephzeng/go
+export <span style="color: #979797;">GOPATH</span>=$(<span style="color: #979797;">shell</span> pwd):/home/josephzeng/go
 <span style="color: #979797;">GOBIN</span>=go
 <span style="color: #979797;">GLIDE</span>=glide
-<span style="color: #979797;">GOBUILD</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> build
-<span style="color: #979797;">GOCLEAN</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> clean
-<span style="color: #979797;">GOTEST</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> test
-<span style="color: #979797;">GOGET</span>=$<span style="color: #51afef;">(</span><span style="color: #979797;">GOBIN</span><span style="color: #51afef;">)</span> get
+<span style="color: #979797;">GOBUILD</span>=$(<span style="color: #979797;">GOBIN</span>) build
+<span style="color: #979797;">GOCLEAN</span>=$(<span style="color: #979797;">GOBIN</span>) clean
+<span style="color: #979797;">GOTEST</span>=$(<span style="color: #979797;">GOBIN</span>) test
+<span style="color: #979797;">GOGET</span>=$(<span style="color: #979797;">GOBIN</span>) get
 <span style="color: #979797;">GATEWAYBIN</span>=./bin/gateway
 <span style="color: #979797;">GATEWAYSRC</span>=./src/gateway
 
@@ -287,25 +288,25 @@ export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;
 <span style="color: #51afef;">build</span>: build_gateway
 
 <span style="color: #51afef;">test_gateway</span>:
-        $<span style="color: #51afef;">(</span><span style="color: #979797;">GOTEST</span><span style="color: #51afef;">)</span> -v $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYSRC</span><span style="color: #51afef;">)</span>
+    $(<span style="color: #979797;">GOTEST</span>) -v $(<span style="color: #979797;">GATEWAYSRC</span>)
 
 <span style="color: #51afef;">build_gateway</span>:
-        rm -rf $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span>
-        $<span style="color: #51afef;">(</span><span style="color: #979797;">GOBUILD</span><span style="color: #51afef;">)</span> -o $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span> $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYSRC</span><span style="color: #51afef;">)</span>
+    rm -rf $(<span style="color: #979797;">GATEWAYBIN</span>)
+    $(<span style="color: #979797;">GOBUILD</span>) -o $(<span style="color: #979797;">GATEWAYBIN</span>) $(<span style="color: #979797;">GATEWAYSRC</span>)
 
 <span style="color: #51afef;">run_gateway</span>: build_gateway
-        ps -eaf| grep $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span> | grep -v grep | awk <span style="color: #99bb66;">'{print $$2}'</span> | xargs kill -9
-        $<span style="color: #51afef;">(</span><span style="color: #979797;">GATEWAYBIN</span><span style="color: #51afef;">)</span>
+    ps -eaf| grep $(<span style="color: #979797;">GATEWAYBIN</span>) | grep -v grep | awk <span style="color: #99bb66;">'{print $$2}'</span> | xargs kill -9
+    $(<span style="color: #979797;">GATEWAYBIN</span>)
 
 <span style="color: #51afef;">deps</span>:
-        cd ./src                                               ;\
-        $<span style="color: #51afef;">(</span><span style="color: #979797;">GLIDE</span><span style="color: #51afef;">)</span> get github.com/go-ini/ini#v1.38.1             ;\
-        $<span style="color: #51afef;">(</span><span style="color: #979797;">GLIDE</span><span style="color: #51afef;">)</span> get github.com/urfave/cli#v1.20.0             ;\
-        $<span style="color: #51afef;">(</span><span style="color: #979797;">GLIDE</span><span style="color: #51afef;">)</span> install
+    cd ./src                                               ;\
+    $(<span style="color: #979797;">GLIDE</span>) get github.com/go-ini/ini#v1.38.1             ;\
+    $(<span style="color: #979797;">GLIDE</span>) get github.com/urfave/cli#v1.20.0             ;\
+    $(<span style="color: #979797;">GLIDE</span>) install
 
 <span style="color: #51afef;">clean</span>:
-        rm -rf ./bin/*
-        rm -rf ./logs/*
+    rm -rf ./bin/*
+    rm -rf ./logs/*
 
 <span style="color: #51afef;">.PHONY</span>:test_gateway build_gateway
 </pre>
@@ -358,7 +359,7 @@ export <span style="color: #979797;">GOPATH</span>=$<span style="color: #51afef;
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-11-25 Thu 23:05 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

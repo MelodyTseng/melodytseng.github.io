@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:50 -->
+<!-- 2021-11-25 Thu 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mysql</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -326,7 +327,7 @@ flush privileges; <span style="color: #747474;">#</span><span style="color: #747
 <h4 id="org663daf4">修改密码</h4>
 <div class="outline-text-4" id="text-org663daf4">
 <div class="org-src-container">
-<pre class="src src-bash">update mysql.user set <span style="color: #979797;">password</span> = password<span style="color: #51afef;">(</span><span style="color: #99bb66;">'pwd1'</span><span style="color: #51afef;">)</span> where <span style="color: #979797;">user</span> = <span style="color: #99bb66;">'username1'</span> and <span style="color: #979797;">host</span> = <span style="color: #99bb66;">'%'</span>;
+<pre class="src src-bash">update mysql.user set <span style="color: #979797;">password</span> = password(<span style="color: #99bb66;">'pwd1'</span>) where <span style="color: #979797;">user</span> = <span style="color: #99bb66;">'username1'</span> and <span style="color: #979797;">host</span> = <span style="color: #99bb66;">'%'</span>;
 flush privileges;
 </pre>
 </div>
@@ -373,11 +374,11 @@ CREATE DATABASE h_test DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 <pre class="src src-bash">//&#39318;&#20808;&#36873;&#23450;&#25805;&#20316;&#30340;&#25968;&#25454;&#24211;
 use h_test;
 //&#21019;&#24314;&#34920;student
-create table student<span style="color: #51afef;">(</span>
-  id  int<span style="color: #c678dd;">(</span>11<span style="color: #c678dd;">)</span>,
-  name  varchar<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
-  age int<span style="color: #c678dd;">(</span>11<span style="color: #c678dd;">)</span>
-<span style="color: #51afef;">)</span>;
+create table student(
+  id  int(11),
+  name  varchar(20),
+  age int(11)
+);
 //&#26597;&#30475;&#25968;&#25454;&#34920;
 show tables;
 //&#26597;&#30475;&#25968;&#25454;&#34920;&#20449;&#24687;&#65292;&#21518;&#38754;&#21152;&#19978;&#21442;&#25968;/G&#21487;&#20351;&#32467;&#26524;&#26356;&#21152;&#32654;&#35266;
@@ -385,18 +386,18 @@ show create table student;
 //&#26597;&#30475;&#34920;&#30340;&#30340;&#23383;&#27573;&#20449;&#24687;
 desc student;
 //&#20462;&#25913;&#34920;&#21517;
-alter table student rename <span style="color: #51afef;">[</span>to<span style="color: #51afef;">]</span> h_student;
+alter table student rename [to] h_student;
 //&#20462;&#25913;&#23383;&#27573;&#21517;
-alter table h_student change name stu_name varchar<span style="color: #51afef;">(</span>20<span style="color: #51afef;">)</span>;
+alter table h_student change name stu_name varchar(20);
 //&#20462;&#25913;&#23383;&#27573;&#30340;&#25968;&#25454;&#31867;&#22411;
-alter table h_student modify id int<span style="color: #51afef;">(</span>20<span style="color: #51afef;">)</span>;
+alter table h_student modify id int(20);
 //&#28155;&#21152;&#23383;&#27573;
 alter table h_student add grade float;
 //&#21024;&#38500;&#23383;&#27573;
 alter table h_student drop grade;
 //&#20462;&#25913;&#23383;&#27573;&#30340;&#20301;&#32622;
-alter table h_student modify stu_name varchar<span style="color: #51afef;">(</span>20<span style="color: #51afef;">)</span> first;
-alter table h_student modify id int<span style="color: #51afef;">(</span>11<span style="color: #51afef;">)</span> after age;
+alter table h_student modify stu_name varchar(20) first;
+alter table h_student modify id int(11) after age;
 //&#21024;&#38500;&#25968;&#25454;&#34920;
 drop table h_student;
 </pre>
@@ -461,99 +462,99 @@ drop table h_student;
 6.&#31354;&#38388;&#32034;&#24341;
 //&#21019;&#24314;&#32034;&#24341;
 //&#19968;.&#21019;&#24314;&#34920;&#30340;&#26102;&#20505;&#21019;&#24314;&#32034;&#24341;
-create table &#34920;&#21517;<span style="color: #51afef;">(</span>
-        &#23383;&#27573;&#21517; &#25968;&#25454;&#31867;&#22411;<span style="color: #c678dd;">[</span>&#23436;&#25972;&#24615;&#32422;&#26463;&#26465;&#20214;<span style="color: #c678dd;">]</span>,
+create table &#34920;&#21517;(
+        &#23383;&#27573;&#21517; &#25968;&#25454;&#31867;&#22411;[&#23436;&#25972;&#24615;&#32422;&#26463;&#26465;&#20214;],
         ...
         &#23383;&#27573;&#21517; &#25968;&#25454;&#31867;&#22411;,
-        <span style="color: #c678dd;">[</span>UNIQUE|FULLTEXT|SPATIAL<span style="color: #c678dd;">]</span> INDEX|KEY
-  <span style="color: #51afef;">)</span>;
+        [UNIQUE|FULLTEXT|SPATIAL] INDEX|KEY
+  );
 //1-1.&#21019;&#24314;&#26222;&#36890;&#32034;&#24341;
-create table test1<span style="color: #51afef;">(</span>
+create table test1(
   id  INT,
-  name VARCHAR<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
+  name VARCHAR(20),
   age INT,
-  INDEX <span style="color: #c678dd;">(</span>id<span style="color: #c678dd;">)</span>
-<span style="color: #51afef;">)</span>;
+  INDEX (id)
+);
 //&#21487;&#20197;&#25554;&#20837;&#19968;&#26465;&#25968;&#25454;,&#26597;&#30475;&#32034;&#24341;&#26159;&#21542;&#34987;&#20351;&#29992;
 explain select * from test1 where <span style="color: #979797;">id</span>=1 \G;
 //1-2.&#21019;&#24314;&#21807;&#19968;&#24615;&#32034;&#24341;
-create table test2<span style="color: #51afef;">(</span>
+create table test2(
   id  INT,
-  name VARCHAR<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
+  name VARCHAR(20),
   age INT,
-  UNIQUE INDEX unique_id<span style="color: #c678dd;">(</span>id asc<span style="color: #c678dd;">)</span>
-<span style="color: #51afef;">)</span>;
+  UNIQUE INDEX unique_id(id asc)
+);
 //1-3.&#21019;&#24314;&#20840;&#25991;&#32034;&#24341;
-create table test3<span style="color: #51afef;">(</span>
+create table test3(
   id  INT,
-  name VARCHAR<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
+  name VARCHAR(20),
   age INT,
-  FULLTEXT INDEX fulltext_name<span style="color: #c678dd;">(</span>name<span style="color: #c678dd;">)</span>
-<span style="color: #51afef;">)</span><span style="color: #979797;">ENGINE</span>=MyISAM;
+  FULLTEXT INDEX fulltext_name(name)
+)<span style="color: #979797;">ENGINE</span>=MyISAM;
 //1-4.&#21019;&#24314;&#21333;&#21015;&#32034;&#24341;
-create table test4<span style="color: #51afef;">(</span>
+create table test4(
   id  INT,
-  name VARCHAR<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
+  name VARCHAR(20),
   age INT,
-  INDEX single_name<span style="color: #c678dd;">(</span>name<span style="color: #99bb66;">(</span>20<span style="color: #99bb66;">)</span><span style="color: #c678dd;">)</span>
-<span style="color: #51afef;">)</span>;
+  INDEX single_name(name(20))
+);
 //1-5.&#21019;&#24314;&#22810;&#21015;&#32034;&#24341;
-create table test5<span style="color: #51afef;">(</span>
+create table test5(
   id  INT,
-  name VARCHAR<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
+  name VARCHAR(20),
   age INT,
-  INDEX multi<span style="color: #c678dd;">(</span>id,name<span style="color: #99bb66;">(</span>20<span style="color: #99bb66;">)</span><span style="color: #c678dd;">)</span>
-<span style="color: #51afef;">)</span>;
+  INDEX multi(id,name(20))
+);
 //1-6.&#21019;&#24314;&#31354;&#38388;&#32034;&#24341;
-create table test6<span style="color: #51afef;">(</span>
+create table test6(
   id  INT,
   space GEOMETRY NOT NULL,
-  SPATIAL INDEX sp<span style="color: #c678dd;">(</span>space<span style="color: #c678dd;">)</span>
-<span style="color: #51afef;">)</span><span style="color: #979797;">ENGINE</span>=MyISAM;
+  SPATIAL INDEX sp(space)
+)<span style="color: #979797;">ENGINE</span>=MyISAM;
 ---------------------------------------------------
 //&#20108;.&#20351;&#29992;create index&#35821;&#21477;&#22312;&#24050;&#32463;&#23384;&#22312;&#30340;&#34920;&#19978;&#21019;&#24314;&#32034;&#24341;
 //&#39318;&#20808;&#26032;&#24314;&#19968;&#20010;&#34920;,&#36825;&#20010;&#34920;&#27809;&#26377;&#32034;&#24341;
-create table student<span style="color: #51afef;">(</span>
+create table student(
   id int,
   age int,
-  name varchar<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
-  intro varchar<span style="color: #c678dd;">(</span>40<span style="color: #c678dd;">)</span>,
+  name varchar(20),
+  intro varchar(40),
   g GEOMETRY NOT NULL
-<span style="color: #51afef;">)</span><span style="color: #979797;">ENGINE</span>=MyISAM;
+)<span style="color: #979797;">ENGINE</span>=MyISAM;
 //2-1.&#21019;&#24314;&#26222;&#36890;&#32034;&#24341;
-create index index_id on student<span style="color: #51afef;">(</span>id<span style="color: #51afef;">)</span>;
+create index index_id on student(id);
 //2-2.&#21019;&#24314;&#21807;&#19968;&#24615;&#32034;&#24341;
-create unique index uniqueidx on student<span style="color: #51afef;">(</span>id<span style="color: #51afef;">)</span>;
+create unique index uniqueidx on student(id);
 //2-3.&#21019;&#24314;&#21333;&#21015;&#32034;&#24341;
-create index singleidx on student<span style="color: #51afef;">(</span>age<span style="color: #51afef;">)</span>;
+create index singleidx on student(age);
 //2-4.&#21019;&#24314;&#22810;&#21015;&#32034;&#24341;
-create index mulitidx on student<span style="color: #51afef;">(</span>name<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,intro<span style="color: #c678dd;">(</span>40<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>;
+create index mulitidx on student(name(20),intro(40));
 //2-5.&#21019;&#24314;&#20840;&#25991;&#32034;&#24341;
-create fulltext index fulltextidx on student<span style="color: #51afef;">(</span>name<span style="color: #51afef;">)</span>;
+create fulltext index fulltextidx on student(name);
 //2-6.&#21019;&#24314;&#31354;&#38388;&#32034;&#24341;
-create spatial index spatidx on student<span style="color: #51afef;">(</span>g<span style="color: #51afef;">)</span>;
+create spatial index spatidx on student(g);
 //&#19977;.&#20351;&#29992;alter table&#35821;&#21477;&#22312;&#24050;&#32463;&#23384;&#22312;&#30340;&#34920;&#19978;&#21019;&#24314;&#32034;&#24341;
 //&#21024;&#38500;student&#34920;&#65292;&#37325;&#26032;&#21019;&#24314;
 drop table student;
-create table student<span style="color: #51afef;">(</span>
+create table student(
   id int,
   age int,
-  name varchar<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,
-  intro varchar<span style="color: #c678dd;">(</span>40<span style="color: #c678dd;">)</span>,
+  name varchar(20),
+  intro varchar(40),
   space GEOMETRY NOT NULL
-<span style="color: #51afef;">)</span><span style="color: #979797;">ENGINE</span>=MyISAM;
+)<span style="color: #979797;">ENGINE</span>=MyISAM;
 //3-1.&#21019;&#24314;&#26222;&#36890;&#32034;&#24341;
-alter table student add index index_id<span style="color: #51afef;">(</span>id<span style="color: #51afef;">)</span>;
+alter table student add index index_id(id);
 //3-2.&#21019;&#24314;&#21807;&#19968;&#24615;&#32034;&#24341;
-alter table student add unique uniqueidx<span style="color: #51afef;">(</span>id<span style="color: #51afef;">)</span>;
+alter table student add unique uniqueidx(id);
 //3-3.&#21019;&#24314;&#21333;&#21015;&#32034;&#24341;
-alter table student add index singleidx <span style="color: #51afef;">(</span>age<span style="color: #51afef;">)</span>;
+alter table student add index singleidx (age);
 //3-4.&#21019;&#24314;&#22810;&#21015;&#32034;&#24341;
-alter table student add index multidx<span style="color: #51afef;">(</span>name<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span>,intro<span style="color: #c678dd;">(</span>40<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>;
+alter table student add index multidx(name(20),intro(40));
 //3-5.&#21019;&#24314;&#20840;&#25991;&#32034;&#24341;
-alter table student add fulltext index fulltextidx<span style="color: #51afef;">(</span>name<span style="color: #51afef;">)</span>;
+alter table student add fulltext index fulltextidx(name);
 //3-6.&#21019;&#24314;&#31354;&#38388;&#32034;&#24341;
-alter table student add spatial index spatidx<span style="color: #51afef;">(</span>space<span style="color: #51afef;">)</span>;
+alter table student add spatial index spatidx(space);
 //&#21024;&#38500;&#32034;&#24341;&#65292;&#26377;&#19979;&#38754;&#20004;&#31181;&#26041;&#24335;
 //1.&#20351;&#29992;alter table&#21024;&#38500;&#32034;&#24341;fulltextidx
 alter table student drop index fulltextidx;
@@ -569,22 +570,22 @@ drop index spatidx on student;
 <div class="org-src-container">
 <pre class="src src-bash">//&#37325;&#26032;&#24314;&#31435;&#34920;student
 drop table student;
-create table student<span style="color: #51afef;">(</span>
+create table student(
   id int,
-  name varchar<span style="color: #c678dd;">(</span>20<span style="color: #c678dd;">)</span> not null,
+  name varchar(20) not null,
   grade float
-<span style="color: #51afef;">)</span>;
+);
 //&#25554;&#20837;&#19968;&#26465;&#25968;&#25454;&#65292;&#20063;&#21487;&#20197;&#23569;&#26576;&#20010;&#23383;&#27573;&#30340;&#21516;&#26102;&#20063;&#23569;&#23545;&#24212;&#30340;&#25968;&#25454;
-insert into student<span style="color: #51afef;">(</span>id,name,grade<span style="color: #51afef;">)</span> values<span style="color: #51afef;">(</span>1,<span style="color: #99bb66;">'howie'</span>,70<span style="color: #51afef;">)</span>;
+insert into student(id,name,grade) values(1,<span style="color: #99bb66;">'howie'</span>,70);
 //&#20063;&#21487;&#20197;&#19981;&#25351;&#23450;&#23383;&#27573;&#21517;&#65292;&#20294;&#35201;&#27880;&#24847;&#39034;&#24207;
-insert into student values<span style="color: #51afef;">(</span>2,<span style="color: #99bb66;">'howie'</span>,80<span style="color: #51afef;">)</span>;
+insert into student values(2,<span style="color: #99bb66;">'howie'</span>,80);
 //&#20063;&#21487;&#20197;&#36825;&#26679;&#28155;&#21152;&#25968;&#25454;
 insert into student set <span style="color: #979797;">id</span>=3,<span style="color: #979797;">name</span>=<span style="color: #99bb66;">"howie"</span>,<span style="color: #979797;">grade</span>=90;
 //&#21516;&#26102;&#28155;&#21152;&#22810;&#26465;&#25968;&#25454;
 insert into student values
-<span style="color: #51afef;">(</span>4,<span style="color: #99bb66;">'howie'</span>,80<span style="color: #51afef;">)</span>,
-<span style="color: #51afef;">(</span>5,<span style="color: #99bb66;">'howie'</span>,80<span style="color: #51afef;">)</span>,
-<span style="color: #51afef;">(</span>6,<span style="color: #99bb66;">'howie'</span>,80<span style="color: #51afef;">)</span>;
+(4,<span style="color: #99bb66;">'howie'</span>,80),
+(5,<span style="color: #99bb66;">'howie'</span>,80),
+(6,<span style="color: #99bb66;">'howie'</span>,80);
 </pre>
 </div>
 </div>
@@ -609,7 +610,7 @@ update student set <span style="color: #979797;">grade</span>=100 where id&lt;4;
 delete from student where <span style="color: #979797;">id</span>=6;
 //&#25209;&#37327;&#21024;&#38500;&#25968;&#25454;
 delete from student where id&gt;3;
-//&#21024;&#38500;&#25152;&#26377;&#25968;&#25454;,DDL<span style="color: #51afef;">(</span>&#25968;&#25454;&#23450;&#20041;&#35821;&#35328;<span style="color: #51afef;">)</span>&#35821;&#21477; truncate table student&#20063;&#21487;&#20197;&#21024;&#38500;&#34920;&#20869;&#25152;&#26377;&#25968;&#25454;
+//&#21024;&#38500;&#25152;&#26377;&#25968;&#25454;,DDL(&#25968;&#25454;&#23450;&#20041;&#35821;&#35328;)&#35821;&#21477; truncate table student&#20063;&#21487;&#20197;&#21024;&#38500;&#34920;&#20869;&#25152;&#26377;&#25968;&#25454;
 delete from student;
 </pre>
 </div>
@@ -636,7 +637,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-06 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-06 Sat 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-06 Sat 00:00 <br />Last updated: 2021-11-25 Thu 23:05 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

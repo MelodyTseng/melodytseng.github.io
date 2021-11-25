@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:48 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elk add node solved unassigned shards</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -262,7 +263,7 @@
 <div id="outline-container-orgf0c2a46" class="outline-2">
 <h2 id="orgf0c2a46">下载</h2>
 <div class="outline-text-2" id="text-orgf0c2a46">
-<pre class="example" id="org33092b0">
+<pre class="example" id="org6e3e5e9">
 elasticsearch-5.2.2
 logstash-5.2.2
 kibana-5.2.2-linux-x86_64
@@ -273,7 +274,7 @@ kibana-5.2.2-linux-x86_64
 <div id="outline-container-orgfaa0cc5" class="outline-2">
 <h2 id="orgfaa0cc5">logstash udp server</h2>
 <div class="outline-text-2" id="text-orgfaa0cc5">
-<pre class="example" id="org2208904">
+<pre class="example" id="org208f97d">
 input {
    udp {
 	port =&gt; 65551
@@ -308,7 +309,7 @@ output {
 <div id="outline-container-org1a5fce0" class="outline-2">
 <h2 id="org1a5fce0">kibana配置</h2>
 <div class="outline-text-2" id="text-org1a5fce0">
-<pre class="example" id="org611f904">
+<pre class="example" id="orgf3ba14b">
 server.port: 8080
 server.host: "0.0.0.0"
 elasticsearch.url: "http://localhost:9200"
@@ -320,7 +321,7 @@ elasticsearch.requestTimeout: 60000
 <div id="outline-container-org829fcb8" class="outline-2">
 <h2 id="org829fcb8">Elasticsearch节点1</h2>
 <div class="outline-text-2" id="text-org829fcb8">
-<pre class="example" id="org2ed386b">
+<pre class="example" id="orgbe5f095">
 cluster.name: logcenter
 node.name: node1
 node.data: true
@@ -334,7 +335,7 @@ discovery.zen.minimum_master_nodes: 1
 <div id="outline-container-org08cc330" class="outline-2">
 <h2 id="org08cc330">Elasticsearch节点2</h2>
 <div class="outline-text-2" id="text-org08cc330">
-<pre class="example" id="orgb0ef9b5">
+<pre class="example" id="orgffafe25">
 cluster.name: logcenter
 node.name: node2
 node.data: true
@@ -350,7 +351,7 @@ discovery.zen.minimum_master_nodes: 1
 <div id="outline-container-orgae59915" class="outline-2">
 <h2 id="orgae59915">其他</h2>
 <div class="outline-text-2" id="text-orgae59915">
-<pre class="example" id="org951bef4">
+<pre class="example" id="orgf379836">
 ### 可以修改 elasticsearch-5.2.2/config/jvm.options 
 -Xms3g
 -Xmx3g
@@ -396,7 +397,7 @@ $ ./start.sh
 <div id="outline-container-org7541e86" class="outline-2">
 <h2 id="org7541e86">验收</h2>
 <div class="outline-text-2" id="text-org7541e86">
-<pre class="example" id="org203ee65">
+<pre class="example" id="org88557be">
 $ curl -XGET "http://localhost:9200/_cat/health?v"
 epoch      timestamp cluster   status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
 1489128117 14:41:57  logcenter green           2         2     12   6    0    0        0             0                  -                100.0%
@@ -412,7 +413,7 @@ epoch      timestamp cluster   status node.total node.data shards pri relo init 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2017-03-11 19:15:02 <br />Last updated: 2021-11-25 Thu 23:23 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

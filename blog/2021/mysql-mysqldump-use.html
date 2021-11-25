@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-12 Fri 10:08 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MySQL命令mysqldump使用</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -270,17 +271,17 @@
 <h3 id="org9a82e93">使用简单说明</h3>
 <div class="outline-text-3" id="text-org9a82e93">
 <div class="org-src-container">
-<pre class="src src-bash">- Create a backup <span style="color: #51afef;">(</span>user will be prompted for a password<span style="color: #51afef;">)</span>:
+<pre class="src src-bash">- Create a backup (user will be prompted for a password):
   mysqldump --user user --password database_name --result-file=path/to/file.sql
 
-- Backup a specific table redirecting the output to a file <span style="color: #51afef;">(</span>user will be prompted for a password<span style="color: #51afef;">)</span>:
+- Backup a specific table redirecting the output to a file (user will be prompted for a password):
   mysqldump --user user --password database_name table_name &gt; path/to/file.sql
 
-- Backup all databases redirecting the output to a file <span style="color: #51afef;">(</span>user will be prompted for a password<span style="color: #51afef;">)</span>:
+- Backup all databases redirecting the output to a file (user will be prompted for a password):
   mysqldump --user user --password --all-databases &gt; path/to/file.sql
 
-- Backup all databases from a remote host, redirecting the output to a file <span style="color: #51afef;">(</span>user will be prompted for a password<span style="color: #51afef;">)</span>:
-  mysqldump --host=<span style="color: #51afef;">{</span><span style="color: #c678dd;">(</span>ip_or_hostname<span style="color: #c678dd;">)</span><span style="color: #51afef;">}</span> --user user --password --all-databases &gt; <span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>path/to/file.sql<span style="color: #c678dd;">}</span><span style="color: #ff6655; font-weight: bold;">}</span>
+- Backup all databases from a remote host, redirecting the output to a file (user will be prompted for a password):
+  mysqldump --host={(ip_or_hostname)} --user user --password --all-databases &gt; ({path/to/file.sql}}
 
   More information: https://dev.mysql.com/doc/refman/en/mysqldump.html.
 </pre>
@@ -333,7 +334,7 @@
 &#8211;no-create-info, -t&#21482;&#23548;&#20986;&#25968;&#25454;&#65292;&#32780;&#19981;&#28155;&#21152;CREATE TABLE &#35821;&#21477;
   mysqldump -uroot -p &#8211;<span style="color: #979797;">host</span>=localhost &#8211;all-databases &#8211;no-create-info
 -R, &#8211;routines: &#23548;&#20986;&#23384;&#20648;&#36807;&#31243;&#20197;&#21450;&#33258;&#23450;&#20041;&#20989;&#25968;
-  &#22312;&#36716;&#20648;&#30340;&#25968;&#25454;&#24211;&#20013;&#36716;&#20648;&#23384;&#20648;&#31243;&#24207;<span style="color: #51afef;">(</span>&#20989;&#25968;&#21644;&#31243;&#24207;<span style="color: #51afef;">)</span>
+  &#22312;&#36716;&#20648;&#30340;&#25968;&#25454;&#24211;&#20013;&#36716;&#20648;&#23384;&#20648;&#31243;&#24207;(&#20989;&#25968;&#21644;&#31243;&#24207;)
   mysqldump -uroot -p --host=localhost --all-databases --routines
 &#8211;opt
   &#21151;&#33021;&#31561;&#21516;&#20110;&#21516;&#26102;&#25351;&#23450;&#20102; &#8211;add-drop-table, &#8211;add-locks, &#8211;create-options, &#8211;quick, &#8211;extended-insert, &#8211;lock-tables, &#8211;set-charset,&#20197;&#21450; &#8211;disable-keys&#36825;&#20123;
@@ -359,7 +360,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-11 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-03-11 Thu 00:00 <br />Last updated: 2021-03-12 Fri 10:08 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-03-11 Thu 00:00 <br />Last updated: 2021-11-25 Thu 23:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

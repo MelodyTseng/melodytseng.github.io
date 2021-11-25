@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:50 -->
+<!-- 2021-11-25 Thu 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -232,7 +233,7 @@
 <li><a href="#orgb3b5b67">git</a>
 <ul>
 <li><a href="#orgeb41e06">安装</a></li>
-<li><a href="#orgd299ce7">使用</a>
+<li><a href="#orgc4ae13b">使用</a>
 <ul>
 <li><a href="#orge6546da">常用基本操作</a></li>
 <li><a href="#org94b2d39">官网详细手册</a></li>
@@ -251,7 +252,7 @@
 <li><a href="#orgf7e00b0">创建ssh key</a></li>
 <li><a href="#org6856ed8">登录Github</a></li>
 <li><a href="#org7a4c5fb">测试</a></li>
-<li><a href="#org2b78e42">使用</a></li>
+<li><a href="#orgc8e66b4">使用</a></li>
 </ul>
 </li>
 <li><a href="#orgd9e6963">参考</a></li>
@@ -267,33 +268,33 @@
 <h3 id="orgeb41e06">安装</h3>
 <div class="outline-text-3" id="text-orgeb41e06">
 <div class="org-src-container">
-<pre class="src src-bash">sudo apt install git <span style="color: #747474;">#</span><span style="color: #747474;">&#25110;&#33258;&#24049;&#32534;&#35793; https://git-scm.com/download/linux</span>
-git config --global user.name <span style="color: #99bb66;">"josephzeng"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#35774;&#32622;&#29992;&#25143;&#21517;</span>
-git config --global user.email <span style="color: #99bb66;">"xxx@gmail.com"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#35774;&#32622;&#37038;&#31665;</span>
+<pre class="src src-bash">     sudo apt install git <span style="color: #747474;">#</span><span style="color: #747474;">&#25110;&#33258;&#24049;&#32534;&#35793; https://git-scm.com/download/linux</span>
+     git config --global user.name <span style="color: #99bb66;">"josephzeng"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#35774;&#32622;&#29992;&#25143;&#21517;</span>
+     git config --global user.email <span style="color: #99bb66;">"xxx@gmail.com"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#35774;&#32622;&#37038;&#31665;</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd299ce7" class="outline-3">
-<h3 id="orgd299ce7">使用</h3>
-<div class="outline-text-3" id="text-orgd299ce7">
+<div id="outline-container-orgc4ae13b" class="outline-3">
+<h3 id="orgc4ae13b">使用</h3>
+<div class="outline-text-3" id="text-orgc4ae13b">
 </div>
 <div id="outline-container-orge6546da" class="outline-4">
 <h4 id="orge6546da">常用基本操作</h4>
 <div class="outline-text-4" id="text-orge6546da">
 <div class="org-src-container">
-<pre class="src src-bash">git init <span style="color: #747474;">#</span><span style="color: #747474;">&#21021;&#22987;&#21270;</span>
-git status <span style="color: #747474;">#</span><span style="color: #747474;">&#33719;&#21462;&#29366;&#24577;</span>
-git add file <span style="color: #747474;">#</span><span style="color: #747474;">&#19968;&#20010;&#25991;&#20214;&#25110;&#22810;&#20010;&#25991;&#20214; &#25110; &#29992;.&#21644;*&#20195;&#34920;&#20840;&#37096; &#25110;*.html&#25351;&#23450;&#25991;&#20214;&#31867;&#22411;</span>
-git commit -m <span style="color: #99bb66;">"&#27880;&#37322;"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#25552;&#20132;&#26412;&#22320;&#20179;&#24211;</span>
-git checkout -- file <span style="color: #747474;">#</span><span style="color: #747474;">&#25764;&#38144;&#21040;&#26368;&#36817;&#19968;&#27425;&#29366;&#24577;</span>
-git remote add origin https://github.com/josephtseng-echo/java-tcp-server-todo-qserver.git <span style="color: #747474;">#</span><span style="color: #747474;">&#28155;&#21152;&#28304;</span>
-git push -u origin master || git push origin master <span style="color: #747474;">#</span><span style="color: #747474;">&#25552;&#20132;&#21040;&#36828;&#31243;&#20179;&#24211;</span>
-git clone https://github.com/josephtseng-echo/java-tcp-server-todo-qserver.git <span style="color: #747474;">#</span><span style="color: #747474;">&#20811;&#38534;&#20179;&#24211;</span>
-git clone https://github.com/josephtseng-echo/java-tcp-server-todo-qserver.git myProject <span style="color: #747474;">#</span><span style="color: #747474;">&#20811;&#38534;&#20179;&#24211;</span>
-git diff HEAD -- &#25991;&#20214;&#21517; <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#20462;&#25913;</span>
-git rm &#25991;&#20214; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25991;&#20214;</span>
-git log <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#21382;&#21490;&#29256;&#26412;</span>
+<pre class="src src-bash">     git init <span style="color: #747474;">#</span><span style="color: #747474;">&#21021;&#22987;&#21270;</span>
+     git status <span style="color: #747474;">#</span><span style="color: #747474;">&#33719;&#21462;&#29366;&#24577;</span>
+     git add file <span style="color: #747474;">#</span><span style="color: #747474;">&#19968;&#20010;&#25991;&#20214;&#25110;&#22810;&#20010;&#25991;&#20214; &#25110; &#29992;.&#21644;*&#20195;&#34920;&#20840;&#37096; &#25110;*.html&#25351;&#23450;&#25991;&#20214;&#31867;&#22411;</span>
+     git commit -m <span style="color: #99bb66;">"&#27880;&#37322;"</span> <span style="color: #747474;">#</span><span style="color: #747474;">&#25552;&#20132;&#26412;&#22320;&#20179;&#24211;</span>
+     git checkout -- file <span style="color: #747474;">#</span><span style="color: #747474;">&#25764;&#38144;&#21040;&#26368;&#36817;&#19968;&#27425;&#29366;&#24577;</span>
+     git remote add origin https://github.com/josephtseng-echo/java-tcp-server-todo-qserver.git <span style="color: #747474;">#</span><span style="color: #747474;">&#28155;&#21152;&#28304;</span>
+     git push -u origin master || git push origin master <span style="color: #747474;">#</span><span style="color: #747474;">&#25552;&#20132;&#21040;&#36828;&#31243;&#20179;&#24211;</span>
+     git clone https://github.com/josephtseng-echo/java-tcp-server-todo-qserver.git <span style="color: #747474;">#</span><span style="color: #747474;">&#20811;&#38534;&#20179;&#24211;</span>
+     git clone https://github.com/josephtseng-echo/java-tcp-server-todo-qserver.git myProject <span style="color: #747474;">#</span><span style="color: #747474;">&#20811;&#38534;&#20179;&#24211;</span>
+     git diff HEAD -- &#25991;&#20214;&#21517; <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#20462;&#25913;</span>
+     git rm &#25991;&#20214; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25991;&#20214;</span>
+     git log <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#21382;&#21490;&#29256;&#26412;</span>
 </pre>
 </div>
 </div>
@@ -318,12 +319,12 @@ git log <span style="color: #747474;">#</span><span style="color: #747474;">&#26
 <h4 id="org9c44f35">查看最近修改的文件</h4>
 <div class="outline-text-4" id="text-org9c44f35">
 <div class="org-src-container">
-<pre class="src src-bash">git log --name-status   &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;, &#26174;&#31034;&#29366;&#24577;
-git log --name-only     &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;
-git log --stat          &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;, &#21450;&#25991;&#20214;&#20462;&#25913;&#30340;&#32479;&#35745;
-git whatchanged         &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;
-git whatchanged --stat  &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;, &#21450;&#25991;&#20214;&#20462;&#25913;&#30340;&#32479;&#35745;
-git show                &#26174;&#31034;&#26368;&#21518;&#19968;&#27425;&#30340;&#25991;&#20214;&#25913;&#21464;&#30340;&#20855;&#20307;&#20869;&#23481;
+<pre class="src src-bash">    git log --name-status   &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;, &#26174;&#31034;&#29366;&#24577;
+    git log --name-only     &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;
+    git log --stat          &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;, &#21450;&#25991;&#20214;&#20462;&#25913;&#30340;&#32479;&#35745;
+    git whatchanged         &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;
+    git whatchanged --stat  &#27599;&#27425;&#20462;&#25913;&#30340;&#25991;&#20214;&#21015;&#34920;, &#21450;&#25991;&#20214;&#20462;&#25913;&#30340;&#32479;&#35745;
+    git show                &#26174;&#31034;&#26368;&#21518;&#19968;&#27425;&#30340;&#25991;&#20214;&#25913;&#21464;&#30340;&#20855;&#20307;&#20869;&#23481;
 </pre>
 </div>
 </div>
@@ -366,15 +367,15 @@ git show                &#26174;&#31034;&#26368;&#21518;&#19968;&#27425;&#30340;
 <h3 id="org7a4c5fb">测试</h3>
 <div class="outline-text-3" id="text-org7a4c5fb">
 <div class="org-src-container">
-<pre class="src src-bash">&#10140;  ~ ssh -T git@github.com
-Hi josephtseng-echo! You<span style="color: #99bb66;">'ve successfully authenticated, but GitHub does not provide shell access.</span>
+<pre class="src src-bash">   &#10140;  ~ ssh -T git@github.com
+   Hi josephtseng-echo! You<span style="color: #99bb66;">'ve successfully authenticated, but GitHub does not provide shell access.</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2b78e42" class="outline-3">
-<h3 id="org2b78e42">使用</h3>
-<div class="outline-text-3" id="text-org2b78e42">
+<div id="outline-container-orgc8e66b4" class="outline-3">
+<h3 id="orgc8e66b4">使用</h3>
+<div class="outline-text-3" id="text-orgc8e66b4">
 <p>
 自己创建仓库，参考Git的使用即可，省略。<br />
 </p>
@@ -400,7 +401,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-29 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-29 Fri 00:00 <br />Last updated: 2021-11-25 Thu 23:06 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

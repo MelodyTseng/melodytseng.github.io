@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:50 -->
+<!-- 2021-11-25 Thu 23:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MongoDB</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -272,11 +273,11 @@
 <pre class="src src-bash"><span style="color: #747474;">#</span>
 mongo ip:port/dbname -u &#29992;&#25143;&#21517; -p &#23494;&#30721;
 <span style="color: #747474;">#</span><span style="color: #747474;">&#33509;&#26080;&#27861;&#26597;&#35810;</span>
-<span style="color: #44b9b1;">rs.slaveOk</span><span style="color: #51afef;">()</span> || rs.secondaryOK<span style="color: #51afef;">()</span>
+<span style="color: #46D9FF;">rs.slaveOk</span>() || rs.secondaryOK()
 &#10140;  ~ mongo 127.0.0.1:27017/test
 MongoDB shell version v4.4.3
 connecting to: mongodb://127.0.0.1:27017/test?<span style="color: #979797;">compressors</span>=disabled&amp;<span style="color: #979797;">gssapiServiceName</span>=mongodb
-Implicit session: session <span style="color: #51afef;">{</span> <span style="color: #99bb66;">"id"</span> : UUID<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"dcc9c3ce-9b40-406c-889e-a8284833264d"</span><span style="color: #c678dd;">)</span> <span style="color: #51afef;">}</span>
+Implicit session: session { <span style="color: #99bb66;">"id"</span> : UUID(<span style="color: #99bb66;">"dcc9c3ce-9b40-406c-889e-a8284833264d"</span>) }
 MongoDB server version: 4.4.3
 ---
 The server generated these startup warnings when booting:
@@ -310,8 +311,8 @@ Enable MongoDB<span style="color: #99bb66;">'s free cloud-based monitoring servi
 show collections; <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#24403;&#21069;&#25968;&#25454;&#24211;&#20013;&#30340;&#38598;&#21512;</span>
 show users; <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#29992;&#25143;</span>
 use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">&#20999;&#25442;&#25968;&#25454;&#24211;</span>
-<span style="color: #44b9b1;">db.help</span><span style="color: #51afef;">()</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#25968;&#25454;&#24211;&#25805;&#20316;&#21629;&#20196;&#21015;&#34920;</span>
-<span style="color: #44b9b1;">db.foo.help</span><span style="color: #51afef;">()</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#38598;&#21512;&#25805;&#20316;&#21629;&#20196;&#21015;&#34920;</span>
+<span style="color: #46D9FF;">db.help</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#25968;&#25454;&#24211;&#25805;&#20316;&#21629;&#20196;&#21015;&#34920;</span>
+<span style="color: #46D9FF;">db.foo.help</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#38598;&#21512;&#25805;&#20316;&#21629;&#20196;&#21015;&#34920;</span>
 </pre>
 </div>
 </div>
@@ -320,14 +321,14 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 <h4 id="orgf638e52">插入</h4>
 <div class="outline-text-4" id="text-orgf638e52">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #44b9b1;">db.COLLECTION_NAME.insert</span><span style="color: #51afef;">(</span>document<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#19968;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
-<span style="color: #44b9b1;">db.user.insert</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"josephzeng"</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">exmpale</span>
+<pre class="src src-bash"><span style="color: #46D9FF;">db.COLLECTION_NAME.insert</span>(document); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#19968;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
+<span style="color: #46D9FF;">db.user.insert</span>({<span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"josephzeng"</span>}); <span style="color: #747474;">#</span><span style="color: #747474;">exmpale</span>
 
-<span style="color: #44b9b1;">db.COLLECTION_NAME.insertOne</span><span style="color: #51afef;">(</span>document<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#19968;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
-<span style="color: #44b9b1;">db.user.insertOne</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>name: <span style="color: #99bb66;">'josephzeng'</span>, age:12<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.insertOne</span>(document); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#19968;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
+<span style="color: #46D9FF;">db.user.insertOne</span>({name: <span style="color: #99bb66;">'josephzeng'</span>, age:12}); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
 
-<span style="color: #44b9b1;">db.COLLECTION_NAME.insertMany</span><span style="color: #51afef;">(</span>documents<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#22810;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
-<span style="color: #44b9b1;">db.user.insertMany</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>name: <span style="color: #99bb66;">'cs'</span>, age:12<span style="color: #c678dd;">}</span>,<span style="color: #c678dd;">{</span>name: <span style="color: #99bb66;">'cs'</span>, age:12<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.insertMany</span>(documents); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#22810;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
+<span style="color: #46D9FF;">db.user.insertMany</span>({name: <span style="color: #99bb66;">'cs'</span>, age:12},{name: <span style="color: #99bb66;">'cs'</span>, age:12}); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
 </pre>
 </div>
 </div>
@@ -336,15 +337,15 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 <h4 id="orgbad75dd">删除</h4>
 <div class="outline-text-4" id="text-orgbad75dd">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #44b9b1;">db.dropDatabase</span><span style="color: #51afef;">()</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#24403;&#21069;&#25152;&#22312;&#30340;&#25968;&#25454;&#24211;</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.drop</span><span style="color: #51afef;">()</span>;  <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#35813;&#25968;&#25454;&#24211;&#19979;&#30340;&#38598;&#21512;&#34920;</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.remove</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{}</span><span style="color: #51afef;">)</span>;  <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#38598;&#21512;&#34920;&#20013;&#30340;&#25152;&#26377;&#30340;&#25991;&#26723;</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.remove</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">'title'</span>:<span style="color: #99bb66;">'MongoDB'</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#38598;&#21512;&#34920;&#20013;&#30340;&#25152;&#26377;title&#20026;MongoDB&#30340;&#25991;&#26723;</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.remove</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">'title'</span>:<span style="color: #99bb66;">'MongoDB'</span><span style="color: #c678dd;">}</span>, 1<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;1&#26465;&#38598;&#21512;&#34920;&#20013;&#30340;title&#20026;MongoDB&#30340;&#25991;&#26723;</span>
-<span style="color: #44b9b1;">db.user.drop</span><span style="color: #51afef;">()</span>; <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.deleteOne</span><span style="color: #51afef;">(</span>query<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#21333;&#20010;&#25991;&#26723;</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.deleteMany</span><span style="color: #51afef;">(</span>query<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#22810;&#20010;&#25991;&#26723;</span>
-<span style="color: #44b9b1;">db.user.deleteOne</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">exampel</span>
+<pre class="src src-bash"><span style="color: #46D9FF;">db.dropDatabase</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#24403;&#21069;&#25152;&#22312;&#30340;&#25968;&#25454;&#24211;</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.drop</span>();  <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#35813;&#25968;&#25454;&#24211;&#19979;&#30340;&#38598;&#21512;&#34920;</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.remove</span>({});  <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#38598;&#21512;&#34920;&#20013;&#30340;&#25152;&#26377;&#30340;&#25991;&#26723;</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.remove</span>({<span style="color: #99bb66;">'title'</span>:<span style="color: #99bb66;">'MongoDB'</span>}); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#38598;&#21512;&#34920;&#20013;&#30340;&#25152;&#26377;title&#20026;MongoDB&#30340;&#25991;&#26723;</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.remove</span>({<span style="color: #99bb66;">'title'</span>:<span style="color: #99bb66;">'MongoDB'</span>}, 1); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;1&#26465;&#38598;&#21512;&#34920;&#20013;&#30340;title&#20026;MongoDB&#30340;&#25991;&#26723;</span>
+<span style="color: #46D9FF;">db.user.drop</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.deleteOne</span>(query); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#21333;&#20010;&#25991;&#26723;</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.deleteMany</span>(query); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#22810;&#20010;&#25991;&#26723;</span>
+<span style="color: #46D9FF;">db.user.deleteOne</span>({<span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span>}); <span style="color: #747474;">#</span><span style="color: #747474;">exampel</span>
 </pre>
 </div>
 </div>
@@ -353,36 +354,36 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 <h4 id="org32b6505">更新</h4>
 <div class="outline-text-4" id="text-org32b6505">
 <div class="org-src-container">
-<pre class="src src-bash">/*
- * query : update&#30340;&#26597;&#35810;&#26465;&#20214;&#65292;&#31867;&#20284;sql update&#26597;&#35810;&#20869;where&#21518;&#38754;&#30340;&#12290;
- * update : update&#30340;&#23545;&#35937;&#21644;&#19968;&#20123;&#26356;&#26032;&#30340;&#25805;&#20316;&#31526;<span style="color: #51afef;">&#65288;</span>&#22914;$,$<span style="color: #979797;">inc</span>...<span style="color: #51afef;">&#65289;</span>&#31561;&#65292;&#20063;&#21487;&#20197;&#29702;&#35299;&#20026;sql update&#26597;&#35810;&#20869;set&#21518;&#38754;&#30340;
- * upsert : &#21487;&#36873;&#65292;&#36825;&#20010;&#21442;&#25968;&#30340;&#24847;&#24605;&#26159;&#65292;&#22914;&#26524;&#19981;&#23384;&#22312;update&#30340;&#35760;&#24405;&#65292;&#26159;&#21542;&#25554;&#20837;objNew,true&#20026;&#25554;&#20837;&#65292;&#40664;&#35748;&#26159;false&#65292;&#19981;&#25554;&#20837;&#12290;
- * multi : &#21487;&#36873;&#65292;mongodb &#40664;&#35748;&#26159;false,&#21482;&#26356;&#26032;&#25214;&#21040;&#30340;&#31532;&#19968;&#26465;&#35760;&#24405;&#65292;&#22914;&#26524;&#36825;&#20010;&#21442;&#25968;&#20026;true,&#23601;&#25226;&#25353;&#26465;&#20214;&#26597;&#20986;&#26469;&#22810;&#26465;&#35760;&#24405;&#20840;&#37096;&#26356;&#26032;&#12290;
- * writeConcern :&#21487;&#36873;&#65292;&#25243;&#20986;&#24322;&#24120;&#30340;&#32423;&#21035;&#12290;
- */
-<span style="color: #44b9b1;">db.COLLECTION_NAME.update</span><span style="color: #51afef;">(</span>
-        &lt;query&gt;,
-        &lt;update&gt;,
-        <span style="color: #c678dd;">{</span>
-                upsert: &lt;boolean&gt;,
-                multi: &lt;boolean&gt;,
-                writeConcern: &lt;document&gt;
-        <span style="color: #c678dd;">}</span>
-<span style="color: #51afef;">)</span>
-<span style="color: #44b9b1;">db.user.update</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span><span style="color: #c678dd;">}</span>,<span style="color: #c678dd;">{</span>$<span style="color: #979797;">set</span>:<span style="color: #99bb66;">{</span><span style="color: #99bb66;">'age'</span>:24<span style="color: #99bb66;">}</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.updateOne</span><span style="color: #51afef;">(</span>query,update<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#26356;&#26032;&#21333;&#20010;&#25991;&#26723;</span>
-<span style="color: #44b9b1;">db.COLLECTION_NAME.updateMany</span><span style="color: #51afef;">(</span>query,update<span style="color: #51afef;">)</span>; <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#26356;&#26032;&#22810;&#20010;&#25991;&#26723;</span>
+<pre class="src src-bash">       /*
+        * query : update&#30340;&#26597;&#35810;&#26465;&#20214;&#65292;&#31867;&#20284;sql update&#26597;&#35810;&#20869;where&#21518;&#38754;&#30340;&#12290;
+        * update : update&#30340;&#23545;&#35937;&#21644;&#19968;&#20123;&#26356;&#26032;&#30340;&#25805;&#20316;&#31526;&#65288;&#22914;$,$<span style="color: #979797;">inc</span>...&#65289;&#31561;&#65292;&#20063;&#21487;&#20197;&#29702;&#35299;&#20026;sql update&#26597;&#35810;&#20869;set&#21518;&#38754;&#30340;
+        * upsert : &#21487;&#36873;&#65292;&#36825;&#20010;&#21442;&#25968;&#30340;&#24847;&#24605;&#26159;&#65292;&#22914;&#26524;&#19981;&#23384;&#22312;update&#30340;&#35760;&#24405;&#65292;&#26159;&#21542;&#25554;&#20837;objNew,true&#20026;&#25554;&#20837;&#65292;&#40664;&#35748;&#26159;false&#65292;&#19981;&#25554;&#20837;&#12290;
+        * multi : &#21487;&#36873;&#65292;mongodb &#40664;&#35748;&#26159;false,&#21482;&#26356;&#26032;&#25214;&#21040;&#30340;&#31532;&#19968;&#26465;&#35760;&#24405;&#65292;&#22914;&#26524;&#36825;&#20010;&#21442;&#25968;&#20026;true,&#23601;&#25226;&#25353;&#26465;&#20214;&#26597;&#20986;&#26469;&#22810;&#26465;&#35760;&#24405;&#20840;&#37096;&#26356;&#26032;&#12290;
+        * writeConcern :&#21487;&#36873;&#65292;&#25243;&#20986;&#24322;&#24120;&#30340;&#32423;&#21035;&#12290;
+        */
+       db.COLLECTION_NAME.update(
+               &lt;query&gt;,
+               &lt;update&gt;,
+               {
+                       upsert: &lt;boolean&gt;,
+                       multi: &lt;boolean&gt;,
+                       writeConcern: &lt;document&gt;
+               }
+       )
+       db.user.update({<span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span>},{$<span style="color: #979797;">set</span>:{<span style="color: #99bb66;">'age'</span>:24}}); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+       db.COLLECTION_NAME.updateOne(query,update); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#26356;&#26032;&#21333;&#20010;&#25991;&#26723;</span>
+       db.COLLECTION_NAME.updateMany(query,update); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#26356;&#26032;&#22810;&#20010;&#25991;&#26723;</span>
 
-/*
- * document : &#25991;&#26723;&#25968;&#25454;&#12290;
- * writeConcern :&#21487;&#36873;&#65292;&#25243;&#20986;&#24322;&#24120;&#30340;&#32423;&#21035;&#12290;
- */
-<span style="color: #44b9b1;">db.collection.save</span><span style="color: #51afef;">(</span>
-     &lt;document&gt;,
-     <span style="color: #c678dd;">{</span>
-          writeConcern: &lt;document&gt;
-     <span style="color: #c678dd;">}</span>
-<span style="color: #51afef;">)</span>
+       /*
+        * document : &#25991;&#26723;&#25968;&#25454;&#12290;
+        * writeConcern :&#21487;&#36873;&#65292;&#25243;&#20986;&#24322;&#24120;&#30340;&#32423;&#21035;&#12290;
+        */
+       db.collection.save(
+            &lt;document&gt;,
+            {
+                 writeConcern: &lt;document&gt;
+            }
+       )
 </pre>
 </div>
 </div>
@@ -394,10 +395,10 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 <pre class="src src-bash"> /*
   **query : &#26597;&#35810;&#26465;&#20214;
   */
-<span style="color: #44b9b1;">db.COLLECTION_NAME.find</span><span style="color: #51afef;">(</span>
+<span style="color: #46D9FF;">db.COLLECTION_NAME.find</span>(
      &lt;query&gt;
-<span style="color: #51afef;">)</span>
-<span style="color: #44b9b1;">db.user.find</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span> <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+)
+<span style="color: #46D9FF;">db.user.find</span>({<span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span>}) <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
 </pre>
 </div>
 <p>
@@ -471,9 +472,9 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </table>
 <div class="org-src-container">
 <pre class="src src-bash">// <span style="color: #979797;">&#36890;&#36807;name&#21644;age&#38190;&#26469;&#26597;&#35810;user&#20013;name</span>=jiangwen&#24182;&#19988;&#24180;&#40836;&#23567;&#20110;28&#30340;&#25968;&#25454;
-<span style="color: #44b9b1;">db.user.find</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"jiangwen"</span>, <span style="color: #99bb66;">"age"</span>: <span style="color: #99bb66;">{</span>$<span style="color: #979797;">lt</span>:28<span style="color: #99bb66;">}</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>
+<span style="color: #46D9FF;">db.user.find</span>({<span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"jiangwen"</span>, <span style="color: #99bb66;">"age"</span>: {$<span style="color: #979797;">lt</span>:28}})
 //  &#26597;&#35810;&#21517;&#23383;&#20026;jiangwen&#24182;&#19988;&#24180;&#40836;&#20026;28&#25110;&#24615;&#21035;&#20026;&#30007;&#24615;&#30340;&#25968;&#25454;
-<span style="color: #44b9b1;">db.col.find</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span><span style="color: #99bb66;">"name"</span>: <span style="color: #99bb66;">'jiangwen'</span>, $<span style="color: #979797;">or</span>: <span style="color: #99bb66;">[</span><span style="color: #dd8844;">{</span><span style="color: #99bb66;">"age"</span>: 28<span style="color: #dd8844;">}</span>,<span style="color: #dd8844;">{</span><span style="color: #99bb66;">"sex"</span>: <span style="color: #99bb66;">"male"</span><span style="color: #dd8844;">}</span><span style="color: #99bb66;">]</span><span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>
+<span style="color: #46D9FF;">db.col.find</span>({<span style="color: #99bb66;">"name"</span>: <span style="color: #99bb66;">'jiangwen'</span>, $<span style="color: #979797;">or</span>: [{<span style="color: #99bb66;">"age"</span>: 28},{<span style="color: #99bb66;">"sex"</span>: <span style="color: #99bb66;">"male"</span>}]})
 </pre>
 </div>
 </div>
@@ -487,17 +488,17 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
  * &#8211;port&#65306;&#20195;&#34920;&#36828;&#31243;&#36830;&#25509;&#30340;&#25968;&#25454;&#24211;&#30340;&#31471;&#21475;&#65292;&#40664;&#35748;&#36830;&#25509;&#30340;&#36828;&#31243;&#31471;&#21475;27017&#65307;
  * -u,&#8211;username&#65306;&#20195;&#34920;&#36830;&#25509;&#36828;&#31243;&#25968;&#25454;&#24211;&#30340;&#36134;&#21495;&#65292;&#22914;&#26524;&#35774;&#32622;&#25968;&#25454;&#24211;&#30340;&#35748;&#35777;&#65292;&#38656;&#35201;&#25351;&#23450;&#29992;&#25143;&#36134;&#21495;&#65307;
  * -p,&#8211;password&#65306;&#20195;&#34920;&#36830;&#25509;&#25968;&#25454;&#24211;&#30340;&#36134;&#21495;&#23545;&#24212;&#30340;&#23494;&#30721;&#65307;
- * -d,&#8211;db&#65306;&#20195;&#34920;&#36830;&#25509;&#30340;&#25968;&#25454;&#24211;&#65307;<span style="color: #51afef;">&#65288;</span>&#24517;&#36873;&#21442;&#25968;<span style="color: #51afef;">&#65289;</span>
- * -c,&#8211;collection&#65306;&#20195;&#34920;&#36830;&#25509;&#25968;&#25454;&#24211;&#20013;&#30340;&#38598;&#21512;&#65307;<span style="color: #51afef;">&#65288;</span>&#24517;&#36873;&#21442;&#25968;<span style="color: #51afef;">&#65289;</span>
- * -f, &#8211;fields&#65306;&#20195;&#34920;&#38598;&#21512;&#20013;&#30340;&#23383;&#27573;&#65292;&#21487;&#20197;&#26681;&#25454;&#35774;&#32622;&#36873;&#25321;&#23548;&#20986;&#30340;&#23383;&#27573;&#65307;<span style="color: #51afef;">&#65288;</span>&#24517;&#36873;&#21442;&#25968;<span style="color: #51afef;">&#65289;</span>
+ * -d,&#8211;db&#65306;&#20195;&#34920;&#36830;&#25509;&#30340;&#25968;&#25454;&#24211;&#65307;&#65288;&#24517;&#36873;&#21442;&#25968;&#65289;
+ * -c,&#8211;collection&#65306;&#20195;&#34920;&#36830;&#25509;&#25968;&#25454;&#24211;&#20013;&#30340;&#38598;&#21512;&#65307;&#65288;&#24517;&#36873;&#21442;&#25968;&#65289;
+ * -f, &#8211;fields&#65306;&#20195;&#34920;&#38598;&#21512;&#20013;&#30340;&#23383;&#27573;&#65292;&#21487;&#20197;&#26681;&#25454;&#35774;&#32622;&#36873;&#25321;&#23548;&#20986;&#30340;&#23383;&#27573;&#65307;&#65288;&#24517;&#36873;&#21442;&#25968;&#65289;
  * &#8211;type&#65306;&#20195;&#34920;&#23548;&#20986;&#36755;&#20986;&#30340;&#25991;&#20214;&#31867;&#22411;&#65292;&#21253;&#25324;csv&#21644;json&#25991;&#20214;&#65307;
  * -o, &#8211;out&#65306;&#20195;&#34920;&#23548;&#20986;&#30340;&#25991;&#20214;&#21517;&#65307;
  * -q, &#8211;query&#65306;&#20195;&#34920;&#26597;&#35810;&#26465;&#20214;&#65307;
  * &#8211;skip&#65306;&#36339;&#36807;&#25351;&#23450;&#25968;&#37327;&#30340;&#25968;&#25454;&#65307;
  * &#8211;limit&#65306;&#35835;&#21462;&#25351;&#23450;&#25968;&#37327;&#30340;&#25968;&#25454;&#35760;&#24405;&#65307;
- * &#8211;sort&#65306;&#23545;&#25968;&#25454;&#36827;&#34892;&#25490;&#24207;&#65292;&#36890;&#36807;&#21442;&#25968;&#25351;&#23450;&#25490;&#24207;&#30340;&#23383;&#27573;&#65292;1<span style="color: #51afef;">&#65288;</span>&#21319;&#24207;<span style="color: #51afef;">&#65289;</span>&#21644;-1<span style="color: #51afef;">&#65288;</span>&#38477;&#24207;<span style="color: #51afef;">&#65289;</span>&#26469;&#25351;&#23450;&#25490;&#24207;&#30340;&#26041;&#24335;&#65292;&#22914; sort<span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>KEY:1<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>
+ * &#8211;sort&#65306;&#23545;&#25968;&#25454;&#36827;&#34892;&#25490;&#24207;&#65292;&#36890;&#36807;&#21442;&#25968;&#25351;&#23450;&#25490;&#24207;&#30340;&#23383;&#27573;&#65292;1&#65288;&#21319;&#24207;&#65289;&#21644;-1&#65288;&#38477;&#24207;&#65289;&#26469;&#25351;&#23450;&#25490;&#24207;&#30340;&#26041;&#24335;&#65292;&#22914; sort({KEY:1})
  */
-mongoimport -d <span style="color: #51afef;">[</span>DB_name<span style="color: #51afef;">]</span> -c <span style="color: #51afef;">[</span>Collection_name<span style="color: #51afef;">]</span> -f <span style="color: #51afef;">[</span>File_url<span style="color: #51afef;">]</span>
+mongoimport -d [DB_name] -c [Collection_name] -f [File_url]
 ./mongoimport  -d user -c goods --file test <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
 </pre>
 </div>
@@ -509,23 +510,23 @@ mongoimport -d <span style="color: #51afef;">[</span>DB_name<span style="color: 
 <div class="outline-text-3" id="text-orgb149021">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#21019;&#24314;&#32034;&#24341;</span>
-<span style="color: #44b9b1;">db.userInfo.ensureIndex</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>name: 1<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>;
-<span style="color: #44b9b1;">db.userInfo.ensureIndex</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">{</span>name: 1, ts: -1<span style="color: #c678dd;">}</span><span style="color: #51afef;">)</span>;
+<span style="color: #46D9FF;">db.userInfo.ensureIndex</span>({name: 1});
+<span style="color: #46D9FF;">db.userInfo.ensureIndex</span>({name: 1, ts: -1});
 
 <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#35810;&#24403;&#21069;&#32858;&#38598;&#38598;&#21512;&#25152;&#26377;&#32034;&#24341;</span>
-<span style="color: #44b9b1;">db.userInfo.getIndexes</span><span style="color: #51afef;">()</span>;
+<span style="color: #46D9FF;">db.userInfo.getIndexes</span>();
 
 <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#24635;&#32034;&#24341;&#35760;&#24405;&#22823;&#23567;</span>
-<span style="color: #44b9b1;">db.userInfo.totalIndexSize</span><span style="color: #51afef;">()</span>;
+<span style="color: #46D9FF;">db.userInfo.totalIndexSize</span>();
 
 <span style="color: #747474;">#</span><span style="color: #747474;">&#35835;&#21462;&#24403;&#21069;&#38598;&#21512;&#30340;&#25152;&#26377;index&#20449;&#24687;</span>
-<span style="color: #44b9b1;">db.users.reIndex</span><span style="color: #51afef;">()</span>;
+<span style="color: #46D9FF;">db.users.reIndex</span>();
 
 <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25351;&#23450;&#32034;&#24341;</span>
-<span style="color: #44b9b1;">db.users.dropIndex</span><span style="color: #51afef;">(</span><span style="color: #99bb66;">"name_1"</span><span style="color: #51afef;">)</span>;
+<span style="color: #46D9FF;">db.users.dropIndex</span>(<span style="color: #99bb66;">"name_1"</span>);
 
 <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25152;&#26377;&#32034;&#24341;&#32034;&#24341;</span>
-<span style="color: #44b9b1;">db.users.dropIndexes</span><span style="color: #51afef;">()</span>;
+<span style="color: #46D9FF;">db.users.dropIndexes</span>();
 </pre>
 </div>
 </div>
@@ -564,7 +565,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-05 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2021-11-25 Thu 23:06 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

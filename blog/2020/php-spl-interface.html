@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:49 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php_spl常用接口</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -231,23 +232,23 @@
 <ul>
 <li><a href="#orga50f0d5">Countable</a>
 <ul>
-<li><a href="#org7215b62">简介</a></li>
-<li><a href="#orgaa82fe9">接口摘要</a></li>
-<li><a href="#orgff06767">示例</a></li>
+<li><a href="#org0f81269">简介</a></li>
+<li><a href="#org17b80d3">接口摘要</a></li>
+<li><a href="#org06ad175">示例</a></li>
 </ul>
 </li>
 <li><a href="#orgd3d78ee">Iterator</a>
 <ul>
-<li><a href="#org592c117">简介</a></li>
-<li><a href="#org21abb41">接口摘要</a></li>
-<li><a href="#org9f9b23d">示例</a></li>
+<li><a href="#org7e30ba5">简介</a></li>
+<li><a href="#org46e66e1">接口摘要</a></li>
+<li><a href="#orge097f6a">示例</a></li>
 </ul>
 </li>
 <li><a href="#org9a12a8c">IteratorAggregate</a>
 <ul>
-<li><a href="#org92cab1b">简介</a></li>
-<li><a href="#org3b78682">接口摘要</a></li>
-<li><a href="#orgcd703bf">示例</a></li>
+<li><a href="#org9c2790d">简介</a></li>
+<li><a href="#org3685404">接口摘要</a></li>
+<li><a href="#org39e085e">示例</a></li>
 </ul>
 </li>
 </ul>
@@ -258,22 +259,22 @@
 <h2 id="orga50f0d5">Countable</h2>
 <div class="outline-text-2" id="text-orga50f0d5">
 </div>
-<div id="outline-container-org7215b62" class="outline-3">
-<h3 id="org7215b62">简介</h3>
-<div class="outline-text-3" id="text-org7215b62">
+<div id="outline-container-org0f81269" class="outline-3">
+<h3 id="org0f81269">简介</h3>
+<div class="outline-text-3" id="text-org0f81269">
 <p>
 类实现 Countable 可被用于 count() 函数. 
 </p>
 </div>
 </div>
-<div id="outline-container-orgaa82fe9" class="outline-3">
-<h3 id="orgaa82fe9">接口摘要</h3>
-<div class="outline-text-3" id="text-orgaa82fe9">
+<div id="outline-container-org17b80d3" class="outline-3">
+<h3 id="org17b80d3">接口摘要</h3>
+<div class="outline-text-3" id="text-org17b80d3">
 <div class="org-src-container">
-<pre class="src src-php"> Countable <span style="color: #51afef;">{</span>
+<pre class="src src-php"> Countable {
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861;</span><span style="color: #747474;"> */</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> count <span style="color: #c678dd;">(</span> <span style="color: #44b9b1;">void</span> <span style="color: #c678dd;">)</span> : <span style="color: #44b9b1;">int</span>
-<span style="color: #51afef;">}</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> count ( <span style="color: #44b9b1;">void</span> ) : <span style="color: #44b9b1;">int</span>
+}
 </pre>
 </div>
 </div>
@@ -281,9 +282,9 @@
 
 
 
-<div id="outline-container-orgff06767" class="outline-3">
-<h3 id="orgff06767">示例</h3>
-<div class="outline-text-3" id="text-orgff06767">
+<div id="outline-container-org06ad175" class="outline-3">
+<h3 id="org06ad175">示例</h3>
+<div class="outline-text-3" id="text-org06ad175">
 <div class="org-src-container">
 <pre class="src src-php"><span style="color: #51afef; font-weight: bold;">&lt;?php</span>
 <span style="color: #7d7d7d;">/**</span>
@@ -297,29 +298,29 @@
 <span style="color: #7d7d7d;">PHP Fatal error:  Class Demo contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Countable::count)</span><span style="background-color: #ff6655;"> </span>
 <span style="color: #7d7d7d;">*/</span>
 
-<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Demo</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">Countable</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">class</span> <span style="color: #44b9b1;">Demo</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">Countable</span> {
 
-    <span style="color: #51afef;">protected</span> $<span style="color: #979797;">arr</span> = <span style="color: #c678dd;">[]</span>;
+    <span style="color: #51afef;">protected</span> $<span style="color: #979797;">arr</span> = [];
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">insertItemToArr</span><span style="color: #c678dd;">(</span>$<span style="color: #979797;">item</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
-        array_push<span style="color: #99bb66;">(</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">arr</span>, $<span style="color: #979797;">item</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #c678dd;">}</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">insertItemToArr</span>($<span style="color: #979797;">item</span>) {
+        array_push(<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">arr</span>, $<span style="color: #979797;">item</span>);
+    }
+<span style="background-color: #ff6655;">    </span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">count</span>(){
+        <span style="color: #51afef;">return</span> count(<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">arr</span>);
+    }
+<span style="background-color: #ff6655;">    </span>
+}
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">count</span><span style="color: #c678dd;">(){</span>
-        <span style="color: #51afef;">return</span> count<span style="color: #99bb66;">(</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">arr</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #c678dd;">}</span>
 
-<span style="color: #51afef;">}</span>
-
-
-$<span style="color: #979797;">demo</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Demo</span><span style="color: #51afef;">()</span>;
-$<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color: #51afef;">(</span>1<span style="color: #51afef;">)</span>;
-$<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color: #51afef;">(</span>2<span style="color: #51afef;">)</span>;
-$<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color: #51afef;">(</span><span style="color: #99bb66;">"abc"</span><span style="color: #51afef;">)</span>;
-<span style="color: #51afef;">echo</span> count<span style="color: #51afef;">(</span>$<span style="color: #979797;">demo</span><span style="color: #51afef;">)</span>.<span style="color: #51afef;">PHP_EOL</span>;
-$<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color: #51afef;">(</span>4<span style="color: #51afef;">)</span>;
-$<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color: #51afef;">(</span>5<span style="color: #51afef;">)</span>;
-<span style="color: #51afef;">echo</span> count<span style="color: #51afef;">(</span>$<span style="color: #979797;">demo</span><span style="color: #51afef;">)</span>.<span style="color: #51afef;">PHP_EOL</span>;
+$<span style="color: #979797;">demo</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">Demo</span>();
+$<span style="color: #979797;">demo</span>-&gt;insertItemToArr(1);
+$<span style="color: #979797;">demo</span>-&gt;insertItemToArr(2);
+$<span style="color: #979797;">demo</span>-&gt;insertItemToArr(<span style="color: #99bb66;">"abc"</span>);
+<span style="color: #51afef;">echo</span> count($<span style="color: #979797;">demo</span>).<span style="color: #51afef;">PHP_EOL</span>;
+$<span style="color: #979797;">demo</span>-&gt;insertItemToArr(4);
+$<span style="color: #979797;">demo</span>-&gt;insertItemToArr(5);
+<span style="color: #51afef;">echo</span> count($<span style="color: #979797;">demo</span>).<span style="color: #51afef;">PHP_EOL</span>;
 </pre>
 </div>
 </div>
@@ -330,87 +331,87 @@ $<span style="color: #979797;">demo</span>-&gt;insertItemToArr<span style="color
 <h2 id="orgd3d78ee">Iterator</h2>
 <div class="outline-text-2" id="text-orgd3d78ee">
 </div>
-<div id="outline-container-org592c117" class="outline-3">
-<h3 id="org592c117">简介</h3>
-<div class="outline-text-3" id="text-org592c117">
+<div id="outline-container-org7e30ba5" class="outline-3">
+<h3 id="org7e30ba5">简介</h3>
+<div class="outline-text-3" id="text-org7e30ba5">
 <p>
 可在内部迭代自己的外部迭代器或类的接口。
 </p>
 </div>
 </div>
-<div id="outline-container-org21abb41" class="outline-3">
-<h3 id="org21abb41">接口摘要</h3>
-<div class="outline-text-3" id="text-org21abb41">
+<div id="outline-container-org46e66e1" class="outline-3">
+<h3 id="org46e66e1">接口摘要</h3>
+<div class="outline-text-3" id="text-org46e66e1">
 <div class="org-src-container">
-<pre class="src src-php"> Iterator <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> <span style="color: #51afef;">{</span>
+<pre class="src src-php"> Iterator <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> {
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861;</span><span style="color: #747474;"> */</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> current <span style="color: #c678dd;">(</span> <span style="color: #44b9b1;">void</span> <span style="color: #c678dd;">)</span> : <span style="color: #44b9b1;">mixed</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> key <span style="color: #c678dd;">(</span> <span style="color: #44b9b1;">void</span> <span style="color: #c678dd;">)</span> : scalar
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> next <span style="color: #c678dd;">(</span> <span style="color: #44b9b1;">void</span> <span style="color: #c678dd;">)</span> : <span style="color: #44b9b1;">void</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> rewind <span style="color: #c678dd;">(</span> <span style="color: #44b9b1;">void</span> <span style="color: #c678dd;">)</span> : <span style="color: #44b9b1;">void</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> valid <span style="color: #c678dd;">(</span> <span style="color: #44b9b1;">void</span> <span style="color: #c678dd;">)</span> : <span style="color: #44b9b1;">bool</span>
-<span style="color: #51afef;">}</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> current ( <span style="color: #44b9b1;">void</span> ) : <span style="color: #44b9b1;">mixed</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> key ( <span style="color: #44b9b1;">void</span> ) : scalar
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> next ( <span style="color: #44b9b1;">void</span> ) : <span style="color: #44b9b1;">void</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> rewind ( <span style="color: #44b9b1;">void</span> ) : <span style="color: #44b9b1;">void</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> valid ( <span style="color: #44b9b1;">void</span> ) : <span style="color: #44b9b1;">bool</span>
+}
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org9f9b23d" class="outline-3">
-<h3 id="org9f9b23d">示例</h3>
-<div class="outline-text-3" id="text-org9f9b23d">
+<div id="outline-container-orge097f6a" class="outline-3">
+<h3 id="orge097f6a">示例</h3>
+<div class="outline-text-3" id="text-orge097f6a">
 <div class="org-src-container">
-<pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myIterator</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">Iterator</span> <span style="color: #51afef;">{</span>
+<pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myIterator</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">Iterator</span> {
     <span style="color: #51afef;">private</span> $<span style="color: #979797;">position</span> = 0;
-    <span style="color: #51afef;">private</span> $<span style="color: #979797;">array</span> = <span style="color: #51afef;">array</span><span style="color: #c678dd;">(</span>
+    <span style="color: #51afef;">private</span> $<span style="color: #979797;">array</span> = <span style="color: #51afef;">array</span>(
     <span style="color: #99bb66;">"firstelement"</span>,
     <span style="color: #99bb66;">"secondelement"</span>,
     <span style="color: #99bb66;">"lastelement"</span>,
-    <span style="color: #c678dd;">)</span>;
+    );
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">__construct</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span> = 0;
-    <span style="color: #c678dd;">}</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">__construct</span>() {
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span> = 0;
+    }
 
     <span style="color: #747474;">//</span><span style="color: #747474;">&#31532;&#19968;&#27425;&#24490;&#29615;&#36845;&#20195;&#21069;&#35843;&#29992;</span>
-    <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">rewind</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #51afef;">__METHOD__</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span> = 0;
+    <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">rewind</span>() {
+        var_dump(<span style="color: #51afef;">__METHOD__</span>);
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span> = 0;
     <span style="color: #51afef;">echo</span> <span style="color: #51afef;">PHP_EOL</span>;
-    <span style="color: #c678dd;">}</span>
+    }
 
-    <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">current</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #51afef;">__METHOD__</span><span style="color: #99bb66;">)</span>;
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #99bb66;">"current() : "</span>.<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span><span style="color: #dd8844;">[</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span><span style="color: #dd8844;">]</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #51afef;">return</span> <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span><span style="color: #99bb66;">[</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span><span style="color: #99bb66;">]</span>;
-    <span style="color: #c678dd;">}</span>
+    <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">current</span>() {
+        var_dump(<span style="color: #51afef;">__METHOD__</span>);
+    var_dump(<span style="color: #99bb66;">"current() : "</span>.<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span>[<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>]);
+        <span style="color: #51afef;">return</span> <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span>[<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>];
+    }
 
-    <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">key</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #51afef;">__METHOD__</span><span style="color: #99bb66;">)</span>;
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #99bb66;">"key() : "</span>.<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #51afef;">return</span> <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>;
-    <span style="color: #c678dd;">}</span>
+    <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">key</span>() {
+        var_dump(<span style="color: #51afef;">__METHOD__</span>);
+    var_dump(<span style="color: #99bb66;">"key() : "</span>.<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>);
+        <span style="color: #51afef;">return</span> <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>;
+    }
 
     <span style="color: #747474;">//</span><span style="color: #747474;">&#27599;&#27425;&#24490;&#29615;&#36845;&#25191;&#34892;</span>
-    <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">next</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #51afef;">__METHOD__</span><span style="color: #99bb66;">)</span>;
-    ++<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>;
-    <span style="color: #c678dd;">}</span>
+    <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">next</span>() {
+        var_dump(<span style="color: #51afef;">__METHOD__</span>);
+        ++<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>;
+    }
 
     <span style="color: #747474;">//</span><span style="color: #747474;">&#27599;&#27425;&#24490;&#29615;&#36845;&#25191;&#34892;&#65292;&#24182;&#26681;&#25454;&#36820;&#22238; true &#25110; false &#26469;&#21028;&#26029;&#26159;&#21542;&#32467;&#26463;&#24490;&#29615;</span>
-    <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">valid</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #51afef;">__METHOD__</span><span style="color: #99bb66;">)</span>;
-    var_dump<span style="color: #99bb66;">(</span><span style="color: #51afef;">isset</span><span style="color: #dd8844;">(</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span><span style="color: #a9a1e1;">[</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span><span style="color: #a9a1e1;">]</span><span style="color: #dd8844;">)</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #51afef;">return</span> <span style="color: #51afef;">isset</span><span style="color: #99bb66;">(</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span><span style="color: #dd8844;">[</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span><span style="color: #dd8844;">]</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #c678dd;">}</span>
-<span style="color: #51afef;">}</span>
+    <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">valid</span>() {
+        var_dump(<span style="color: #51afef;">__METHOD__</span>);
+    var_dump(<span style="color: #51afef;">isset</span>(<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span>[<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>]));
+        <span style="color: #51afef;">return</span> <span style="color: #51afef;">isset</span>(<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">array</span>[<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">position</span>]);
+    }
+}
 
-$<span style="color: #979797;">it</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">myIterator</span><span style="color: #51afef;">()</span>;
+$<span style="color: #979797;">it</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">myIterator</span>();
 
-<span style="color: #51afef;">foreach</span><span style="color: #51afef;">(</span>$<span style="color: #979797;">it</span> <span style="color: #51afef;">as</span> $<span style="color: #979797;">key</span> =&gt; $<span style="color: #979797;">value</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
+<span style="color: #51afef;">foreach</span>($<span style="color: #979797;">it</span> <span style="color: #51afef;">as</span> $<span style="color: #979797;">key</span> =&gt; $<span style="color: #979797;">value</span>) {
     <span style="color: #747474;">//</span><span style="color: #747474;">var_dump($key, $value);</span>
     <span style="color: #747474;">//</span><span style="color: #747474;">echo "\n";</span>
     <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"****** key=</span><span style="color: #979797;">{$key}</span><span style="color: #99bb66;">, value=</span><span style="color: #979797;">{$value}</span><span style="color: #99bb66;"> ******"</span>.<span style="color: #51afef;">PHP_EOL</span>;
     <span style="color: #51afef;">echo</span> <span style="color: #51afef;">PHP_EOL</span>;
-<span style="color: #51afef;">}</span>
+}
 </pre>
 </div>
 </div>
@@ -421,50 +422,50 @@ $<span style="color: #979797;">it</span> = <span style="color: #51afef;">new</sp
 <h2 id="org9a12a8c">IteratorAggregate</h2>
 <div class="outline-text-2" id="text-org9a12a8c">
 </div>
-<div id="outline-container-org92cab1b" class="outline-3">
-<h3 id="org92cab1b">简介</h3>
-<div class="outline-text-3" id="text-org92cab1b">
+<div id="outline-container-org9c2790d" class="outline-3">
+<h3 id="org9c2790d">简介</h3>
+<div class="outline-text-3" id="text-org9c2790d">
 <p>
 创建外部迭代器的接口。
 </p>
 </div>
 </div>
-<div id="outline-container-org3b78682" class="outline-3">
-<h3 id="org3b78682">接口摘要</h3>
-<div class="outline-text-3" id="text-org3b78682">
+<div id="outline-container-org3685404" class="outline-3">
+<h3 id="org3685404">接口摘要</h3>
+<div class="outline-text-3" id="text-org3685404">
 <div class="org-src-container">
-<pre class="src src-php"> IteratorAggregate <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> <span style="color: #51afef;">{</span>
+<pre class="src src-php"> IteratorAggregate <span style="color: #51afef;">extends</span> <span style="color: #44b9b1;">Traversable</span> {
 <span style="color: #747474;">/* </span><span style="color: #747474;">&#26041;&#27861;</span><span style="color: #747474;"> */</span>
-<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> getIterator <span style="color: #c678dd;">(</span> <span style="color: #44b9b1;">void</span> <span style="color: #c678dd;">)</span> : Traversable
-<span style="color: #51afef;">}</span>
+<span style="color: #51afef;">abstract</span> <span style="color: #51afef;">public</span> getIterator ( <span style="color: #44b9b1;">void</span> ) : Traversable
+}
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcd703bf" class="outline-3">
-<h3 id="orgcd703bf">示例</h3>
-<div class="outline-text-3" id="text-orgcd703bf">
+<div id="outline-container-org39e085e" class="outline-3">
+<h3 id="org39e085e">示例</h3>
+<div class="outline-text-3" id="text-org39e085e">
 <div class="org-src-container">
-<pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myData</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">IteratorAggregate</span> <span style="color: #51afef;">{</span>
+<pre class="src src-php"><span style="color: #51afef;">class</span> <span style="color: #44b9b1;">myData</span> <span style="color: #51afef;">implements</span> <span style="color: #44b9b1;">IteratorAggregate</span> {
     <span style="color: #51afef;">public</span> $<span style="color: #979797;">property1</span> = <span style="color: #99bb66;">"Public property one"</span>;
     <span style="color: #51afef;">public</span> $<span style="color: #979797;">property2</span> = <span style="color: #99bb66;">"Public property two"</span>;
     <span style="color: #51afef;">public</span> $<span style="color: #979797;">property3</span> = <span style="color: #99bb66;">"Public property three"</span>;
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">__construct</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">property4</span> = <span style="color: #99bb66;">"last property"</span>;
-    <span style="color: #c678dd;">}</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">__construct</span>() {
+        <span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>-&gt;<span style="color: #979797;">property4</span> = <span style="color: #99bb66;">"last property"</span>;
+    }
 
-    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #44b9b1;">getIterator</span><span style="color: #c678dd;">()</span> <span style="color: #c678dd;">{</span>
-    <span style="color: #51afef;">return</span> <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">ArrayIterator</span><span style="color: #99bb66;">(</span><span style="color: #51afef;">$</span><span style="color: #51afef;">this</span><span style="color: #99bb66;">)</span>;
-    <span style="color: #c678dd;">}</span>
-<span style="color: #51afef;">}</span>
+    <span style="color: #51afef;">public</span> <span style="color: #51afef;">function</span> <span style="color: #46D9FF;">getIterator</span>() {
+        <span style="color: #51afef;">return</span> <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">ArrayIterator</span>(<span style="color: #51afef;">$</span><span style="color: #51afef;">this</span>);
+    }
+}
 
 $<span style="color: #979797;">obj</span> = <span style="color: #51afef;">new</span> <span style="color: #44b9b1;">myData</span>;
 
-<span style="color: #51afef;">foreach</span><span style="color: #51afef;">(</span>$<span style="color: #979797;">obj</span> <span style="color: #51afef;">as</span> $<span style="color: #979797;">key</span> =&gt; $<span style="color: #979797;">value</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
-    var_dump<span style="color: #c678dd;">(</span>$<span style="color: #979797;">key</span>, $<span style="color: #979797;">value</span><span style="color: #c678dd;">)</span>;
+<span style="color: #51afef;">foreach</span>($<span style="color: #979797;">obj</span> <span style="color: #51afef;">as</span> $<span style="color: #979797;">key</span> =&gt; $<span style="color: #979797;">value</span>) {
+    var_dump($<span style="color: #979797;">key</span>, $<span style="color: #979797;">value</span>);
     <span style="color: #51afef;">echo</span> <span style="color: #99bb66;">"\n"</span>;
-<span style="color: #51afef;">}</span>
+}
 </pre>
 </div>
 
@@ -477,7 +478,7 @@ $<span style="color: #979797;">obj</span> = <span style="color: #51afef;">new</s
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2020-02-22 18:02:33 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2020-02-22 18:02:33 <br />Last updated: 2021-11-25 Thu 23:22 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>

@@ -2,14 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-03-20 Sat 22:48 -->
+<!-- 2021-11-25 Thu 23:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>diff和patch命令使用</title>
+<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员" />
+<meta name="description" content="coder 程序员"
+ />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<meta name="generator" content="Org Mode" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -231,14 +232,14 @@
 <ul>
 <li><a href="#org5f29890">diff介绍</a>
 <ul>
-<li><a href="#orgcd5b479">语法</a></li>
-<li><a href="#org5bfed46">例子</a></li>
+<li><a href="#orgb136b20">语法</a></li>
+<li><a href="#org82a1911">例子</a></li>
 </ul>
 </li>
 <li><a href="#org878c4f4">patch介绍</a>
 <ul>
-<li><a href="#org8920ade">语法</a></li>
-<li><a href="#org208bd4f">例子</a></li>
+<li><a href="#org60ce15f">语法</a></li>
+<li><a href="#org7710ba2">例子</a></li>
 </ul>
 </li>
 <li><a href="#org27dcff1">参考</a></li>
@@ -278,18 +279,18 @@ diff 是一个文件比较工具。<br />
 </tbody>
 </table>
 </div>
-<div id="outline-container-orgcd5b479" class="outline-3">
-<h3 id="orgcd5b479">语法</h3>
-<div class="outline-text-3" id="text-orgcd5b479">
+<div id="outline-container-orgb136b20" class="outline-3">
+<h3 id="orgb136b20">语法</h3>
+<div class="outline-text-3" id="text-orgb136b20">
 <div class="org-src-container">
-<pre class="src src-bash">diff <span style="color: #51afef;">[</span>options<span style="color: #51afef;">]</span> old new
+<pre class="src src-bash">diff [options] old new
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org5bfed46" class="outline-3">
-<h3 id="org5bfed46">例子</h3>
-<div class="outline-text-3" id="text-org5bfed46">
+<div id="outline-container-org82a1911" class="outline-3">
+<h3 id="org82a1911">例子</h3>
+<div class="outline-text-3" id="text-org82a1911">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  shell diff -urN a.c b.c
 --- a.c 2021-02-09 11:29:12.840339700 +0800 <span style="color: #747474;">#</span><span style="color: #747474;">&#26356;&#26032;&#21069;&#30340;&#25991;&#20214;</span>
@@ -299,12 +300,12 @@ diff 是一个文件比较工具。<br />
 +/* new */ <span style="color: #747474;"># </span><span style="color: #747474;">+ &#34920;&#31034;&#22686;&#21152;</span>
  <span style="color: #747474;">#</span><span style="color: #747474;">include &lt;stdio.h&gt;</span>
 
- int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span>
- <span style="color: #51afef;">{</span>
--  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"old\n"</span><span style="color: #c678dd;">)</span>;
-+  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"new\n"</span><span style="color: #c678dd;">)</span>;
+ int main(int argc, char *argv[])
+ {
+-  printf(<span style="color: #99bb66;">"old\n"</span>);
++  printf(<span style="color: #99bb66;">"new\n"</span>);
    <span style="color: #51afef;">return</span> 0;
- <span style="color: #51afef;">}</span>
+ }
 </pre>
 </div>
 </div>
@@ -359,37 +360,37 @@ patch 是一个可以将diff生成的补丁应用到源文件，生成一个打�
 </tbody>
 </table>
 </div>
-<div id="outline-container-org8920ade" class="outline-3">
-<h3 id="org8920ade">语法</h3>
-<div class="outline-text-3" id="text-org8920ade">
+<div id="outline-container-org60ce15f" class="outline-3">
+<h3 id="org60ce15f">语法</h3>
+<div class="outline-text-3" id="text-org60ce15f">
 <div class="org-src-container">
-<pre class="src src-bash">patch <span style="color: #51afef;">[</span>oiption<span style="color: #51afef;">]</span> <span style="color: #51afef;">[</span>originalfile <span style="color: #c678dd;">[</span>patchfile<span style="color: #c678dd;">]</span><span style="color: #51afef;">]</span>
+<pre class="src src-bash">patch [oiption] [originalfile [patchfile]]
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org208bd4f" class="outline-3">
-<h3 id="org208bd4f">例子</h3>
-<div class="outline-text-3" id="text-org208bd4f">
+<div id="outline-container-org7710ba2" class="outline-3">
+<h3 id="org7710ba2">例子</h3>
+<div class="outline-text-3" id="text-org7710ba2">
 <div class="org-src-container">
 <pre class="src src-bash">&#10140;  shell cat a.c
 /* old */
 <span style="color: #747474;">#</span><span style="color: #747474;">include &lt;stdio.h&gt;</span>
 
-int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">{</span>
-  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"old\n"</span><span style="color: #c678dd;">)</span>;
+int main(int argc, char *argv[])
+{
+  printf(<span style="color: #99bb66;">"old\n"</span>);
   <span style="color: #51afef;">return</span> 0;
-<span style="color: #51afef;">}</span>
+}
 &#10140;  shell cat b.c
 /* new */
 <span style="color: #747474;">#</span><span style="color: #747474;">include &lt;stdio.h&gt;</span>
 
-int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">{</span>
-  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"new\n"</span><span style="color: #c678dd;">)</span>;
+int main(int argc, char *argv[])
+{
+  printf(<span style="color: #99bb66;">"new\n"</span>);
   <span style="color: #51afef;">return</span> 0;
-<span style="color: #51afef;">}</span>
+}
 <span style="color: #747474;"># </span><span style="color: #747474;">&#29983;&#25104;&#34917;&#19969;&#25991;&#20214;</span>
 &#10140;  shell diff -urN a.c b.c &gt; diff.patch
 &#10140;  shell cat diff.patch
@@ -400,12 +401,12 @@ int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="c
 +/* new */
  <span style="color: #747474;">#</span><span style="color: #747474;">include &lt;stdio.h&gt;</span>
 
- int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span>
- <span style="color: #51afef;">{</span>
--  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"old\n"</span><span style="color: #c678dd;">)</span>;
-+  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"new\n"</span><span style="color: #c678dd;">)</span>;
+ int main(int argc, char *argv[])
+ {
+-  printf(<span style="color: #99bb66;">"old\n"</span>);
++  printf(<span style="color: #99bb66;">"new\n"</span>);
    <span style="color: #51afef;">return</span> 0;
- <span style="color: #51afef;">}</span>
+ }
  <span style="color: #747474;"># </span><span style="color: #747474;">&#25171;&#34917;&#19969;</span>
 &#10140;  shell patch -p0 &lt; diff.patch
 patching file a.c
@@ -413,36 +414,36 @@ patching file a.c
 /* new */
 <span style="color: #747474;">#</span><span style="color: #747474;">include &lt;stdio.h&gt;</span>
 
-int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">{</span>
-  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"new\n"</span><span style="color: #c678dd;">)</span>;
+int main(int argc, char *argv[])
+{
+  printf(<span style="color: #99bb66;">"new\n"</span>);
   <span style="color: #51afef;">return</span> 0;
-<span style="color: #51afef;">}</span>
+}
 <span style="color: #747474;"># </span><span style="color: #747474;">&#25110; &#29983;&#25104;&#26032;&#25991;&#20214;&#20877;&#35206;&#30422;</span>
 &#10140;  shell patch a.c -i diff.patch -o d.c
-patching file d.c <span style="color: #51afef;">(</span><span style="color: #51afef;">read</span> from a.c<span style="color: #51afef;">)</span>
+patching file d.c (<span style="color: #51afef;">read</span> from a.c)
 &#10140;  shell cat d.c
 /* new */
 <span style="color: #747474;">#</span><span style="color: #747474;">include &lt;stdio.h&gt;</span>
 
-int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">{</span>
-  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"new\n"</span><span style="color: #c678dd;">)</span>;
+int main(int argc, char *argv[])
+{
+  printf(<span style="color: #99bb66;">"new\n"</span>);
   <span style="color: #51afef;">return</span> 0;
-<span style="color: #51afef;">}</span>
+}
 <span style="color: #747474;"># </span><span style="color: #747474;">&#25764;&#38144;&#22238;&#28378;&#34917;&#19969;</span>
 &#10140;  shell patch -p0 -E &lt; diff.patch
 patching file a.c
-<span style="color: #44b9b1;">Reversed</span> <span style="color: #51afef;">(</span>or previously applied<span style="color: #51afef;">)</span> patch detected!  Assume -R? <span style="color: #51afef;">[</span>n<span style="color: #51afef;">]</span> y
+<span style="color: #46D9FF;">Reversed</span> (or previously applied) patch detected!  Assume -R? [n] y
 &#10140;  shell cat a.c
 /* old */
 <span style="color: #747474;">#</span><span style="color: #747474;">include &lt;stdio.h&gt;</span>
 
-int main<span style="color: #51afef;">(</span>int argc, char *argv<span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span>
-<span style="color: #51afef;">{</span>
-  printf<span style="color: #c678dd;">(</span><span style="color: #99bb66;">"old\n"</span><span style="color: #c678dd;">)</span>;
+int main(int argc, char *argv[])
+{
+  printf(<span style="color: #99bb66;">"old\n"</span>);
   <span style="color: #51afef;">return</span> 0;
-<span style="color: #51afef;">}</span>
+}
 </pre>
 </div>
 </div>
@@ -472,7 +473,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-09 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-09 Tue 00:00 <br />Last updated: 2021-02-10 Wed 16:12 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-09 Tue 00:00 <br />Last updated: 2021-11-25 Thu 23:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
