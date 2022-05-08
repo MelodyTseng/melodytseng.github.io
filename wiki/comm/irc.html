@@ -1,0 +1,543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2022-05-08 日 21:25 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IRC</title>
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员" />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">IRC</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf2afa71">IRC English</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf2afa71" class="outline-2">
+<h2 id="orgf2afa71">IRC English</h2>
+<div class="outline-text-2" id="text-orgf2afa71">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">afk</td>
+<td class="org-left">away from the keyboard</td>
+<td class="org-left">远离键盘</td>
+</tr>
+
+<tr>
+<td class="org-left">asap</td>
+<td class="org-left">as soon as possible</td>
+<td class="org-left">尽快地</td>
+</tr>
+
+<tr>
+<td class="org-left">bbl</td>
+<td class="org-left">be back later</td>
+<td class="org-left">稍后回来</td>
+</tr>
+
+<tr>
+<td class="org-left">bbs</td>
+<td class="org-left">be back shortly</td>
+<td class="org-left">很快回来</td>
+</tr>
+
+<tr>
+<td class="org-left">brb</td>
+<td class="org-left">be right back</td>
+<td class="org-left">马上回来</td>
+</tr>
+
+<tr>
+<td class="org-left">bbiab</td>
+<td class="org-left">be back in a bit</td>
+<td class="org-left">回来一点</td>
+</tr>
+
+<tr>
+<td class="org-left">bbiaf</td>
+<td class="org-left">be back in a few</td>
+<td class="org-left">回来几个</td>
+</tr>
+
+<tr>
+<td class="org-left">bbfn</td>
+<td class="org-left">bye bye for now</td>
+<td class="org-left">再见了</td>
+</tr>
+
+<tr>
+<td class="org-left">btw</td>
+<td class="org-left">by the way</td>
+<td class="org-left">顺便说说</td>
+</tr>
+
+<tr>
+<td class="org-left">ctc</td>
+<td class="org-left">care to chat?</td>
+<td class="org-left">小心聊天？</td>
+</tr>
+
+<tr>
+<td class="org-left">cya</td>
+<td class="org-left">see ya</td>
+<td class="org-left">拜拜</td>
+</tr>
+
+<tr>
+<td class="org-left">FAQ</td>
+<td class="org-left">Frequently Asked Questions</td>
+<td class="org-left">经常问的问题</td>
+</tr>
+
+<tr>
+<td class="org-left">focl</td>
+<td class="org-left">falling off chair laughing</td>
+<td class="org-left">从椅子上笑着掉下来</td>
+</tr>
+
+<tr>
+<td class="org-left">fwiw</td>
+<td class="org-left">for what it's worth</td>
+<td class="org-left">物有所值</td>
+</tr>
+
+<tr>
+<td class="org-left">fyi</td>
+<td class="org-left">for your information</td>
+<td class="org-left">供您参考</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;g&gt;</td>
+<td class="org-left">Grin</td>
+<td class="org-left">微笑</td>
+</tr>
+
+<tr>
+<td class="org-left">gmta</td>
+<td class="org-left">Great Minds Think Alike</td>
+<td class="org-left">英雄所见略同</td>
+</tr>
+
+<tr>
+<td class="org-left">ic</td>
+<td class="org-left">I see</td>
+<td class="org-left">我知道了</td>
+</tr>
+
+<tr>
+<td class="org-left">imo</td>
+<td class="org-left">in my opinion</td>
+<td class="org-left">在我看来</td>
+</tr>
+
+<tr>
+<td class="org-left">imho</td>
+<td class="org-left">in my humble opinion</td>
+<td class="org-left">在我的愚见</td>
+</tr>
+
+<tr>
+<td class="org-left">iow</td>
+<td class="org-left">in other words</td>
+<td class="org-left">换一种说法</td>
+</tr>
+
+<tr>
+<td class="org-left">irl</td>
+<td class="org-left">in real life</td>
+<td class="org-left">在真实生活中</td>
+</tr>
+
+<tr>
+<td class="org-left">j/k</td>
+<td class="org-left">just kidding</td>
+<td class="org-left">开玩笑</td>
+</tr>
+
+<tr>
+<td class="org-left">ltns</td>
+<td class="org-left">long time no see</td>
+<td class="org-left">好久不见</td>
+</tr>
+
+<tr>
+<td class="org-left">lts</td>
+<td class="org-left">laughing to self</td>
+<td class="org-left">笑着自言自语</td>
+</tr>
+
+<tr>
+<td class="org-left">l8r</td>
+<td class="org-left">later</td>
+<td class="org-left">后来</td>
+</tr>
+
+<tr>
+<td class="org-left">lol</td>
+<td class="org-left">laughing out loud</td>
+<td class="org-left">大笑</td>
+</tr>
+
+<tr>
+<td class="org-left">ly</td>
+<td class="org-left">love you</td>
+<td class="org-left">爱你</td>
+</tr>
+
+<tr>
+<td class="org-left">mil</td>
+<td class="org-left">mother-in-law</td>
+<td class="org-left">岳母</td>
+</tr>
+
+<tr>
+<td class="org-left">motd</td>
+<td class="org-left">message of the day</td>
+<td class="org-left">当天的消息</td>
+</tr>
+
+<tr>
+<td class="org-left">n/p</td>
+<td class="org-left">no problem - np also used</td>
+<td class="org-left">没问题 - 也使用了np</td>
+</tr>
+
+<tr>
+<td class="org-left">oic</td>
+<td class="org-left">Oh, I see</td>
+<td class="org-left">原来如此</td>
+</tr>
+
+<tr>
+<td class="org-left">otoh</td>
+<td class="org-left">on the other hand</td>
+<td class="org-left">另一方面</td>
+</tr>
+
+<tr>
+<td class="org-left">ppl</td>
+<td class="org-left">people</td>
+<td class="org-left">人</td>
+</tr>
+
+<tr>
+<td class="org-left">re</td>
+<td class="org-left">RE hi or RE hello</td>
+<td class="org-left">RE hi或RE你好</td>
+</tr>
+
+<tr>
+<td class="org-left">rofl</td>
+<td class="org-left">rolling on floor laughing</td>
+<td class="org-left">滚在地上笑</td>
+</tr>
+
+<tr>
+<td class="org-left">roflmao</td>
+<td class="org-left">rolling on floor laughing my arse off</td>
+<td class="org-left">滚在地上笑我的屁股</td>
+</tr>
+
+<tr>
+<td class="org-left">SAHM</td>
+<td class="org-left">stay at home mom</td>
+<td class="org-left">留在家里的妈妈</td>
+</tr>
+
+<tr>
+<td class="org-left">slm</td>
+<td class="org-left">Muslim greeting</td>
+<td class="org-left">穆斯林问候</td>
+</tr>
+
+<tr>
+<td class="org-left">tafn</td>
+<td class="org-left">that's all for now</td>
+<td class="org-left">目前为止就这样了</td>
+</tr>
+
+<tr>
+<td class="org-left">ttyl</td>
+<td class="org-left">talk (type) to you later</td>
+<td class="org-left">稍后再谈谈（打字）</td>
+</tr>
+
+<tr>
+<td class="org-left">ttys</td>
+<td class="org-left">talk (type) to you soon</td>
+<td class="org-left">很快跟你说话（打字）</td>
+</tr>
+
+<tr>
+<td class="org-left">wb</td>
+<td class="org-left">welcome back</td>
+<td class="org-left">欢迎回来</td>
+</tr>
+
+<tr>
+<td class="org-left">wfm</td>
+<td class="org-left">works for me</td>
+<td class="org-left">适合我</td>
+</tr>
+
+<tr>
+<td class="org-left">wtg</td>
+<td class="org-left">way to go</td>
+<td class="org-left">要走的路</td>
+</tr>
+
+<tr>
+<td class="org-left">WYSIWYG</td>
+<td class="org-left">what you see is what you get</td>
+<td class="org-left">你所看到的就是你得到的</td>
+</tr>
+</tbody>
+</table>
+
+<div class="post-copyright">
+<p>Author: josephzeng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-08 日&gt;</span></span><br />
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2022-05-08 日 00:00 <br />Last updated: 2022-05-08 日 21:25 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
+</div>
+</body>
+</html>
