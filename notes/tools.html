@@ -2,17 +2,16 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-11-25 Thu 23:31 -->
+<!-- 2022-05-08 日 21:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JosephTseng's Notes - Env Tools</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -33,8 +32,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -43,21 +43,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -193,12 +193,10 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
      {
        var target = document.getElementById(id);
@@ -215,7 +213,6 @@
          target.classList.remove("code-highlighted");
        }
      }
-    /*]]>*///-->
 // @license-end
 </script>
 </head>
@@ -224,22 +221,22 @@
  <a accesskey="h" href="../index.html"> UP </a>
  |
  <a accesskey="H" href="/index.html"> HOME </a>
-</div><div id="content">
+</div><div id="content" class="content">
 <h1 class="title">JosephTseng's Notes - Env Tools</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org314256a">开发环境</a>
+<li><a href="#org6309e3d">开发环境</a>
 <ul>
-<li><a href="#orgd13554d">系统</a></li>
-<li><a href="#orgeef15ef">常用工具</a>
+<li><a href="#org5f6f8a3">系统</a></li>
+<li><a href="#orgcfd3d3d">常用工具</a>
 <ul>
-<li><a href="#org577080b">debian</a></li>
-<li><a href="#orge9ec80e">archlinux</a></li>
-<li><a href="#org27eb11d">windows 10</a></li>
-<li><a href="#org6f7f9d9">macOS</a></li>
-<li><a href="#org48f0708">通用</a></li>
+<li><a href="#org3624d2c">debian</a></li>
+<li><a href="#org476b525">archlinux</a></li>
+<li><a href="#org5fc6ca0">windows 10</a></li>
+<li><a href="#orgcf06693">macOS</a></li>
+<li><a href="#orga1c4802">通用</a></li>
 </ul>
 </li>
 </ul>
@@ -248,53 +245,53 @@
 </div>
 </div>
 
-<div id="outline-container-org314256a" class="outline-2">
-<h2 id="org314256a">开发环境</h2>
-<div class="outline-text-2" id="text-org314256a">
+<div id="outline-container-org6309e3d" class="outline-2">
+<h2 id="org6309e3d">开发环境</h2>
+<div class="outline-text-2" id="text-org6309e3d">
 </div>
-<div id="outline-container-orgd13554d" class="outline-3">
-<h3 id="orgd13554d">系统</h3>
-<div class="outline-text-3" id="text-orgd13554d">
+<div id="outline-container-org5f6f8a3" class="outline-3">
+<h3 id="org5f6f8a3">系统</h3>
+<div class="outline-text-3" id="text-org5f6f8a3">
 <p>
 debian  或  win10 + wsl2(debian)
 </p>
 </div>
 </div>
-<div id="outline-container-orgeef15ef" class="outline-3">
-<h3 id="orgeef15ef">常用工具</h3>
-<div class="outline-text-3" id="text-orgeef15ef">
+<div id="outline-container-orgcfd3d3d" class="outline-3">
+<h3 id="orgcfd3d3d">常用工具</h3>
+<div class="outline-text-3" id="text-orgcfd3d3d">
 </div>
-<div id="outline-container-org577080b" class="outline-4">
-<h4 id="org577080b">debian</h4>
+<div id="outline-container-org3624d2c" class="outline-4">
+<h4 id="org3624d2c">debian</h4>
 </div>
-<div id="outline-container-orge9ec80e" class="outline-4">
-<h4 id="orge9ec80e">archlinux</h4>
-<div class="outline-text-4" id="text-orge9ec80e">
+<div id="outline-container-org476b525" class="outline-4">
+<h4 id="org476b525">archlinux</h4>
+<div class="outline-text-4" id="text-org476b525">
 <ul class="org-ul">
 <li><a href="https:ohmyz.sh/#install">oh my zsh</a> - 默认主题</li>
-<li><a href="https:github.com/tmux/tmux">tmux</a> - 配置使用<a href="https:github.com/gpakosz/.tmux.git"> https://github.com/gpakosz/.tmux.git</a></li>
-<li><a href="https:www.vim.org/">vim</a> - 配置使用 <a href="https:github.com/josephtseng-echo/vim.git">https://github.com/josephtseng-echo/vim.git</a></li>
-<li><a href="https:www.gnu.org/software/emacs/">emacs</a> 配置使用 <a href="https:github.com/josephtseng-echo/emacs.git">https://github.com/josephtseng-echo/emacs.git</a></li>
+<li><a href="https:github.com/tmux/tmux">tmux</a> - 配置使用 <a href="https://github.com/gpakosz/.tmux.git" target="_blank"> https://github.com/gpakosz/.tmux.git</a></li>
+<li><a href="https:www.vim.org/">vim</a> - 配置使用 <a href="https://github.com/josephtseng-echo/vim.git" target="_blank"> https://github.com/josephtseng-echo/vim.git</a></li>
+<li><a href="https:www.gnu.org/software/emacs/">emacs</a> 配置使用 <a href="https://github.com/josephtseng-echo/emacs.git" target="_blank"> https://github.com/josephtseng-echo/emacs.git</a></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #51afef;">alias</span> <span style="color: #979797;">emacsd</span>=<span style="color: #99bb66;">"emacs --bg-daemon=~/.emacs.d/.cache/emacs_server"</span>
-<span style="color: #51afef;">alias</span> <span style="color: #979797;">et</span>=<span style="color: #99bb66;">"emacsclient -s ~/.emacs.d/.cache/emacs_server -nw"</span>
+<pre class="src src-bash">alias emacsd="emacs --bg-daemon=~/.emacs.d/.cache/emacs_server"
+alias et="emacsclient -s ~/.emacs.d/.cache/emacs_server -nw"
 </pre>
 </div>
 <ul class="org-ul">
 <li>tldr</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #747474;"># </span><span style="color: #747474;">debian</span>
+<pre class="src src-bash"># debian
 sudo apt-get install tldr
-<span style="color: #747474;"># </span><span style="color: #747474;">archlinux</span>
+# archlinux
 sudo pacman -S tldr
 </pre>
 </div>
 <ul class="org-ul">
-<li>trans - <a href="https:github.com/soimort/translate-shell">https://github.com/soimort/translate-shell</a></li>
-<li>ag - <a href="https:github.com/ggreer/the_silver_searcher">https://github.com/ggreer/the_silver_searcher</a></li>
-<li>eclipse - <a href="https:www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a></li>
+<li>trans - <a href="https://github.com/soimort/translate-shell" target="_blank"> https://github.com/soimort/translate-shell</a></li>
+<li>ag - <a href="https://github.com/ggreer/the_silver_searcher" target="_blank"> https://github.com/ggreer/the_silver_searcher</a></li>
+<li>eclipse - <a href="https://www.eclipse.org/downloads/" target="_blank"> https://www.eclipse.org/downloads/</a></li>
 <li>xfce4 or awesome</li>
 <li>gcc / g++ / gdb / valgrind / doxygen / nginx / php / golang /
 cmake / make /autotools / java / &#x2026;</li>
@@ -302,22 +299,22 @@ cmake / make /autotools / java / &#x2026;</li>
 </div>
 </div>
 
-<div id="outline-container-org27eb11d" class="outline-4">
-<h4 id="org27eb11d">windows 10</h4>
-<div class="outline-text-4" id="text-org27eb11d">
+<div id="outline-container-org5fc6ca0" class="outline-4">
+<h4 id="org5fc6ca0">windows 10</h4>
+<div class="outline-text-4" id="text-org5fc6ca0">
 <ul class="org-ul">
-<li>eclipse - <a href="https:www.eclipse.org/downloads/">https://www.eclipse.org/downloads/</a></li>
+<li>eclipse - <a href="https://www.eclipse.org/downloads/" target="_blank"> https://www.eclipse.org/downloads/</a></li>
 <li>WSL2 debian</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6f7f9d9" class="outline-4">
-<h4 id="org6f7f9d9">macOS</h4>
+<div id="outline-container-orgcf06693" class="outline-4">
+<h4 id="orgcf06693">macOS</h4>
 </div>
 
-<div id="outline-container-org48f0708" class="outline-4">
-<h4 id="org48f0708">通用</h4>
-<div class="outline-text-4" id="text-org48f0708">
+<div id="outline-container-orga1c4802" class="outline-4">
+<h4 id="orga1c4802">通用</h4>
+<div class="outline-text-4" id="text-orga1c4802">
 <ul class="org-ul">
 <li>zeal</li>
 <li>网易云音乐</li>
@@ -332,7 +329,7 @@ cmake / make /autotools / java / &#x2026;</li>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-01 <br />Last updated: 2021-11-25 Thu 23:06 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-01 <br />Last updated: 2022-05-08 日 21:51 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
