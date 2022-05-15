@@ -2,17 +2,16 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-11-25 Thu 23:30 -->
+<!-- 2022-05-15 Sun 13:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>2020年总结</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -33,8 +32,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -43,21 +43,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -193,12 +193,10 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
      {
        var target = document.getElementById(id);
@@ -215,7 +213,6 @@
          target.classList.remove("code-highlighted");
        }
      }
-    /*]]>*///-->
 // @license-end
 </script>
 </head>
@@ -224,18 +221,18 @@
  <a accesskey="h" href="/blog/index.html"> UP </a>
  |
  <a accesskey="H" href="/index.html"> HOME </a>
-</div><div id="content">
+</div><div id="content" class="content">
 <h1 class="title">2020年总结</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf06603d">生活</a></li>
-<li><a href="#org900abb8">工作</a></li>
-<li><a href="#org6894975">学习</a></li>
-<li><a href="#org467b4c6">复盘</a></li>
-<li><a href="#org1ebcb34">其他</a></li>
-<li><a href="#orgd5344c4">总结</a></li>
+<li><a href="#org06c2fe7">生活</a></li>
+<li><a href="#org29e9b61">工作</a></li>
+<li><a href="#org770df8e">学习</a></li>
+<li><a href="#org2681d5e">复盘</a></li>
+<li><a href="#orgbdd94e3">其他</a></li>
+<li><a href="#orgf678f19">总结</a></li>
 </ul>
 </div>
 </div>
@@ -243,9 +240,9 @@
 时间过得挺快的，新的一年到了，意味着又一年过去了。内心一直在暗示自己应该写一下2020年终总结，每每想写的时候，却不知道该如何写起或写点什么。
 </p>
 
-<div id="outline-container-orgf06603d" class="outline-2">
-<h2 id="orgf06603d">生活</h2>
-<div class="outline-text-2" id="text-orgf06603d">
+<div id="outline-container-org06c2fe7" class="outline-2">
+<h2 id="org06c2fe7">生活</h2>
+<div class="outline-text-2" id="text-org06c2fe7">
 <p>
 年初，由于疫情，在家办公，貌似也成了自从工作以来，在家里待的时间最长的一次，直到3月份左右才回深圳。这次可算是在家待到爸妈老婆孩子都嫌我烦了。我
 家老李倒是挺委屈的，被领导安排天天回学校值班，直到学校正式开学；说实话，真心不容易，天天搞统计报表。随着复工，一家子生活又慢慢恢复成日常的节奏，
@@ -283,20 +280,47 @@
 </div>
 </div>
 
-<div id="outline-container-org900abb8" class="outline-2">
-<h2 id="org900abb8">工作</h2>
-<div class="outline-text-2" id="text-org900abb8">
+<div id="outline-container-org29e9b61" class="outline-2">
+<h2 id="org29e9b61">工作</h2>
+<div class="outline-text-2" id="text-org29e9b61">
 <p>
-小伙伴们今年挺给力的， 也算是顺利完成了一些事情。首先第一件事是，顺利将亚洲区的锦标赛合服，举办了第一届线上BPT决赛。虽然这过程有不少磕磕绊绊和部
+小伙伴们今年挺给力的， 也算是顺利完成了一些事情。
+</p>
+
+<p>
+首先第一件事是，顺利将亚洲区的锦标赛合服，举办了第一届线上BPT决赛。虽然这过程有不少磕磕绊绊和部
 门团队之间磨合的小插曲等，但是总算是圆满完成，并带来了一些经验总结。比如：多部门，多团队之间应该如何更好的沟通和协作？跨机房如何做好数据同步？等
-。第二件事，就是顺利完成了全平台迁云工作。这事除了要求团队之间协作之外，其实更多考察的是迁云工作前的准备及对服务整体的熟悉程度，尤其是这过程操作
-的TODO LISTS，服务测试验收用例，备选方案等等。第三件事，部分服务及游戏SERVER也顺利使用上了golang生态圈开发，从上线后服务各项指标的情况来看，总体
+。
+</p>
+
+<p>
+第二件事，就是顺利完成了全平台迁云工作。这事除了要求团队之间协作之外，其实更多考察的是迁云工作前的准备及对服务整体的熟悉程度，尤其是这过程操作
+的TODO LISTS，服务测试验收用例，备选方案等等。
+</p>
+
+<p>
+第三件事，部分服务及游戏SERVER也顺利使用上了golang生态圈开发，从上线后服务各项指标的情况来看，总体
 表现还不错，也算是新的技术引进和尝试。虽然一直认为，很多问题其实是无法通过换开发语言来解决的；但是引进新的技术生态，并进行对比不同技术生态圈的优
-劣势总归没错，给后续不同需求或场景技术选型上提供更多的选择。第四件事情就是slots项目顺利按期上线，可惜市场反应不怎么样。 还有些事就是活动模板化，
-部分公共服务的重构，配合移动客户端重构及PC平台的H5化等等。想起了公共服务重构方面上，有个项目的出发点倒是挺值得提下和提倡的，负责重构短信公共服务
-的小伙子是个很较真的人，他重构的基于点是为了节约成本，当然他努力做到了。技术的更新迭代，出发点本应该就是要需要带来收益的，尤其是在企业里面。小伙
+劣势总归没错，给后续不同需求或场景技术选型上提供更多的选择。
+</p>
+
+<p>
+第四件事情就是slots项目顺利按期上线，可惜市场反应不怎么样。
+</p>
+
+<p>
+还有些事就是活动模板化，部分公共服务的重构，配合移动客户端重构及PC平台的H5化等等。想起了公共服务重构方面上，有个项目的出发点倒是挺值得提下和提倡的，负责重构短信公共服务
+的小伙子是个很较真的人，他重构的基于点是为了节约成本，当然他努力做到了。
+</p>
+
+<p>
+技术的更新迭代，出发点本应该就是要需要带来收益的，尤其是在企业里面。小伙
 伴们有些对待技术或解决的方式上是有洁癖的；也有些对待新技术是充满热枕的；不管如何选择或坚持什么都好；
-<font color="668BB6">工作只是谋生的手段，技术也只是谋生的工具，大家求同存异，互相学习，把事情干得漂亮就好</font>。对小组简单的小结，一句话，“<font color="red">干的还不错</font>”。
+<font color="668BB6">工作只是谋生的手段，技术也只是谋生的工具，大家求同存异，互相学习，把事情干得漂亮就好</font>。
+</p>
+
+<p>
+对小组简单的小结，一句话，“<font color="red">干的还不错</font>”。
 </p>
 
 <p>
@@ -316,18 +340,18 @@
 </div>
 
 
-<div id="outline-container-org6894975" class="outline-2">
-<h2 id="org6894975">学习</h2>
-<div class="outline-text-2" id="text-org6894975">
+<div id="outline-container-org770df8e" class="outline-2">
+<h2 id="org770df8e">学习</h2>
+<div class="outline-text-2" id="text-org770df8e">
 <p>
 说起学习，看书和记录工作日常问题方面上，极其惭愧。零零散散，没有坚持。这个是需要纠正的坏毛病。不然会慢慢让自己失去表达能力的。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org467b4c6" class="outline-2">
-<h2 id="org467b4c6">复盘</h2>
-<div class="outline-text-2" id="text-org467b4c6">
+<div id="outline-container-org2681d5e" class="outline-2">
+<h2 id="org2681d5e">复盘</h2>
+<div class="outline-text-2" id="text-org2681d5e">
 <p>
 对比去年，新增了架子鼓/电吉他的学习，偶尔翻了几本书。
 对比上个月，松懈了日常架子鼓的练习
@@ -346,9 +370,9 @@
 </div>
 </div>
 
-<div id="outline-container-org1ebcb34" class="outline-2">
-<h2 id="org1ebcb34">其他</h2>
-<div class="outline-text-2" id="text-org1ebcb34">
+<div id="outline-container-orgbdd94e3" class="outline-2">
+<h2 id="orgbdd94e3">其他</h2>
+<div class="outline-text-2" id="text-orgbdd94e3">
 <p>
 跟2019一样，有一段想高攀的感情，无疾而终。<font color="red">可遇不可求</font>。
 在沟通交流上，继续保持做到<font color="668BB6">求同存异</font>。
@@ -356,9 +380,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd5344c4" class="outline-2">
-<h2 id="orgd5344c4">总结</h2>
-<div class="outline-text-2" id="text-orgd5344c4">
+<div id="outline-container-orgf678f19" class="outline-2">
+<h2 id="orgf678f19">总结</h2>
+<div class="outline-text-2" id="text-orgf678f19">
 <p>
 总之，2020一般。2021加油，<font color="red">好好干</font>。
 </p>
@@ -373,7 +397,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-01-10 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-01 Fri 00:00 <br />Last updated: 2021-11-25 Thu 23:21 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-01 Fri 00:00 <br />Last updated: 2022-05-15 Sun 13:49 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
