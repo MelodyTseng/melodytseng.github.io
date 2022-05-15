@@ -2,17 +2,16 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-11-25 Thu 23:34 -->
+<!-- 2022-05-15 Sun 12:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JosephTseng Echo</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -33,8 +32,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -43,21 +43,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -193,12 +193,10 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
      {
        var target = document.getElementById(id);
@@ -215,28 +213,28 @@
          target.classList.remove("code-highlighted");
        }
      }
-    /*]]>*///-->
 // @license-end
 </script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">JosephTseng Echo</h1>
 
-<div id="outline-container-org4f46456" class="outline-2">
-<h2 id="org4f46456">序</h2>
-<div class="outline-text-2" id="text-org4f46456">
+<div id="outline-container-org5201e7d" class="outline-2">
+<h2 id="org5201e7d">序</h2>
+<div class="outline-text-2" id="text-org5201e7d">
 <script language="javascript">
 var txtArr = [
-'写自己的代码，让别人说去。顺其自然，修太认真。',
+'写自己的代码，让别人说去。顺其自然，修太认真。阳光总在风雨后！',
 ];
 document.write('<span style="color:#999;">'+txtArr[Math.floor(Math.random() * txtArr.length)]+'</span>');
 </script>
 </div>
-<div id="outline-container-org657f967" class="outline-3">
-<h3 id="org657f967">Present</h3>
-<div class="outline-text-3" id="text-org657f967">
+<div id="outline-container-org9f1ff12" class="outline-3">
+<h3 id="org9f1ff12">Present</h3>
+<div class="outline-text-3" id="text-org9f1ff12">
 <ul class="org-ul">
+<li><a href="wiki/comm/graphviz.html">Graphviz</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-15 Sun&gt;</span></span><br /></li>
 <li><a href="blog/2021/protobuf-use-notice.html">protobuf 常用使用注意</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-20 Sat&gt;</span></span><br /></li>
 <li><a href="blog/2021/pecl-switch-php-version.html">pecl 切换 php 版本</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-16 Tue&gt;</span></span><br /></li>
 <li><a href="blog/2021/mysql-mysqldump-use.html">MySQL 命令 mysqldump 使用</a> <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-03-11 Thu&gt;</span></span><br /></li>
@@ -250,33 +248,33 @@ document.write('<span style="color:#999;">'+txtArr[Math.floor(Math.random() * tx
 </div>
 </div>
 
-<div id="outline-container-orge09d2d8" class="outline-3">
-<h3 id="orge09d2d8"><a href="blog/index.html">Blog</a></h3>
-<div class="outline-text-3" id="text-orge09d2d8">
+<div id="outline-container-org35061d5" class="outline-3">
+<h3 id="org35061d5"><a href="blog/index.html">Blog</a></h3>
+<div class="outline-text-3" id="text-org35061d5">
 <p>
 网络日志，日常工作和生活的点点滴滴。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgb227079" class="outline-3">
-<h3 id="orgb227079"><a href="wiki/index.html">Wiki</a></h3>
-<div class="outline-text-3" id="text-orgb227079">
+<div id="outline-container-orga8fa72c" class="outline-3">
+<h3 id="orga8fa72c"><a href="wiki/index.html">Wiki</a></h3>
+<div class="outline-text-3" id="text-orga8fa72c">
 <p>
 工具手册，常用插件环境等。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org0053d39" class="outline-3">
-<h3 id="org0053d39">Notes</h3>
-<div class="outline-text-3" id="text-org0053d39">
+<div id="outline-container-org27b779e" class="outline-3">
+<h3 id="org27b779e">Notes</h3>
+<div class="outline-text-3" id="text-org27b779e">
 <ul class="org-ul">
 <li><a href="notes/tools.html">开发环境备注</a><br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge577bb5" class="outline-3">
-<h3 id="orge577bb5">Contact</h3>
-<div class="outline-text-3" id="text-orge577bb5">
+<div id="outline-container-orgde15a96" class="outline-3">
+<h3 id="orgde15a96">Contact</h3>
+<div class="outline-text-3" id="text-orgde15a96">
 <ul class="org-ul">
 <li>github : <a href="https://github.com/josephtseng-echo">https://github.com/josephtseng-echo</a><br /></li>
 <li>email <a href="mailto:josephtseng.echo@gmail.com">: josephtseng.echo at gmail dot com</a><br /></li>
@@ -285,9 +283,9 @@ document.write('<span style="color:#999;">'+txtArr[Math.floor(Math.random() * tx
 </div>
 
 
-<div id="outline-container-orgcbbcfcd" class="outline-3">
-<h3 id="orgcbbcfcd">About</h3>
-<div class="outline-text-3" id="text-orgcbbcfcd">
+<div id="outline-container-org578a196" class="outline-3">
+<h3 id="org578a196">About</h3>
+<div class="outline-text-3" id="text-org578a196">
 <ul class="org-ul">
 <li><a href="notes/about.html">about me</a><br /></li>
 <li><a href="notes/resume.html">resume</a><br /></li>
@@ -297,7 +295,7 @@ document.write('<span style="color:#999;">'+txtArr[Math.floor(Math.random() * tx
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-01-01 <br />Last updated: 2021-11-25 Thu 23:34 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-01-01 <br />Last updated: 2022-05-15 Sun 12:35 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
