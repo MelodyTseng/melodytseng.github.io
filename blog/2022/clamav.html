@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2022-05-19 Thu 23:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clamav 使用</title>
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员" />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">Clamav 使用</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org58d3b52">简介</a></li>
+<li><a href="#org6717283">安装</a></li>
+<li><a href="#org527895d">配置</a></li>
+<li><a href="#orge005989">使用</a>
+<ul>
+<li><a href="#orgf5c30df">升级</a></li>
+<li><a href="#org837fe8b">杀毒</a></li>
+</ul>
+</li>
+<li><a href="#orgf8091c9">定时运行</a></li>
+<li><a href="#orge1c241f">参考</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org58d3b52" class="outline-2">
+<h2 id="org58d3b52">简介</h2>
+<div class="outline-text-2" id="text-org58d3b52">
+<p>
+clam antivirus是基于UNIX/LINUX 操作系统的一款免费杀毒软件，支持在线更新病毒库。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6717283" class="outline-2">
+<h2 id="org6717283">安装</h2>
+<div class="outline-text-2" id="text-org6717283">
+<div class="org-src-container">
+<pre class="src src-bash">~&gt; sudo pacman -S clamav
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org527895d" class="outline-2">
+<h2 id="org527895d">配置</h2>
+<div class="outline-text-2" id="text-org527895d">
+<div class="org-src-container">
+<pre class="src src-bash">#杀毒软件的主配置文件
+sudo vim /etc/clamav/clamd.conf
+
+#更新病毒库的配置文件
+sudo vim /etc/clamav/freshclam.conf
+
+具体配置略
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge005989" class="outline-2">
+<h2 id="orge005989">使用</h2>
+<div class="outline-text-2" id="text-orge005989">
+</div>
+<div id="outline-container-orgf5c30df" class="outline-3">
+<h3 id="orgf5c30df">升级</h3>
+<div class="outline-text-3" id="text-orgf5c30df">
+<p>
+使用前先运行升级，Download Database
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">#升级
+sudo freshclam
+
+-----------------------------------
+    freshclam [options]
+
+    --help               -h              Show this help
+    --version            -V              Print version number and exit
+    --verbose            -v              Be verbose
+    --debug                              Enable debug messages
+    --quiet                              Only output error messages
+    --no-warnings                        Don't print and log warnings
+    --stdout                             Write to stdout instead of stderr. Does not affect 'debug' messages.
+    --show-progress                      Show download progress percentage
+
+    --config-file=FILE                   Read configuration from FILE.
+    --log=FILE           -l FILE         Log into FILE
+    --daemon             -d              Run in daemon mode
+    --pid=FILE           -p FILE         Save daemon's pid in FILE
+    --foreground         -F              Don't fork into background (for use in daemon mode).
+    --user=USER          -u USER         Run as USER
+    --no-dns                             Force old non-DNS verification method
+    --checks=#n          -c #n           Number of checks per day, 1 &lt;= n &lt;= 50
+    --datadir=DIRECTORY                  Download new databases into DIRECTORY
+    --daemon-notify[=/path/clamd.conf]   Send RELOAD command to clamd
+    --local-address=IP   -a IP           Bind to IP for HTTP downloads
+    --on-update-execute=COMMAND          Execute COMMAND after successful update.
+                                         Use EXIT_1 to return 1 after successful database update.
+    --on-error-execute=COMMAND           Execute COMMAND if errors occurred
+    --on-outdated-execute=COMMAND        Execute COMMAND when software is outdated
+    --update-db=DBNAME                   Only update database DBNAME
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org837fe8b" class="outline-3">
+<h3 id="org837fe8b">杀毒</h3>
+<div class="outline-text-3" id="text-org837fe8b">
+<div class="org-src-container">
+<pre class="src src-bash">#杀毒
+clamscan -r 目录
+
+----------------------------------------
+    clamscan [options] [file/directory/-]
+
+    --help                -h             Show this help
+    --version             -V             Print version number
+    --verbose             -v             Be verbose
+    --archive-verbose     -a             Show filenames inside scanned archives
+    --debug                              Enable libclamav's debug messages
+    --quiet                              Only output error messages
+    --stdout                             Write to stdout instead of stderr. Does not affect 'debug' messages.
+    --no-summary                         Disable summary at end of scanning
+    --infected            -i             Only print infected files
+    --suppress-ok-results -o             Skip printing OK files
+    --bell                               Sound bell on virus detection
+
+    --tempdir=DIRECTORY                  Create temporary files in DIRECTORY
+    --leave-temps[=yes/no(*)]            Do not remove temporary files
+    --gen-json[=yes/no(*)]               Generate JSON metadata for the scanned file(s). For testing &amp; development use ONLY.
+                                         JSON will be printed if --debug is enabled.
+                                         A JSON file will dropped to the temp directory if --leave-temps is enabled.
+    --database=FILE/DIR   -d FILE/DIR    Load virus database from FILE or load all supported db files from DIR
+    --official-db-only[=yes/no(*)]       Only load official signatures
+    --log=FILE            -l FILE        Save scan report to FILE
+    --recursive[=yes/no(*)]  -r          Scan subdirectories recursively
+    --allmatch[=yes/no(*)]   -z          Continue scanning within file after finding a match
+    --cross-fs[=yes(*)/no]               Scan files and directories on other filesystems
+    --follow-dir-symlinks[=0/1(*)/2]     Follow directory symlinks (0 = never, 1 = direct, 2 = always)
+    --follow-file-symlinks[=0/1(*)/2]    Follow file symlinks (0 = never, 1 = direct, 2 = always)
+    --file-list=FILE      -f FILE        Scan files from FILE
+    --remove[=yes/no(*)]                 Remove infected files. Be careful!
+    --move=DIRECTORY                     Move infected files into DIRECTORY
+    --copy=DIRECTORY                     Copy infected files into DIRECTORY
+    --exclude=REGEX                      Don't scan file names matching REGEX
+    --exclude-dir=REGEX                  Don't scan directories matching REGEX
+    --include=REGEX                      Only scan file names matching REGEX
+    --include-dir=REGEX                  Only scan directories matching REGEX
+
+    --bytecode[=yes(*)/no]               Load bytecode from the database
+    --bytecode-unsigned[=yes/no(*)]      Load unsigned bytecode
+                                         **Caution**: You should NEVER run bytecode signatures from untrusted sources.
+                                         Doing so may result in arbitrary code execution.
+    --bytecode-timeout=N                 Set bytecode timeout (in milliseconds)
+    --statistics[=none(*)/bytecode/pcre] Collect and print execution statistics
+    --detect-pua[=yes/no(*)]             Detect Possibly Unwanted Applications
+    --exclude-pua=CAT                    Skip PUA sigs of category CAT
+    --include-pua=CAT                    Load PUA sigs of category CAT
+    --detect-structured[=yes/no(*)]      Detect structured data (SSN, Credit Card)
+    --structured-ssn-format=X            SSN format (0=normal,1=stripped,2=both)
+    --structured-ssn-count=N             Min SSN count to generate a detect
+    --structured-cc-count=N              Min CC count to generate a detect
+    --structured-cc-mode=X               CC mode (0=credit debit and private label, 1=credit cards only
+    --scan-mail[=yes(*)/no]              Scan mail files
+    --phishing-sigs[=yes(*)/no]          Enable email signature-based phishing detection
+    --phishing-scan-urls[=yes(*)/no]     Enable URL signature-based phishing detection
+    --heuristic-alerts[=yes(*)/no]       Heuristic alerts
+    --heuristic-scan-precedence[=yes/no(*)] Stop scanning as soon as a heuristic match is found
+    --normalize[=yes(*)/no]              Normalize html, script, and text files. Use normalize=no for yara compatibility
+    --scan-pe[=yes(*)/no]                Scan PE files
+    --scan-elf[=yes(*)/no]               Scan ELF files
+    --scan-ole2[=yes(*)/no]              Scan OLE2 containers
+    --scan-pdf[=yes(*)/no]               Scan PDF files
+    --scan-swf[=yes(*)/no]               Scan SWF files
+    --scan-html[=yes(*)/no]              Scan HTML files
+    --scan-xmldocs[=yes(*)/no]           Scan xml-based document files
+    --scan-hwp3[=yes(*)/no]              Scan HWP3 files
+    --scan-archive[=yes(*)/no]           Scan archive files (supported by libclamav)
+    --alert-broken[=yes/no(*)]           Alert on broken executable files (PE &amp; ELF)
+    --alert-broken-media[=yes/no(*)]     Alert on broken graphics files (JPEG, TIFF, PNG, GIF)
+    --alert-encrypted[=yes/no(*)]        Alert on encrypted archives and documents
+    --alert-encrypted-archive[=yes/no(*)] Alert on encrypted archives
+    --alert-encrypted-doc[=yes/no(*)]    Alert on encrypted documents
+    --alert-macros[=yes/no(*)]           Alert on OLE2 files containing VBA macros
+    --alert-exceeds-max[=yes/no(*)]      Alert on files that exceed max file size, max scan size, or max recursion limit
+    --alert-phishing-ssl[=yes/no(*)]     Alert on emails containing SSL mismatches in URLs
+    --alert-phishing-cloak[=yes/no(*)]   Alert on emails containing cloaked URLs
+    --alert-partition-intersection[=yes/no(*)] Alert on raw DMG image files containing partition intersections
+    --nocerts                            Disable authenticode certificate chain verification in PE files
+    --dumpcerts                          Dump authenticode certificate chain in PE files
+
+    --max-scantime=#n                    Scan time longer than this will be skipped and assumed clean (milliseconds)
+    --max-filesize=#n                    Files larger than this will be skipped and assumed clean
+    --max-scansize=#n                    The maximum amount of data to scan for each container file (**)
+    --max-files=#n                       The maximum number of files to scan for each container file (**)
+    --max-recursion=#n                   Maximum archive recursion level for container file (**)
+    --max-dir-recursion=#n               Maximum directory recursion level
+    --max-embeddedpe=#n                  Maximum size file to check for embedded PE
+    --max-htmlnormalize=#n               Maximum size of HTML file to normalize
+    --max-htmlnotags=#n                  Maximum size of normalized HTML file to scan
+    --max-scriptnormalize=#n             Maximum size of script file to normalize
+    --max-ziptypercg=#n                  Maximum size zip to type reanalyze
+    --max-partitions=#n                  Maximum number of partitions in disk image to be scanned
+    --max-iconspe=#n                     Maximum number of icons in PE file to be scanned
+    --max-rechwp3=#n                     Maximum recursive calls to HWP3 parsing function
+    --pcre-match-limit=#n                Maximum calls to the PCRE match function.
+    --pcre-recmatch-limit=#n             Maximum recursive calls to the PCRE match function.
+    --pcre-max-filesize=#n               Maximum size file to perform PCRE subsig matching.
+    --disable-cache                      Disable caching and cache checks for hash sums of scanned files.
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf8091c9" class="outline-2">
+<h2 id="orgf8091c9">定时运行</h2>
+<div class="outline-text-2" id="text-orgf8091c9">
+<p>
+建议创建新帐号，定时运行；自行配置 <code>crontab</code>
+定时更新病毒库 + 定时扫描杀毒
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge1c241f" class="outline-2">
+<h2 id="orge1c241f">参考</h2>
+<div class="outline-text-2" id="text-orge1c241f">
+<p>
+<a href="https://www.clamav.net/" target="_blank">https://www.clamav.net/</a>
+</p>
+
+<div class="post-copyright">
+<p>Author: josephzeng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-19 Thu&gt;</span></span>
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2022-05-19 Thu 00:00 <br />Last updated: 2022-05-19 Thu 23:32 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
+</div>
+</body>
+</html>
