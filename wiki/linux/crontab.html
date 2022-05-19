@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2022-05-20 Fri 00:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crontab</title>
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员" />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">Crontab</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge84ae16">简介</a></li>
+<li><a href="#orga4d24db">help</a></li>
+<li><a href="#orgfaacc2e">配置</a></li>
+<li><a href="#org548ca51">格式</a>
+<ul>
+<li><a href="#org64a321a">分时日月星期</a></li>
+<li><a href="#org4acf08d">通配符</a></li>
+</ul>
+</li>
+<li><a href="#org4162c5d">举例</a></li>
+<li><a href="#org1747bb7">参考</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge84ae16" class="outline-2">
+<h2 id="orge84ae16">简介</h2>
+<div class="outline-text-2" id="text-orge84ae16">
+<p>
+Linux下的计划任务管理工具。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga4d24db" class="outline-2">
+<h2 id="orga4d24db">help</h2>
+<div class="outline-text-2" id="text-orga4d24db">
+<div class="org-src-container">
+<pre class="src src-bash">  crontab
+
+  Schedule cron jobs to run on a time interval for the current user.
+  Job definition format: "(min) (hour) (day_of_month) (month) (day_of_week) command_to_execute".
+  More information: https://manned.org/crontab.
+
+  - Edit the crontab file for the current user:
+    crontab -e
+
+  - Edit the crontab file for a specific user:
+    sudo crontab -e -u user
+
+  - Replace the current crontab with the contents of the given file:
+    crontab path/to/file
+
+  - View a list of existing cron jobs for current user:
+    crontab -l
+
+  - Remove all cron jobs for the current user:
+    crontab -r
+
+  - Sample job which runs at 10:00 every day (* means any value):
+    0 10 * * * command_to_execute
+
+  - Sample job which runs every minute on the 3rd of April:
+    * * 3 Apr * command_to_execute
+
+  - Sample job which runs a certain script at 02:30 every Friday:
+    30 2 * * Fri /absolute/path/to/script.sh
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfaacc2e" class="outline-2">
+<h2 id="orgfaacc2e">配置</h2>
+<div class="outline-text-2" id="text-orgfaacc2e">
+<div class="org-src-container">
+<pre class="src src-bash">~&gt; tree -L 3 /etc/cron*  #配置文件目录结构
+/etc/cron.d
+└── 0hourly
+/etc/cron.daily
+/etc/cron.deny  [error opening dir]
+/etc/cron.hourly
+└── 0anacron
+/etc/cron.monthly
+/etc/cron.weekly
+
+0 directories, 0 files
+
+#查看
+~&gt; crontab -l
+
+#编译
+~&gt; crontab -e
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org548ca51" class="outline-2">
+<h2 id="org548ca51">格式</h2>
+<div class="outline-text-2" id="text-org548ca51">
+<div class="org-src-container">
+<pre class="src src-bash">分 时 日 月 星期 命令
+00 10 * * * TODO &amp;&amp;  SCRIPT #example
+</pre>
+</div>
+</div>
+<div id="outline-container-org64a321a" class="outline-3">
+<h3 id="org64a321a">分时日月星期</h3>
+<div class="outline-text-3" id="text-org64a321a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">分</td>
+<td class="org-left">0 - 59</td>
+</tr>
+
+<tr>
+<td class="org-left">时</td>
+<td class="org-left">0 - 23</td>
+</tr>
+
+<tr>
+<td class="org-left">日</td>
+<td class="org-left">1 - 31</td>
+</tr>
+
+<tr>
+<td class="org-left">月</td>
+<td class="org-left">1 - 12</td>
+</tr>
+
+<tr>
+<td class="org-left">星期</td>
+<td class="org-left">0 - 6 ( 0 代表星期日 )</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org4acf08d" class="outline-3">
+<h3 id="org4acf08d">通配符</h3>
+<div class="outline-text-3" id="text-org4acf08d">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">符号</td>
+<td class="org-left">描述</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>*</code></td>
+<td class="org-left">通配符，表示所有支持的时间值</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>,</code></td>
+<td class="org-left">用逗号分隔多个时间</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>-</code></td>
+<td class="org-left">连接两个数值，给出一个范围</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>/</code></td>
+<td class="org-left">指定一个周期或频率</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org4162c5d" class="outline-2">
+<h2 id="org4162c5d">举例</h2>
+<div class="outline-text-2" id="text-org4162c5d">
+<div class="org-src-container">
+<pre class="src src-bash"># 每天早上6点 
+0 6 * * * echo "Good morning." &gt;&gt; /tmp/test.txt //注意单纯echo，从屏幕上看不到任何输出，因为cron把任何输出都email到root的信箱了。
+
+# 每两个小时 
+0 */2 * * * echo "Have a break now." &gt;&gt; /tmp/test.txt  
+
+# 晚上11点到早上8点之间每两个小时和早上八点 
+0 23-7/2，8 * * * echo "Have a good dream" &gt;&gt; /tmp/test.txt
+
+# 每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点 
+0 11 4 * 1-3 command line
+
+# 1月1日早上4点 
+0 4 1 1 * command line SHELL=/bin/bash PATH=/sbin:/bin:/usr/sbin:/usr/bin MAILTO=root //如果出现错误，或者有数据输出，数据作为邮件发给这个帐号 HOME=/ 
+
+# 每小时（第一分钟）执行/etc/cron.hourly内的脚本
+01 * * * * root run-parts /etc/cron.hourly
+
+# 每天（凌晨4：02）执行/etc/cron.daily内的脚本
+02 4 * * * root run-parts /etc/cron.daily 
+
+# 每星期（周日凌晨4：22）执行/etc/cron.weekly内的脚本
+22 4 * * 0 root run-parts /etc/cron.weekly 
+
+# 每月（1号凌晨4：42）去执行/etc/cron.monthly内的脚本 
+42 4 1 * * root run-parts /etc/cron.monthly 
+
+# 注意:  "run-parts"这个参数了，如果去掉这个参数的话，后面就可以写要运行的某个脚本名，而不是文件夹名。 　 
+
+# 每天的下午4点、5点、6点的5 min、15 min、25 min、35 min、45 min、55 min时执行命令。 
+5，15，25，35，45，55 16，17，18 * * * command
+
+# 每周一，三，五的下午3：00系统进入维护状态，重新启动系统。
+00 15 * *1，3，5 shutdown -r +5
+
+# 每小时的10分，40分执行用户目录下的innd/bbslin这个指令： 
+10，40 * * * * innd/bbslink 
+
+# 每小时的1分执行用户目录下的bin/account这个指令： 
+1 * * * * bin/account
+
+# 每天早晨三点二十分执行用户目录下如下所示的两个指令（每个指令以;分隔）： 
+203 * * * （/bin/rm -f expire.ls logins.bad;bin/expire$#@62;expire.1st）　
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1747bb7" class="outline-2">
+<h2 id="org1747bb7">参考</h2>
+<div class="outline-text-2" id="text-org1747bb7">
+<ul class="org-ul">
+<li><a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html" target="_blank">https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</a></li>
+<li><a href="https://www.jianshu.com/p/838db0269fd0" target="_blank">https://www.jianshu.com/p/838db0269fd0</a></li>
+</ul>
+
+<div class="post-copyright">
+<p>Author: josephzeng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-19 Thu&gt;</span></span>
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2022-05-19 Thu 00:00 <br />Last updated: 2022-05-20 Fri 00:11 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
+</div>
+</body>
+</html>
