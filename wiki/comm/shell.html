@@ -2,17 +2,16 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-11-25 Thu 23:31 -->
+<!-- 2022-05-25 Wed 23:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shell</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -33,8 +32,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -43,21 +43,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -193,13 +193,11 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
 <link rel="stylesheet" type="text/css" href="/static/style/theme2.css"/>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
      {
        var target = document.getElementById(id);
@@ -216,7 +214,6 @@
          target.classList.remove("code-highlighted");
        }
      }
-    /*]]>*///-->
 // @license-end
 </script>
 </head>
@@ -225,69 +222,72 @@
  <a accesskey="h" href="../index.html"> UP </a>
  |
  <a accesskey="H" href="/index.html"> HOME </a>
-</div><div id="content">
+</div><div id="content" class="content">
 <h1 class="title">Shell</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3de91fc">序</a>
+<li><a href="#orgce5f7b3">序</a>
 <ul>
-<li><a href="#org658191c">shell命令解析流程</a></li>
-<li><a href="#orgd8f93a1">常见命令</a>
+<li><a href="#orgd943dbc">shell命令解析流程</a></li>
+<li><a href="#orgb320c96">常见命令</a>
 <ul>
-<li><a href="#org45de7c4">文本处理</a></li>
-<li><a href="#org99b0192">其他常用命令</a></li>
+<li><a href="#org12ea804">文本处理</a></li>
+<li><a href="#org16968c0">其他常用命令</a></li>
 </ul>
 </li>
-<li><a href="#org070e058">学会看手册</a></li>
+<li><a href="#org71a45e3">学会看手册</a></li>
 </ul>
 </li>
-<li><a href="#org71408e4">初探</a>
+<li><a href="#org52a4da2">初探</a>
 <ul>
-<li><a href="#orgf10b5f9">原则</a></li>
-<li><a href="#orgf38500a">规范</a></li>
-<li><a href="#org15ba2d1">执行</a></li>
-<li><a href="#orgc0d754f">变量</a></li>
-<li><a href="#org3ec5b1a">条件判断</a></li>
-<li><a href="#org21cb17c">循环</a></li>
-<li><a href="#orgdc2b1ad">参考</a></li>
+<li><a href="#orgc3a1171">原则</a></li>
+<li><a href="#orge6cb8bc">规范</a></li>
+<li><a href="#org77f8856">执行</a></li>
+<li><a href="#org864bd16">变量</a></li>
+<li><a href="#org97a6475">条件判断</a></li>
+<li><a href="#org04a5c38">循环</a></li>
+<li><a href="#org8dc8be7">参考</a></li>
 </ul>
 </li>
-<li><a href="#orge1f2f52">日常使用</a>
+<li><a href="#orgd3ddc51">日常使用</a>
 <ul>
-<li><a href="#org30758f3">一些不好的习惯</a></li>
-<li><a href="#orgb9303c6">一些好的习惯</a></li>
-<li><a href="#org71c5932">一些容易混淆的概念</a>
+<li><a href="#orgf0d9946">一些不好的习惯</a></li>
+<li><a href="#org025bc4c">一些好的习惯</a></li>
+<li><a href="#org4a84817">一些容易混淆的概念</a>
 <ul>
-<li><a href="#org95a8991">环境变量</a></li>
+<li><a href="#org230e5d8">环境变量</a></li>
 </ul>
 </li>
-<li><a href="#org13460d3">技巧</a></li>
+<li><a href="#org3b43023">技巧</a></li>
 </ul>
 </li>
-<li><a href="#org0df128b">参考</a></li>
+<li><a href="#org5e07e94">脚本传递参数</a>
+<ul>
+<li><a href="#org5907bef">举例</a></li>
+<li><a href="#org5a4afdf">特殊字符</a></li>
+</ul>
+</li>
+<li><a href="#org45bb2ba">参考</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3de91fc" class="outline-2">
-<h2 id="org3de91fc">序</h2>
-<div class="outline-text-2" id="text-org3de91fc">
-<p>
-<font color="red">持续更新.......</font><br />
-</p>
+<div id="outline-container-orgce5f7b3" class="outline-2">
+<h2 id="orgce5f7b3">序</h2>
+<div class="outline-text-2" id="text-orgce5f7b3">
 </div>
-<div id="outline-container-org658191c" class="outline-3">
-<h3 id="org658191c">shell命令解析流程</h3>
+<div id="outline-container-orgd943dbc" class="outline-3">
+<h3 id="orgd943dbc">shell命令解析流程</h3>
 </div>
-<div id="outline-container-orgd8f93a1" class="outline-3">
-<h3 id="orgd8f93a1">常见命令</h3>
-<div class="outline-text-3" id="text-orgd8f93a1">
+<div id="outline-container-orgb320c96" class="outline-3">
+<h3 id="orgb320c96">常见命令</h3>
+<div class="outline-text-3" id="text-orgb320c96">
 </div>
-<div id="outline-container-org45de7c4" class="outline-4">
-<h4 id="org45de7c4">文本处理</h4>
-<div class="outline-text-4" id="text-org45de7c4">
+<div id="outline-container-org12ea804" class="outline-4">
+<h4 id="org12ea804">文本处理</h4>
+<div class="outline-text-4" id="text-org12ea804">
 <ul class="org-ul">
 <li>grep<br /></li>
 <li>sed<br /></li>
@@ -298,9 +298,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org99b0192" class="outline-4">
-<h4 id="org99b0192">其他常用命令</h4>
-<div class="outline-text-4" id="text-org99b0192">
+<div id="outline-container-org16968c0" class="outline-4">
+<h4 id="org16968c0">其他常用命令</h4>
+<div class="outline-text-4" id="text-org16968c0">
 <ul class="org-ul">
 <li>crontab<br /></li>
 <li>curl 支持ftp，http等多种协议处理<br /></li>
@@ -329,9 +329,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org070e058" class="outline-3">
-<h3 id="org070e058">学会看手册</h3>
-<div class="outline-text-3" id="text-org070e058">
+<div id="outline-container-org71a45e3" class="outline-3">
+<h3 id="org71a45e3">学会看手册</h3>
+<div class="outline-text-3" id="text-org71a45e3">
 <p>
 命令有很多，而且选项也很多，单靠记忆是很难全部记住的。所以要学会 <font style="background-color:#f3f4f4;padding:0 2px 0 2px">RTFM</font>。下面是看手册也的一些基本要点：<br />
 </p>
@@ -343,9 +343,9 @@
 <pre class="src src-shell">       The table below shows the section numbers of the manual followed by the types  of  pages  they contain.
 
        1   Executable programs or shell commands
-       2   System calls (<span style="color: #51afef;">functions</span> provided by the kernel)
-       3   Library calls (<span style="color: #51afef;">functions</span> within program libraries)
-       4   Special files (usually found<span style="color: #51afef;"> in</span> /dev)
+       2   System calls (functions provided by the kernel)
+       3   Library calls (functions within program libraries)
+       4   Special files (usually found in /dev)
        5   File formats and conventions eg /etc/passwd
        6   Games
        7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)
@@ -356,13 +356,13 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org71408e4" class="outline-2">
-<h2 id="org71408e4">初探</h2>
-<div class="outline-text-2" id="text-org71408e4">
+<div id="outline-container-org52a4da2" class="outline-2">
+<h2 id="org52a4da2">初探</h2>
+<div class="outline-text-2" id="text-org52a4da2">
 </div>
-<div id="outline-container-orgf10b5f9" class="outline-3">
-<h3 id="orgf10b5f9">原则</h3>
-<div class="outline-text-3" id="text-orgf10b5f9">
+<div id="outline-container-orgc3a1171" class="outline-3">
+<h3 id="orgc3a1171">原则</h3>
+<div class="outline-text-3" id="text-orgc3a1171">
 <ul class="org-ul">
 <li>一次做好一件事<br /></li>
 <li>处理文本，不要处理二进制数据<br />
@@ -382,9 +382,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf38500a" class="outline-3">
-<h3 id="orgf38500a">规范</h3>
-<div class="outline-text-3" id="text-orgf38500a">
+<div id="outline-container-orge6cb8bc" class="outline-3">
+<h3 id="orge6cb8bc">规范</h3>
+<div class="outline-text-3" id="text-orge6cb8bc">
 <p>
 可以参考<a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-shell-styleguide/contents/" target="_blank"> google shell脚本编程规范</a><br />
 这里特别提两点，变量名使用小写加小划线，环境变量以及全局变量放开头，并用大写加下划线；<br />
@@ -393,55 +393,55 @@ Linux下的可执行文件没有特殊意义，另外，脚本有可能使用其
 </p>
 </div>
 </div>
-<div id="outline-container-org15ba2d1" class="outline-3">
-<h3 id="org15ba2d1">执行</h3>
-<div class="outline-text-3" id="text-org15ba2d1">
+<div id="outline-container-org77f8856" class="outline-3">
+<h3 id="org77f8856">执行</h3>
+<div class="outline-text-3" id="text-org77f8856">
 <p>
 Linux在执行命令的时候，首先会判断命令是否是一个可执行的二进制文件，如果是，则直接执行。如果不是且文件以`#!`开头，则把该命令作为一个脚本执行（解释器文件）。并以`#!`后面指定的命令作为解释器。<br />
 例子<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #747474;">#</span><span style="color: #747474;">!/path/to/</span><span style="color: #51afef;">cmd</span><span style="color: #747474;"> -pf</span>
+<pre class="src src-shell">#!/path/to/cmd -pf
 script content comes here...
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc0d754f" class="outline-3">
-<h3 id="orgc0d754f">变量</h3>
-<div class="outline-text-3" id="text-orgc0d754f">
+<div id="outline-container-org864bd16" class="outline-3">
+<h3 id="org864bd16">变量</h3>
+<div class="outline-text-3" id="text-org864bd16">
 <p>
 bash支持定义readonly变量，整型变量等。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org3ec5b1a" class="outline-3">
-<h3 id="org3ec5b1a">条件判断</h3>
-<div class="outline-text-3" id="text-org3ec5b1a">
+<div id="outline-container-org97a6475" class="outline-3">
+<h3 id="org97a6475">条件判断</h3>
+<div class="outline-text-3" id="text-org97a6475">
 <p>
 bash支持if条件判断(条件测试包括文件是否存在，命令是否执行成功等。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org21cb17c" class="outline-3">
-<h3 id="org21cb17c">循环</h3>
-<div class="outline-text-3" id="text-org21cb17c">
+<div id="outline-container-org04a5c38" class="outline-3">
+<h3 id="org04a5c38">循环</h3>
+<div class="outline-text-3" id="text-org04a5c38">
 <p>
 ash支持for以及while循环语句。<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgdc2b1ad" class="outline-3">
-<h3 id="orgdc2b1ad">参考</h3>
+<div id="outline-container-org8dc8be7" class="outline-3">
+<h3 id="org8dc8be7">参考</h3>
 </div>
 </div>
-<div id="outline-container-orge1f2f52" class="outline-2">
-<h2 id="orge1f2f52">日常使用</h2>
-<div class="outline-text-2" id="text-orge1f2f52">
+<div id="outline-container-orgd3ddc51" class="outline-2">
+<h2 id="orgd3ddc51">日常使用</h2>
+<div class="outline-text-2" id="text-orgd3ddc51">
 </div>
-<div id="outline-container-org30758f3" class="outline-3">
-<h3 id="org30758f3">一些不好的习惯</h3>
-<div class="outline-text-3" id="text-org30758f3">
+<div id="outline-container-orgf0d9946" class="outline-3">
+<h3 id="orgf0d9946">一些不好的习惯</h3>
+<div class="outline-text-3" id="text-orgf0d9946">
 <ul class="org-ul">
 <li>可执行脚本以<font style="background-color:#f3f4f4;padding:0 2px 0 2px">.sh</font>后缀结尾<br /></li>
 <li>脚本第一行不是<font style="background-color:#f3f4f4;padding:0 2px 0 2px">#!/bin/bash</font><br /></li>
@@ -461,9 +461,9 @@ ash支持for以及while循环语句。<br />
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb9303c6" class="outline-3">
-<h3 id="orgb9303c6">一些好的习惯</h3>
-<div class="outline-text-3" id="text-orgb9303c6">
+<div id="outline-container-org025bc4c" class="outline-3">
+<h3 id="org025bc4c">一些好的习惯</h3>
+<div class="outline-text-3" id="text-org025bc4c">
 <ul class="org-ul">
 <li>保证脚本在任何工作目录都可以正常执行，关键是在脚本里使用绝对路径。<br /></li>
 <li>合理使用引号。例如，<font style="background-color:#f3f4f4;padding:0 2px 0 2px">grep</font>的*pattern*参数最好用单引号包起来。<br /></li>
@@ -473,34 +473,120 @@ ash支持for以及while循环语句。<br />
 </ul>
 </div>
 </div>
-<div id="outline-container-org71c5932" class="outline-3">
-<h3 id="org71c5932">一些容易混淆的概念</h3>
-<div class="outline-text-3" id="text-org71c5932">
+<div id="outline-container-org4a84817" class="outline-3">
+<h3 id="org4a84817">一些容易混淆的概念</h3>
+<div class="outline-text-3" id="text-org4a84817">
 </div>
-<div id="outline-container-org95a8991" class="outline-4">
-<h4 id="org95a8991">环境变量</h4>
-<div class="outline-text-4" id="text-org95a8991">
+<div id="outline-container-org230e5d8" class="outline-4">
+<h4 id="org230e5d8">环境变量</h4>
+<div class="outline-text-4" id="text-org230e5d8">
 <p>
 设置环境变量仅对当前进程以及它的子进程有效。<br />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org13460d3" class="outline-3">
-<h3 id="org13460d3">技巧</h3>
+<div id="outline-container-org3b43023" class="outline-3">
+<h3 id="org3b43023">技巧</h3>
 </div>
 </div>
-<div id="outline-container-org0df128b" class="outline-2">
-<h2 id="org0df128b">参考</h2>
-<div class="outline-text-2" id="text-org0df128b">
+
+<div id="outline-container-org5e07e94" class="outline-2">
+<h2 id="org5e07e94">脚本传递参数</h2>
+<div class="outline-text-2" id="text-org5e07e94">
+</div>
+<div id="outline-container-org5907bef" class="outline-3">
+<h3 id="org5907bef">举例</h3>
+<div class="outline-text-3" id="text-org5907bef">
+<div class="org-src-container">
+<pre class="src src-bash">#!/bin/bash
+echo "执行的文件名：$0";
+echo "第一个参数为：$1";
+echo "第二个参数为：$2";
+echo "第三个参数为：$3";
+
+sh ./dem.sh 1 2 3
+执行的文件名：./demo.sh
+第一个参数为：1
+第二个参数为：2
+第三个参数为：3
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a4afdf" class="outline-3">
+<h3 id="org5a4afdf">特殊字符</h3>
+<div class="outline-text-3" id="text-org5a4afdf">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">参数处理</td>
+<td class="org-left">说明</td>
+</tr>
+
+<tr>
+<td class="org-left">$#</td>
+<td class="org-left">传递到脚本的参数个数</td>
+</tr>
+
+<tr>
+<td class="org-left">$*</td>
+<td class="org-left">以一个单字符串显示所有向脚本传递的参数</td>
+</tr>
+
+<tr>
+<td class="org-left">$$</td>
+<td class="org-left">脚本运行的当前进程ID号</td>
+</tr>
+
+<tr>
+<td class="org-left">$!</td>
+<td class="org-left">后台运行的最后一个进程的ID号</td>
+</tr>
+
+<tr>
+<td class="org-left">$@</td>
+<td class="org-left">与$*相同，但是使用时加引号，并在引号中返回每个参数</td>
+</tr>
+
+<tr>
+<td class="org-left">$-</td>
+<td class="org-left">显示Shell使用的当前选项，与set命令功能相同</td>
+</tr>
+
+<tr>
+<td class="org-left">$?</td>
+<td class="org-left">显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org45bb2ba" class="outline-2">
+<h2 id="org45bb2ba">参考</h2>
+<div class="outline-text-2" id="text-org45bb2ba">
 <ul class="org-ul">
 <li><a href="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md" target="_blank"> 命令行的艺术</a><br /></li>
 <li><a href="https://book.douban.com/subject/3519360/" target="_blank"> Shell脚本学习指南</a><br /></li>
 <li><a href="https://book.douban.com/subject/4253716/" target="_blank"> Unix & Linux大学教程</a><br /></li>
-<li><a href="https://book.douban.com/subject/1110484/" target="_blank"> UNIX用户手册</a>[[https:][]]<br /></li>
+<li><a href="https://book.douban.com/subject/1110484/" target="_blank"> UNIX用户手册</a><br /></li>
 <li><a href="https://book.douban.com/subject/1788421/" target="_blank"> UNIX环境高级编程</a><br /></li>
 </ul>
 
+<p>
+<font color="red">持续更新.......</font><br />
+</p>
 <div class="post-copyright">
 <p>Author: josephzeng</p>
 <p>
@@ -512,7 +598,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-20 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-20 Sat 00:00 <br />Last updated: 2021-11-25 Thu 23:05 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-20 Sat 00:00 <br />Last updated: 2022-05-25 Wed 23:26 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
