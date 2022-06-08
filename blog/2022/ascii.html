@@ -1,0 +1,2181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2022-06-08 Wed 23:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASCII码对照表</title>
+<meta name="author" content="JosephZeng" />
+<meta name="description" content="coder 程序员" />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">ASCII码对照表</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org28faad6">ASCII 控制字符</a></li>
+<li><a href="#org0720e64">ASCII 特殊和数字字符</a></li>
+<li><a href="#org7f71988">ASCII 字母字符</a></li>
+<li><a href="#org4fb8aee">控制字符</a></li>
+<li><a href="#orgab71f47">其他字符</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org28faad6" class="outline-2">
+<h2 id="org28faad6">ASCII 控制字符</h2>
+<div class="outline-text-2" id="text-org28faad6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">十进制代码</td>
+<td class="org-right">十六进制代码</td>
+<td class="org-left">MCS 字符或缩写</td>
+<td class="org-left">DEC 多国字符名</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-left">NUL</td>
+<td class="org-left">空字符</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-left">SOH</td>
+<td class="org-left">标题起始 (Ctrl/A)</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-left">STX</td>
+<td class="org-left">文本起始 (Ctrl/B)</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-left">ETX</td>
+<td class="org-left">文本结束 (Ctrl/C)</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+<td class="org-left">EOT</td>
+<td class="org-left">传输结束 (Ctrl/D)</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+<td class="org-left">ENQ</td>
+<td class="org-left">询问 (Ctrl/E)</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">6</td>
+<td class="org-left">ACK</td>
+<td class="org-left">认可 (Ctrl/F)</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">7</td>
+<td class="org-left">BEL</td>
+<td class="org-left">铃 (Ctrl/G)</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">8</td>
+<td class="org-left">BS</td>
+<td class="org-left">退格 (Ctrl/H)</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">9</td>
+<td class="org-left">HT</td>
+<td class="org-left">水平制表栏 (Ctrl/I)</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">0A</td>
+<td class="org-left">LF</td>
+<td class="org-left">换行 (Ctrl/J)</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">0B</td>
+<td class="org-left">VT</td>
+<td class="org-left">垂直制表栏 (Ctrl/K)</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-right">0C</td>
+<td class="org-left">FF</td>
+<td class="org-left">换页 (Ctrl/L)</td>
+</tr>
+
+<tr>
+<td class="org-right">13</td>
+<td class="org-right">0D</td>
+<td class="org-left">CR</td>
+<td class="org-left">回车 (Ctrl/M)</td>
+</tr>
+
+<tr>
+<td class="org-right">14</td>
+<td class="org-right">0E</td>
+<td class="org-left">SO</td>
+<td class="org-left">移出 (Ctrl/N)</td>
+</tr>
+
+<tr>
+<td class="org-right">15</td>
+<td class="org-right">0F</td>
+<td class="org-left">SI</td>
+<td class="org-left">移入 (Ctrl/O)</td>
+</tr>
+
+<tr>
+<td class="org-right">16</td>
+<td class="org-right">10</td>
+<td class="org-left">DLE</td>
+<td class="org-left">数据链接丢失 (Ctrl/P)</td>
+</tr>
+
+<tr>
+<td class="org-right">17</td>
+<td class="org-right">11</td>
+<td class="org-left">DC1</td>
+<td class="org-left">设备控制 1 (Ctrl/Q)</td>
+</tr>
+
+<tr>
+<td class="org-right">18</td>
+<td class="org-right">12</td>
+<td class="org-left">DC2</td>
+<td class="org-left">设备控制 2 (Ctrl/R)</td>
+</tr>
+
+<tr>
+<td class="org-right">19</td>
+<td class="org-right">13</td>
+<td class="org-left">DC3</td>
+<td class="org-left">设备控制 3 (Ctrl/S)</td>
+</tr>
+
+<tr>
+<td class="org-right">20</td>
+<td class="org-right">14</td>
+<td class="org-left">DC4</td>
+<td class="org-left">设备控制 4 (Ctrl/T)</td>
+</tr>
+
+<tr>
+<td class="org-right">21</td>
+<td class="org-right">15</td>
+<td class="org-left">NAK</td>
+<td class="org-left">否定接受 (Ctrl/U)</td>
+</tr>
+
+<tr>
+<td class="org-right">22</td>
+<td class="org-right">16</td>
+<td class="org-left">SYN</td>
+<td class="org-left">同步闲置符 (Ctrl/V)</td>
+</tr>
+
+<tr>
+<td class="org-right">23</td>
+<td class="org-right">17</td>
+<td class="org-left">ETB</td>
+<td class="org-left">传输块结束 (Ctrl/W)</td>
+</tr>
+
+<tr>
+<td class="org-right">24</td>
+<td class="org-right">18</td>
+<td class="org-left">CAN</td>
+<td class="org-left">取消 (Ctrl/X)</td>
+</tr>
+
+<tr>
+<td class="org-right">25</td>
+<td class="org-right">19</td>
+<td class="org-left">EM</td>
+<td class="org-left">媒体结束 (Ctrl/Y)</td>
+</tr>
+
+<tr>
+<td class="org-right">26</td>
+<td class="org-right">1A</td>
+<td class="org-left">SUB</td>
+<td class="org-left">替换 (Ctrl/Z)</td>
+</tr>
+
+<tr>
+<td class="org-right">27</td>
+<td class="org-right">1B</td>
+<td class="org-left">ESC</td>
+<td class="org-left">换码符</td>
+</tr>
+
+<tr>
+<td class="org-right">28</td>
+<td class="org-right">1C</td>
+<td class="org-left">FS</td>
+<td class="org-left">文件分隔符</td>
+</tr>
+
+<tr>
+<td class="org-right">29</td>
+<td class="org-right">1D</td>
+<td class="org-left">GS</td>
+<td class="org-left">组分隔符</td>
+</tr>
+
+<tr>
+<td class="org-right">30</td>
+<td class="org-right">1E</td>
+<td class="org-left">RS</td>
+<td class="org-left">记录分隔符</td>
+</tr>
+
+<tr>
+<td class="org-right">31</td>
+<td class="org-right">1F</td>
+<td class="org-left">US</td>
+<td class="org-left">单位分隔符</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org0720e64" class="outline-2">
+<h2 id="org0720e64">ASCII 特殊和数字字符</h2>
+<div class="outline-text-2" id="text-org0720e64">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">十进制代码</td>
+<td class="org-right">十六进制代码</td>
+<td class="org-left">MCS 字符或缩写</td>
+<td class="org-left">DEC 多国字符名</td>
+</tr>
+
+<tr>
+<td class="org-right">32</td>
+<td class="org-right">20</td>
+<td class="org-left">SP</td>
+<td class="org-left">空格</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">21</td>
+<td class="org-left">!</td>
+<td class="org-left">感叹号</td>
+</tr>
+
+<tr>
+<td class="org-right">34</td>
+<td class="org-right">22</td>
+<td class="org-left">"</td>
+<td class="org-left">引号 (双引号)</td>
+</tr>
+
+<tr>
+<td class="org-right">35</td>
+<td class="org-right">23</td>
+<td class="org-left">#</td>
+<td class="org-left">数字符号</td>
+</tr>
+
+<tr>
+<td class="org-right">36</td>
+<td class="org-right">24</td>
+<td class="org-left">$</td>
+<td class="org-left">美元符</td>
+</tr>
+
+<tr>
+<td class="org-right">37</td>
+<td class="org-right">25</td>
+<td class="org-left">%</td>
+<td class="org-left">百分号</td>
+</tr>
+
+<tr>
+<td class="org-right">38</td>
+<td class="org-right">26</td>
+<td class="org-left">&amp;</td>
+<td class="org-left">和号</td>
+</tr>
+
+<tr>
+<td class="org-right">39</td>
+<td class="org-right">27</td>
+<td class="org-left">'</td>
+<td class="org-left">省略号 (单引号)</td>
+</tr>
+
+<tr>
+<td class="org-right">40</td>
+<td class="org-right">28</td>
+<td class="org-left">(</td>
+<td class="org-left">左圆括号</td>
+</tr>
+
+<tr>
+<td class="org-right">41</td>
+<td class="org-right">29</td>
+<td class="org-left">)</td>
+<td class="org-left">右圆括号</td>
+</tr>
+
+<tr>
+<td class="org-right">42</td>
+<td class="org-right">2A</td>
+<td class="org-left">*</td>
+<td class="org-left">星号</td>
+</tr>
+
+<tr>
+<td class="org-right">43</td>
+<td class="org-right">2B</td>
+<td class="org-left">+</td>
+<td class="org-left">加号</td>
+</tr>
+
+<tr>
+<td class="org-right">44</td>
+<td class="org-right">2C</td>
+<td class="org-left">,</td>
+<td class="org-left">逗号</td>
+</tr>
+
+<tr>
+<td class="org-right">45</td>
+<td class="org-right">2D</td>
+<td class="org-left">--</td>
+<td class="org-left">连字号或减号</td>
+</tr>
+
+<tr>
+<td class="org-right">46</td>
+<td class="org-right">2E</td>
+<td class="org-left">.</td>
+<td class="org-left">句点或小数点</td>
+</tr>
+
+<tr>
+<td class="org-right">47</td>
+<td class="org-right">2F</td>
+<td class="org-left">/</td>
+<td class="org-left">斜杠</td>
+</tr>
+
+<tr>
+<td class="org-right">48</td>
+<td class="org-right">30</td>
+<td class="org-left">0</td>
+<td class="org-left">零</td>
+</tr>
+
+<tr>
+<td class="org-right">49</td>
+<td class="org-right">31</td>
+<td class="org-left">1</td>
+<td class="org-left">1</td>
+</tr>
+
+<tr>
+<td class="org-right">50</td>
+<td class="org-right">32</td>
+<td class="org-left">2</td>
+<td class="org-left">2</td>
+</tr>
+
+<tr>
+<td class="org-right">51</td>
+<td class="org-right">33</td>
+<td class="org-left">3</td>
+<td class="org-left">3</td>
+</tr>
+
+<tr>
+<td class="org-right">52</td>
+<td class="org-right">34</td>
+<td class="org-left">4</td>
+<td class="org-left">4</td>
+</tr>
+
+<tr>
+<td class="org-right">53</td>
+<td class="org-right">35</td>
+<td class="org-left">5</td>
+<td class="org-left">5</td>
+</tr>
+
+<tr>
+<td class="org-right">54</td>
+<td class="org-right">36</td>
+<td class="org-left">6</td>
+<td class="org-left">6</td>
+</tr>
+
+<tr>
+<td class="org-right">55</td>
+<td class="org-right">37</td>
+<td class="org-left">7</td>
+<td class="org-left">7</td>
+</tr>
+
+<tr>
+<td class="org-right">56</td>
+<td class="org-right">38</td>
+<td class="org-left">8</td>
+<td class="org-left">8</td>
+</tr>
+
+<tr>
+<td class="org-right">57</td>
+<td class="org-right">39</td>
+<td class="org-left">9</td>
+<td class="org-left">9</td>
+</tr>
+
+<tr>
+<td class="org-right">58</td>
+<td class="org-right">3A</td>
+<td class="org-left">:</td>
+<td class="org-left">冒号</td>
+</tr>
+
+<tr>
+<td class="org-right">59</td>
+<td class="org-right">3B</td>
+<td class="org-left">;</td>
+<td class="org-left">分号</td>
+</tr>
+
+<tr>
+<td class="org-right">60</td>
+<td class="org-right">3C</td>
+<td class="org-left">&lt;</td>
+<td class="org-left">小于</td>
+</tr>
+
+<tr>
+<td class="org-right">61</td>
+<td class="org-right">3D</td>
+<td class="org-left">=</td>
+<td class="org-left">等于</td>
+</tr>
+
+<tr>
+<td class="org-right">62</td>
+<td class="org-right">3E</td>
+<td class="org-left">&gt;</td>
+<td class="org-left">大于</td>
+</tr>
+
+<tr>
+<td class="org-right">63</td>
+<td class="org-right">3F</td>
+<td class="org-left">?</td>
+<td class="org-left">问号</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org7f71988" class="outline-2">
+<h2 id="org7f71988">ASCII 字母字符</h2>
+<div class="outline-text-2" id="text-org7f71988">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">十进制代码</td>
+<td class="org-right">十六进制代码</td>
+<td class="org-left">MCS 字符或缩写</td>
+<td class="org-left">DEC 多国字符名</td>
+</tr>
+
+<tr>
+<td class="org-right">64</td>
+<td class="org-right">40</td>
+<td class="org-left">@</td>
+<td class="org-left">商业 at 符号</td>
+</tr>
+
+<tr>
+<td class="org-right">65</td>
+<td class="org-right">41</td>
+<td class="org-left">A</td>
+<td class="org-left">大写字母 A</td>
+</tr>
+
+<tr>
+<td class="org-right">66</td>
+<td class="org-right">42</td>
+<td class="org-left">B</td>
+<td class="org-left">大写字母 B</td>
+</tr>
+
+<tr>
+<td class="org-right">67</td>
+<td class="org-right">43</td>
+<td class="org-left">C</td>
+<td class="org-left">大写字母 C</td>
+</tr>
+
+<tr>
+<td class="org-right">68</td>
+<td class="org-right">44</td>
+<td class="org-left">D</td>
+<td class="org-left">大写字母 D</td>
+</tr>
+
+<tr>
+<td class="org-right">69</td>
+<td class="org-right">45</td>
+<td class="org-left">E</td>
+<td class="org-left">大写字母 E</td>
+</tr>
+
+<tr>
+<td class="org-right">70</td>
+<td class="org-right">46</td>
+<td class="org-left">F</td>
+<td class="org-left">大写字母 F</td>
+</tr>
+
+<tr>
+<td class="org-right">71</td>
+<td class="org-right">47</td>
+<td class="org-left">G</td>
+<td class="org-left">大写字母 G</td>
+</tr>
+
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">48</td>
+<td class="org-left">H</td>
+<td class="org-left">大写字母 H</td>
+</tr>
+
+<tr>
+<td class="org-right">73</td>
+<td class="org-right">49</td>
+<td class="org-left">I</td>
+<td class="org-left">大写字母 I</td>
+</tr>
+
+<tr>
+<td class="org-right">74</td>
+<td class="org-right">4A</td>
+<td class="org-left">J</td>
+<td class="org-left">大写字母 J</td>
+</tr>
+
+<tr>
+<td class="org-right">75</td>
+<td class="org-right">4B</td>
+<td class="org-left">K</td>
+<td class="org-left">大写字母 K</td>
+</tr>
+
+<tr>
+<td class="org-right">76</td>
+<td class="org-right">4C</td>
+<td class="org-left">L</td>
+<td class="org-left">大写字母 L</td>
+</tr>
+
+<tr>
+<td class="org-right">77</td>
+<td class="org-right">4D</td>
+<td class="org-left">M</td>
+<td class="org-left">大写字母 M</td>
+</tr>
+
+<tr>
+<td class="org-right">78</td>
+<td class="org-right">4E</td>
+<td class="org-left">N</td>
+<td class="org-left">大写字母 N</td>
+</tr>
+
+<tr>
+<td class="org-right">79</td>
+<td class="org-right">4F</td>
+<td class="org-left">O</td>
+<td class="org-left">大写字母 O</td>
+</tr>
+
+<tr>
+<td class="org-right">80</td>
+<td class="org-right">50</td>
+<td class="org-left">P</td>
+<td class="org-left">大写字母 P</td>
+</tr>
+
+<tr>
+<td class="org-right">81</td>
+<td class="org-right">51</td>
+<td class="org-left">Q</td>
+<td class="org-left">大写字母 Q</td>
+</tr>
+
+<tr>
+<td class="org-right">82</td>
+<td class="org-right">52</td>
+<td class="org-left">R</td>
+<td class="org-left">大写字母 R</td>
+</tr>
+
+<tr>
+<td class="org-right">83</td>
+<td class="org-right">53</td>
+<td class="org-left">S</td>
+<td class="org-left">大写字母 S</td>
+</tr>
+
+<tr>
+<td class="org-right">84</td>
+<td class="org-right">54</td>
+<td class="org-left">T</td>
+<td class="org-left">大写字母 T</td>
+</tr>
+
+<tr>
+<td class="org-right">85</td>
+<td class="org-right">55</td>
+<td class="org-left">U</td>
+<td class="org-left">大写字母 U</td>
+</tr>
+
+<tr>
+<td class="org-right">86</td>
+<td class="org-right">56</td>
+<td class="org-left">V</td>
+<td class="org-left">大写字母 V</td>
+</tr>
+
+<tr>
+<td class="org-right">87</td>
+<td class="org-right">57</td>
+<td class="org-left">W</td>
+<td class="org-left">大写字母 W</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-right">58</td>
+<td class="org-left">X</td>
+<td class="org-left">大写字母 X</td>
+</tr>
+
+<tr>
+<td class="org-right">89</td>
+<td class="org-right">59</td>
+<td class="org-left">Y</td>
+<td class="org-left">大写字母 Y</td>
+</tr>
+
+<tr>
+<td class="org-right">90</td>
+<td class="org-right">5A</td>
+<td class="org-left">Z</td>
+<td class="org-left">大写字母 Z</td>
+</tr>
+
+<tr>
+<td class="org-right">91</td>
+<td class="org-right">5B</td>
+<td class="org-left">[</td>
+<td class="org-left">左中括号</td>
+</tr>
+
+<tr>
+<td class="org-right">92</td>
+<td class="org-right">5C</td>
+<td class="org-left">\</td>
+<td class="org-left">反斜杠</td>
+</tr>
+
+<tr>
+<td class="org-right">93</td>
+<td class="org-right">5D</td>
+<td class="org-left">]</td>
+<td class="org-left">右中括号</td>
+</tr>
+
+<tr>
+<td class="org-right">94</td>
+<td class="org-right">5E</td>
+<td class="org-left">^</td>
+<td class="org-left">音调符号</td>
+</tr>
+
+<tr>
+<td class="org-right">95</td>
+<td class="org-right">5F</td>
+<td class="org-left">_</td>
+<td class="org-left">下划线</td>
+</tr>
+
+<tr>
+<td class="org-right">96</td>
+<td class="org-right">60</td>
+<td class="org-left">`</td>
+<td class="org-left">重音符</td>
+</tr>
+
+<tr>
+<td class="org-right">97</td>
+<td class="org-right">61</td>
+<td class="org-left">a</td>
+<td class="org-left">小写字母 a</td>
+</tr>
+
+<tr>
+<td class="org-right">98</td>
+<td class="org-right">62</td>
+<td class="org-left">b</td>
+<td class="org-left">小写字母 b</td>
+</tr>
+
+<tr>
+<td class="org-right">99</td>
+<td class="org-right">63</td>
+<td class="org-left">c</td>
+<td class="org-left">小写字母 c</td>
+</tr>
+
+<tr>
+<td class="org-right">100</td>
+<td class="org-right">64</td>
+<td class="org-left">d</td>
+<td class="org-left">小写字母 d</td>
+</tr>
+
+<tr>
+<td class="org-right">101</td>
+<td class="org-right">65</td>
+<td class="org-left">e</td>
+<td class="org-left">小写字母 e</td>
+</tr>
+
+<tr>
+<td class="org-right">102</td>
+<td class="org-right">66</td>
+<td class="org-left">f</td>
+<td class="org-left">小写字母 f</td>
+</tr>
+
+<tr>
+<td class="org-right">103</td>
+<td class="org-right">67</td>
+<td class="org-left">g</td>
+<td class="org-left">小写字母 g</td>
+</tr>
+
+<tr>
+<td class="org-right">104</td>
+<td class="org-right">68</td>
+<td class="org-left">h</td>
+<td class="org-left">小写字母 h</td>
+</tr>
+
+<tr>
+<td class="org-right">105</td>
+<td class="org-right">69</td>
+<td class="org-left">i</td>
+<td class="org-left">小写字母 i</td>
+</tr>
+
+<tr>
+<td class="org-right">106</td>
+<td class="org-right">6A</td>
+<td class="org-left">j</td>
+<td class="org-left">小写字母 j</td>
+</tr>
+
+<tr>
+<td class="org-right">107</td>
+<td class="org-right">6B</td>
+<td class="org-left">k</td>
+<td class="org-left">小写字母 k</td>
+</tr>
+
+<tr>
+<td class="org-right">108</td>
+<td class="org-right">6C</td>
+<td class="org-left">l</td>
+<td class="org-left">小写字母 l</td>
+</tr>
+
+<tr>
+<td class="org-right">109</td>
+<td class="org-right">6D</td>
+<td class="org-left">m</td>
+<td class="org-left">小写字母 m</td>
+</tr>
+
+<tr>
+<td class="org-right">110</td>
+<td class="org-right">6E</td>
+<td class="org-left">n</td>
+<td class="org-left">小写字母 n</td>
+</tr>
+
+<tr>
+<td class="org-right">111</td>
+<td class="org-right">6F</td>
+<td class="org-left">o</td>
+<td class="org-left">小写字母 o</td>
+</tr>
+
+<tr>
+<td class="org-right">112</td>
+<td class="org-right">70</td>
+<td class="org-left">p</td>
+<td class="org-left">小写字母 p</td>
+</tr>
+
+<tr>
+<td class="org-right">113</td>
+<td class="org-right">71</td>
+<td class="org-left">q</td>
+<td class="org-left">小写字母 q</td>
+</tr>
+
+<tr>
+<td class="org-right">114</td>
+<td class="org-right">72</td>
+<td class="org-left">r</td>
+<td class="org-left">小写字母 r</td>
+</tr>
+
+<tr>
+<td class="org-right">115</td>
+<td class="org-right">73</td>
+<td class="org-left">s</td>
+<td class="org-left">小写字母 s</td>
+</tr>
+
+<tr>
+<td class="org-right">116</td>
+<td class="org-right">74</td>
+<td class="org-left">t</td>
+<td class="org-left">小写字母 t</td>
+</tr>
+
+<tr>
+<td class="org-right">117</td>
+<td class="org-right">75</td>
+<td class="org-left">u</td>
+<td class="org-left">小写字母 u</td>
+</tr>
+
+<tr>
+<td class="org-right">118</td>
+<td class="org-right">76</td>
+<td class="org-left">v</td>
+<td class="org-left">小写字母 v</td>
+</tr>
+
+<tr>
+<td class="org-right">119</td>
+<td class="org-right">77</td>
+<td class="org-left">w</td>
+<td class="org-left">小写字母 w</td>
+</tr>
+
+<tr>
+<td class="org-right">120</td>
+<td class="org-right">78</td>
+<td class="org-left">x</td>
+<td class="org-left">小写字母 x</td>
+</tr>
+
+<tr>
+<td class="org-right">121</td>
+<td class="org-right">79</td>
+<td class="org-left">y</td>
+<td class="org-left">小写字母 y</td>
+</tr>
+
+<tr>
+<td class="org-right">122</td>
+<td class="org-right">7A</td>
+<td class="org-left">z</td>
+<td class="org-left">小写字母 z</td>
+</tr>
+
+<tr>
+<td class="org-right">123</td>
+<td class="org-right">7B</td>
+<td class="org-left">{</td>
+<td class="org-left">左大括号</td>
+</tr>
+
+<tr>
+<td class="org-right">124</td>
+<td class="org-right">7C</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">垂直线</td>
+</tr>
+
+<tr>
+<td class="org-right">125</td>
+<td class="org-right">7D</td>
+<td class="org-left">}</td>
+<td class="org-left">右大括号 (ALTMODE)</td>
+</tr>
+
+<tr>
+<td class="org-right">126</td>
+<td class="org-right">7E</td>
+<td class="org-left">~</td>
+<td class="org-left">代字号 (ALTMODE)</td>
+</tr>
+
+<tr>
+<td class="org-right">127</td>
+<td class="org-right">7F</td>
+<td class="org-left">DEL</td>
+<td class="org-left">擦掉 (DELETE)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org4fb8aee" class="outline-2">
+<h2 id="org4fb8aee">控制字符</h2>
+<div class="outline-text-2" id="text-org4fb8aee">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">十进制代码</td>
+<td class="org-right">十六进制代码</td>
+<td class="org-left">MCS 字符或缩写</td>
+<td class="org-left">DEC 多国字符名</td>
+</tr>
+
+<tr>
+<td class="org-right">128</td>
+<td class="org-right">80</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留]</td>
+</tr>
+
+<tr>
+<td class="org-right">129</td>
+<td class="org-right">81</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留]</td>
+</tr>
+
+<tr>
+<td class="org-right">130</td>
+<td class="org-right">82</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留]</td>
+</tr>
+
+<tr>
+<td class="org-right">131</td>
+<td class="org-right">83</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留]</td>
+</tr>
+
+<tr>
+<td class="org-right">132</td>
+<td class="org-right">84</td>
+<td class="org-left">IND</td>
+<td class="org-left">索引</td>
+</tr>
+
+<tr>
+<td class="org-right">133</td>
+<td class="org-right">85</td>
+<td class="org-left">NEL</td>
+<td class="org-left">下一行</td>
+</tr>
+
+<tr>
+<td class="org-right">134</td>
+<td class="org-right">86</td>
+<td class="org-left">SSA</td>
+<td class="org-left">被选区域起始</td>
+</tr>
+
+<tr>
+<td class="org-right">135</td>
+<td class="org-right">87</td>
+<td class="org-left">ESA</td>
+<td class="org-left">被选区域结束</td>
+</tr>
+
+<tr>
+<td class="org-right">136</td>
+<td class="org-right">88</td>
+<td class="org-left">HTS</td>
+<td class="org-left">水平制表符集</td>
+</tr>
+
+<tr>
+<td class="org-right">137</td>
+<td class="org-right">89</td>
+<td class="org-left">HTJ</td>
+<td class="org-left">对齐的水平制表符集</td>
+</tr>
+
+<tr>
+<td class="org-right">138</td>
+<td class="org-right">8A</td>
+<td class="org-left">VTS</td>
+<td class="org-left">垂直制表符集</td>
+</tr>
+
+<tr>
+<td class="org-right">139</td>
+<td class="org-right">8B</td>
+<td class="org-left">PLD</td>
+<td class="org-left">部分行向下</td>
+</tr>
+
+<tr>
+<td class="org-right">140</td>
+<td class="org-right">8C</td>
+<td class="org-left">PLU</td>
+<td class="org-left">部分行向上</td>
+</tr>
+
+<tr>
+<td class="org-right">141</td>
+<td class="org-right">8D</td>
+<td class="org-left">RI</td>
+<td class="org-left">反向索引</td>
+</tr>
+
+<tr>
+<td class="org-right">142</td>
+<td class="org-right">8E</td>
+<td class="org-left">SS2</td>
+<td class="org-left">单移 2</td>
+</tr>
+
+<tr>
+<td class="org-right">143</td>
+<td class="org-right">8F</td>
+<td class="org-left">SS3</td>
+<td class="org-left">单移 3</td>
+</tr>
+
+<tr>
+<td class="org-right">144</td>
+<td class="org-right">90</td>
+<td class="org-left">DCS</td>
+<td class="org-left">设备控制字符串</td>
+</tr>
+
+<tr>
+<td class="org-right">145</td>
+<td class="org-right">91</td>
+<td class="org-left">PU1</td>
+<td class="org-left">专用 1</td>
+</tr>
+
+<tr>
+<td class="org-right">146</td>
+<td class="org-right">92</td>
+<td class="org-left">PU2</td>
+<td class="org-left">专用 2</td>
+</tr>
+
+<tr>
+<td class="org-right">147</td>
+<td class="org-right">93</td>
+<td class="org-left">STS</td>
+<td class="org-left">设置传输状态</td>
+</tr>
+
+<tr>
+<td class="org-right">148</td>
+<td class="org-right">94</td>
+<td class="org-left">CCH</td>
+<td class="org-left">取消字符</td>
+</tr>
+
+<tr>
+<td class="org-right">149</td>
+<td class="org-right">95</td>
+<td class="org-left">MW</td>
+<td class="org-left">消息等待</td>
+</tr>
+
+<tr>
+<td class="org-right">150</td>
+<td class="org-right">96</td>
+<td class="org-left">SPA</td>
+<td class="org-left">保护区起始</td>
+</tr>
+
+<tr>
+<td class="org-right">151</td>
+<td class="org-right">97</td>
+<td class="org-left">EPA</td>
+<td class="org-left">保护区结束</td>
+</tr>
+
+<tr>
+<td class="org-right">152</td>
+<td class="org-right">98</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留]</td>
+</tr>
+
+<tr>
+<td class="org-right">153</td>
+<td class="org-right">99</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留]</td>
+</tr>
+
+<tr>
+<td class="org-right">154</td>
+<td class="org-right">9A</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留]</td>
+</tr>
+
+<tr>
+<td class="org-right">155</td>
+<td class="org-right">9B</td>
+<td class="org-left">CSI</td>
+<td class="org-left">控制序列引导符</td>
+</tr>
+
+<tr>
+<td class="org-right">156</td>
+<td class="org-right">9C</td>
+<td class="org-left">ST</td>
+<td class="org-left">字符串终止符</td>
+</tr>
+
+<tr>
+<td class="org-right">157</td>
+<td class="org-right">9D</td>
+<td class="org-left">OSC</td>
+<td class="org-left">操作系统命令</td>
+</tr>
+
+<tr>
+<td class="org-right">158</td>
+<td class="org-right">9E</td>
+<td class="org-left">PM</td>
+<td class="org-left">秘密消息</td>
+</tr>
+
+<tr>
+<td class="org-right">159</td>
+<td class="org-right">9F</td>
+<td class="org-left">APC</td>
+<td class="org-left">应用程序</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgab71f47" class="outline-2">
+<h2 id="orgab71f47">其他字符</h2>
+<div class="outline-text-2" id="text-orgab71f47">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">十进制代码</td>
+<td class="org-left">十六进制代码</td>
+<td class="org-left">MCS 字符或缩写</td>
+<td class="org-left">DEC 多国字符名</td>
+</tr>
+
+<tr>
+<td class="org-right">160</td>
+<td class="org-left">A0</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">161</td>
+<td class="org-left">A1</td>
+<td class="org-left">¡</td>
+<td class="org-left">反向感叹号</td>
+</tr>
+
+<tr>
+<td class="org-right">162</td>
+<td class="org-left">A2</td>
+<td class="org-left">¢</td>
+<td class="org-left">分币符</td>
+</tr>
+
+<tr>
+<td class="org-right">163</td>
+<td class="org-left">A3</td>
+<td class="org-left">£</td>
+<td class="org-left">英磅符</td>
+</tr>
+
+<tr>
+<td class="org-right">164</td>
+<td class="org-left">A4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">165</td>
+<td class="org-left">A5</td>
+<td class="org-left">¥</td>
+<td class="org-left">人民币符</td>
+</tr>
+
+<tr>
+<td class="org-right">166</td>
+<td class="org-left">A6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">167</td>
+<td class="org-left">A7</td>
+<td class="org-left">§</td>
+<td class="org-left">章节符</td>
+</tr>
+
+<tr>
+<td class="org-right">168</td>
+<td class="org-left">A8</td>
+<td class="org-left">¤</td>
+<td class="org-left">通用货币符号 2</td>
+</tr>
+
+<tr>
+<td class="org-right">169</td>
+<td class="org-left">A9</td>
+<td class="org-left">©</td>
+<td class="org-left">版权符号</td>
+</tr>
+
+<tr>
+<td class="org-right">170</td>
+<td class="org-left">AA</td>
+<td class="org-left">ª</td>
+<td class="org-left">阴性顺序指示符</td>
+</tr>
+
+<tr>
+<td class="org-right">171</td>
+<td class="org-left">AB</td>
+<td class="org-left">«</td>
+<td class="org-left">左角引号</td>
+</tr>
+
+<tr>
+<td class="org-right">172</td>
+<td class="org-left">AC</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">173</td>
+<td class="org-left">AD</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">174</td>
+<td class="org-left">AE</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">175</td>
+<td class="org-left">AF</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">176</td>
+<td class="org-left">B0</td>
+<td class="org-left">°</td>
+<td class="org-left">温度符</td>
+</tr>
+
+<tr>
+<td class="org-right">177</td>
+<td class="org-left">B1</td>
+<td class="org-left">±</td>
+<td class="org-left">加/减号</td>
+</tr>
+
+<tr>
+<td class="org-right">178</td>
+<td class="org-left">B2</td>
+<td class="org-left">²</td>
+<td class="org-left">上标 2</td>
+</tr>
+
+<tr>
+<td class="org-right">179</td>
+<td class="org-left">B3</td>
+<td class="org-left">³</td>
+<td class="org-left">上标 3</td>
+</tr>
+
+<tr>
+<td class="org-right">180</td>
+<td class="org-left">B4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">181</td>
+<td class="org-left">B5</td>
+<td class="org-left">µ</td>
+<td class="org-left">微符</td>
+</tr>
+
+<tr>
+<td class="org-right">182</td>
+<td class="org-left">B6</td>
+<td class="org-left">¶</td>
+<td class="org-left">段落符，pilcrow</td>
+</tr>
+
+<tr>
+<td class="org-right">183</td>
+<td class="org-left">B7</td>
+<td class="org-left">·</td>
+<td class="org-left">中点</td>
+</tr>
+
+<tr>
+<td class="org-right">184</td>
+<td class="org-left">B8</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">185</td>
+<td class="org-left">B9</td>
+<td class="org-left">¹</td>
+<td class="org-left">上标 1</td>
+</tr>
+
+<tr>
+<td class="org-right">186</td>
+<td class="org-left">BA</td>
+<td class="org-left">º</td>
+<td class="org-left">阳性顺序指示符</td>
+</tr>
+
+<tr>
+<td class="org-right">187</td>
+<td class="org-left">BB</td>
+<td class="org-left">»</td>
+<td class="org-left">右角引号</td>
+</tr>
+
+<tr>
+<td class="org-right">188</td>
+<td class="org-left">BC</td>
+<td class="org-left">¼</td>
+<td class="org-left">分数四分之一</td>
+</tr>
+
+<tr>
+<td class="org-right">189</td>
+<td class="org-left">BD</td>
+<td class="org-left">½</td>
+<td class="org-left">分数二分之一</td>
+</tr>
+
+<tr>
+<td class="org-right">190</td>
+<td class="org-left">BE</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">191</td>
+<td class="org-left">BF</td>
+<td class="org-left">¿</td>
+<td class="org-left">反向问号</td>
+</tr>
+
+<tr>
+<td class="org-right">192</td>
+<td class="org-left">C0</td>
+<td class="org-left">À</td>
+<td class="org-left">带重音符的大写字母 A</td>
+</tr>
+
+<tr>
+<td class="org-right">193</td>
+<td class="org-left">C1</td>
+<td class="org-left">Á</td>
+<td class="org-left">带尖锐重音的大写字母 A</td>
+</tr>
+
+<tr>
+<td class="org-right">194</td>
+<td class="org-left">C2</td>
+<td class="org-left">Â</td>
+<td class="org-left">带音调符号的大写字母 A</td>
+</tr>
+
+<tr>
+<td class="org-right">195</td>
+<td class="org-left">C3</td>
+<td class="org-left">Ã</td>
+<td class="org-left">带代字号的大写字母 A</td>
+</tr>
+
+<tr>
+<td class="org-right">196</td>
+<td class="org-left">C4</td>
+<td class="org-left">Ä</td>
+<td class="org-left">带元音变音 (分音符号) 的大写字母 A</td>
+</tr>
+
+<tr>
+<td class="org-right">197</td>
+<td class="org-left">C5</td>
+<td class="org-left">Å</td>
+<td class="org-left">带铃声的大写字母 A</td>
+</tr>
+
+<tr>
+<td class="org-right">198</td>
+<td class="org-left">C6</td>
+<td class="org-left">Æ</td>
+<td class="org-left">大写字母 AE 双重元音</td>
+</tr>
+
+<tr>
+<td class="org-right">199</td>
+<td class="org-left">C7</td>
+<td class="org-left">Ç</td>
+<td class="org-left">带变音符号的大写字母 C</td>
+</tr>
+
+<tr>
+<td class="org-right">200</td>
+<td class="org-left">C8</td>
+<td class="org-left">È</td>
+<td class="org-left">带重音符的大写字母 E</td>
+</tr>
+
+<tr>
+<td class="org-right">201</td>
+<td class="org-left">C9</td>
+<td class="org-left">É</td>
+<td class="org-left">带尖锐重音的大写字母 E</td>
+</tr>
+
+<tr>
+<td class="org-right">202</td>
+<td class="org-left">CA</td>
+<td class="org-left">Ê</td>
+<td class="org-left">带音调符号的大写字母 E</td>
+</tr>
+
+<tr>
+<td class="org-right">203</td>
+<td class="org-left">CB</td>
+<td class="org-left">Ë</td>
+<td class="org-left">带元音变音 (分音符号) 的大写字母 E</td>
+</tr>
+
+<tr>
+<td class="org-right">204</td>
+<td class="org-left">CC</td>
+<td class="org-left">Ì</td>
+<td class="org-left">带重音符的大写字母 I</td>
+</tr>
+
+<tr>
+<td class="org-right">205</td>
+<td class="org-left">CD</td>
+<td class="org-left">Í</td>
+<td class="org-left">带尖锐重音的大写字母 I</td>
+</tr>
+
+<tr>
+<td class="org-right">206</td>
+<td class="org-left">CE</td>
+<td class="org-left">Î</td>
+<td class="org-left">带音调符号的大写字母 I</td>
+</tr>
+
+<tr>
+<td class="org-right">207</td>
+<td class="org-left">CF</td>
+<td class="org-left">Ï</td>
+<td class="org-left">带元音变音 (分音符号) 的大写字母 I</td>
+</tr>
+
+<tr>
+<td class="org-right">208</td>
+<td class="org-left">D0</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">209</td>
+<td class="org-left">D1</td>
+<td class="org-left">Ñ</td>
+<td class="org-left">带代字号的大写字母 N</td>
+</tr>
+
+<tr>
+<td class="org-right">210</td>
+<td class="org-left">D2</td>
+<td class="org-left">Ò</td>
+<td class="org-left">带重音符的大写字母 O</td>
+</tr>
+
+<tr>
+<td class="org-right">211</td>
+<td class="org-left">D3</td>
+<td class="org-left">Ó</td>
+<td class="org-left">带尖锐重音的大写字母 O</td>
+</tr>
+
+<tr>
+<td class="org-right">212</td>
+<td class="org-left">D4</td>
+<td class="org-left">Ô</td>
+<td class="org-left">带音调符号的大写字母 O</td>
+</tr>
+
+<tr>
+<td class="org-right">213</td>
+<td class="org-left">D5</td>
+<td class="org-left">Õ</td>
+<td class="org-left">带代字号的大写字母 O</td>
+</tr>
+
+<tr>
+<td class="org-right">214</td>
+<td class="org-left">D6</td>
+<td class="org-left">Ö</td>
+<td class="org-left">带元音变音 (分音符号) 的大写字母 O</td>
+</tr>
+
+<tr>
+<td class="org-right">215</td>
+<td class="org-left">D7</td>
+<td class="org-left">OE</td>
+<td class="org-left">大写字母 OE 连字 2</td>
+</tr>
+
+<tr>
+<td class="org-right">216</td>
+<td class="org-left">D8</td>
+<td class="org-left">Ø</td>
+<td class="org-left">带斜杠的大写字母 O</td>
+</tr>
+
+<tr>
+<td class="org-right">217</td>
+<td class="org-left">D9</td>
+<td class="org-left">Ù</td>
+<td class="org-left">带重音符的大写字母 U</td>
+</tr>
+
+<tr>
+<td class="org-right">218</td>
+<td class="org-left">DA</td>
+<td class="org-left">Ú</td>
+<td class="org-left">带尖锐重音的大写字母 U</td>
+</tr>
+
+<tr>
+<td class="org-right">219</td>
+<td class="org-left">DB</td>
+<td class="org-left">Û</td>
+<td class="org-left">带音调符号的大写字母 U</td>
+</tr>
+
+<tr>
+<td class="org-right">220</td>
+<td class="org-left">DC</td>
+<td class="org-left">Ü</td>
+<td class="org-left">带元音变音 (分音符号) 的大写字母 U</td>
+</tr>
+
+<tr>
+<td class="org-right">221</td>
+<td class="org-left">DD</td>
+<td class="org-left">Y</td>
+<td class="org-left">带元音变音 (分音符号) 的大写字母 Y</td>
+</tr>
+
+<tr>
+<td class="org-right">222</td>
+<td class="org-left">DE</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">223</td>
+<td class="org-left">DF</td>
+<td class="org-left">ß</td>
+<td class="org-left">德语高调小写字母 s</td>
+</tr>
+
+<tr>
+<td class="org-right">224</td>
+<td class="org-left">E0</td>
+<td class="org-left">à</td>
+<td class="org-left">带重音符的小写字母 a</td>
+</tr>
+
+<tr>
+<td class="org-right">225</td>
+<td class="org-left">E1</td>
+<td class="org-left">á</td>
+<td class="org-left">带尖锐重音的小写字母 a</td>
+</tr>
+
+<tr>
+<td class="org-right">226</td>
+<td class="org-left">E2</td>
+<td class="org-left">â</td>
+<td class="org-left">带音调符号的小写字母 a</td>
+</tr>
+
+<tr>
+<td class="org-right">227</td>
+<td class="org-left">E3</td>
+<td class="org-left">ã</td>
+<td class="org-left">带代字号的小写字母 a</td>
+</tr>
+
+<tr>
+<td class="org-right">228</td>
+<td class="org-left">E4</td>
+<td class="org-left">ä</td>
+<td class="org-left">带元音变音 (分音符号) 的小写字母 a</td>
+</tr>
+
+<tr>
+<td class="org-right">229</td>
+<td class="org-left">E5</td>
+<td class="org-left">å</td>
+<td class="org-left">带铃声的小写字母 a</td>
+</tr>
+
+<tr>
+<td class="org-right">230</td>
+<td class="org-left">E6</td>
+<td class="org-left">æ</td>
+<td class="org-left">小写字母 ae 双重元音</td>
+</tr>
+
+<tr>
+<td class="org-right">231</td>
+<td class="org-left">E7</td>
+<td class="org-left">ç</td>
+<td class="org-left">带变音符号的小写字母 c</td>
+</tr>
+
+<tr>
+<td class="org-right">232</td>
+<td class="org-left">E8</td>
+<td class="org-left">è</td>
+<td class="org-left">带重音符的小写字母 e</td>
+</tr>
+
+<tr>
+<td class="org-right">233</td>
+<td class="org-left">E9</td>
+<td class="org-left">é</td>
+<td class="org-left">带尖锐重音的小写字母 e</td>
+</tr>
+
+<tr>
+<td class="org-right">234</td>
+<td class="org-left">EA</td>
+<td class="org-left">ê</td>
+<td class="org-left">带音调符号的小写字母 e</td>
+</tr>
+
+<tr>
+<td class="org-right">235</td>
+<td class="org-left">EB</td>
+<td class="org-left">ë</td>
+<td class="org-left">带元音变音 (分音符号) 的小写字母 e</td>
+</tr>
+
+<tr>
+<td class="org-right">236</td>
+<td class="org-left">EC</td>
+<td class="org-left">ì</td>
+<td class="org-left">带重音符的小写字母 i</td>
+</tr>
+
+<tr>
+<td class="org-right">237</td>
+<td class="org-left">ED</td>
+<td class="org-left">í</td>
+<td class="org-left">带尖锐重音的小写字母 i</td>
+</tr>
+
+<tr>
+<td class="org-right">238</td>
+<td class="org-left">EE</td>
+<td class="org-left">î</td>
+<td class="org-left">带音调符号的小写字母 i</td>
+</tr>
+
+<tr>
+<td class="org-right">239</td>
+<td class="org-left">EF</td>
+<td class="org-left">ï</td>
+<td class="org-left">带元音变音 (分音符号) 的小写字母 i</td>
+</tr>
+
+<tr>
+<td class="org-right">240</td>
+<td class="org-left">F0</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">241</td>
+<td class="org-left">F1</td>
+<td class="org-left">ñ</td>
+<td class="org-left">带代字号的小写字母 n</td>
+</tr>
+
+<tr>
+<td class="org-right">242</td>
+<td class="org-left">F2</td>
+<td class="org-left">ò</td>
+<td class="org-left">带重音符的小写字母 o</td>
+</tr>
+
+<tr>
+<td class="org-right">243</td>
+<td class="org-left">F3</td>
+<td class="org-left">ó</td>
+<td class="org-left">带尖锐重音的小写字母 o</td>
+</tr>
+
+<tr>
+<td class="org-right">244</td>
+<td class="org-left">F4</td>
+<td class="org-left">ô</td>
+<td class="org-left">带音调符号的小写字母 o</td>
+</tr>
+
+<tr>
+<td class="org-right">245</td>
+<td class="org-left">F5</td>
+<td class="org-left">õ</td>
+<td class="org-left">带代字号的小写字母 o</td>
+</tr>
+
+<tr>
+<td class="org-right">246</td>
+<td class="org-left">F6</td>
+<td class="org-left">ö</td>
+<td class="org-left">带元音变音 (分音符号) 的小写字母 o</td>
+</tr>
+
+<tr>
+<td class="org-right">247</td>
+<td class="org-left">F7</td>
+<td class="org-left">oe</td>
+<td class="org-left">小写字母 oe 连字 2</td>
+</tr>
+
+<tr>
+<td class="org-right">248</td>
+<td class="org-left">F8</td>
+<td class="org-left">ø</td>
+<td class="org-left">带斜杠的小写字母 o</td>
+</tr>
+
+<tr>
+<td class="org-right">249</td>
+<td class="org-left">F9</td>
+<td class="org-left">ù</td>
+<td class="org-left">带重音符的小写字母 u</td>
+</tr>
+
+<tr>
+<td class="org-right">250</td>
+<td class="org-left">FA</td>
+<td class="org-left">ú</td>
+<td class="org-left">带尖锐重音的小写字母 u</td>
+</tr>
+
+<tr>
+<td class="org-right">251</td>
+<td class="org-left">FB</td>
+<td class="org-left">û</td>
+<td class="org-left">带音调符号的小写字母 u</td>
+</tr>
+
+<tr>
+<td class="org-right">252</td>
+<td class="org-left">FC</td>
+<td class="org-left">ü</td>
+<td class="org-left">带元音变音 (分音符号) 的小写字母 u</td>
+</tr>
+
+<tr>
+<td class="org-right">253</td>
+<td class="org-left">FD</td>
+<td class="org-left">ÿ</td>
+<td class="org-left">带元音变音 (分音符号) 的小写字母 y 2</td>
+</tr>
+
+<tr>
+<td class="org-right">254</td>
+<td class="org-left">FE</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+
+<tr>
+<td class="org-right">255</td>
+<td class="org-left">FF</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">[保留] 2</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="post-copyright">
+<p>Author: josephzeng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-06-08 Wed&gt;</span></span>
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">First created: 2022-06-08 Wed 00:00 <br />Last updated: 2022-06-08 Wed 23:22 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
+</div>
+</body>
+</html>
