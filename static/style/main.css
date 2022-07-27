@@ -37,7 +37,10 @@ body {
   line-height: 1.6;
 }
 
-#content { position: relative; }
+#content { 
+	position: relative; 
+	color: #34495e;
+}
 
 /* header line */
 /* i.e. h1 */
