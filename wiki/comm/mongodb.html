@@ -2,17 +2,16 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2021-11-25 Thu 23:31 -->
+<!-- 2022-11-10 Thu 23:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MongoDB</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="JosephZeng" />
-<meta name="description" content="coder 程序员"
- />
+<meta name="description" content="coder 程序员" />
 <meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -33,8 +32,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -43,21 +43,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -193,12 +193,10 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
-  /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
-<!--/*--><![CDATA[/*><!--*/
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
      function CodeHighlightOn(elem, id)
      {
        var target = document.getElementById(id);
@@ -215,7 +213,6 @@
          target.classList.remove("code-highlighted");
        }
      }
-    /*]]>*///-->
 // @license-end
 </script>
 </head>
@@ -224,142 +221,144 @@
  <a accesskey="h" href="../index.html"> UP </a>
  |
  <a accesskey="H" href="/index.html"> HOME </a>
-</div><div id="content">
+</div><div id="content" class="content">
 <h1 class="title">MongoDB</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4d0c53a">安装</a></li>
-<li><a href="#org21c4441">命令</a>
+<li><a href="#org4da570c">安装</a></li>
+<li><a href="#org1f4ec22">命令</a>
 <ul>
-<li><a href="#orgf0a46ac">连接</a></li>
-<li><a href="#org3f8fed4">基本操作</a>
+<li><a href="#orgc434e95">连接</a></li>
+<li><a href="#orgb07dbc4">基本操作</a>
 <ul>
-<li><a href="#org31a1d3e">数据库</a></li>
-<li><a href="#orgf638e52">插入</a></li>
-<li><a href="#orgbad75dd">删除</a></li>
-<li><a href="#org32b6505">更新</a></li>
-<li><a href="#org8b3aeb8">查询</a></li>
-<li><a href="#org5e83652">导入</a></li>
+<li><a href="#orgf0440ad">数据库</a></li>
+<li><a href="#org76486ab">插入</a></li>
+<li><a href="#org4f634d0">删除</a></li>
+<li><a href="#orgc51dd30">更新</a></li>
+<li><a href="#orga7c494d">查询</a></li>
+<li><a href="#org0645959">导入</a></li>
 </ul>
 </li>
-<li><a href="#orgb149021">索引</a></li>
+<li><a href="#orgd78587c">索引</a></li>
+<li><a href="#orgb7ac142">集群</a></li>
+<li><a href="#org9500d01">权限</a></li>
 </ul>
 </li>
-<li><a href="#orgd3bb4b9">管理</a></li>
-<li><a href="#orgee27a3b">参考</a></li>
+<li><a href="#orgd9e446a">管理</a></li>
+<li><a href="#org97b5707">参考</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4d0c53a" class="outline-2">
-<h2 id="org4d0c53a">安装</h2>
-<div class="outline-text-2" id="text-org4d0c53a">
+<div id="outline-container-org4da570c" class="outline-2">
+<h2 id="org4da570c">安装</h2>
+<div class="outline-text-2" id="text-org4da570c">
 <p>
 使用apt, yumd或自行编译等等方式安装。<br />
 详细，请查看 <a href="https://docs.mongodb.com/manual/installation">https://docs.mongodb.com/manual/installation</a><br />
 </p>
 </div>
 </div>
-<div id="outline-container-org21c4441" class="outline-2">
-<h2 id="org21c4441">命令</h2>
-<div class="outline-text-2" id="text-org21c4441">
+<div id="outline-container-org1f4ec22" class="outline-2">
+<h2 id="org1f4ec22">命令</h2>
+<div class="outline-text-2" id="text-org1f4ec22">
 </div>
-<div id="outline-container-orgf0a46ac" class="outline-3">
-<h3 id="orgf0a46ac">连接</h3>
-<div class="outline-text-3" id="text-orgf0a46ac">
+<div id="outline-container-orgc434e95" class="outline-3">
+<h3 id="orgc434e95">连接</h3>
+<div class="outline-text-3" id="text-orgc434e95">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #747474;">#</span>
-mongo ip:port/dbname -u &#29992;&#25143;&#21517; -p &#23494;&#30721;
-<span style="color: #747474;">#</span><span style="color: #747474;">&#33509;&#26080;&#27861;&#26597;&#35810;</span>
-<span style="color: #46D9FF;">rs.slaveOk</span>() || rs.secondaryOK()
-&#10140;  ~ mongo 127.0.0.1:27017/test
+<pre class="src src-bash">#
+mongo ip:port/dbname -u 用户名 -p 密码
+#若无法查询
+rs.slaveOk() || rs.secondaryOK()
+➜  ~ mongo 127.0.0.1:27017/test
 MongoDB shell version v4.4.3
-connecting to: mongodb://127.0.0.1:27017/test?<span style="color: #979797;">compressors</span>=disabled&amp;<span style="color: #979797;">gssapiServiceName</span>=mongodb
-Implicit session: session { <span style="color: #99bb66;">"id"</span> : UUID(<span style="color: #99bb66;">"dcc9c3ce-9b40-406c-889e-a8284833264d"</span>) }
+connecting to: mongodb://127.0.0.1:27017/test?compressors=disabled&amp;gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("dcc9c3ce-9b40-406c-889e-a8284833264d") }
 MongoDB server version: 4.4.3
 ---
 The server generated these startup warnings when booting:
 2021-02-05T11:55:27.759+08:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
 2021-02-05T11:55:28.636+08:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
-2021-02-05T11:55:28.636+08:00: /sys/kernel/mm/transparent_hugepage/enabled is <span style="color: #99bb66;">'always'</span>. We suggest setting it to <span style="color: #99bb66;">'never'</span>
+2021-02-05T11:55:28.636+08:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
 ---
 ---
-Enable MongoDB<span style="color: #99bb66;">'s free cloud-based monitoring service, which will then receive and display</span>
-<span style="color: #99bb66;">metrics about your deployment (disk utilization, CPU, operation statistics, etc).</span>
-<span style="color: #99bb66;">The monitoring data will be available on a MongoDB website with a unique URL accessible to you</span>
-<span style="color: #99bb66;">and anyone you share the URL with. MongoDB may use this information to make product</span>
-<span style="color: #99bb66;">improvements and to suggest MongoDB products and deployment options to you.</span>
-<span style="color: #99bb66;">To enable free monitoring, run the following command: db.enableFreeMonitoring()</span>
-<span style="color: #99bb66;">To permanently disable this reminder, run the following command: db.disableFreeMonitoring()</span>
-<span style="color: #99bb66;">---</span>
-<span style="color: #99bb66;">&gt;</span>
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+&gt;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3f8fed4" class="outline-3">
-<h3 id="org3f8fed4">基本操作</h3>
-<div class="outline-text-3" id="text-org3f8fed4">
+<div id="outline-container-orgb07dbc4" class="outline-3">
+<h3 id="orgb07dbc4">基本操作</h3>
+<div class="outline-text-3" id="text-orgb07dbc4">
 </div>
-<div id="outline-container-org31a1d3e" class="outline-4">
-<h4 id="org31a1d3e">数据库</h4>
-<div class="outline-text-4" id="text-org31a1d3e">
+<div id="outline-container-orgf0440ad" class="outline-4">
+<h4 id="orgf0440ad">数据库</h4>
+<div class="outline-text-4" id="text-orgf0440ad">
 <div class="org-src-container">
-<pre class="src src-bash">show dbs; <span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#25152;&#26377;&#25968;&#25454;&#24211;&#21015;&#34920;</span>
-show collections; <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#24403;&#21069;&#25968;&#25454;&#24211;&#20013;&#30340;&#38598;&#21512;</span>
-show users; <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#29992;&#25143;</span>
-use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">&#20999;&#25442;&#25968;&#25454;&#24211;</span>
-<span style="color: #46D9FF;">db.help</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#25968;&#25454;&#24211;&#25805;&#20316;&#21629;&#20196;&#21015;&#34920;</span>
-<span style="color: #46D9FF;">db.foo.help</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">&#26174;&#31034;&#38598;&#21512;&#25805;&#20316;&#21629;&#20196;&#21015;&#34920;</span>
+<pre class="src src-bash">show dbs; #查看所有数据库列表
+show collections; #显示当前数据库中的集合
+show users; #显示用户
+use dbname; #切换数据库
+db.help(); #显示数据库操作命令列表
+db.foo.help(); #显示集合操作命令列表
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf638e52" class="outline-4">
-<h4 id="orgf638e52">插入</h4>
-<div class="outline-text-4" id="text-orgf638e52">
+<div id="outline-container-org76486ab" class="outline-4">
+<h4 id="org76486ab">插入</h4>
+<div class="outline-text-4" id="text-org76486ab">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #46D9FF;">db.COLLECTION_NAME.insert</span>(document); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#19968;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
-<span style="color: #46D9FF;">db.user.insert</span>({<span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"josephzeng"</span>}); <span style="color: #747474;">#</span><span style="color: #747474;">exmpale</span>
+<pre class="src src-bash">db.COLLECTION_NAME.insert(document); #向指定集合中插入一条文档数据
+db.user.insert({"name":"josephzeng"}); #exmpale
 
-<span style="color: #46D9FF;">db.COLLECTION_NAME.insertOne</span>(document); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#19968;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
-<span style="color: #46D9FF;">db.user.insertOne</span>({name: <span style="color: #99bb66;">'josephzeng'</span>, age:12}); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+db.COLLECTION_NAME.insertOne(document); #向指定集合中插入一条文档数据
+db.user.insertOne({name: 'josephzeng', age:12}); #example
 
-<span style="color: #46D9FF;">db.COLLECTION_NAME.insertMany</span>(documents); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#20013;&#25554;&#20837;&#22810;&#26465;&#25991;&#26723;&#25968;&#25454;</span>
-<span style="color: #46D9FF;">db.user.insertMany</span>({name: <span style="color: #99bb66;">'cs'</span>, age:12},{name: <span style="color: #99bb66;">'cs'</span>, age:12}); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+db.COLLECTION_NAME.insertMany(documents); #向指定集合中插入多条文档数据
+db.user.insertMany({name: 'cs', age:12},{name: 'cs', age:12}); #example
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbad75dd" class="outline-4">
-<h4 id="orgbad75dd">删除</h4>
-<div class="outline-text-4" id="text-orgbad75dd">
+<div id="outline-container-org4f634d0" class="outline-4">
+<h4 id="org4f634d0">删除</h4>
+<div class="outline-text-4" id="text-org4f634d0">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #46D9FF;">db.dropDatabase</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#24403;&#21069;&#25152;&#22312;&#30340;&#25968;&#25454;&#24211;</span>
-<span style="color: #46D9FF;">db.COLLECTION_NAME.drop</span>();  <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#35813;&#25968;&#25454;&#24211;&#19979;&#30340;&#38598;&#21512;&#34920;</span>
-<span style="color: #46D9FF;">db.COLLECTION_NAME.remove</span>({});  <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#38598;&#21512;&#34920;&#20013;&#30340;&#25152;&#26377;&#30340;&#25991;&#26723;</span>
-<span style="color: #46D9FF;">db.COLLECTION_NAME.remove</span>({<span style="color: #99bb66;">'title'</span>:<span style="color: #99bb66;">'MongoDB'</span>}); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#38598;&#21512;&#34920;&#20013;&#30340;&#25152;&#26377;title&#20026;MongoDB&#30340;&#25991;&#26723;</span>
-<span style="color: #46D9FF;">db.COLLECTION_NAME.remove</span>({<span style="color: #99bb66;">'title'</span>:<span style="color: #99bb66;">'MongoDB'</span>}, 1); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;1&#26465;&#38598;&#21512;&#34920;&#20013;&#30340;title&#20026;MongoDB&#30340;&#25991;&#26723;</span>
-<span style="color: #46D9FF;">db.user.drop</span>(); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
-<span style="color: #46D9FF;">db.COLLECTION_NAME.deleteOne</span>(query); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#21333;&#20010;&#25991;&#26723;</span>
-<span style="color: #46D9FF;">db.COLLECTION_NAME.deleteMany</span>(query); <span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#22810;&#20010;&#25991;&#26723;</span>
-<span style="color: #46D9FF;">db.user.deleteOne</span>({<span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span>}); <span style="color: #747474;">#</span><span style="color: #747474;">exampel</span>
+<pre class="src src-bash">db.dropDatabase(); #删除当前所在的数据库
+db.COLLECTION_NAME.drop();  #删除该数据库下的集合表
+db.COLLECTION_NAME.remove({});  #删除集合表中的所有的文档
+db.COLLECTION_NAME.remove({'title':'MongoDB'}); #删除集合表中的所有title为MongoDB的文档
+db.COLLECTION_NAME.remove({'title':'MongoDB'}, 1); #删除1条集合表中的title为MongoDB的文档
+db.user.drop(); #example
+db.COLLECTION_NAME.deleteOne(query); #删除单个文档
+db.COLLECTION_NAME.deleteMany(query); #删除多个文档
+db.user.deleteOne({'name':'josephzeng'}); #exampel
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org32b6505" class="outline-4">
-<h4 id="org32b6505">更新</h4>
-<div class="outline-text-4" id="text-org32b6505">
+<div id="outline-container-orgc51dd30" class="outline-4">
+<h4 id="orgc51dd30">更新</h4>
+<div class="outline-text-4" id="text-orgc51dd30">
 <div class="org-src-container">
 <pre class="src src-bash">       /*
-        * query : update&#30340;&#26597;&#35810;&#26465;&#20214;&#65292;&#31867;&#20284;sql update&#26597;&#35810;&#20869;where&#21518;&#38754;&#30340;&#12290;
-        * update : update&#30340;&#23545;&#35937;&#21644;&#19968;&#20123;&#26356;&#26032;&#30340;&#25805;&#20316;&#31526;&#65288;&#22914;$,$<span style="color: #979797;">inc</span>...&#65289;&#31561;&#65292;&#20063;&#21487;&#20197;&#29702;&#35299;&#20026;sql update&#26597;&#35810;&#20869;set&#21518;&#38754;&#30340;
-        * upsert : &#21487;&#36873;&#65292;&#36825;&#20010;&#21442;&#25968;&#30340;&#24847;&#24605;&#26159;&#65292;&#22914;&#26524;&#19981;&#23384;&#22312;update&#30340;&#35760;&#24405;&#65292;&#26159;&#21542;&#25554;&#20837;objNew,true&#20026;&#25554;&#20837;&#65292;&#40664;&#35748;&#26159;false&#65292;&#19981;&#25554;&#20837;&#12290;
-        * multi : &#21487;&#36873;&#65292;mongodb &#40664;&#35748;&#26159;false,&#21482;&#26356;&#26032;&#25214;&#21040;&#30340;&#31532;&#19968;&#26465;&#35760;&#24405;&#65292;&#22914;&#26524;&#36825;&#20010;&#21442;&#25968;&#20026;true,&#23601;&#25226;&#25353;&#26465;&#20214;&#26597;&#20986;&#26469;&#22810;&#26465;&#35760;&#24405;&#20840;&#37096;&#26356;&#26032;&#12290;
-        * writeConcern :&#21487;&#36873;&#65292;&#25243;&#20986;&#24322;&#24120;&#30340;&#32423;&#21035;&#12290;
+        * query : update的查询条件，类似sql update查询内where后面的。
+        * update : update的对象和一些更新的操作符（如$,$inc...）等，也可以理解为sql update查询内set后面的
+        * upsert : 可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。
+        * multi : 可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。
+        * writeConcern :可选，抛出异常的级别。
         */
        db.COLLECTION_NAME.update(
                &lt;query&gt;,
@@ -370,13 +369,13 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
                        writeConcern: &lt;document&gt;
                }
        )
-       db.user.update({<span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span>},{$<span style="color: #979797;">set</span>:{<span style="color: #99bb66;">'age'</span>:24}}); <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
-       db.COLLECTION_NAME.updateOne(query,update); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#26356;&#26032;&#21333;&#20010;&#25991;&#26723;</span>
-       db.COLLECTION_NAME.updateMany(query,update); <span style="color: #747474;">#</span><span style="color: #747474;">&#21521;&#25351;&#23450;&#38598;&#21512;&#26356;&#26032;&#22810;&#20010;&#25991;&#26723;</span>
+       db.user.update({'name':'josephzeng'},{$set:{'age':24}}); #example
+       db.COLLECTION_NAME.updateOne(query,update); #向指定集合更新单个文档
+       db.COLLECTION_NAME.updateMany(query,update); #向指定集合更新多个文档
 
        /*
-        * document : &#25991;&#26723;&#25968;&#25454;&#12290;
-        * writeConcern :&#21487;&#36873;&#65292;&#25243;&#20986;&#24322;&#24120;&#30340;&#32423;&#21035;&#12290;
+        * document : 文档数据。
+        * writeConcern :可选，抛出异常的级别。
         */
        db.collection.save(
             &lt;document&gt;,
@@ -388,17 +387,17 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </div>
 </div>
 </div>
-<div id="outline-container-org8b3aeb8" class="outline-4">
-<h4 id="org8b3aeb8">查询</h4>
-<div class="outline-text-4" id="text-org8b3aeb8">
+<div id="outline-container-orga7c494d" class="outline-4">
+<h4 id="orga7c494d">查询</h4>
+<div class="outline-text-4" id="text-orga7c494d">
 <div class="org-src-container">
 <pre class="src src-bash"> /*
-  **query : &#26597;&#35810;&#26465;&#20214;
+  **query : 查询条件
   */
-<span style="color: #46D9FF;">db.COLLECTION_NAME.find</span>(
+db.COLLECTION_NAME.find(
      &lt;query&gt;
 )
-<span style="color: #46D9FF;">db.user.find</span>({<span style="color: #99bb66;">'name'</span>:<span style="color: #99bb66;">'josephzeng'</span>}) <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+db.user.find({'name':'josephzeng'}) #example
 </pre>
 </div>
 <p>
@@ -471,84 +470,145 @@ use dbname; <span style="color: #747474;">#</span><span style="color: #747474;">
 </tbody>
 </table>
 <div class="org-src-container">
-<pre class="src src-bash">// <span style="color: #979797;">&#36890;&#36807;name&#21644;age&#38190;&#26469;&#26597;&#35810;user&#20013;name</span>=jiangwen&#24182;&#19988;&#24180;&#40836;&#23567;&#20110;28&#30340;&#25968;&#25454;
-<span style="color: #46D9FF;">db.user.find</span>({<span style="color: #99bb66;">"name"</span>:<span style="color: #99bb66;">"jiangwen"</span>, <span style="color: #99bb66;">"age"</span>: {$<span style="color: #979797;">lt</span>:28}})
-//  &#26597;&#35810;&#21517;&#23383;&#20026;jiangwen&#24182;&#19988;&#24180;&#40836;&#20026;28&#25110;&#24615;&#21035;&#20026;&#30007;&#24615;&#30340;&#25968;&#25454;
-<span style="color: #46D9FF;">db.col.find</span>({<span style="color: #99bb66;">"name"</span>: <span style="color: #99bb66;">'jiangwen'</span>, $<span style="color: #979797;">or</span>: [{<span style="color: #99bb66;">"age"</span>: 28},{<span style="color: #99bb66;">"sex"</span>: <span style="color: #99bb66;">"male"</span>}]})
+<pre class="src src-bash">// 通过name和age键来查询user中name=jiangwen并且年龄小于28的数据
+db.user.find({"name":"jiangwen", "age": {$lt:28}})
+//  查询名字为jiangwen并且年龄为28或性别为男性的数据
+db.col.find({"name": 'jiangwen', $or: [{"age": 28},{"sex": "male"}]})
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org5e83652" class="outline-4">
-<h4 id="org5e83652">导入</h4>
-<div class="outline-text-4" id="text-org5e83652">
+<div id="outline-container-org0645959" class="outline-4">
+<h4 id="org0645959">导入</h4>
+<div class="outline-text-4" id="text-org0645959">
 <div class="org-src-container">
 <pre class="src src-bash"> /*
- * -h,&#8211;host &#65306;&#20195;&#34920;&#36828;&#31243;&#36830;&#25509;&#30340;&#25968;&#25454;&#24211;&#22320;&#22336;&#65292;&#40664;&#35748;&#36830;&#25509;&#26412;&#22320;Mongo&#25968;&#25454;&#24211;&#65307;
- * &#8211;port&#65306;&#20195;&#34920;&#36828;&#31243;&#36830;&#25509;&#30340;&#25968;&#25454;&#24211;&#30340;&#31471;&#21475;&#65292;&#40664;&#35748;&#36830;&#25509;&#30340;&#36828;&#31243;&#31471;&#21475;27017&#65307;
- * -u,&#8211;username&#65306;&#20195;&#34920;&#36830;&#25509;&#36828;&#31243;&#25968;&#25454;&#24211;&#30340;&#36134;&#21495;&#65292;&#22914;&#26524;&#35774;&#32622;&#25968;&#25454;&#24211;&#30340;&#35748;&#35777;&#65292;&#38656;&#35201;&#25351;&#23450;&#29992;&#25143;&#36134;&#21495;&#65307;
- * -p,&#8211;password&#65306;&#20195;&#34920;&#36830;&#25509;&#25968;&#25454;&#24211;&#30340;&#36134;&#21495;&#23545;&#24212;&#30340;&#23494;&#30721;&#65307;
- * -d,&#8211;db&#65306;&#20195;&#34920;&#36830;&#25509;&#30340;&#25968;&#25454;&#24211;&#65307;&#65288;&#24517;&#36873;&#21442;&#25968;&#65289;
- * -c,&#8211;collection&#65306;&#20195;&#34920;&#36830;&#25509;&#25968;&#25454;&#24211;&#20013;&#30340;&#38598;&#21512;&#65307;&#65288;&#24517;&#36873;&#21442;&#25968;&#65289;
- * -f, &#8211;fields&#65306;&#20195;&#34920;&#38598;&#21512;&#20013;&#30340;&#23383;&#27573;&#65292;&#21487;&#20197;&#26681;&#25454;&#35774;&#32622;&#36873;&#25321;&#23548;&#20986;&#30340;&#23383;&#27573;&#65307;&#65288;&#24517;&#36873;&#21442;&#25968;&#65289;
- * &#8211;type&#65306;&#20195;&#34920;&#23548;&#20986;&#36755;&#20986;&#30340;&#25991;&#20214;&#31867;&#22411;&#65292;&#21253;&#25324;csv&#21644;json&#25991;&#20214;&#65307;
- * -o, &#8211;out&#65306;&#20195;&#34920;&#23548;&#20986;&#30340;&#25991;&#20214;&#21517;&#65307;
- * -q, &#8211;query&#65306;&#20195;&#34920;&#26597;&#35810;&#26465;&#20214;&#65307;
- * &#8211;skip&#65306;&#36339;&#36807;&#25351;&#23450;&#25968;&#37327;&#30340;&#25968;&#25454;&#65307;
- * &#8211;limit&#65306;&#35835;&#21462;&#25351;&#23450;&#25968;&#37327;&#30340;&#25968;&#25454;&#35760;&#24405;&#65307;
- * &#8211;sort&#65306;&#23545;&#25968;&#25454;&#36827;&#34892;&#25490;&#24207;&#65292;&#36890;&#36807;&#21442;&#25968;&#25351;&#23450;&#25490;&#24207;&#30340;&#23383;&#27573;&#65292;1&#65288;&#21319;&#24207;&#65289;&#21644;-1&#65288;&#38477;&#24207;&#65289;&#26469;&#25351;&#23450;&#25490;&#24207;&#30340;&#26041;&#24335;&#65292;&#22914; sort({KEY:1})
+ * -h,–host ：代表远程连接的数据库地址，默认连接本地Mongo数据库；
+ * –port：代表远程连接的数据库的端口，默认连接的远程端口27017；
+ * -u,–username：代表连接远程数据库的账号，如果设置数据库的认证，需要指定用户账号；
+ * -p,–password：代表连接数据库的账号对应的密码；
+ * -d,–db：代表连接的数据库；（必选参数）
+ * -c,–collection：代表连接数据库中的集合；（必选参数）
+ * -f, –fields：代表集合中的字段，可以根据设置选择导出的字段；（必选参数）
+ * –type：代表导出输出的文件类型，包括csv和json文件；
+ * -o, –out：代表导出的文件名；
+ * -q, –query：代表查询条件；
+ * –skip：跳过指定数量的数据；
+ * –limit：读取指定数量的数据记录；
+ * –sort：对数据进行排序，通过参数指定排序的字段，1（升序）和-1（降序）来指定排序的方式，如 sort({KEY:1})
  */
 mongoimport -d [DB_name] -c [Collection_name] -f [File_url]
-./mongoimport  -d user -c goods --file test <span style="color: #747474;">#</span><span style="color: #747474;">example</span>
+./mongoimport  -d user -c goods --file test #example
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgb149021" class="outline-3">
-<h3 id="orgb149021">索引</h3>
-<div class="outline-text-3" id="text-orgb149021">
+<div id="outline-container-orgd78587c" class="outline-3">
+<h3 id="orgd78587c">索引</h3>
+<div class="outline-text-3" id="text-orgd78587c">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#21019;&#24314;&#32034;&#24341;</span>
-<span style="color: #46D9FF;">db.userInfo.ensureIndex</span>({name: 1});
-<span style="color: #46D9FF;">db.userInfo.ensureIndex</span>({name: 1, ts: -1});
+<pre class="src src-bash">#创建索引
+db.userInfo.ensureIndex({name: 1});
+db.userInfo.ensureIndex({name: 1, ts: -1});
 
-<span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#35810;&#24403;&#21069;&#32858;&#38598;&#38598;&#21512;&#25152;&#26377;&#32034;&#24341;</span>
-<span style="color: #46D9FF;">db.userInfo.getIndexes</span>();
+#查询当前聚集集合所有索引
+db.userInfo.getIndexes();
 
-<span style="color: #747474;">#</span><span style="color: #747474;">&#26597;&#30475;&#24635;&#32034;&#24341;&#35760;&#24405;&#22823;&#23567;</span>
-<span style="color: #46D9FF;">db.userInfo.totalIndexSize</span>();
+#查看总索引记录大小
+db.userInfo.totalIndexSize();
 
-<span style="color: #747474;">#</span><span style="color: #747474;">&#35835;&#21462;&#24403;&#21069;&#38598;&#21512;&#30340;&#25152;&#26377;index&#20449;&#24687;</span>
-<span style="color: #46D9FF;">db.users.reIndex</span>();
+#读取当前集合的所有index信息
+db.users.reIndex();
 
-<span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25351;&#23450;&#32034;&#24341;</span>
-<span style="color: #46D9FF;">db.users.dropIndex</span>(<span style="color: #99bb66;">"name_1"</span>);
+#删除指定索引
+db.users.dropIndex("name_1");
 
-<span style="color: #747474;">#</span><span style="color: #747474;">&#21024;&#38500;&#25152;&#26377;&#32034;&#24341;&#32034;&#24341;</span>
-<span style="color: #46D9FF;">db.users.dropIndexes</span>();
+#删除所有索引索引
+db.users.dropIndexes();
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb7ac142" class="outline-3">
+<h3 id="orgb7ac142">集群</h3>
+<div class="outline-text-3" id="text-orgb7ac142">
+<div class="org-src-container">
+<pre class="src src-sh">#连接
+./mongo 127.0.0.1:27017
+use admin
+
+#写入节点配置
+cfg={ _id:"pkcms", members:[ {_id:0,host:'127.0.0.1:27017',priority:2}, {_id:1,host:'127.0.0.2:27017',priority:1},
+{_id:2,host:'127.0.0.3:27017',arbiterOnly:true}] };
+
+#让配置生效
+rs.initiate(cfg)
+
+#查看配置
+rs.status()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9500d01" class="outline-3">
+<h3 id="org9500d01">权限</h3>
+<div class="outline-text-3" id="text-org9500d01">
+<div class="org-src-container">
+<pre class="src src-sh">#创建超级管理员
+db.createUser( {
+    user: "root",
+    pwd: "admin123",
+    roles: [{ role: "root", db: "admin" } ]
+})
+
+#创建集群管理帐号
+db.createUser({
+    user: "repl",
+    pwd: "repl123",
+    roles: [ { "role" : "clusterAdmin", "db" : "admin" } ]
+})
+
+#创建业务帐号角色
+db.createRole({
+	"role" : "pktest_pri",
+	"privileges" : [{"resource" : {"db" : "pktest", "collection" : ""},"actions" : ['find', 'insert','remove', 'update', 'listCollections', 'listIndexes' ,'collStats', 'dbStats', 'createIndex', 'createCollection']},
+                    { resource: { cluster: true }, actions: [ 'listDatabases' ]}],
+	"roles" : []
+})
+
+#创建业务帐号
+db.createUser(
+    {
+        "user" : "pktest",
+        "pwd" : "pktest",
+        roles: [{ role: "pktest_pri", db: "admin" }]
+      }
+)
 </pre>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd3bb4b9" class="outline-2">
-<h2 id="orgd3bb4b9">管理</h2>
-<div class="outline-text-2" id="text-orgd3bb4b9">
+<div id="outline-container-orgd9e446a" class="outline-2">
+<h2 id="orgd9e446a">管理</h2>
+<div class="outline-text-2" id="text-orgd9e446a">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #747474;">#</span><span style="color: #747474;">&#21551;&#21160;</span>
+<pre class="src src-bash">#启动
 sudo /etc/init.d/mongodb start
-<span style="color: #747474;">#</span><span style="color: #747474;">&#37325;&#21551;</span>
+#重启
 sudo /etc/init.d/mongodb restart
-<span style="color: #747474;">#</span><span style="color: #747474;">&#20572;&#27490;</span>
+#停止
 sudo /etc/init.d/mongodb stop
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgee27a3b" class="outline-2">
-<h2 id="orgee27a3b">参考</h2>
-<div class="outline-text-2" id="text-orgee27a3b">
+<div id="outline-container-org97b5707" class="outline-2">
+<h2 id="org97b5707">参考</h2>
+<div class="outline-text-2" id="text-org97b5707">
 <ul class="org-ul">
 <li><a href="https://docs.mongodb.com/manual/core/document/">https://docs.mongodb.com/manual/core/document/</a><br /></li>
 <li><a href="https:juejin.cn/post/6865704368252026887">https://juejin.cn/post/6865704368252026887</a><br /></li>
@@ -565,7 +625,7 @@ Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2021-02-05 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2021-11-25 Thu 23:06 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">First created: 2021-02-05 Fri 00:00 <br />Last updated: 2022-11-10 Thu 23:32 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4) <br /> © 2017 – 2021 by josephzeng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
