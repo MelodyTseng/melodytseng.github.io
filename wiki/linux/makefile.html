@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
 <head>
-<!-- 2023-04-18 Tue 21:53 -->
+<!-- 2023-04-18 Tue 22:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Makefile 使用备注</title>
@@ -263,51 +263,51 @@
 一般在项目根目录下，创建Makefile文件。如：<br />
 </p>
 <div class="org-src-container">
-<pre class="src src-makefile"><span style="color: #73d216;">#</span>
-<span style="color: #73d216;"># </span><span style="color: #73d216;">Makefile</span>
-<span style="color: #73d216;"># </span><span style="color: #73d216;">josephzeng, 2018-08-02 23:13</span>
-<span style="color: #73d216;">#</span>
+<pre class="src src-makefile">#
+# Makefile
+# josephzeng, 2018-08-02 23:13
+#
 
-<span style="color: #fcaf3e;">SHELL</span>=/bin/bash
-export <span style="color: #fcaf3e;">GOPATH</span>=$<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">shell</span> pwd<span style="color: #8c8c8c;">)</span>:/home/josephzeng/go
-<span style="color: #fcaf3e;">GOBIN</span>=go
-<span style="color: #fcaf3e;">GLIDE</span>=glide
-<span style="color: #fcaf3e;">GOBUILD</span>=$<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GOBIN</span><span style="color: #8c8c8c;">)</span> build
-<span style="color: #fcaf3e;">GOCLEAN</span>=$<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GOBIN</span><span style="color: #8c8c8c;">)</span> clean
-<span style="color: #fcaf3e;">GOTEST</span>=$<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GOBIN</span><span style="color: #8c8c8c;">)</span> test
-<span style="color: #fcaf3e;">GOGET</span>=$<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GOBIN</span><span style="color: #8c8c8c;">)</span> get
-<span style="color: #fcaf3e;">GATEWAYBIN</span>=./bin/gateway
-<span style="color: #fcaf3e;">GATEWAYSRC</span>=./src/gateway
+SHELL=/bin/bash
+export GOPATH=$(shell pwd):/home/josephzeng/go
+GOBIN=go
+GLIDE=glide
+GOBUILD=$(GOBIN) build
+GOCLEAN=$(GOBIN) clean
+GOTEST=$(GOBIN) test
+GOGET=$(GOBIN) get
+GATEWAYBIN=./bin/gateway
+GATEWAYSRC=./src/gateway
 
-<span style="color: #fce94f;">all</span>: test_gateway build_gateway
+all: test_gateway build_gateway
 
-<span style="color: #fce94f;">test</span>: test_gateway
-<span style="color: #fce94f;">build</span>: build_gateway
+test: test_gateway
+build: build_gateway
 
-<span style="color: #fce94f;">test_gateway</span>:
-        $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GOTEST</span><span style="color: #8c8c8c;">)</span> -v $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GATEWAYSRC</span><span style="color: #8c8c8c;">)</span>
+test_gateway:
+	$(GOTEST) -v $(GATEWAYSRC)
 
-<span style="color: #fce94f;">build_gateway</span>:
-        rm -rf $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GATEWAYBIN</span><span style="color: #8c8c8c;">)</span>
-        $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GOBUILD</span><span style="color: #8c8c8c;">)</span> -o $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GATEWAYBIN</span><span style="color: #8c8c8c;">)</span> $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GATEWAYSRC</span><span style="color: #8c8c8c;">)</span>
+build_gateway:
+	rm -rf $(GATEWAYBIN)
+	$(GOBUILD) -o $(GATEWAYBIN) $(GATEWAYSRC)
 
-<span style="color: #fce94f;">run_gateway</span>: build_gateway
-        ps -eaf| grep $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GATEWAYBIN</span><span style="color: #8c8c8c;">)</span> | grep -v grep | awk <span style="color: #e9b96e;">'{print $$2}'</span> | xargs kill -9
-        $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GATEWAYBIN</span><span style="color: #8c8c8c;">)</span>
+run_gateway: build_gateway
+	ps -eaf| grep $(GATEWAYBIN) | grep -v grep | awk '{print $$2}' | xargs kill -9
+	$(GATEWAYBIN)
 
-<span style="color: #fce94f;">deps</span>:
-        cd ./src ;\
-        $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GLIDE</span><span style="color: #8c8c8c;">)</span> get github.com/go-ini/ini#v1.38.1 ;\
-        $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GLIDE</span><span style="color: #8c8c8c;">)</span> get github.com/urfave/cli#v1.20.0 ;\
-        $<span style="color: #8c8c8c;">(</span><span style="color: #fcaf3e;">GLIDE</span><span style="color: #8c8c8c;">)</span> install
+deps:
+	cd ./src ;\
+	$(GLIDE) get github.com/go-ini/ini#v1.38.1 ;\
+	$(GLIDE) get github.com/urfave/cli#v1.20.0 ;\
+	$(GLIDE) install
 
-<span style="color: #fce94f;">clean</span>:
-        rm -rf ./bin/*
-        rm -rf ./logs/*
+clean:
+	rm -rf ./bin/*
+	rm -rf ./logs/*
 
-<span style="color: #73d216;">#</span><span style="color: #73d216;">&#25191;&#34892;&#22810;&#20010;&#30446;&#26631;</span>
+#执行多个目标
 
-<span style="color: #fce94f;">.PHONY</span>:test_gateway build_gateway
+.PHONY:test_gateway build_gateway
 </pre>
 </div>
 </div>
@@ -320,11 +320,11 @@ export <span style="color: #fcaf3e;">GOPATH</span>=$<span style="color: #8c8c8c;
 <h4 id="org3c1e9b3">基本语法</h4>
 <div class="outline-text-4" id="text-org3c1e9b3">
 <div class="org-src-container">
-<pre class="src src-makefile"><span style="color: #fce94f;">target</span>: dependencies
+<pre class="src src-makefile">target: dependencies
       command
-<span style="color: #73d216;">#</span><span style="color: #73d216;">target &#25191;&#34892;&#30446;&#26631;&#65292;&#27604;&#22914; make target &#25191;&#34892;&#23545;&#24212;&#30340;&#30446;&#26631;</span>
-<span style="color: #73d216;">#</span><span style="color: #73d216;">dependencies &#20381;&#36182;&#39033; &#22914; target: before &#34920;&#31034;&#20381;&#36182;before&#25191;&#34892;target</span>
-<span style="color: #73d216;">#</span><span style="color: #73d216;">command &#25191;&#34892;&#30446;&#26631;&#20351;&#29992;&#21629;&#20196;&#38598;&#21512;</span>
+#target 执行目标，比如 make target 执行对应的目标
+#dependencies 依赖项 如 target: before 表示依赖before执行target
+#command 执行目标使用命令集合
 </pre>
 </div>
 </div>
@@ -333,14 +333,14 @@ export <span style="color: #fcaf3e;">GOPATH</span>=$<span style="color: #8c8c8c;
 <h4 id="org269ff66">变量</h4>
 <div class="outline-text-4" id="text-org269ff66">
 <div class="org-src-container">
-<pre class="src src-makefile"><span style="color: #fcaf3e;">VARIABLE</span> = value
-<span style="color: #73d216;"># </span><span style="color: #73d216;">&#22312;&#25191;&#34892;&#26102;&#25193;&#23637;&#65292;&#20801;&#35768;&#36882;&#24402;&#25193;&#23637;&#12290;</span>
-<span style="color: #fcaf3e;">VARIABLE</span> := value
-<span style="color: #73d216;"># </span><span style="color: #73d216;">&#22312;&#23450;&#20041;&#26102;&#25193;&#23637;&#12290;</span>
-<span style="color: #fcaf3e;">VARIABLE</span> ?= value
-<span style="color: #73d216;"># </span><span style="color: #73d216;">&#21482;&#26377;&#22312;&#35813;&#21464;&#37327;&#20026;&#31354;&#26102;&#25165;&#35774;&#32622;&#20540;&#12290;</span>
-<span style="color: #fcaf3e;">VARIABLE</span> += value
-<span style="color: #73d216;"># </span><span style="color: #73d216;">&#23558;&#20540;&#36861;&#21152;&#21040;&#21464;&#37327;&#30340;&#23614;&#31471;&#12290;</span>
+<pre class="src src-makefile">VARIABLE = value
+# 在执行时扩展，允许递归扩展。
+VARIABLE := value
+# 在定义时扩展。
+VARIABLE ?= value
+# 只有在该变量为空时才设置值。
+VARIABLE += value
+# 将值追加到变量的尾端。
 </pre>
 </div>
 </div>
@@ -358,7 +358,7 @@ export <span style="color: #fcaf3e;">GOPATH</span>=$<span style="color: #8c8c8c;
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">Last updated: 2023-04-18 Tue 21:53 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> emacs-28.2 (<a href="https://orgmode.org">Org</a> mode 9.6) <br /> © 2017 – 2023 by JosephTseng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<p class="postamble">Last updated: 2023-04-18 Tue 22:10 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> emacs-28.2 (<a href="https://orgmode.org">Org</a> mode 9.6) <br /> © 2017 – 2023 by JosephTseng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
 </div>
 </body>
