@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
+<head>
+<!-- 2023-04-23 Sun 00:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>德州扑克规则玩法</title>
+<meta name="author" content="JosephTseng" />
+<meta name="description" content="coder 程序员" />
+<meta name="keywords" content="coder 程序员 linux php golang c c++ lanmp 架构师" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="/static/style/main.css"/>
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+// @license-end
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="../index.html"> UP </a>
+ |
+ <a accesskey="H" href="/index.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">德州扑克规则玩法</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgbcc1442">规则</a>
+<ul>
+<li><a href="#org8abd833">扑克</a></li>
+<li><a href="#org09d78b0">人数</a></li>
+<li><a href="#orgaed5ad4">步骤</a>
+<ul>
+<li><a href="#org3a1a749">翻牌前 Pre-flop</a></li>
+<li><a href="#orga47e840">翻牌 Flop</a></li>
+<li><a href="#orgfe5c975">转牌 Turn</a></li>
+<li><a href="#org93e83b9">河牌 River</a></li>
+<li><a href="#org9001fcc">比牌 Compare</a></li>
+</ul>
+</li>
+<li><a href="#org368a68c">比牌方法</a>
+<ul>
+<li><a href="#org78f07ea">成牌规则</a></li>
+<li><a href="#org61c6c26">牌型</a>
+<ul>
+<li><a href="#org21f86ee">皇家同花顺 (Royal Flush)</a></li>
+<li><a href="#org1551d3d">同花顺 (Straight Flush)</a></li>
+<li><a href="#orgee375fe">四条 (Four of a Kind)</a></li>
+<li><a href="#org9876986">葫芦 (Fullhouse)</a></li>
+<li><a href="#org08b36f6">同花 (Flush)</a></li>
+<li><a href="#orgf32530e">顺子 (Straight)</a></li>
+<li><a href="#org55cd668">三条 (Three of a kind)</a></li>
+<li><a href="#orgcaad51a">两对 (Two Pairs)</a></li>
+<li><a href="#orgcee8827">一对 (One Pair)</a></li>
+<li><a href="#org57920c7">高牌 (High Card)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb9ed24c">玩法</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbcc1442" class="outline-2">
+<h2 id="orgbcc1442">规则</h2>
+<div class="outline-text-2" id="text-orgbcc1442">
+</div>
+<div id="outline-container-org8abd833" class="outline-3">
+<h3 id="org8abd833">扑克</h3>
+<div class="outline-text-3" id="text-org8abd833">
+<p>
+一副标准扑克，52张牌（除去大小王）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09d78b0" class="outline-3">
+<h3 id="org09d78b0">人数</h3>
+<div class="outline-text-3" id="text-org09d78b0">
+<p>
+一般一桌 2-9 个玩家。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaed5ad4" class="outline-3">
+<h3 id="orgaed5ad4">步骤</h3>
+<div class="outline-text-3" id="text-orgaed5ad4">
+</div>
+<div id="outline-container-org3a1a749" class="outline-4">
+<h4 id="org3a1a749">翻牌前 Pre-flop</h4>
+<div class="outline-text-4" id="text-org3a1a749">
+<p>
+先下大小盲注，然后给每个玩家发 2 张底牌；大盲注后面第一个玩家选择跟注，
+加注或盖牌放弃，顺时针方向，其他玩家依次操作；如有玩家加注情况，跟注
+的玩家需要再次依次操作。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga47e840" class="outline-4">
+<h4 id="orga47e840">翻牌 Flop</h4>
+<div class="outline-text-4" id="text-orga47e840">
+<p>
+同时发三张公共牌，由小盲注按顺时针方向，开始依次操作，选择下注，加注或
+弃牌。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfe5c975" class="outline-4">
+<h4 id="orgfe5c975">转牌 Turn</h4>
+<div class="outline-text-4" id="text-orgfe5c975">
+<p>
+发第四张牌，由小盲注按顺时针方向，开始依次操作，选择下注，加注或弃牌。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org93e83b9" class="outline-4">
+<h4 id="org93e83b9">河牌 River</h4>
+<div class="outline-text-4" id="text-org93e83b9">
+<p>
+发第五张牌，由小盲注按顺时针方向，开始依次操作，选择下注，加注或弃牌。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9001fcc" class="outline-4">
+<h4 id="org9001fcc">比牌 Compare</h4>
+<div class="outline-text-4" id="text-org9001fcc">
+<p>
+经过前四个步骤的操作，剩下的玩家开始亮牌比较，成牌最大玩家赢取奖池底。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org368a68c" class="outline-3">
+<h3 id="org368a68c">比牌方法</h3>
+<div class="outline-text-3" id="text-org368a68c">
+</div>
+<div id="outline-container-org78f07ea" class="outline-4">
+<h4 id="org78f07ea">成牌规则</h4>
+<div class="outline-text-4" id="text-org78f07ea">
+<p>
+用自己的 2 张底牌 + 5张公共牌结合一起，选出 5 张牌，不论自己的底牌使用
+几张或不使用，凑成最大的牌型，然后玩家之间比大小。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61c6c26" class="outline-4">
+<h4 id="org61c6c26">牌型</h4>
+<div class="outline-text-4" id="text-org61c6c26">
+<p>
+比牌先比牌型，大牌型大于小牌型；有 10 种，从大到小排序。
+</p>
+</div>
+
+<div id="outline-container-org21f86ee" class="outline-5">
+<h5 id="org21f86ee">皇家同花顺 (Royal Flush)</h5>
+<div class="outline-text-5" id="text-org21f86ee">
+<p>
+同花色的 A, K, Q, J, 10。
+</p>
+
+<p>
+<span class="underline">有两副多副皇家同花顺时，平分筹码。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1551d3d" class="outline-5">
+<h5 id="org1551d3d">同花顺 (Straight Flush)</h5>
+<div class="outline-text-5" id="text-org1551d3d">
+<p>
+五张同花色的连续牌。
+</p>
+
+<p>
+<span class="underline">有两副或多副同花顺，连续牌的头张牌大的获得筹码。如果是两副或多副相同的连续牌，平分筹码。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee375fe" class="outline-5">
+<h5 id="orgee375fe">四条 (Four of a Kind)</h5>
+<div class="outline-text-5" id="text-orgee375fe">
+<p>
+四张是相同点数但不同花的扑克牌，第五张是随意的一张牌。
+</p>
+
+<p>
+<span class="underline">如果两组或者更多组摊牌，则四张牌中的最大者赢局，如果一组人持有的四张牌是一样的，那么第五张牌最大者赢局（起脚牌）。如果起脚牌也一样，平分彩池。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9876986" class="outline-5">
+<h5 id="org9876986">葫芦 (Fullhouse)</h5>
+<div class="outline-text-5" id="text-org9876986">
+<p>
+由三张相同点数及任何两张其他相同点数的扑克牌组成。
+</p>
+
+<p>
+<span class="underline">如果两组或者更多组摊牌，那么三张相同点数中较大者赢局。如果三张牌都一样，则两张牌中点数较大者赢局，如果所有的牌都一样，则平分彩池。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org08b36f6" class="outline-5">
+<h5 id="org08b36f6">同花 (Flush)</h5>
+<div class="outline-text-5" id="text-org08b36f6">
+<p>
+此牌由五张不按顺序但相同花的扑克牌组成。
+</p>
+
+<p>
+<span class="underline">如果不止一人抓到此牌相，则牌点最高的人赢得该局，如果最大点相同，则由第二、第三、第四或者第五张牌来决定胜负，如果所有的牌都相同，平分彩池。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf32530e" class="outline-5">
+<h5 id="orgf32530e">顺子 (Straight)</h5>
+<div class="outline-text-5" id="text-orgf32530e">
+<p>
+此牌由五张顺序扑克牌组成。
+</p>
+
+<p>
+<span class="underline">如果不止一人抓到此牌，则五张牌中点数最大的赢得此局，如果所有牌点数都相同，平分彩池。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org55cd668" class="outline-5">
+<h5 id="org55cd668">三条 (Three of a kind)</h5>
+<div class="outline-text-5" id="text-org55cd668">
+<p>
+由三张相同点数和两张不同点数的扑克组成。
+</p>
+
+<p>
+<span class="underline">如果不止一人抓到此牌，则三张牌中最大点数者赢局，如果三张牌都相同，比较第四张牌，必要时比较第五张，点数大的人赢局。如果所有牌都相同，则平分彩池。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcaad51a" class="outline-5">
+<h5 id="orgcaad51a">两对 (Two Pairs)</h5>
+<div class="outline-text-5" id="text-orgcaad51a">
+<p>
+两对点数相同但两两不同的扑克和随意的一张牌组成。
+</p>
+
+<p>
+<span class="underline">如果不止一人抓大此牌相，牌点比较大的人赢，如果比较大的牌点相同，那么较小牌点中的较大者赢，如果两对牌点相同，那么第五张牌点较大者赢（起脚牌）。如果起脚牌也相同，则平分彩池。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcee8827" class="outline-5">
+<h5 id="orgcee8827">一对 (One Pair)</h5>
+<div class="outline-text-5" id="text-orgcee8827">
+<p>
+由两张相同点数的扑克牌和另三张随意的牌组成。
+</p>
+
+<p>
+<span class="underline">如果不止一人抓到此牌，则两张牌中点数大的赢，如果对牌都一样，则比较另外三张牌中大的赢，如果另外三张牌中较大的也一样则比较第二大的和第三大的，如果所有的牌都一样，则平分彩池。</span>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org57920c7" class="outline-5">
+<h5 id="org57920c7">高牌 (High Card)</h5>
+<div class="outline-text-5" id="text-org57920c7">
+<p>
+既不是同一花色也不是同一点数的五张牌组成。
+</p>
+
+<p>
+<span class="underline">如果不止一人抓到此牌，则比较点数最大者，如果点数最大的相同，则比较第二、第三、第四和第五大的，如果所有牌都相同，则平分彩池。</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb9ed24c" class="outline-2">
+<h2 id="orgb9ed24c">玩法</h2>
+<div class="outline-text-2" id="text-orgb9ed24c">
+<div class="post-copyright">
+<p>Author: JosephTseng</p>
+<p>
+Lastmod: <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-22 Sat&gt;</span></span>
+</p>
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">Last updated: 2023-04-23 Sun 00:08 <br />Power by <a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6) <br /> © 2017 – 2023 by JosephTseng</p><script async src="https://www.googletagmanager.com/gtag/js?id=G-DM3G6ZEQVV"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DM3G6ZEQVV');</script>
+</div>
+</body>
+</html>
